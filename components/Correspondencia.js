@@ -33,7 +33,9 @@ class Correspondencia extends Component{
        <Text style={styles.textIntro}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et tincidunt nibh, vestibulum mollis odio. Nunc aliquam ipsum sed ante mollis, vitae rhoncus felis dignissim. Duis tellus odio, facilisis vitae purus eget, pretium auctor nisl. </Text>
       </View>
 
-      <Table />
+      <View style={styles.tableCorresp}>
+        <Table />
+      </View>
 
       <View style={styles.space}></View>
       </ScrollView>
@@ -57,6 +59,11 @@ const styles = StyleSheet.create({
     height: '100%',
     backgroundColor: '#eeeff1',
     },
+    tableCorresp: {
+      paddingLeft: '2%',
+      paddingRight: '2%',
+      marginTop: 20,
+      },
     textContainer:{
       width: '96%',
       marginLeft: '2%',

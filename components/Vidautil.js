@@ -8,7 +8,7 @@ import { Dropdown } from 'react-native-material-dropdown';
 
 import Header from './Header';
 import MenuBottom from './MenuBottom';
-import Table from './Table';
+import Table1 from './Table1';
 
 class Vidautil extends Component{
 
@@ -17,7 +17,6 @@ class Vidautil extends Component{
     super(props);
     this.state = { 
         label: 'es un placeholder...' };
-        //this.onChangeTextDropdown()
     }
 
 
@@ -52,12 +51,12 @@ class Vidautil extends Component{
             <Dropdown
               label={this.state.label}
               data={data}
-              //onChangeText={this.onChangeTextDropdown()}
             />
       </View>
         
-
-     <Table />
+      <View style={styles.tableContainer} >
+        <Table1 />
+      </View>
      
       <View style={styles.space}></View>
       </ScrollView>
@@ -122,11 +121,10 @@ const styles = StyleSheet.create({
         paddingRight:20,
         paddingBottom:10,
       },
-    table:{
-      flexDirection: 'column',
-      width: '96%',
-      marginLeft: '2%',
-      marginRight: '2%',
+    tableContainer:{
+      width: '94%',
+      marginLeft: '3%',
+      marginRight: '3%',
       marginTop: 20,
       }, 
       tableTitle:{

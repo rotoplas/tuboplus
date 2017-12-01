@@ -7,7 +7,8 @@ import Accordion from 'react-native-collapsible/Accordion';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
 
-import Table from './Table';
+import Table1 from './Table1';
+import Table2 from './Table2';
 
 
 
@@ -40,8 +41,8 @@ class AccordionProd extends Component {
     content: 
     
       <View style={styles.content}>
-        <Text>Caracteristicas</Text>
-        <Table />
+        <Text style={styles.title}>Características</Text>
+        <Table1 />
       </View>
 
   },
@@ -50,12 +51,18 @@ class AccordionProd extends Component {
     content: 
     <View>
       <Image style={{width: '100%', height:300, resizeMode: Image.resizeMode.contain}}  source={require('../assets/img/plano.png')} />
+      <Table2 />
     </View>
+
  
   },
   {
     title: 'Equivalencias',
- 
+    content: 
+    
+      <View style={styles.content}>
+        <Table1 />
+      </View>
   }
 ];
 
@@ -96,8 +103,17 @@ const styles = StyleSheet.create({
     fontFamily: 'Signika-Bold',
     textAlign: 'left',
   },
+  title:{
+    fontSize: 18,
+    color: '#0075bc',
+    fontFamily: 'Signika-Regular',
+    marginLeft: 20,
+    marginBottom: 20,
+    },
   content: {
     backgroundColor: '#fff',
+    padding:'2%',
+    backgroundColor: '#eeeff1',
   },
   active: {
     color: '#013178',

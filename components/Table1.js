@@ -6,10 +6,7 @@ import { TextField } from 'react-native-material-textfield';
 import { Dropdown } from 'react-native-material-dropdown';
 
 
-import Header from './Header';
-import MenuBottom from './MenuBottom';
-
-class Vidautil extends Component{
+class Table1 extends Component{
 
 	render() {
 		return (
@@ -45,58 +42,9 @@ class Vidautil extends Component{
 const styles = StyleSheet.create({
 
 
-  wrapperContact: {
-    width: '100%',
-    height: '100%',
-    backgroundColor: '#eeeff1',
-    },
-    titContainer:{
-      width: '96%',
-      marginLeft: '2%',
-      marginRight: '2%',
-      marginTop: 20,
-      backgroundColor: 'transparent',
-    },
-    mainTitle:{
-      color: '#515253',
-      fontSize: 18,
-      fontFamily: 'Signika-Bold',
-    },
-    subTitle:{
-      color:'#0075bc',
-      fontFamily: 'Signika-Regular',
-      fontSize: 16,
-      marginTop: 5,
-      paddingRight: 30,
-      },
-    imgTableContain: {
-      flexDirection: 'row',
-    },
-    imgTable:{
-      flex: 1,
-      resizeMode: Image.resizeMode.contain,
-      height: 290,
-      },
-      filterBy:{
-        backgroundColor: '#ffffff',
-        height:60,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.2,
-        shadowRadius: 5,
-        marginLeft:10,
-        marginRight:10,
-        marginTop:10,
-        paddingLeft:20,
-        paddingRight:20,
-        paddingBottom:10,
-      },
     table:{
       flexDirection: 'column',
-      width: '96%',
-      marginLeft: '2%',
-      marginRight: '2%',
-      marginTop: 20,
+      width: '100%',
       }, 
       tableTitle:{
         backgroundColor: 'transparent',
@@ -123,9 +71,6 @@ const styles = StyleSheet.create({
         fontFamily: 'Signika-Regular',
         fontSize: 14,
       },
-      contactBoxInner:{
-        width: '100%',
-      },
       tableTexts:{
         backgroundColor: '#ffffff',
         flexDirection: 'row',
@@ -145,11 +90,8 @@ const styles = StyleSheet.create({
         color:'#999999',
         fontSize: 14,
       },
-      space:{
-      paddingBottom: 80,
-      },
     
 });
 
 
-export default Vidautil;
+export default Table1;
