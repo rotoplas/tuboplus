@@ -5,32 +5,16 @@ import Slideshow from 'react-native-slideshow';
 
 import Header from './Header';
 import MenuBottom from './MenuBottom';
+import SelectProductsList from './SelectProductsList';
 
 
 
 
 class ProductsList extends Component{
 
-  constructor(props) {
-    super(props);
-    this.state = { 
-        label: 'placeholder...' 
-      };
-        //onChangeTextDropdown(){
-          //label: ''
-        //}
-    }
+  
 
   render() {
-
-    let data = [{
-      value: 'Item 1',
-    }, {
-      value: 'Item 2',
-    }, {
-      value: 'Item 3',
-    },
-    ];
 
     return (
 
@@ -59,11 +43,7 @@ class ProductsList extends Component{
 
 
           <View style={styles.filterBy} >
-            <Dropdown
-              label={this.state.label}
-              data={data}
-              //onChangeText={this.onChangeTextDropdown()}
-            />
+             <SelectProductsList />
           </View>
         
 
@@ -105,16 +85,16 @@ const styles = StyleSheet.create({
     },
     filterBy:{
       backgroundColor: '#ffffff',
-      height:60,
+      height:44,
       shadowColor: '#000',
       shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.2,
       shadowRadius: 5,
       marginLeft:10,
       marginRight:10,
-      marginTop:20,
-      paddingLeft:20,
-      paddingRight:20,
+      marginTop:10,
+      paddingLeft:10,
+      paddingRight:10,
       paddingBottom:10,
       },
   productItem:{

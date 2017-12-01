@@ -9,6 +9,7 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import Table1 from './Table1';
 import Table2 from './Table2';
+import SelectPlanos from './SelectPlanos';
 
 
 
@@ -51,7 +52,10 @@ class AccordionProd extends Component {
     content: 
     <View>
       <Image style={{width: '100%', height:300, resizeMode: Image.resizeMode.contain}}  source={require('../assets/img/plano.png')} />
-      <Table2 />
+      <View>
+        <SelectPlanos />
+      </View>
+      {/*<Table2 />*/}
     </View>
 
  

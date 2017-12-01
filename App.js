@@ -11,13 +11,13 @@ import {
   Text,
   View
 } from 'react-native';
-import Product from './components/Product';
+import ProductsList from './components/ProductsList';
 
 export default class App extends Component<{}> {
   render() {
     return (
       <View >
-        <Product />
+        <ProductsList />
       </View>
     );
   }
