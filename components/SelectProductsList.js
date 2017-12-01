@@ -13,7 +13,7 @@ export default class SelectImput extends Component {
  
   constructor(props) {
     super(props);
-    this.state = {value : 'Select Me Please'}
+    this.state = {value : 'Filtrar por...'}
   }
   onSelect(value, label) {
     this.setState({value : value});
@@ -26,10 +26,12 @@ export default class SelectImput extends Component {
             onSelect = {this.onSelect.bind(this)}
             defaultText  = {this.state.value}
             style = {{borderColor : 'transparent', backgroundColor : '#ffffff', width: '100%'}}
-            textStyle = {{}}
+            textStyle = {{color: '#999999'}}
+            animationType = {'fade'}
+            transparent = {true}
             backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
             indicatorIcon = {<View style={styles.selectIconContainer}><Icon style={styles.selectIcon} name='angle-down'></Icon></View>}
-            optionListStyle = {{backgroundColor : '#ffffff'}}
+            optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999' }}
           >
           <Option value = 'Product 1'>Product 1</Option>
           <Option value = 'Product 2'>Product 2</Option>
@@ -49,16 +51,19 @@ export default class SelectImput extends Component {
 
 
 const styles = StyleSheet.create({
-  container: {
+
+container: {
     flex: 1,
+    backgroundColor: 'transparent',
   },
 selectIconContainer:{
   backgroundColor: 'transparent',
   width: 30,
-  right: 10,
+  right: 0,
   },
 selectIcon: {
   fontSize: 20,
+  color: '#999999',
 }
 
 });

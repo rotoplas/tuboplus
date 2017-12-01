@@ -13,7 +13,7 @@ export default class SelectPlanos extends Component {
  
   constructor(props) {
     super(props);
-    this.state = {value : 'Select Me Please'}
+    this.state = {value : '200081'}
   }
   onSelect(value, label) {
     this.setState({value : value});
@@ -26,6 +26,8 @@ export default class SelectPlanos extends Component {
             onSelect = {this.onSelect.bind(this)}
             defaultText  = {this.state.value}
             style = {{borderColor : 'transparent', backgroundColor : '#ffffff'}}
+            animationType = {'fade'}
+            transparent = {true}
             textStyle = {{}}
             backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
             indicatorIcon = {<View style={styles.selectIconContainer}><Icon style={styles.selectIcon} name='angle-down'></Icon></View>}

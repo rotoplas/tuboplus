@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, Image, StyleSheet, TextInput, ScrollView,FlatList } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient'; 
-import { TextField } from 'react-native-material-textfield';
-import { Dropdown } from 'react-native-material-dropdown';
+
 
 
 class Table1 extends Component{

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput} from 'react-native';
-import { Dropdown } from 'react-native-material-dropdown';
 import Slideshow from 'react-native-slideshow';
 
 import Header from './Header';
@@ -11,8 +10,6 @@ import SelectProductsList from './SelectProductsList';
 
 
 class ProductsList extends Component{
-
-  
 
   render() {
 
@@ -84,15 +81,13 @@ const styles = StyleSheet.create({
      backgroundColor: '#edeef0',
     },
     filterBy:{
-      backgroundColor: '#ffffff',
+      backgroundColor: 'transparent',
       height:44,
       shadowColor: '#000',
       shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.2,
       shadowRadius: 5,
-      marginLeft:10,
-      marginRight:10,
-      marginTop:10,
+      marginTop:20,
       paddingLeft:10,
       paddingRight:10,
       paddingBottom:10,
@@ -112,7 +107,7 @@ const styles = StyleSheet.create({
       shadowOpacity: 0.2,
       shadowRadius: 2,
       marginBottom: 5,
-      marginTop:20,
+      marginTop:5,
       resizeMode: 'contain',
       },
     productName:{

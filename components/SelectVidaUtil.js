@@ -9,11 +9,11 @@ import {
   View
 } from 'react-native';
  
-export default class SelectImput extends Component {
+export default class SelectVidaUtil extends Component {
  
   constructor(props) {
     super(props);
-    this.state = {value : 'Select Me Please'}
+    this.state = {value : 'Selecciona la temperatura'}
   }
   onSelect(value, label) {
     this.setState({value : value});
@@ -25,21 +25,23 @@ export default class SelectImput extends Component {
         <Select
             onSelect = {this.onSelect.bind(this)}
             defaultText  = {this.state.value}
-            style = {{borderWidth : 1, borderColor : '#cccccc'}}
-            textStyle = {{}}
+            style = {{borderColor : 'transparent', backgroundColor : '#ffffff', width: '100%'}}
+            textStyle = {{color: '#999999'}}
+            animationType = {'fade'}
+            transparent = {true}
             backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
             indicatorIcon = {<View style={styles.selectIconContainer}><Icon style={styles.selectIcon} name='angle-down'></Icon></View>}
-            optionListStyle = {{backgroundColor : '#ffffff'}}
+            optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999' }}
           >
-          <Option value = 'Azhar'>Azhar</Option>
-          <Option value = 'johnceena'>Johnceena</Option>
-          <Option value = 'undertaker'>Undertaker</Option>
-          <Option value = 'Daniel'>Daniel</Option>
-          <Option value = 'Roman'>Roman</Option>
-          <Option value = 'Stonecold'>Stonecold</Option>
-          <Option value = 'Rock'>Rock</Option>
-          <Option value = 'Sheild'>Sheild</Option>
-          <Option value = 'Orton'>Orton</Option>
+          <Option value = '200081'>200081</Option>
+          <Option value = '200082'>200082</Option>
+          <Option value = '200083'>200083</Option>
+          <Option value = '200084'>200084</Option>
+          <Option value = '200085'>200085</Option>
+          <Option value = '200086'>200086</Option>
+          <Option value = '200087'>200087</Option>
+          <Option value = '200088'>200088</Option>
+          <Option value = '200089'>200089</Option>
  
         </Select>
       </View>
@@ -50,11 +52,10 @@ export default class SelectImput extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 80,
     flex: 1,
+    backgroundColor: 'transparent',
   },
 selectIconContainer:{
-  backgroundColor: 'transparent',
   width: 30,
   right: 10,
   },

@@ -11,14 +11,20 @@ import {
   Text,
   View
 } from 'react-native';
-import ProductsList from './components/ProductsList';
+
+import Vidautil from './components/Vidautil';
+
 
 export default class App extends Component<{}> {
   render() {
     return (
       <View >
-        <ProductsList />
+        <Vidautil />
       </View>
+
     );
   }
 }
+
+
+

@@ -1,35 +1,16 @@
 import React, { Component } from 'react';
 import { Text, View, Image, StyleSheet, TextInput, ScrollView, } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient'; 
-import { TextField } from 'react-native-material-textfield';
-import { Dropdown } from 'react-native-material-dropdown';
 
 
 import Header from './Header';
 import MenuBottom from './MenuBottom';
 import Table1 from './Table1';
+import SelectVidaUtil from './SelectVidaUtil';
 
 class Vidautil extends Component{
 
-
-   constructor(props) {
-    super(props);
-    this.state = { 
-        label: 'es un placeholder...' };
-    }
-
-
 	render() {
-
-    let data = [{
-      value: 'Item 1',
-    }, {
-      value: 'Item 2',
-    }, {
-      value: 'Item 3',
-    },
-    ];
 
 		return (
 
@@ -48,10 +29,7 @@ class Vidautil extends Component{
       </View>
 
       <View style={styles.filterBy} >
-            <Dropdown
-              label={this.state.label}
-              data={data}
-            />
+           <SelectVidaUtil />
       </View>
         
       <View style={styles.tableContainer} >
@@ -107,19 +85,18 @@ const styles = StyleSheet.create({
       resizeMode: Image.resizeMode.contain,
       height: 290,
       },
-      filterBy:{
-        backgroundColor: '#ffffff',
-        height:60,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.2,
-        shadowRadius: 5,
-        marginLeft:10,
-        marginRight:10,
-        marginTop:10,
-        paddingLeft:20,
-        paddingRight:20,
-        paddingBottom:10,
+    filterBy:{
+      backgroundColor: '#ffffff',
+      height:44,
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.2,
+      shadowRadius: 5,
+      marginTop:0,
+      marginBottom:5,
+      width:'94%',
+      marginLeft:'3%',
+      marginRight:'3%',
       },
     tableContainer:{
       width: '94%',
