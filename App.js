@@ -11,9 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
-
 import Product from './components/Product';
-
 
 export default class App extends Component<{}> {
   render() {
@@ -21,10 +19,6 @@ export default class App extends Component<{}> {
       <View >
         <Product />
       </View>
-
     );
   }
 }
-
-
-
