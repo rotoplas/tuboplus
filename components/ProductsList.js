@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput} from 'react-native';
+import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput, TouchableOpacity, Navigator} from 'react-native';
 import Slideshow from 'react-native-slideshow';
 
 import Header from './Header';
@@ -7,9 +7,25 @@ import MenuBottom from './MenuBottom';
 import SelectProductsList from './SelectProductsList';
 
 
-
+let data = [
+  {key: 'menuItem1', productName: 'Producto 1', prodDescription: 'Descripción 1', imageProd:require('../assets/img/producto1.jpg')},
+  {key: 'menuItem2', productName: 'Producto 2', prodDescription: 'Descripción 1', imageProd:require('../assets/img/producto1.jpg')},
+  {key: 'menuItem3', productName: 'Producto 3', prodDescription: 'Descripción 3', imageProd:require('../assets/img/producto1.jpg')},
+  {key: 'menuItem4', productName: 'Producto 4', prodDescription: 'Descripción 4', imageProd:require('../assets/img/producto1.jpg')},
+  {key: 'menuItem5', productName: 'Producto 5', prodDescription: 'Descripción 5', imageProd:require('../assets/img/producto1.jpg')},
+  {key: 'menuItem6', productName: 'Producto 6', prodDescription: 'Descripción 6', imageProd:require('../assets/img/producto1.jpg')}]
+let listeners = []
 
 class ProductsList extends Component{
+  constructor(props) {
+    super(props)
+    this.state = { data: Array.from(data), selectedID: null }
+  }
+
+  componentDidMount () {
+    listeners.push(() => { this.setState({ data: data }) })
+  }
+
   static navigationOptions = {
     tabBarLabel: 'ProductsList',
     // Note: By default the icon is only shown on iOS. Search the showIcon option below.
@@ -20,6 +36,13 @@ class ProductsList extends Component{
       />
     ),
   };
+
+  onPress = () => {
+    this.setState({
+       selectedID: this.state.selectedID
+     })
+  };
+
   render() {
 
     return (
@@ -47,28 +70,25 @@ class ProductsList extends Component{
         },
       ]}/>
 
+      <View style={styles.filterBy} >
+          <SelectProductsList />
+      </View>
 
-          <View style={styles.filterBy} >
-             <SelectProductsList />
-          </View>
+      <Text >{ this.state.selectedID !== null ? this.state.selectedID : null}</Text>
 
-
-      <FlatList numColumns={2} data={[
-        {key: 'menuItem1', productName: 'Producto 1', prodDescription: 'Descripción 1', imageProd:require('../assets/img/producto1.jpg')},
-        {key: 'menuItem2', productName: 'Producto 2', prodDescription: 'Descripción 1', imageProd:require('../assets/img/producto1.jpg')},
-        {key: 'menuItem3', productName: 'Producto 3', prodDescription: 'Descripción 3', imageProd:require('../assets/img/producto1.jpg')},
-        {key: 'menuItem4', productName: 'Producto 4', prodDescription: 'Descripción 4', imageProd:require('../assets/img/producto1.jpg')},
-        {key: 'menuItem5', productName: 'Producto 5', prodDescription: 'Descripción 5', imageProd:require('../assets/img/producto1.jpg')},
-        {key: 'menuItem6', productName: 'Producto 6', prodDescription: 'Descripción 6', imageProd:require('../assets/img/producto1.jpg')}]}
-
-        renderItem={({item}) =>
-
-                <View style={styles.productItem}>
-                  <Image style={styles.prodImage} source={item.imageProd} />
-                  <Text style={styles.productName}>{item.productName}</Text>
-                  <Text style={styles.prodDescription}>{item.prodDescription}</Text>
-                </View>
-      }
+      <FlatList
+      numColumns={2}
+      data={this.state.data}
+      keyExtractor={(item) => item.key}
+      renderItem={({item}) => (
+          <TouchableOpacity onPress={this.onPress}>
+              <View style={styles.productItem}>
+                <Image style={styles.prodImage} source={item.imageProd} />
+                <Text style={styles.productName}>{item.productName}</Text>
+                <Text style={styles.prodDescription}>{item.prodDescription}</Text>
+              </View>
+          </TouchableOpacity>
+        )}
       />
      <View style={styles.space}></View>
      </ScrollView>
@@ -77,9 +97,7 @@ class ProductsList extends Component{
       <MenuBottom />
     </View>
 
-
     </View>
-
     );
   }
 }
