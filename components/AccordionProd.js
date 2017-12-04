@@ -14,8 +14,16 @@ import SelectPlanos from './SelectPlanos';
 
 
 class AccordionProd extends Component {
-
-
+  static navigationOptions = {
+		tabBarLabel: 'AccordionProd',
+		// Note: By default the icon is only shown on iOS. Search the showIcon option below.
+		tabBarIcon: ({ tintColor }) => (
+			<Image
+				source={require('../assets/img/icon1.png')}
+				style={[styles.icon, {tintColor: tintColor}]}
+			/>
+		),
+	};
 
   _renderContent(section) {
     return (
@@ -39,8 +47,8 @@ class AccordionProd extends Component {
       const SECTIONS = [
   {
     title: 'Correspondencia',
-    content: 
-    
+    content:
+
       <View style={styles.content}>
         <Text style={styles.title}>Características</Text>
         <Table1 />
@@ -49,7 +57,7 @@ class AccordionProd extends Component {
   },
   {
     title: 'Planos',
-    content: 
+    content:
     <View style={styles.contentPlano}>
       <Image style={{width: '100%', height:250, resizeMode: Image.resizeMode.contain}}  source={require('../assets/img/plano.png')} />
       <View style={styles.selectPlanos}>
@@ -58,12 +66,12 @@ class AccordionProd extends Component {
       <Table2 />
     </View>
 
- 
+
   },
   {
     title: 'Equivalencias',
-    content: 
-    
+    content:
+
       <View style={styles.content}>
         <Table1 />
       </View>
@@ -76,7 +84,7 @@ class AccordionProd extends Component {
         sections={SECTIONS}
         renderHeader={this._renderHeader}
         renderContent={this._renderContent}
-        
+
       />
     );
   }
@@ -146,6 +154,5 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   }
 });
- 
-export default AccordionProd;
 
+export default AccordionProd;

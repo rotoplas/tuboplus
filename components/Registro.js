@@ -3,17 +3,26 @@ import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput} from 'r
 import { Dropdown } from 'react-native-material-dropdown';
 import { TextField } from 'react-native-material-textfield';
 import CheckBox from 'react-native-modest-checkbox'
-import LinearGradient from 'react-native-linear-gradient'; 
+import LinearGradient from 'react-native-linear-gradient';
 
 import Header from './Header';
 import MenuBottom from './MenuBottom';
 
 
 class Registro extends Component{
-
+  static navigationOptions = {
+    tabBarLabel: 'Registro',
+    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
+    tabBarIcon: ({ tintColor }) => (
+      <Image
+        source={require('../assets/img/icon1.png')}
+        style={[styles.icon, {tintColor: tintColor}]}
+      />
+    ),
+  };
  constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
                   text: '',
                   placeholderNombre: 'Nombre',
                   placeholderMunicipio: 'Delegación o Municipio',
@@ -38,7 +47,7 @@ class Registro extends Component{
        <Header />
 
        <View style={styles.wrapperForm} >
-          
+
           <Text style={styles.titContactform}>
           Registro
           </Text>
@@ -74,8 +83,8 @@ class Registro extends Component{
             />
 
           <View style={styles.checkboxItem}>
-          <CheckBox 
-            label ='Acepto términos y condiciones. Aviso de privacidad' 
+          <CheckBox
+            label ='Acepto términos y condiciones. Aviso de privacidad'
             labelStyle={{fontSize: 12, color: '#626262'}}
             checkedImage={require('../assets/img/checked.png')}
             uncheckedImage={require('../assets/img/unchecked.png')}
@@ -108,7 +117,7 @@ class Registro extends Component{
     </View>
 
     );
-  } 
+  }
 }
 
 const styles = StyleSheet.create({

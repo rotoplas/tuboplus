@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Text, View, Image, StyleSheet, TextInput} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import LinearGradient from 'react-native-linear-gradient'; 
+import LinearGradient from 'react-native-linear-gradient';
 import { TextField } from 'react-native-material-textfield';
 
 class Login extends Component{
 
  constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
                   text: '',
                   placeholderEmail: 'Email',
                   placeholderPass: 'Contraseña',
@@ -48,7 +48,7 @@ class Login extends Component{
 		</LinearGradient>
 
 		);
-	}	
+	}
 }
 
 
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Signika-Regular',
     fontSize: 18,
     marginTop: 15,
-    }, 
+    },
   passLabel: {
     color: '#ffffff',
     backgroundColor: 'transparent',

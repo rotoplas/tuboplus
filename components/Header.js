@@ -9,7 +9,7 @@ class Header extends Component{
 	render() {
 		return (
       <View>
-			
+
 				<LinearGradient style={styles.wrapperHeader} colors={["#23a7df","#0186be"]} >
 
 		      <View style={styles.iconView}>

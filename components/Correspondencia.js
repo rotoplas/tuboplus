@@ -10,7 +10,16 @@ import MenuBottom from './MenuBottom';
 import Table1 from './Table1';
 
 class Correspondencia extends Component{
-
+	static navigationOptions = {
+		tabBarLabel: 'Correspondencia',
+		// Note: By default the icon is only shown on iOS. Search the showIcon option below.
+		tabBarIcon: ({ tintColor }) => (
+			<Image
+				source={require('../assets/img/icon1.png')}
+				style={[styles.icon, {tintColor: tintColor}]}
+			/>
+		),
+	};
 	render() {
 		return (
 

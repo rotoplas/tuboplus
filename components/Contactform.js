@@ -9,7 +9,16 @@ import MenuBottom from './MenuBottom';
 
 
 class Contactform extends Component{
-
+  static navigationOptions = {
+    tabBarLabel: 'Contactform',
+    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
+    tabBarIcon: ({ tintColor }) => (
+      <Image
+        source={require('../assets/img/icon1.png')}
+        style={[styles.icon, {tintColor: tintColor}]}
+      />
+    ),
+  };
  constructor(props) {
     super(props);
     this.state = {

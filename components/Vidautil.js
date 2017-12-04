@@ -10,7 +10,7 @@ import SelectVidaUtil from './SelectVidaUtil';
 
 class Vidautil extends Component{
 	static navigationOptions = {
-		tabBarLabel: 'Home',
+		tabBarLabel: 'Vida Util',
 		// Note: By default the icon is only shown on iOS. Search the showIcon option below.
 		tabBarIcon: ({ tintColor }) => (
 			<Image
