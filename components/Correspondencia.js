@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Text, View, Image, StyleSheet, TextInput, ScrollView,FlatList } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import LinearGradient from 'react-native-linear-gradient'; 
+import LinearGradient from 'react-native-linear-gradient';
 import { TextField } from 'react-native-material-textfield';
 
 
 import Header from './Header';
 import MenuBottom from './MenuBottom';
-import Table from './Table';
+import Table1 from './Table1';
 
 class Correspondencia extends Component{
 
@@ -15,7 +15,7 @@ class Correspondencia extends Component{
 		return (
 
 		<View style={styles.wrapperContact}>
-      
+
       <ScrollView>
       <Header />
 
@@ -46,7 +46,7 @@ class Correspondencia extends Component{
 		</View>
 
 		);
-	}	
+	}
 }
 
 
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
       marginLeft: '2%',
       marginRight: '2%',
       marginTop: 20,
-      }, 
+      },
       tableTitle:{
         backgroundColor: 'transparent',
         flexDirection: 'row',
@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
       space:{
       paddingBottom: 80,
       },
-    
+
 });
 
 

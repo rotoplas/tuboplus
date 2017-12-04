@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput} from 'react-native';
-import { Dropdown } from 'react-native-material-dropdown';
 import { TextField } from 'react-native-material-textfield';
 import CheckBox from 'react-native-modest-checkbox'
-import LinearGradient from 'react-native-linear-gradient'; 
+import LinearGradient from 'react-native-linear-gradient';
 
 import Header from './Header';
 import MenuBottom from './MenuBottom';
@@ -13,7 +12,7 @@ class Contactform extends Component{
 
  constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
                   text: '',
                   placeholderNombre: 'Nombre',
                   placeholderMunicipio: 'Delegación o Municipio',
@@ -82,8 +81,8 @@ class Contactform extends Component{
             />
 
           <View style={styles.checkboxItem}>
-          <CheckBox 
-            label ='Acepto términos y condiciones. Aviso de privacidad' 
+          <CheckBox
+            label ='Acepto términos y condiciones. Aviso de privacidad'
             labelStyle={{fontSize: 12, color: '#626262'}}
             checkedImage={require('../assets/img/checked.png')}
             uncheckedImage={require('../assets/img/unchecked.png')}
@@ -116,7 +115,7 @@ class Contactform extends Component{
     </View>
 
     );
-  } 
+  }
 }
 
 const styles = StyleSheet.create({
