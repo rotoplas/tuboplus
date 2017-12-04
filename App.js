@@ -21,38 +21,40 @@ import Correspondencia from './components/Correspondencia';
 import Contactform from './components/Contactform';
 import Contacto from './components/Contact';
 
-const BasicApp = TabNavigator({
-  Catalogo: {
-    screen: ProductsList,
-  },
-  Correspondencia: {
-    screen: Correspondencia,
-  },
-  Termofusion: {
-    screen: Product,
-  },
-  Distribuidor: {
-    screen: Contactform,
-  },
-  Contactenos: {
-    screen: Contacto,
+const TabMenuBottom = TabNavigator({
+    ProductsList: {
+      screen: ProductsList,
+    },
+    Correspondencia: {
+      screen: Correspondencia,
+    },
+    Termofusion: {
+      screen: Product,
+    },
+    Contactform: {
+      screen: Contactform,
+    },
+    Contacto: {
+      screen: Contacto,
+    },
+  }, {
+    tabBarPosition: 'bottom',
+    animationEnabled: true,
+    tabBarOptions: {
+      activeTintColor: '#e91e63',
+      labelStyle: {
+        fontSize: 12,
+      },
+      style: {
+        backgroundColor: 'blue',
+      },
   },
 }, {
-  tabBarPosition: 'bottom',
-  animationEnabled: true,
-  tabBarOptions: {
-    activeTintColor: '#e91e63',
-    labelStyle: {
-      fontSize: 12,
-    },
-    style: {
-      backgroundColor: 'blue',
-    },
-  },
+  initialRouteName: 'ProductsList',
 });
 
 export default class App extends Component<{}> {
   render() {
-    return <BasicApp />
+    return <TabMenuBottom />
   }
 }
