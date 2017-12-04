@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput} from 'react-native';
-import { Dropdown } from 'react-native-material-dropdown';
 import { TextField } from 'react-native-material-textfield';
 import CheckBox from 'react-native-modest-checkbox'
 import LinearGradient from 'react-native-linear-gradient'; 
+import SelectPais from './SelectPais';
+import SelectEstado from './SelectEstado';
+import SelectDirigido from './SelectDirigido';
 
 import Header from './Header';
 import MenuBottom from './MenuBottom';
@@ -74,6 +76,12 @@ class Contactform extends Component{
             style={styles.inputForm}
             placeholder={this.state.placeholderCalle}
             />
+            <Text style={styles.inputLabel}>País</Text>
+            <SelectPais />
+            <Text style={styles.inputLabel}>Estado</Text>
+            <SelectEstado />
+            <Text style={styles.inputLabel}>Dirigido a</Text>
+            <SelectDirigido />
             <Text style={styles.inputLabel}>Mensaje</Text>
           <TextInput style={styles.inputlMessage}
             style={styles.inputForm}
@@ -157,7 +165,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 3,
-    borderRadius: 5,
+    borderRadius: 4,
     marginTop: 5,
     marginBottom: 20,
     },
@@ -171,7 +179,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 3,
-    borderRadius: 5,
+    borderRadius: 4,
     marginTop: 5,
     marginBottom: 20,
     height: 150,

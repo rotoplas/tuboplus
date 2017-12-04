@@ -12,14 +12,14 @@ import {
   View
 } from 'react-native';
 
-import Product from './components/Product';
+import Contactform from './components/Contactform';
 
 
 export default class App extends Component<{}> {
   render() {
     return (
       <View >
-        <Product />
+        <Contactform />
       </View>
 
     );
