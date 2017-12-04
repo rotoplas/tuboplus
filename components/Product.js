@@ -7,8 +7,9 @@ import MenuBottom from './MenuBottom';
 
 
 class Product extends Component {
-
-
+  static navigationOptions = {
+    tabBarLabel: 'Producto',
+  };
   render() {
     return (
 
@@ -31,7 +32,7 @@ class Product extends Component {
         </View>
 
         <Text style={styles.introContainer}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et tincidunt nibh, vestibulum mollis odio. Nunc aliquam ipsum sed ante mollis, vitae rhoncus felis dignissim. Duis tellus odio, facilisis vitae purus eget, pretium auctor nisl. </Text>
-        
+
         <AccordionProd />
 
         <View style={styles.space}></View>
@@ -90,6 +91,5 @@ const styles = StyleSheet.create({
     paddingBottom: 50,
     },
 });
- 
-export default Product;
 
+export default Product;
