@@ -2,25 +2,13 @@ import React, { Component } from 'react';
 import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput} from 'react-native';
 import { TextField } from 'react-native-material-textfield';
 import CheckBox from 'react-native-modest-checkbox'
-import LinearGradient from 'react-native-linear-gradient'; 
-import SelectPais from './SelectPais';
-import SelectEstado from './SelectEstado';
-import SelectDirigido from './SelectDirigido';
+import LinearGradient from 'react-native-linear-gradient';
 
 import Header from './Header';
 
 
-class Contactform extends Component{
-  static navigationOptions = {
-    tabBarLabel: 'Contactform',
-    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-    tabBarIcon: ({ tintColor }) => (
-      <Image
-        source={require('../assets/img/icon6.png')}
-        style={[styles.iconItem, {tintColor: tintColor}]}
-      />
-    ),
-  };
+class Registro extends Component{
+  
  constructor(props) {
     super(props);
     this.state = {
@@ -48,11 +36,9 @@ class Contactform extends Component{
        <Header />
 
        <View style={styles.wrapperForm} >
-          <Text style={styles.textIntro}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et tincidunt nibh, vestibulum mollis odio. Nunc aliquam ipsum sed ante mollis.
-          </Text>
+
           <Text style={styles.titContactform}>
-          Contacta a los expertos
+          Registro
           </Text>
           <Text style={styles.inputLabel}>Nombre</Text>
           <TextInput
@@ -84,18 +70,6 @@ class Contactform extends Component{
             style={styles.inputForm}
             placeholder={this.state.placeholderCalle}
             />
-            <Text style={styles.inputLabel}>País</Text>
-            <SelectPais />
-            <Text style={styles.inputLabel}>Estado</Text>
-            <SelectEstado />
-            <Text style={styles.inputLabel}>Dirigido a</Text>
-            <SelectDirigido />
-            <Text style={styles.inputLabel}>Mensaje</Text>
-          <TextInput style={styles.inputlMessage}
-            style={styles.inputForm}
-            placeholder={this.state.placeholderMensaje}
-            multiline={true}
-            />
 
           <View style={styles.checkboxItem}>
           <CheckBox
@@ -125,7 +99,6 @@ class Contactform extends Component{
 
        </ScrollView>
 
-
     </View>
 
     );
@@ -136,11 +109,6 @@ const styles = StyleSheet.create({
 
   wrapperContactform:{
      backgroundColor: '#edeef0',
-    },
-    iconItem:{
-    width: 35,
-    height: 30,
-    backgroundColor: 'transparent',
     },
     wrapperForm:{
      width: '84%',
@@ -175,7 +143,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 3,
-    borderRadius: 4,
+    borderRadius: 5,
     marginTop: 5,
     marginBottom: 20,
     },
@@ -189,7 +157,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 3,
-    borderRadius: 4,
+    borderRadius: 5,
     marginTop: 5,
     marginBottom: 20,
     height: 150,
@@ -218,4 +186,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default Contactform;
+export default Registro;

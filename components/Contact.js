@@ -1,20 +1,28 @@
 import React, { Component } from 'react';
 import { Text, View, Image, StyleSheet, TextInput, ScrollView, } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import LinearGradient from 'react-native-linear-gradient'; 
+import LinearGradient from 'react-native-linear-gradient';
 import { TextField } from 'react-native-material-textfield';
 
-
 import Header from './Header';
-import MenuBottom from './MenuBottom';
+
 
 class Contacto extends Component{
-
+	static navigationOptions = {
+		tabBarLabel: 'Contacto',
+		// Note: By default the icon is only shown on iOS. Search the showIcon option below.
+		tabBarIcon: ({ tintColor }) => (
+			<Image
+				source={require('../assets/img/icon7.png')}
+				style={[styles.iconItem, {tintColor: tintColor}]}
+			/>
+		),
+	};
 	render() {
 		return (
 
 		<View style={styles.wrapperContact}>
-      
+
       <ScrollView>
       <Header />
 
@@ -50,14 +58,11 @@ class Contacto extends Component{
       </View>
       </ScrollView>
 
-      <View>
-        <MenuBottom />
-      </View>
 
 		</View>
 
 		);
-	}	
+	}
 }
 
 
@@ -68,6 +73,11 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     backgroundColor: '#eeeff1',
+    },
+    iconItem:{
+    width: 35,
+    height: 30,
+    backgroundColor: 'transparent',
     },
     imgContent: {
       flexDirection: 'row',

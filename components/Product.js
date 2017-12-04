@@ -3,13 +3,10 @@ import { StyleSheet, Text, View, ScrollView, Image} from 'react-native';
 
 import Header from './Header';
 import AccordionProd from './AccordionProd';
-import MenuBottom from './MenuBottom';
 
 
 class Product extends Component {
-  static navigationOptions = {
-    tabBarLabel: 'Producto',
-  };
+
   render() {
     return (
 
@@ -39,10 +36,6 @@ class Product extends Component {
 
       </ScrollView>
 
-      <View style={styles.wrapperProducts} >
-        <MenuBottom />
-      </View>
-
       </View>
     );
   }
@@ -50,6 +43,7 @@ class Product extends Component {
 
 
 const styles = StyleSheet.create({
+
   imgContent: {
       flexDirection: 'row',
     },

@@ -1,16 +1,25 @@
 import React, { Component } from 'react';
 import { Select, Option} from 'react-native-chooser';
 import Icon from 'react-native-vector-icons/FontAwesome';
- 
+
 import {
   AppRegistry,
   StyleSheet,
   Text,
   View
 } from 'react-native';
- 
+
 export default class SelectVidaUtil extends Component {
- 
+  static navigationOptions = {
+    tabBarLabel: 'SelectVidaUtil',
+    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
+    tabBarIcon: ({ tintColor }) => (
+      <Image
+        source={require('../assets/img/icon1.png')}
+        style={[styles.icon, {tintColor: tintColor}]}
+      />
+    ),
+  };
   constructor(props) {
     super(props);
     this.state = {value : 'Selecciona la temperatura'}
@@ -18,7 +27,7 @@ export default class SelectVidaUtil extends Component {
   onSelect(value, label) {
     this.setState({value : value});
   }
- 
+
   render() {
     return (
       <View style={styles.container}>
@@ -42,7 +51,7 @@ export default class SelectVidaUtil extends Component {
           <Option value = '200087'>200087</Option>
           <Option value = '200088'>200088</Option>
           <Option value = '200089'>200089</Option>
- 
+
         </Select>
       </View>
     );
@@ -66,4 +75,3 @@ selectIcon: {
 }
 
 });
-

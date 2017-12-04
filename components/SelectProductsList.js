@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import { Select, Option} from 'react-native-chooser';
 import Icon from 'react-native-vector-icons/FontAwesome';
- 
+
 import {
   AppRegistry,
   StyleSheet,
   Text,
   View
 } from 'react-native';
- 
+
 export default class SelectImput extends Component {
- 
   constructor(props) {
     super(props);
     this.state = {value : 'Filtrar por...'}
@@ -18,7 +17,7 @@ export default class SelectImput extends Component {
   onSelect(value, label) {
     this.setState({value : value});
   }
- 
+
   render() {
     return (
       <View style={styles.container}>
@@ -42,7 +41,7 @@ export default class SelectImput extends Component {
           <Option value = 'Product 7'>Product 7</Option>
           <Option value = 'Product 8'>Product 8</Option>
           <Option value = 'Product 9'>Product 9</Option>
- 
+
         </Select>
       </View>
     );
@@ -68,4 +67,3 @@ selectIcon: {
 }
 
 });
-
