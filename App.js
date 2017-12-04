@@ -12,14 +12,14 @@ import {
   View
 } from 'react-native';
 
-import Vidautil from './components/Vidautil';
+import Product from './components/Product';
 
 
 export default class App extends Component<{}> {
   render() {
     return (
       <View >
-        <Vidautil />
+        <Product />
       </View>
 
     );

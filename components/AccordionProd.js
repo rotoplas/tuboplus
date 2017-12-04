@@ -50,12 +50,12 @@ class AccordionProd extends Component {
   {
     title: 'Planos',
     content: 
-    <View>
+    <View style={styles.contentPlano}>
       <Image style={{width: '100%', height:300, resizeMode: Image.resizeMode.contain}}  source={require('../assets/img/plano.png')} />
-      <View>
+      <View style={styles.selectPlanos}>
         <SelectPlanos />
       </View>
-      {/*<Table2 />*/}
+      <Table2 />
     </View>
 
  
@@ -130,7 +130,19 @@ const styles = StyleSheet.create({
     color: '#fff',
     backgroundColor: 'transparent',
   },
-
+  selectPlanos: {
+    backgroundColor: 'transparent',
+    height:44,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+    marginTop:20,
+    paddingLeft:10,
+    paddingRight:10,
+    paddingBottom:10,
+    width: '100%',
+  }
 });
  
 export default AccordionProd;
