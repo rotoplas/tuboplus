@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, Image, StyleSheet, TextInput, ScrollView, } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient'; 
+import LinearGradient from 'react-native-linear-gradient';
 
 
 import Header from './Header';
@@ -9,13 +9,23 @@ import Table1 from './Table1';
 import SelectVidaUtil from './SelectVidaUtil';
 
 class Vidautil extends Component{
+	static navigationOptions = {
+		tabBarLabel: 'Home',
+		// Note: By default the icon is only shown on iOS. Search the showIcon option below.
+		tabBarIcon: ({ tintColor }) => (
+			<Image
+				source={require('../assets/img/icon1.png')}
+				style={[styles.icon, {tintColor: tintColor}]}
+			/>
+		),
+	};
 
-	render() {
+render() {
 
 		return (
 
 		<View style={styles.wrapperContact}>
-      
+
       <ScrollView>
       <Header />
 
@@ -31,11 +41,11 @@ class Vidautil extends Component{
       <View style={styles.filterBy} >
            <SelectVidaUtil />
       </View>
-        
+
       <View style={styles.tableContainer} >
         <Table1 />
       </View>
-     
+
       <View style={styles.space}></View>
       </ScrollView>
 
@@ -46,7 +56,7 @@ class Vidautil extends Component{
 		</View>
 
 		);
-	}	
+	}
 }
 
 
@@ -103,7 +113,7 @@ const styles = StyleSheet.create({
       marginLeft: '3%',
       marginRight: '3%',
       marginTop: 20,
-      }, 
+      },
       tableTitle:{
         backgroundColor: 'transparent',
         flexDirection: 'row',
@@ -152,10 +162,18 @@ const styles = StyleSheet.create({
         fontSize: 14,
       },
       space:{
-      paddingBottom: 80,
+      	paddingBottom: 80,
       },
-    
+			activeItem:{
+				backgroundColor: '#013178',
+				borderRightColor: '#ffffff',
+				borderRightWidth: 1,
+				paddingTop: 10,
+				paddingBottom: 10,
+				alignItems: 'center'
+			}
 });
+
 
 
 export default Vidautil;

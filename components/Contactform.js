@@ -15,7 +15,7 @@ class Contactform extends Component{
 
  constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
                   text: '',
                   placeholderNombre: 'Nombre',
                   placeholderMunicipio: 'Delegación o Municipio',
@@ -90,8 +90,8 @@ class Contactform extends Component{
             />
 
           <View style={styles.checkboxItem}>
-          <CheckBox 
-            label ='Acepto términos y condiciones. Aviso de privacidad' 
+          <CheckBox
+            label ='Acepto términos y condiciones. Aviso de privacidad'
             labelStyle={{fontSize: 12, color: '#626262'}}
             checkedImage={require('../assets/img/checked.png')}
             uncheckedImage={require('../assets/img/unchecked.png')}
@@ -124,7 +124,7 @@ class Contactform extends Component{
     </View>
 
     );
-  } 
+  }
 }
 
 const styles = StyleSheet.create({
