@@ -25,13 +25,13 @@ export default class SelectPlanos extends Component {
         <Select
             onSelect = {this.onSelect.bind(this)}
             defaultText  = {this.state.value}
-            style = {{borderColor : 'transparent', backgroundColor : '#ffffff'}}
+            style = {{borderColor : 'transparent', backgroundColor : 'transparent', width: '100%'}}
+            textStyle = {{color: '#999999'}}
             animationType = {'fade'}
             transparent = {true}
-            textStyle = {{}}
             backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
             indicatorIcon = {<View style={styles.selectIconContainer}><Icon style={styles.selectIcon} name='angle-down'></Icon></View>}
-            optionListStyle = {{backgroundColor : '#ffffff'}}
+            optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999' }}
           >
           <Option value = '200081'>200081</Option>
           <Option value = '200082'>200082</Option>
@@ -61,6 +61,8 @@ selectIconContainer:{
   },
 selectIcon: {
   fontSize: 20,
+  color: '#999999',
+  width: '100%',
 }
 
 });
