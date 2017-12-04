@@ -4,21 +4,10 @@ import LinearGradient from 'react-native-linear-gradient';
 
 
 import Header from './Header';
-import MenuBottom from './MenuBottom';
 import Table1 from './Table1';
 import SelectVidaUtil from './SelectVidaUtil';
 
 class Vidautil extends Component{
-	static navigationOptions = {
-		tabBarLabel: 'Vida Util',
-		// Note: By default the icon is only shown on iOS. Search the showIcon option below.
-		tabBarIcon: ({ tintColor }) => (
-			<Image
-				source={require('../assets/img/icon1.png')}
-				style={[styles.icon, {tintColor: tintColor}]}
-			/>
-		),
-	};
 
 render() {
 
@@ -49,9 +38,6 @@ render() {
       <View style={styles.space}></View>
       </ScrollView>
 
-      <View style={styles.wrapperProducts} >
-        <MenuBottom />
-      </View>
 
 		</View>
 

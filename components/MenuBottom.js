@@ -102,7 +102,6 @@ const styles = StyleSheet.create({
     width: 35,
     height: 30,
     backgroundColor: 'transparent',
-
     },
 });
 

@@ -1,25 +1,14 @@
 import React, { Component } from 'react';
 import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput} from 'react-native';
-import { Dropdown } from 'react-native-material-dropdown';
 import { TextField } from 'react-native-material-textfield';
 import CheckBox from 'react-native-modest-checkbox'
 import LinearGradient from 'react-native-linear-gradient';
 
 import Header from './Header';
-import MenuBottom from './MenuBottom';
 
 
 class Registro extends Component{
-  static navigationOptions = {
-    tabBarLabel: 'Registro',
-    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-    tabBarIcon: ({ tintColor }) => (
-      <Image
-        source={require('../assets/img/icon1.png')}
-        style={[styles.icon, {tintColor: tintColor}]}
-      />
-    ),
-  };
+  
  constructor(props) {
     super(props);
     this.state = {
@@ -109,10 +98,6 @@ class Registro extends Component{
        <View style={styles.space}></View>
 
        </ScrollView>
-
-      <View style={styles.wrapperProducts} >
-        <MenuBottom />
-      </View>
 
     </View>
 

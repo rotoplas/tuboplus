@@ -4,9 +4,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
 import { TextField } from 'react-native-material-textfield';
 
-
 import Header from './Header';
-import MenuBottom from './MenuBottom';
+
 
 class Contacto extends Component{
 	static navigationOptions = {
@@ -14,8 +13,8 @@ class Contacto extends Component{
 		// Note: By default the icon is only shown on iOS. Search the showIcon option below.
 		tabBarIcon: ({ tintColor }) => (
 			<Image
-				source={require('../assets/img/icon1.png')}
-				style={[styles.icon, {tintColor: tintColor}]}
+				source={require('../assets/img/icon7.png')}
+				style={[styles.iconItem, {tintColor: tintColor}]}
 			/>
 		),
 	};
@@ -59,9 +58,6 @@ class Contacto extends Component{
       </View>
       </ScrollView>
 
-      <View>
-        <MenuBottom />
-      </View>
 
 		</View>
 
@@ -77,6 +73,11 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     backgroundColor: '#eeeff1',
+    },
+    iconItem:{
+    width: 35,
+    height: 30,
+    backgroundColor: 'transparent',
     },
     imgContent: {
       flexDirection: 'row',

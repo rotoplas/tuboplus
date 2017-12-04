@@ -15,6 +15,7 @@ import {
   TabNavigator,
 } from 'react-navigation';
 
+
 import Product from './components/Product';
 import ProductsList from './components/ProductsList';
 import Correspondencia from './components/Correspondencia';
@@ -29,7 +30,7 @@ const TabMenuBottom = TabNavigator({
       screen: Correspondencia,
     },
     Termofusion: {
-      screen: Product,
+      screen: ProductsList,
     },
     Contactform: {
       screen: Contactform,
@@ -41,12 +42,14 @@ const TabMenuBottom = TabNavigator({
     tabBarPosition: 'bottom',
     animationEnabled: true,
     tabBarOptions: {
-      activeTintColor: '#e91e63',
-      labelStyle: {
-        fontSize: 12,
-      },
-      style: {
-        backgroundColor: 'blue',
+      activeTintColor: '#ffffff',
+      inactiveTintColor: '#ffffff',
+      activeBackgroundColor: '#013178',
+      inactiveBackgroundColor: '#1a83c3',
+      showLabel: false,
+      tabStyle: {
+        borderRightColor: '#ffffff',
+        borderRightWidth: 1,
       },
   },
 }, {

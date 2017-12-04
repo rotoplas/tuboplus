@@ -6,7 +6,6 @@ import { TextField } from 'react-native-material-textfield';
 
 
 import Header from './Header';
-import MenuBottom from './MenuBottom';
 import Table1 from './Table1';
 
 class Correspondencia extends Component{
@@ -15,8 +14,8 @@ class Correspondencia extends Component{
 		// Note: By default the icon is only shown on iOS. Search the showIcon option below.
 		tabBarIcon: ({ tintColor }) => (
 			<Image
-				source={require('../assets/img/icon1.png')}
-				style={[styles.icon, {tintColor: tintColor}]}
+				source={require('../assets/img/icon4.png')}
+				style={[styles.iconItem, {tintColor: tintColor}]}
 			/>
 		),
 	};
@@ -48,10 +47,6 @@ class Correspondencia extends Component{
       <View style={styles.space}></View>
       </ScrollView>
 
-      <View style={styles.wrapperProducts} >
-        <MenuBottom />
-      </View>
-
 		</View>
 
 		);
@@ -66,6 +61,11 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     backgroundColor: '#eeeff1',
+    },
+    iconItem:{
+    width: 35,
+    height: 30,
+    backgroundColor: 'transparent',
     },
     tableCorresp: {
       paddingLeft: '2%',

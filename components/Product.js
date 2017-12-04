@@ -3,20 +3,10 @@ import { StyleSheet, Text, View, ScrollView, Image} from 'react-native';
 
 import Header from './Header';
 import AccordionProd from './AccordionProd';
-import MenuBottom from './MenuBottom';
 
 
 class Product extends Component {
-  static navigationOptions = {
-    tabBarLabel: 'Product',
-    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-    tabBarIcon: ({ tintColor }) => (
-      <Image
-        source={require('../assets/img/icon1.png')}
-        style={[styles.icon, {tintColor: tintColor}]}
-      />
-    ),
-  };
+
   render() {
     return (
 
@@ -46,10 +36,6 @@ class Product extends Component {
 
       </ScrollView>
 
-      <View style={styles.wrapperProducts} >
-        <MenuBottom />
-      </View>
-
       </View>
     );
   }
@@ -57,6 +43,7 @@ class Product extends Component {
 
 
 const styles = StyleSheet.create({
+
   imgContent: {
       flexDirection: 'row',
     },
