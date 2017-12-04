@@ -33,7 +33,7 @@ class Correspondencia extends Component{
       </View>
 
       <View style={styles.tableCorresp}>
-        <Table />
+        <Table1 />
       </View>
 
       <View style={styles.space}></View>
