@@ -3,7 +3,6 @@ import { Text, View, Image, StyleSheet, TextInput, ScrollView,FlatList } from 'r
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient'; 
 import { TextField } from 'react-native-material-textfield';
-import { Dropdown } from 'react-native-material-dropdown';
 
 
 import Header from './Header';

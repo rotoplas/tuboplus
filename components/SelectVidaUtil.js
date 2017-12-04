@@ -61,6 +61,8 @@ selectIconContainer:{
   },
 selectIcon: {
   fontSize: 20,
+  color: '#999999',
+  width: '100%',
 }
 
 });

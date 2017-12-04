@@ -25,7 +25,7 @@ export default class SelectImput extends Component {
         <Select
             onSelect = {this.onSelect.bind(this)}
             defaultText  = {this.state.value}
-            style = {{borderColor : 'transparent', backgroundColor : '#ffffff', width: '100%'}}
+            style = {{borderColor : 'transparent', backgroundColor : 'transparent', width: '100%'}}
             textStyle = {{color: '#999999'}}
             animationType = {'fade'}
             transparent = {true}
@@ -64,6 +64,7 @@ selectIconContainer:{
 selectIcon: {
   fontSize: 20,
   color: '#999999',
+  width: '100%',
 }
 
 });

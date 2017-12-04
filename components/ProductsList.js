@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
      backgroundColor: '#edeef0',
     },
     filterBy:{
-      backgroundColor: 'transparent',
+      backgroundColor: '#ffffff',
       height:44,
       shadowColor: '#000',
       shadowOffset: { width: 0, height: 2 },
@@ -91,6 +91,7 @@ const styles = StyleSheet.create({
       paddingLeft:10,
       paddingRight:10,
       paddingBottom:10,
+      borderRadius: 4,
       },
   productItem:{
     width: '50%',
