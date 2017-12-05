@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   Platform,
@@ -14,8 +8,10 @@ import {
 import {
   TabNavigator,
 } from 'react-navigation';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-
+import { ActionCreators } from './app/actions';
 import Product from './app/components/Product';
 import ProductsList from './app/components/ProductsList';
 import Correspondencia from './app/components/Correspondencia';
@@ -56,8 +52,14 @@ const TabMenuBottom = TabNavigator({
   initialRouteName: 'ProductsList',
 });
 
-export default class App extends Component<{}> {
+class AppContainer extends Component {
   render() {
-    return <TabMenuBottom />
+    return <TabMenuBottom screenProps={this.props} />
   }
 }
+
+function mapDispatchToProps(dispatch){
+  return bindActionCreators(ActionCreators, dispatch);
+}
+
+export default connect((state) => { return state }, mapDispatchToProps)(AppContainer);

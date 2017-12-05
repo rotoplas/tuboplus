@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput} from 'react-native';
+import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput, TouchableHighlight} from 'react-native';
 import Slideshow from 'react-native-slideshow';
+import { connect } from 'react-redux';
 
 import Header from './Header';
 import SelectProductsList from './SelectProductsList';
 
+class ProductsList extends Component {
 
-
-
-class ProductsList extends Component{
   static navigationOptions = {
     tabBarLabel: 'ProductsList',
     // Note: By default the icon is only shown on iOS. Search the showIcon option below.
@@ -19,8 +18,16 @@ class ProductsList extends Component{
       />
     ),
   };
-  render() {
 
+  searchPressed(){
+    this.props.screenProps.fetchProducts();
+  }
+
+  products(){
+    return Object.keys(this.props.searchedProducts).map(key => this.props.searchedProducts[key])
+  }
+
+  render() {
     return (
 
     <View style={styles.wrapperAll} >
@@ -29,8 +36,13 @@ class ProductsList extends Component{
 
       <Header />
 
-      <Slideshow
-      dataSource={[
+      <View>
+        <TouchableHighlight onPress={ () => this.searchPressed() } style={styles.btnProduct}>
+          <Text> Fetch Products </Text>
+        </TouchableHighlight>
+      </View>
+
+      <Slideshow dataSource={[
         {
           title: 'Lorem ipsum dolor sit amet, ',
           caption: 'Consectetur adipiscing elit. Praesent eget tincidunt felis, ut tempus mi.',
@@ -46,11 +58,9 @@ class ProductsList extends Component{
         },
       ]}/>
 
-
-          <View style={styles.filterBy} >
-             <SelectProductsList />
-          </View>
-
+      <View style={styles.filterBy} >
+          <SelectProductsList />
+      </View>
 
       <FlatList numColumns={2} data={[
         {key: 'menuItem1', productName: 'Producto 1', prodDescription: 'Descripción 1', imageProd:require('../../assets/img/producto1.jpg')},
@@ -61,20 +71,15 @@ class ProductsList extends Component{
         {key: 'menuItem6', productName: 'Producto 6', prodDescription: 'Descripción 6', imageProd:require('../../assets/img/producto1.jpg')}]}
 
         renderItem={({item}) =>
-
                 <View style={styles.productItem}>
                   <Image style={styles.prodImage} source={item.imageProd} />
                   <Text style={styles.productName}>{item.productName}</Text>
                   <Text style={styles.prodDescription}>{item.prodDescription}</Text>
-                </View>
-      }
+                </View>}
       />
      <View style={styles.space}></View>
      </ScrollView>
-
-
     </View>
-
     );
   }
 }
@@ -137,8 +142,16 @@ const styles = StyleSheet.create({
     },
     space:{
       paddingBottom: 60,
-      },
+    },
+    btnProduct:{
+        padding: 30,
+    },
 });
 
+function mapStateToProps(state){
+  return {
+    searchedProducts: state.searchedProducts
+  }
+}
 
-export default ProductsList;
+export default connect(mapStateToProps)(ProductsList);
