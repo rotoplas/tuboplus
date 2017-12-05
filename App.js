@@ -16,11 +16,11 @@ import {
 } from 'react-navigation';
 
 
-import Product from './components/Product';
-import ProductsList from './components/ProductsList';
-import Correspondencia from './components/Correspondencia';
-import Contactform from './components/Contactform';
-import Contacto from './components/Contact';
+import Product from './app/components/Product';
+import ProductsList from './app/components/ProductsList';
+import Correspondencia from './app/components/Correspondencia';
+import Contactform from './app/components/Contactform';
+import Contacto from './app/components/Contact';
 
 const TabMenuBottom = TabNavigator({
     ProductsList: {
