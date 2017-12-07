@@ -33,8 +33,6 @@ class Header extends Component{
 
 
 const styles = StyleSheet.create({
-
-
   searchComp: {
     flex: 1,
     position: 'absolute',
@@ -47,10 +45,6 @@ const styles = StyleSheet.create({
   wrapperHeader: {
     width: '100%',
     flexDirection: 'row',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 5,
   },
   iconView:{
     width: '15%',

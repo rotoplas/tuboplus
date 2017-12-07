@@ -2,75 +2,46 @@ import React, { Component } from 'react';
 import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput, TouchableHighlight} from 'react-native';
 import Slideshow from 'react-native-slideshow';
 import { connect } from 'react-redux';
-import {
-  StackNavigator,
-} from 'react-navigation';
 
 import Header from './Header';
 import SelectProductsList from './SelectProductsList';
 import FormatUtil from '../lib/format';
 
-class ProductsList extends Component {
+class ProductsListXCategory extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       isLoading: true,
-      error: null,
-      listProducts: [],
-      slidesShow: [
-        {
-          title: 'Title 1',
-          caption: 'Caption 1',
-          url: 'http://placeimg.com/640/480/any',
-        }, {
-          title: 'Title 2',
-          caption: 'Caption 2',
-          url: 'http://placeimg.com/640/480/any',
-        }, {
-          title: 'Title 3',
-          caption: 'Caption 3',
-          url: 'http://placeimg.com/640/480/any',
-        },
-      ],
+      listProductsXCategory: [],
     };
   }
 
   componentDidMount() {
-    console.log(this.props.screenProps);
-    this.getProductsList();
+    this.getProductsListXCategory();
   }
 
-  getProductsList = () => {
-    this.props.screenProps.fetchProducts().then((res) => {
-      let daux = FormatUtil.toGrid(this.props.searchedProducts);
-      this.setState({ listProducts: daux , isLoading : false });
-    }).catch(err => {
-        this.setState({ error : err, isLoading : false });
-    });
+  static navigationOptions = {
+    tabBarLabel: 'ProductsListXCategory',
   };
 
-  static navigationOptions = {
-    tabBarLabel: 'ProductsList',
-    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-    tabBarIcon: ({ tintColor }) => (
-      <Image
-        source={require('../../assets/img/icon2.png')}
-        style={[styles.iconItem, {tintColor: tintColor}]}
-      />
-    ),
+  getProductsListXCategory = () => {
+    this.props.screenProps.fetchProductsXCategory().then((res) => {
+      let daux = FormatUtil.toGrid(this.props.searchedProductsXCategory);
+      this.setState({ listProductsXCategory: daux , isLoading : false });
+    }).catch(err => {
+        this.setState({ isLoading : false });
+    });
   };
 
   keyExtractor = (item, index) => item.key;
 
   renderItem = ({item}) => (
-    <TouchableHighlight onPress={() => {}}>
-      <View style={styles.productItem}>
-            <Image style={styles.prodImage} source={item.image} />
-            <Text style={styles.productName}>{item.name}</Text>
-            <Text style={styles.prodDescription}>{item.description}</Text>
-        </View>
-    </TouchableHighlight>
+    <View style={styles.productItem}>
+        <Image style={styles.prodImage} source={item.url} />
+        <Text style={styles.productName}>{item.name}</Text>
+        <Text style={styles.prodDescription}>{item.description}</Text>
+    </View>
   );
 
   render() {
@@ -79,9 +50,9 @@ class ProductsList extends Component {
     } else {
       flProducts = <FlatList
                       keyExtractor={ this.keyExtractor }
-                      numColumns={2}
-                      data={this.state.listProducts}
-                      renderItem={this.renderItem}/>
+                      numColumns={ 2 }
+                      data={ this.state.listProducts }
+                      renderItem={ this.renderItem }/>
    }
 
   return (
@@ -90,13 +61,6 @@ class ProductsList extends Component {
       <ScrollView style={styles.wrapperProducts} >
 
       <Header />
-
-      <Slideshow
-        dataSource={this.state.slidesShow}/>
-
-      <View style={styles.filterBy} >
-          <SelectProductsList />
-      </View>
 
       { flProducts }
 
@@ -109,7 +73,6 @@ class ProductsList extends Component {
 }
 
 const styles = StyleSheet.create({
-
   wrapperProducts:{
      backgroundColor: '#edeef0',
     },
@@ -174,8 +137,8 @@ const styles = StyleSheet.create({
 
 function mapStateToProps(state){
   return {
-    searchedProducts: state.searchedProducts
+    searchedProductsXCategory: state.searchedProductsXCategory
   }
 }
 
-export default connect(mapStateToProps)(ProductsList);
+export default connect(mapStateToProps)(ProductsListXCategory);

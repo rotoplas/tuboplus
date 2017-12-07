@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import {
   TabNavigator,
+  StackNavigator,
 } from 'react-navigation';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -14,6 +15,7 @@ import { bindActionCreators } from 'redux';
 import { ActionCreators } from './app/actions';
 import Product from './app/components/Product';
 import ProductsList from './app/components/ProductsList';
+import ProductsListXCategory from './app/components/ProductsListXCategory';
 import Correspondencia from './app/components/Correspondencia';
 import Contactform from './app/components/Contactform';
 import Contacto from './app/components/Contact';
@@ -50,6 +52,12 @@ const TabMenuBottom = TabNavigator({
   },
 }, {
   initialRouteName: 'ProductsList',
+});
+
+const RootNavigation = StackNavigator({
+  ProductsListXCategory: {
+    screen: ProductsListXCategory,
+  },
 });
 
 class AppContainer extends Component {
