@@ -20,15 +20,29 @@ import Correspondencia from './app/components/Correspondencia';
 import Contactform from './app/components/Contactform';
 import Contacto from './app/components/Contact';
 
+const ProductsStack = StackNavigator({
+  ProductsList: {
+    screen: ProductsList,
+  },
+  ProductsListXCategory: {
+    screen: ProductsListXCategory ,
+  }
+  },{
+    headerMode: 'none',
+    navigationOptions: {
+     gesturesEnabled: false,
+   },
+});
+
 const TabMenuBottom = TabNavigator({
     ProductsList: {
-      screen: ProductsList,
+      screen: ProductsStack,
     },
     Correspondencia: {
       screen: Correspondencia,
     },
     Termofusion: {
-      screen: ProductsList,
+      screen: Product,
     },
     Contactform: {
       screen: Contactform,
@@ -37,26 +51,24 @@ const TabMenuBottom = TabNavigator({
       screen: Contacto,
     },
   }, {
+    order: ["ProductsList", "Correspondencia", "Termofusion", "Contactform","Contacto"],
+    lazy: true,
+    initialRouteName: 'ProductsList',
     tabBarPosition: 'bottom',
     animationEnabled: true,
+    swipeEnabled: false,
     tabBarOptions: {
+      showIcon: true,
+      showLabel: false,
       activeTintColor: '#ffffff',
       inactiveTintColor: '#ffffff',
       activeBackgroundColor: '#013178',
       inactiveBackgroundColor: '#1a83c3',
-      showLabel: false,
+      scrollEnabled: false,
       tabStyle: {
         borderRightColor: '#ffffff',
         borderRightWidth: 1,
       },
-  },
-}, {
-  initialRouteName: 'ProductsList',
-});
-
-const RootNavigation = StackNavigator({
-  ProductsListXCategory: {
-    screen: ProductsListXCategory,
   },
 });
 

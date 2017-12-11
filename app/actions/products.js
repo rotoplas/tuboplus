@@ -31,6 +31,6 @@ export function setSearchedProducts( { products } ){
 export function setSearchedProductsXCategory( { productsXCategory } ){
   return {
     type: types.SET_SEARCHED_PRODUCTS_X_CATEGORY,
-    products
+    productsXCategory
   }
 }

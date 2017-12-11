@@ -1,13 +1,30 @@
 import React, { Component } from 'react';
-import { Text, View, Image, StyleSheet, TextInput, ScrollView, } from 'react-native';
+import { Text, View, Image, StyleSheet, TextInput, ScrollView, TouchableHighlight} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
 import { TextField } from 'react-native-material-textfield';
+import Communications from 'react-native-communications';
+import { Stopwatch, Timer } from 'react-native-stopwatch-timer'
 
 import Header from './Header';
 
-
 class Contacto extends Component{
+
+	constructor(props) {
+    super(props);
+    this.state = {
+      phoneNumberCall: '+573225132806',
+			totalDuration: 90000,
+			timerStart: false,
+			timerReset: false,
+    };
+
+		this.toggleTimer = this.toggleTimer.bind(this);
+	 	this.resetTimer = this.resetTimer.bind(this);
+	 	this.toggleStopwatch = this.toggleStopwatch.bind(this);
+	 	this.resetStopwatch = this.resetStopwatch.bind(this);
+  }
+
 	static navigationOptions = {
 		tabBarLabel: 'Contacto',
 		// Note: By default the icon is only shown on iOS. Search the showIcon option below.
@@ -18,9 +35,29 @@ class Contacto extends Component{
 			/>
 		),
 	};
+
+	toggleTimer() {
+		 this.setState({timerStart: !this.state.timerStart, timerReset: false});
+	 }
+
+	 resetTimer() {
+		 this.setState({timerStart: false, timerReset: true});
+	 }
+
+	 toggleStopwatch() {
+		 this.setState({stopwatchStart: !this.state.stopwatchStart, stopwatchReset: false});
+	 }
+
+	 resetStopwatch() {
+		 this.setState({stopwatchStart: false, stopwatchReset: true});
+	 }
+
+	 getFormattedTime(time) {
+			 this.currentTime = time;
+	 };
+
 	render() {
 		return (
-
 		<View style={styles.wrapperContact}>
 
       <ScrollView>
@@ -53,22 +90,56 @@ class Contacto extends Component{
           </View>
         </View>
         <LinearGradient colors={["#1a4585","#012d6c"]} style={styles.butCall}>
-          <Text style={styles.txtBut}>Llamar</Text>
+					<TouchableHighlight
+							onPress={() => Communications.phonecall(this.state.phoneNumberCall, true)}>
+          		<Text style={styles.txtBut}>Llamar</Text>
+					</TouchableHighlight>
         </LinearGradient>
+      </View>
+
+			<View style={styles.contactBox2}>
+        <View style={styles.contactBoxInner}>
+          <View style={styles.contactIcon}>
+					<Timer totalDuration={this.state.totalDuration} start={this.state.timerStart}
+							reset={this.state.timerReset}
+							options={options}
+							handleFinish={handleTimerComplete}
+							getTime={this.getFormattedTime} />
+          </View>
+        </View>
+				<View>
+					<TouchableHighlight onPress={this.toggleTimer}>
+						<Text style={{fontSize: 30}}>{!this.state.timerStart ? "Start" : "Stop"}</Text>
+					</TouchableHighlight>
+					<TouchableHighlight onPress={this.resetTimer}>
+						<Text style={{fontSize: 30}}>Reset</Text>
+					</TouchableHighlight>
+				</View>
       </View>
       </ScrollView>
 
-
 		</View>
-
 		);
 	}
 }
 
+const handleTimerComplete = () => alert("custom completion function");
+
+const options = {
+  container: {
+    backgroundColor: '#000',
+    padding: 5,
+    borderRadius: 5,
+    width: 220,
+  },
+  text: {
+    fontSize: 30,
+    color: '#FFF',
+    marginLeft: 7,
+  }
+};
 
 const styles = StyleSheet.create({
-
-
   wrapperContact: {
     width: '100%',
     height: '100%',

@@ -7,6 +7,16 @@ import AccordionProd from './AccordionProd';
 
 class Product extends Component {
 
+  static navigationOptions = {
+    tabBarLabel: 'Product',
+    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
+    tabBarIcon: ({ tintColor }) => (
+      <Image
+        source={require('../../assets/img/icon2.png')}
+        style={[styles.iconItem, {tintColor: tintColor}]}
+      />
+    ),
+  };
   render() {
     return (
 
@@ -41,29 +51,32 @@ class Product extends Component {
   }
 }
 
-
 const styles = StyleSheet.create({
-
   imgContent: {
       flexDirection: 'row',
-    },
+  },
+  iconItem:{
+    width: 35,
+    height: 30,
+    backgroundColor: 'transparent',
+  },
   imgProd:{
       flex: 1,
       resizeMode: Image.resizeMode.contain,
       height: 240,
-      },
+  },
   titlesContainer: {
       backgroundColor: '#eeeff1',
       padding: 20,
-    },
+  },
   mainTitle: {
     color: '#515253',
     fontFamily: 'Signika-Bold',
     fontSize: 18,
-    },
+  },
   categoryContainer: {
     flexDirection: 'row',
-    },
+  },
   titleCat: {
     color: '#0075bc',
     fontFamily: 'Signika-Bold',
@@ -83,7 +96,7 @@ const styles = StyleSheet.create({
     },
   space:{
     paddingBottom: 50,
-    },
+  },
 });
 
 export default Product;

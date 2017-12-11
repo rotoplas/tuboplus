@@ -37,7 +37,6 @@ class ProductsList extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.screenProps);
     this.getProductsList();
   }
 
@@ -64,9 +63,10 @@ class ProductsList extends Component {
   keyExtractor = (item, index) => item.key;
 
   renderItem = ({item}) => (
-    <TouchableHighlight onPress={() => {}}>
-      <View style={styles.productItem}>
-            <Image style={styles.prodImage} source={item.image} />
+    <TouchableHighlight
+      onPress={() => this.props.navigation.navigate('ProductsListXCategory', { category: item.key })}>
+        <View style={styles.productItem}>
+            {/* <Image style={styles.prodImage} source={item.image} /> */}
             <Text style={styles.productName}>{item.name}</Text>
             <Text style={styles.prodDescription}>{item.description}</Text>
         </View>
@@ -89,18 +89,17 @@ class ProductsList extends Component {
 
       <ScrollView style={styles.wrapperProducts} >
 
-      <Header />
+        <Header />
 
-      <Slideshow
-        dataSource={this.state.slidesShow}/>
+        <Slideshow dataSource={this.state.slidesShow}/>
 
-      <View style={styles.filterBy} >
-          <SelectProductsList />
-      </View>
+        <View style={styles.filterBy} >
+            <SelectProductsList />
+        </View>
 
-      { flProducts }
+        { flProducts }
 
-     <View style={styles.space}></View>
+       <View style={styles.space}></View>
 
      </ScrollView>
     </View>
@@ -109,14 +108,13 @@ class ProductsList extends Component {
 }
 
 const styles = StyleSheet.create({
-
   wrapperProducts:{
      backgroundColor: '#edeef0',
     },
     iconItem:{
-    width: 35,
-    height: 30,
-    backgroundColor: 'transparent',
+      width: 35,
+      height: 30,
+      backgroundColor: 'transparent',
     },
     filterBy:{
       backgroundColor: '#ffffff',
@@ -131,13 +129,13 @@ const styles = StyleSheet.create({
       paddingBottom:10,
       borderRadius: 4,
       },
-  productItem:{
-    width: '50%',
-    paddingLeft: 10,
-    paddingRight: 10,
-    flexDirection:'row',
-    flexWrap:'wrap',
-    },
+    productItem:{
+      width: '50%',
+      paddingLeft: 10,
+      paddingRight: 10,
+      flexDirection:'row',
+      flexWrap:'wrap',
+      },
     prodImage:{
       width: '100%',
       height: 200,
@@ -174,7 +172,7 @@ const styles = StyleSheet.create({
 
 function mapStateToProps(state){
   return {
-    searchedProducts: state.searchedProducts
+    searchedProducts: state.searchedProducts,
   }
 }
 

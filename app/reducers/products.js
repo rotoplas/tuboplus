@@ -10,3 +10,11 @@ export const searchedProducts = createReducer({}, {
     return newState;
   }
 });
+
+export const searchedProductsXCategory = createReducer({}, {
+  [types.SET_SEARCHED_PRODUCTS_X_CATEGORY](state, action){
+    let newState = {};
+    newState[action.productsXCategory.id] = action.productsXCategory
+    return newState;
+  }
+});

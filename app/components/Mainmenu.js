@@ -7,7 +7,6 @@ class Mainmenu extends Component{
 
 	render() {
 		return (
-
       <View style={styles.wrapperMenu}>
 
       <Header />
@@ -30,7 +29,6 @@ class Mainmenu extends Component{
               </LinearGradient>
 			}
 			/>
-
       </View>
 		);
 	}

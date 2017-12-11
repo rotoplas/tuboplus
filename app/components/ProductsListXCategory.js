@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput, TouchableHighlight} from 'react-native';
+import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput, TouchableHighlight } from 'react-native';
 import Slideshow from 'react-native-slideshow';
 import { connect } from 'react-redux';
 
@@ -21,14 +21,19 @@ class ProductsListXCategory extends Component {
     this.getProductsListXCategory();
   }
 
-  static navigationOptions = {
-    tabBarLabel: 'ProductsListXCategory',
-  };
+  static navigationOptions = ({ navigation }) => ({
+    tabBarIcon: ({ tintColor }) => (
+      <Image
+        source={require('../../assets/img/icon2.png')}
+        style={[styles.iconItem, {tintColor: tintColor}]}
+      />
+    ),
+  });
 
   getProductsListXCategory = () => {
-    this.props.screenProps.fetchProductsXCategory().then((res) => {
-      let daux = FormatUtil.toGrid(this.props.searchedProductsXCategory);
-      this.setState({ listProductsXCategory: daux , isLoading : false });
+    this.props.screenProps.fetchProductsXCategory(this.props.navigation.state.params.category).then((res) => {
+      let searchedProductsXCategory = FormatUtil.toGrid(this.props.searchedProductsXCategory);
+      this.setState({ listProductsXCategory: searchedProductsXCategory , isLoading : false });
     }).catch(err => {
         this.setState({ isLoading : false });
     });
@@ -45,28 +50,40 @@ class ProductsListXCategory extends Component {
   );
 
   render() {
-    if(this.state.isLoading){
-      flProducts = <Text> Cargando... </Text>
-    } else {
-      flProducts = <FlatList
-                      keyExtractor={ this.keyExtractor }
-                      numColumns={ 2 }
-                      data={ this.state.listProducts }
-                      renderItem={ this.renderItem }/>
-   }
 
-  return (
+  const { params } = this.props.navigation.state;
+
+  if(this.state.isLoading){
+    flProducts = <Text> Cargando... </Text>
+  } else {
+    flProducts = <FlatList
+                    keyExtractor={ this.keyExtractor }
+                    numColumns={2}
+                    data={this.state.listProducts}
+                    renderItem={this.renderItem}/>
+ }
+
+return (
     <View style={styles.wrapperAll} >
 
       <ScrollView style={styles.wrapperProducts} >
 
-      <Header />
+        <Header />
 
-      { flProducts }
+        <View>
+            <Text>Categoría -> {params.category}</Text>
+        </View>
+        <TouchableHighlight
+            onPress={() => this.props.navigation.goBack()}>
+          <View>
+              <Text> Volver </Text>
+          </View>
+        </TouchableHighlight>
 
-     <View style={styles.space}></View>
+        { flProducts }
 
      </ScrollView>
+
     </View>
     );
   }
@@ -137,7 +154,7 @@ const styles = StyleSheet.create({
 
 function mapStateToProps(state){
   return {
-    searchedProductsXCategory: state.searchedProductsXCategory
+    searchedProductsXCategory: state.searchedProductsXCategory,
   }
 }
 
