@@ -5,10 +5,12 @@ import LinearGradient from 'react-native-linear-gradient';
 import { TextField } from 'react-native-material-textfield';
 import Communications from 'react-native-communications';
 import { Stopwatch, Timer } from 'react-native-stopwatch-timer'
+import { connect } from 'react-redux';
 
 import Header from './Header';
+import MenuBottomComponent from './MenuBottomComponent';
 
-class Contacto extends Component{
+class ContactComponent extends Component{
 
 	constructor(props) {
     super(props);
@@ -25,16 +27,7 @@ class Contacto extends Component{
 	 	this.resetStopwatch = this.resetStopwatch.bind(this);
   }
 
-	static navigationOptions = {
-		tabBarLabel: 'Contacto',
-		// Note: By default the icon is only shown on iOS. Search the showIcon option below.
-		tabBarIcon: ({ tintColor }) => (
-			<Image
-				source={require('../../assets/img/icon7.png')}
-				style={[styles.iconItem, {tintColor: tintColor}]}
-			/>
-		),
-	};
+	static navigationOptions = {};
 
 	toggleTimer() {
 		 this.setState({timerStart: !this.state.timerStart, timerReset: false});
@@ -91,7 +84,10 @@ class Contacto extends Component{
         </View>
         <LinearGradient colors={["#1a4585","#012d6c"]} style={styles.butCall}>
 					<TouchableHighlight
-							onPress={() => Communications.phonecall(this.state.phoneNumberCall, true)}>
+							onPress={() => {
+								Communications.phonecall(this.state.phoneNumberCall, true);
+								//Communications.email(["crijosicar@hotmail.com"], null, null, "Test", "Correo de prueba");
+							}}>
           		<Text style={styles.txtBut}>Llamar</Text>
 					</TouchableHighlight>
         </LinearGradient>
@@ -117,7 +113,7 @@ class Contacto extends Component{
 				</View>
       </View>
       </ScrollView>
-
+			<MenuBottomComponent {...this.props} />
 		</View>
 		);
 	}
@@ -226,5 +222,9 @@ const styles = StyleSheet.create({
     }
 });
 
+function mapStateToProps(state){
+  return {
+  }
+}
 
-export default Contacto;
+export default connect(mapStateToProps)(ContactComponent);

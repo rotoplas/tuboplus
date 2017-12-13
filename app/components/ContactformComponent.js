@@ -6,21 +6,15 @@ import LinearGradient from 'react-native-linear-gradient';
 import SelectPais from './SelectPais';
 import SelectEstado from './SelectEstado';
 import SelectDirigido from './SelectDirigido';
+import { connect } from 'react-redux';
 
 import Header from './Header';
+import MenuBottomComponent from './MenuBottomComponent';
 
 
-class Contactform extends Component{
-  static navigationOptions = {
-    tabBarLabel: 'Contactform',
-    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-    tabBarIcon: ({ tintColor }) => (
-      <Image
-        source={require('../../assets/img/icon6.png')}
-        style={[styles.iconItem, {tintColor: tintColor}]}
-      />
-    ),
-  };
+class ContactformComponent extends Component{
+static navigationOptions = {};
+
  constructor(props) {
     super(props);
     this.state = {
@@ -33,12 +27,10 @@ class Contactform extends Component{
                   placeholderMun: 'Delegación o Municipio',
                   placeholderCalle: 'Calle y número',
                   placeholderMensaje: 'Mensaje',
-                   };
+    };
   }
 
   render() {
-
-
     return (
 
     <View style={styles.wrapperAll} >
@@ -124,8 +116,7 @@ class Contactform extends Component{
        <View style={styles.space}></View>
 
        </ScrollView>
-
-
+       <MenuBottomComponent {...this.props} />
     </View>
 
     );
@@ -135,6 +126,7 @@ class Contactform extends Component{
 const styles = StyleSheet.create({
 
   wrapperContactform:{
+     height: '100%',
      backgroundColor: '#edeef0',
     },
     iconItem:{
@@ -217,5 +209,9 @@ const styles = StyleSheet.create({
     },
 });
 
+function mapStateToProps(state){
+  return {
+  }
+}
 
-export default Contactform;
+export default connect(mapStateToProps)(ContactformComponent);

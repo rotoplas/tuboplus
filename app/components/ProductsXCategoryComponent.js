@@ -6,64 +6,59 @@ import { connect } from 'react-redux';
 import Header from './Header';
 import SelectProductsList from './SelectProductsList';
 import FormatUtil from '../lib/format';
+import MenuBottomComponent from './MenuBottomComponent';
 
-class ProductsListXCategory extends Component {
+class ProductsXCategoryComponent extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       isLoading: true,
       listProductsXCategory: [],
+      searchedProductsList: [],
     };
   }
 
   componentDidMount() {
-    this.getProductsListXCategory();
+    this.initialFetch();
   }
 
-  static navigationOptions = ({ navigation }) => ({
-    tabBarIcon: ({ tintColor }) => (
-      <Image
-        source={require('../../assets/img/icon2.png')}
-        style={[styles.iconItem, {tintColor: tintColor}]}
-      />
-    ),
-  });
+  static navigationOptions = ({ navigation }) => ({});
 
-  getProductsListXCategory = () => {
+  initialFetch = () => {
+    //Fetch products by category
     this.props.screenProps.fetchProductsXCategory(this.props.navigation.state.params.category).then((res) => {
       let searchedProductsXCategory = FormatUtil.toGrid(this.props.searchedProductsXCategory);
-      this.setState({ listProductsXCategory: searchedProductsXCategory , isLoading : false });
+      this.setState({ listProductsXCategory: searchedProductsXCategory, isLoading: false });
     }).catch(err => {
-        this.setState({ isLoading : false });
+        console.log(err, "err");
+        this.setState({ isLoading: false });
     });
+
+    //Set format products categories
+    let searchedProductsList = FormatUtil.toGrid(this.props.screenProps.searchedProducts);
+    this.setState({ searchedProductsList: searchedProductsList });
   };
 
   keyExtractor = (item, index) => item.key;
 
   renderItem = ({item}) => (
-    <View style={styles.productItem}>
-        <Image style={styles.prodImage} source={item.url} />
-        <Text style={styles.productName}>{item.name}</Text>
-        <Text style={styles.prodDescription}>{item.description}</Text>
-    </View>
+    <TouchableHighlight
+      onPress={() => this.props.navigation.navigate('ProductComponent', { category : item.key })}>
+      <View style={styles.productItem}>
+          {/* <Image style={styles.prodImage} source={item.image} /> */}
+          <Image style={styles.prodImage} source={require('../../assets/img/producto1.jpg')} />
+          <Text style={styles.productName}>{item.name}</Text>
+          <Text style={styles.prodDescription}>{item.description}</Text>
+      </View>
+    </TouchableHighlight>
   );
 
   render() {
 
   const { params } = this.props.navigation.state;
 
-  if(this.state.isLoading){
-    flProducts = <Text> Cargando... </Text>
-  } else {
-    flProducts = <FlatList
-                    keyExtractor={ this.keyExtractor }
-                    numColumns={2}
-                    data={this.state.listProducts}
-                    renderItem={this.renderItem}/>
- }
-
-return (
+  return (
     <View style={styles.wrapperAll} >
 
       <ScrollView style={styles.wrapperProducts} >
@@ -71,19 +66,23 @@ return (
         <Header />
 
         <View>
-            <Text>Categoría -> {params.category}</Text>
+          <Text>Categoría -> { params.category }</Text>
         </View>
         <TouchableHighlight
-            onPress={() => this.props.navigation.goBack()}>
+        onPress={() => this.props.navigation.goBack()}>
           <View>
-              <Text> Volver </Text>
+            <Text> Volver </Text>
           </View>
         </TouchableHighlight>
 
-        { flProducts }
+        <FlatList
+        keyExtractor={ this.keyExtractor }
+        numColumns={ 2 }
+        data={ this.state.searchedProductsList }
+        renderItem={ this.renderItem }/>
 
      </ScrollView>
-
+     <MenuBottomComponent {...this.props} />
     </View>
     );
   }
@@ -91,6 +90,7 @@ return (
 
 const styles = StyleSheet.create({
   wrapperProducts:{
+     height: '100%',
      backgroundColor: '#edeef0',
     },
     iconItem:{
@@ -158,4 +158,4 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps)(ProductsListXCategory);
+export default connect(mapStateToProps)(ProductsXCategoryComponent);

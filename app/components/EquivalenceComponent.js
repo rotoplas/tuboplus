@@ -3,22 +3,16 @@ import { Text, View, Image, StyleSheet, TextInput, ScrollView,FlatList } from 'r
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
 import { TextField } from 'react-native-material-textfield';
-
+import { connect } from 'react-redux';
 
 import Header from './Header';
 import Table1 from './Table1';
+import MenuBottomComponent from './MenuBottomComponent';
 
-class Correspondencia extends Component{
-	static navigationOptions = {
-		tabBarLabel: 'Correspondencia',
-		// Note: By default the icon is only shown on iOS. Search the showIcon option below.
-		tabBarIcon: ({ tintColor }) => (
-			<Image
-				source={require('../../assets/img/icon4.png')}
-				style={[styles.iconItem, {tintColor: tintColor}]}
-			/>
-		),
-	};
+class EquivalenceComponent extends Component{
+
+	static navigationOptions = {};
+
 	render() {
 		return (
 
@@ -46,17 +40,14 @@ class Correspondencia extends Component{
 
       <View style={styles.space}></View>
       </ScrollView>
-
+			<MenuBottomComponent {...this.props} />
 		</View>
 
 		);
 	}
 }
 
-
 const styles = StyleSheet.create({
-
-
   wrapperContact: {
     width: '100%',
     height: '100%',
@@ -184,8 +175,11 @@ const styles = StyleSheet.create({
       space:{
       paddingBottom: 80,
       },
-
 });
 
+function mapStateToProps(state){
+  return {
+  }
+}
 
-export default Correspondencia;
+export default connect(mapStateToProps)(EquivalenceComponent);

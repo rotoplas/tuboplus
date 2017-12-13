@@ -13,68 +13,50 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { ActionCreators } from './app/actions';
-import Product from './app/components/Product';
-import ProductsList from './app/components/ProductsList';
-import ProductsListXCategory from './app/components/ProductsListXCategory';
-import Correspondencia from './app/components/Correspondencia';
-import Contactform from './app/components/Contactform';
-import Contacto from './app/components/Contact';
+import MainMenuComponent from './app/components/MainMenuComponent';
+import MenuBottomComponent from './app/components/MenuBottomComponent';
+import ProductComponent from './app/components/ProductComponent';
+import CategoriesComponent from './app/components/CategoriesComponent';
+import ProductsXCategoryComponent from './app/components/ProductsXCategoryComponent';
+import EquivalenceComponent from './app/components/EquivalenceComponent';
+import ContactformComponent from './app/components/ContactformComponent';
+import ContactComponent from './app/components/ContactComponent';
 
-const ProductsStack = StackNavigator({
-  ProductsList: {
-    screen: ProductsList,
+const RootStack = StackNavigator({
+  MainMenuComponent: {
+    screen: MainMenuComponent
   },
-  ProductsListXCategory: {
-    screen: ProductsListXCategory ,
-  }
-  },{
+  CategoriesComponent: {
+    screen: CategoriesComponent
+  },
+  ProductsXCategoryComponent: {
+    screen: ProductsXCategoryComponent ,
+  },
+  ProductComponent: {
+    screen: ProductComponent,
+  },
+  EquivalenceComponent: {
+    screen: EquivalenceComponent,
+  },
+  ContactformComponent: {
+    screen: ContactformComponent,
+  },
+  ContactComponent: {
+    screen: ContactComponent,
+  },
+},{
     headerMode: 'none',
+    animationEnabled: false,
+    swipeEnabled: false,
+    lazy: false,
     navigationOptions: {
      gesturesEnabled: false,
-   },
-});
-
-const TabMenuBottom = TabNavigator({
-    ProductsList: {
-      screen: ProductsStack,
     },
-    Correspondencia: {
-      screen: Correspondencia,
-    },
-    Termofusion: {
-      screen: Product,
-    },
-    Contactform: {
-      screen: Contactform,
-    },
-    Contacto: {
-      screen: Contacto,
-    },
-  }, {
-    order: ["ProductsList", "Correspondencia", "Termofusion", "Contactform","Contacto"],
-    lazy: true,
-    initialRouteName: 'ProductsList',
-    tabBarPosition: 'bottom',
-    animationEnabled: true,
-    swipeEnabled: false,
-    tabBarOptions: {
-      showIcon: true,
-      showLabel: false,
-      activeTintColor: '#ffffff',
-      inactiveTintColor: '#ffffff',
-      activeBackgroundColor: '#013178',
-      inactiveBackgroundColor: '#1a83c3',
-      scrollEnabled: false,
-      tabStyle: {
-        borderRightColor: '#ffffff',
-        borderRightWidth: 1,
-      },
-  },
 });
 
 class AppContainer extends Component {
   render() {
-    return <TabMenuBottom screenProps={this.props} />
+    return <RootStack screenProps={this.props} />;
   }
 }
 

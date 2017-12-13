@@ -1,22 +1,15 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, Image} from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image, TouchableHighlight} from 'react-native';
 
 import Header from './Header';
 import AccordionProd from './AccordionProd';
+import MenuBottomComponent from './MenuBottomComponent';
 
 
-class Product extends Component {
+class ProductComponent extends Component{
 
-  static navigationOptions = {
-    tabBarLabel: 'Product',
-    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-    tabBarIcon: ({ tintColor }) => (
-      <Image
-        source={require('../../assets/img/icon2.png')}
-        style={[styles.iconItem, {tintColor: tintColor}]}
-      />
-    ),
-  };
+  static navigationOptions = {};
+
   render() {
     return (
 
@@ -25,6 +18,13 @@ class Product extends Component {
       <ScrollView>
 
         <Header />
+
+        <TouchableHighlight
+        onPress={() => this.props.navigation.goBack()}>
+          <View>
+            <Text> Volver </Text>
+          </View>
+        </TouchableHighlight>
 
         <View style={styles.titlesContainer}>
           <Text style={styles.mainTitle}>TEE CON ROSCA CENTRAL HEMBRA</Text>
@@ -45,7 +45,7 @@ class Product extends Component {
         <View style={styles.space}></View>
 
       </ScrollView>
-
+      <MenuBottomComponent {...this.props} />
       </View>
     );
   }
@@ -99,4 +99,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Product;
+export default ProductComponent;

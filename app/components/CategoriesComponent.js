@@ -2,34 +2,24 @@ import React, { Component } from 'react';
 import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput, TouchableHighlight} from 'react-native';
 import Slideshow from 'react-native-slideshow';
 import { connect } from 'react-redux';
-import {
-  StackNavigator,
-} from 'react-navigation';
+
 
 import Header from './Header';
 import SelectProductsList from './SelectProductsList';
 import FormatUtil from '../lib/format';
+import MenuBottomComponent from './MenuBottomComponent';
 
-class ProductsList extends Component {
+class CategoriesComponent extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       isLoading: true,
-      error: null,
-      listProducts: [],
-      slidesShow: [
+      categoryPayload: [],
+      slider: [
         {
           title: 'Title 1',
           caption: 'Caption 1',
-          url: 'http://placeimg.com/640/480/any',
-        }, {
-          title: 'Title 2',
-          caption: 'Caption 2',
-          url: 'http://placeimg.com/640/480/any',
-        }, {
-          title: 'Title 3',
-          caption: 'Caption 3',
           url: 'http://placeimg.com/640/480/any',
         },
       ],
@@ -37,36 +27,29 @@ class ProductsList extends Component {
   }
 
   componentDidMount() {
-    this.getProductsList();
+    this.initialFetch();
   }
 
-  getProductsList = () => {
-    this.props.screenProps.fetchProducts().then((res) => {
-      let daux = FormatUtil.toGrid(this.props.searchedProducts);
-      this.setState({ listProducts: daux , isLoading : false });
+  initialFetch = () => {
+    this.props.screenProps.fetchCategories().then((res) => {
+      let categoryPayload = FormatUtil.toCategoryPayload(this.props.searchedCategories);
+      this.setState({ categoryPayload: categoryPayload , isLoading : false });
     }).catch(err => {
-        this.setState({ error : err, isLoading : false });
+        console.log(err);
+        this.setState({ isLoading : false });
     });
   };
 
-  static navigationOptions = {
-    tabBarLabel: 'ProductsList',
-    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-    tabBarIcon: ({ tintColor }) => (
-      <Image
-        source={require('../../assets/img/icon2.png')}
-        style={[styles.iconItem, {tintColor: tintColor}]}
-      />
-    ),
-  };
+  static navigationOptions = {};
 
   keyExtractor = (item, index) => item.key;
 
   renderItem = ({item}) => (
     <TouchableHighlight
-      onPress={() => this.props.navigation.navigate('ProductsListXCategory', { category: item.key })}>
+      onPress={() => this.props.navigation.navigate('CategoriesComponent', { category : item.key })}>
         <View style={styles.productItem}>
-            {/* <Image style={styles.prodImage} source={item.image} /> */}
+            <Image style={styles.prodImage} source={item.image} />
+            {/*  <Image style={styles.prodImage} source={require('../../assets/img/producto1.jpg')} /> */}
             <Text style={styles.productName}>{item.name}</Text>
             <Text style={styles.prodDescription}>{item.description}</Text>
         </View>
@@ -74,34 +57,37 @@ class ProductsList extends Component {
   );
 
   render() {
+
     if(this.state.isLoading){
-      flProducts = <Text> Cargando... </Text>
+      view = <Text> Cargando... </Text>;
     } else {
-      flProducts = <FlatList
-                      keyExtractor={ this.keyExtractor }
+      view = <Header />
+                <Slideshow dataSource={this.state.categoryPayload.slider}/>
+
+                <View style={styles.filterBy} >
+                    <SelectProductsList />
+                </View>
+
+                <FlatList
+                      keyExtractor={this.keyExtractor}
                       numColumns={2}
-                      data={this.state.listProducts}
+                      data={this.state.categoryPayload.categories}
                       renderItem={this.renderItem}/>
    }
 
   return (
     <View style={styles.wrapperAll} >
 
-      <ScrollView style={styles.wrapperProducts} >
+      <ScrollView style={styles.wrapperProducts}>
 
-        <Header />
-
-        <Slideshow dataSource={this.state.slidesShow}/>
-
-        <View style={styles.filterBy} >
-            <SelectProductsList />
-        </View>
-
-        { flProducts }
+        { view }
 
        <View style={styles.space}></View>
 
      </ScrollView>
+
+     <MenuBottomComponent {...this.props} />
+
     </View>
     );
   }
@@ -109,6 +95,7 @@ class ProductsList extends Component {
 
 const styles = StyleSheet.create({
   wrapperProducts:{
+     height: '100%',
      backgroundColor: '#edeef0',
     },
     iconItem:{
@@ -176,4 +163,4 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps)(ProductsList);
+export default connect(mapStateToProps)(CategoriesComponent);
