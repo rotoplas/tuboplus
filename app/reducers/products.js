@@ -1,9 +1,9 @@
 import createReducer from '../lib/createReducer';
 import * as types from '../actions/types';
 
-export const searchedProducts = createReducer({}, {
+export const searchedProducts = createReducer([], {
   [types.SET_SEARCHED_PRODUCTS](state, action){
-    let newState = {};
+    let newState = [];
     action.products.forEach((product) => {
       newState[product.id] = product
     });
@@ -11,15 +11,15 @@ export const searchedProducts = createReducer({}, {
   }
 });
 
-export const searchedCategories = createReducer({}, {
+export const searchedCategories = createReducer([], {
   [types.SET_SEARCHED_CATEGORIES](state, action){
     return action.categories;
   }
 });
 
-export const searchedProductsXCategory = createReducer({}, {
+export const searchedProductsXCategory = createReducer([], {
   [types.SET_SEARCHED_PRODUCTS_X_CATEGORY](state, action){
-    let newState = {};
+    let newState = [];
     newState[action.productsXCategory.id] = action.productsXCategory
     return newState;
   }

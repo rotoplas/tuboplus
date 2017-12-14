@@ -16,7 +16,7 @@ class CategoriesComponent extends Component {
     this.state = {
       isLoading: true,
       categoryPayload: [],
-      slider: [
+      slides: [
         {
           title: 'Title 1',
           caption: 'Caption 1',
@@ -28,14 +28,16 @@ class CategoriesComponent extends Component {
 
   componentDidMount() {
     this.initialFetch();
+    console.log(`componentDidMount -> ${JSON.stringify(this.props.screenProps.searchedCategories)}`);
   }
 
   initialFetch = () => {
     this.props.screenProps.fetchCategories().then((res) => {
       let categoryPayload = FormatUtil.toCategoryPayload(this.props.searchedCategories);
       this.setState({ categoryPayload: categoryPayload , isLoading : false });
+        //console.log(`categoryPayload -> ${JSON.stringify(this.state.categoryPayload)}`);
     }).catch(err => {
-        console.log(err);
+        //console.log(`err -> ${err}`);
         this.setState({ isLoading : false });
     });
   };
@@ -49,7 +51,6 @@ class CategoriesComponent extends Component {
       onPress={() => this.props.navigation.navigate('CategoriesComponent', { category : item.key })}>
         <View style={styles.productItem}>
             <Image style={styles.prodImage} source={item.image} />
-            {/*  <Image style={styles.prodImage} source={require('../../assets/img/producto1.jpg')} /> */}
             <Text style={styles.productName}>{item.name}</Text>
             <Text style={styles.prodDescription}>{item.description}</Text>
         </View>
@@ -61,11 +62,12 @@ class CategoriesComponent extends Component {
     if(this.state.isLoading){
       view = <Text> Cargando... </Text>;
     } else {
-      view = <Header />
-                <Slideshow dataSource={this.state.categoryPayload.slider}/>
+      view = (<View>
+                <Header />
+                <Slideshow dataSource={this.state.categoryPayload.slides}/>
 
                 <View style={styles.filterBy} >
-                    <SelectProductsList />
+                    <SelectProductsList options={this.state.categoryPayload.filters}/>
                 </View>
 
                 <FlatList
@@ -73,6 +75,7 @@ class CategoriesComponent extends Component {
                       numColumns={2}
                       data={this.state.categoryPayload.categories}
                       renderItem={this.renderItem}/>
+            </View>);
    }
 
   return (

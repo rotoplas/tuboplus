@@ -9,6 +9,7 @@ export function fetchProducts(){
       dispatch(setSearchedProducts({ products: res }));
     }).catch((err) => {
       console.log(err);
+      dispatch(setSearchedProducts({ products: [] }));
     })
   }
 }
@@ -16,9 +17,11 @@ export function fetchProducts(){
 export function fetchCategories(){
   return (dispatch, getState) => {
     return Api.get(`/catalogo`).then(res => {
+      console.log(`res -> ${res}`);
       dispatch(setSearchedCategories({ categories: res }));
     }).catch((err) => {
       console.log(err);
+      dispatch(setSearchedCategories({ categories: [] }));
     })
   }
 }
@@ -29,6 +32,7 @@ export function fetchProductsXCategory(category : any){
       dispatch(setSearchedProductsXCategory({ productsXCategory: res }));
     }).catch((err) => {
       console.log(err);
+      dispatch(setSearchedProductsXCategory({ productsXCategory: [] }));
     })
   }
 }

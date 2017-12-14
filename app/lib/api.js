@@ -1,4 +1,7 @@
+import Config from 'react-native-config';
+
 class Api {
+
   static headers() {
     return {
       'Accept': 'application/json',
@@ -24,7 +27,7 @@ class Api {
   }
 
   static xhr(route, params, verb) {
-    const host = process.env.BASE_URL;
+    const host = Config.BASE_URL;
     const url = `${host}${route}`;
     let options = Object.assign({ method: verb }, params ? { body: JSON.stringify(params) } : null );
     options.headers = Api.headers();

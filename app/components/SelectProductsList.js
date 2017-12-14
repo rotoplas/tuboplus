@@ -32,16 +32,9 @@ export default class SelectImput extends Component {
             indicatorIcon = {<View style={styles.selectIconContainer}><Icon style={styles.selectIcon} name='angle-down'></Icon></View>}
             optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999' }}
           >
-          <Option value = 'Product 1'>Product 1</Option>
-          <Option value = 'Product 2'>Product 2</Option>
-          <Option value = 'Product 3'>Product 3</Option>
-          <Option value = 'Product 4'>Product 4</Option>
-          <Option value = 'Product 5'>Product 5</Option>
-          <Option value = 'Product 6'>Product 6</Option>
-          <Option value = 'Product 7'>Product 7</Option>
-          <Option value = 'Product 8'>Product 8</Option>
-          <Option value = 'Product 9'>Product 9</Option>
-
+          {this.props.options.map((item) => (
+            <Option value={item.key}>{item.value}</Option>
+          ))}
         </Select>
       </View>
     );

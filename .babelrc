@@ -1,6 +1,10 @@
 {
   "presets": ["react-native"],
-  "plugins": [
-    "transform-inline-environment-variables"
-  ]
+    "env": {
+      "development": {
+        "plugins": [
+           ["babel-plugin-react-native-config", { envfile: ".env" }]
+        ]
+      }
+    }
 }

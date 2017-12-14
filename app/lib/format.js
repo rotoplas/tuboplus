@@ -19,28 +19,23 @@ class FormatUtil {
 
   static toCategoryPayload(rawData) {
         try {
-          console.log(rawData);
-          return [];
-          /*return Object.keys(rawData).reduce((out, key) => {
-                      out.push({
-                        key: rawData[key].hasOwnProperty('id') ? rawData[key].id : this.makeid(),
-                        name: rawData[key].hasOwnProperty('title') ? rawData[key].title : "",
-                        description: rawData[key].hasOwnProperty('body')  ? rawData[key].body : "",
-                        image: rawData[key].hasOwnProperty('url')  ? { 'url' : rawData[key].url } : { 'url' : '../../assets/img/producto1.jpg' }
-                      });
-            return out;
-          }, []);*/
+          console.log("rawData", rawData);
+          return {
+              slides : [],
+              filters : [],
+              categories : []
+          };
         } catch (err) {
             return [];
         }
   }
 
-  static toFiltro(rawData) {
+  static toFilter(rawData) {
         try {
           return Object.keys(rawData).reduce((out, key) => {
                       out.push({
-                        key: rawData[key].hasOwnProperty('id') ? rawData[key].id : this.makeid(),
-                        value: rawData[key].hasOwnProperty('titulo') ? rawData[key].titulo : ""
+                        key : rawData[key].hasOwnProperty('id') ? rawData[key].id : this.makeid(),
+                        value : rawData[key].hasOwnProperty('titulo') ? rawData[key].titulo : ""
                       });
             return out;
           }, []);
