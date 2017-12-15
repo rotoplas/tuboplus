@@ -21,6 +21,7 @@ import ProductsXCategoryComponent from './app/components/ProductsXCategoryCompon
 import EquivalenceComponent from './app/components/EquivalenceComponent';
 import ContactformComponent from './app/components/ContactformComponent';
 import ContactComponent from './app/components/ContactComponent';
+import TermofusionComponent from './app/components/TermofusionComponent';
 
 const RootStack = StackNavigator({
   MainMenuComponent: {
@@ -43,6 +44,9 @@ const RootStack = StackNavigator({
   },
   ContactComponent: {
     screen: ContactComponent,
+  },
+  TermofusionComponent: {
+    screen: TermofusionComponent
   },
 },{
     headerMode: 'none',

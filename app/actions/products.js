@@ -17,7 +17,6 @@ export function fetchProducts(){
 export function fetchCategories(){
   return (dispatch, getState) => {
     return Api.get(`/catalogo`).then(res => {
-      console.log(`res -> ${res}`);
       dispatch(setSearchedCategories({ categories: res }));
     }).catch((err) => {
       console.log(err);
@@ -26,9 +25,20 @@ export function fetchCategories(){
   }
 }
 
+export function fetchProduct(category, product){
+  return (dispatch, getState) => {
+    return Api.get(`/productos/${category}/${product}`).then(res => {
+      dispatch(setSearchedProduct({ product: res }));
+    }).catch((err) => {
+      console.log(err);
+      dispatch(setSearchedProduct({ product: {} }));
+    })
+  }
+}
+
 export function fetchProductsXCategory(category : any){
   return (dispatch, getState) => {
-    return Api.get(`/posts/${category}`).then(res => {
+    return Api.get(`/productos/${category}`).then(res => {
       dispatch(setSearchedProductsXCategory({ productsXCategory: res }));
     }).catch((err) => {
       console.log(err);
@@ -38,6 +48,13 @@ export function fetchProductsXCategory(category : any){
 }
 
 //SETTERS
+
+export function setSearchedProduct( { product } ){
+  return {
+    type: types.SET_SEARCHED_PRODUCT,
+    product
+  }
+}
 
 export function setSearchedProducts( { products } ){
   return {

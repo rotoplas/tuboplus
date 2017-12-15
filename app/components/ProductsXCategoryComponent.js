@@ -28,26 +28,21 @@ class ProductsXCategoryComponent extends Component {
   initialFetch = () => {
     //Fetch products by category
     this.props.screenProps.fetchProductsXCategory(this.props.navigation.state.params.category).then((res) => {
-      let searchedProductsXCategory = FormatUtil.toGrid(this.props.searchedProductsXCategory);
+      let searchedProductsXCategory = FormatUtil.toCategory(this.props.searchedProductsXCategory);
       this.setState({ listProductsXCategory: searchedProductsXCategory, isLoading: false });
     }).catch(err => {
         console.log(err, "err");
         this.setState({ isLoading: false });
     });
-
-    //Set format products categories
-    let searchedProductsList = FormatUtil.toGrid(this.props.screenProps.searchedProducts);
-    this.setState({ searchedProductsList: searchedProductsList });
   };
 
   keyExtractor = (item, index) => item.key;
 
   renderItem = ({item}) => (
     <TouchableHighlight
-      onPress={() => this.props.navigation.navigate('ProductComponent', { category : item.key })}>
+      onPress={() => this.props.navigation.navigate('ProductComponent', { product : item.key, category : item.category })}>
       <View style={styles.productItem}>
-          {/* <Image style={styles.prodImage} source={item.image} /> */}
-          <Image style={styles.prodImage} source={require('../../assets/img/producto1.jpg')} />
+          <Image style={styles.prodImage} source={item.image} />
           <Text style={styles.productName}>{item.name}</Text>
           <Text style={styles.prodDescription}>{item.description}</Text>
       </View>
@@ -58,6 +53,22 @@ class ProductsXCategoryComponent extends Component {
 
   const { params } = this.props.navigation.state;
 
+  if(this.state.isLoading){
+    view = <Text> Cargando... </Text>;
+  } else {
+    if(this.state.listProductsXCategory.length){
+      view = (<View>
+                <FlatList
+                keyExtractor={ this.keyExtractor }
+                numColumns={ 2 }
+                data={ this.state.listProductsXCategory }
+                renderItem={ this.renderItem }/>
+            </View>);
+    } else {
+      view = <Text> No hay productos disponibles! </Text>;
+    }
+ }
+
   return (
     <View style={styles.wrapperAll} >
 
@@ -66,7 +77,7 @@ class ProductsXCategoryComponent extends Component {
         <Header />
 
         <View>
-          <Text>Categoría -> { params.category }</Text>
+          <Text>Categoría -> { params.name }</Text>
         </View>
         <TouchableHighlight
         onPress={() => this.props.navigation.goBack()}>
@@ -75,11 +86,7 @@ class ProductsXCategoryComponent extends Component {
           </View>
         </TouchableHighlight>
 
-        <FlatList
-        keyExtractor={ this.keyExtractor }
-        numColumns={ 2 }
-        data={ this.state.searchedProductsList }
-        renderItem={ this.renderItem }/>
+        { view }
 
      </ScrollView>
      <MenuBottomComponent {...this.props} />

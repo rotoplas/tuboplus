@@ -11,6 +11,12 @@ export const searchedProducts = createReducer([], {
   }
 });
 
+export const searchedProduct = createReducer({}, {
+  [types.SET_SEARCHED_PRODUCT](state, action){
+    return action.product;
+  }
+});
+
 export const searchedCategories = createReducer([], {
   [types.SET_SEARCHED_CATEGORIES](state, action){
     return action.categories;
@@ -19,8 +25,6 @@ export const searchedCategories = createReducer([], {
 
 export const searchedProductsXCategory = createReducer([], {
   [types.SET_SEARCHED_PRODUCTS_X_CATEGORY](state, action){
-    let newState = [];
-    newState[action.productsXCategory.id] = action.productsXCategory
-    return newState;
+    return action.productsXCategory;
   }
 });

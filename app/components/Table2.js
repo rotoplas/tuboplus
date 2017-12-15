@@ -1,49 +1,43 @@
 import React, { Component } from 'react';
 import { Text, View, Image, StyleSheet, TextInput, ScrollView,FlatList } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient'; 
-
-
+import LinearGradient from 'react-native-linear-gradient';
 
 class Table2 extends Component{
 
+	constructor(props) {
+		super(props);
+	}
+
+	componentDidMount(){}
+
+	keyExtractor = (item, index) => item.key;
+
 	render() {
 		return (
-
       <View style={styles.table}>
-
-        <FlatList data={[
-        {key: 'menuItem1', innerText1: 'd', innerText2: '20'}, 
-        {key: 'menuItem2', innerText1: 'D', innerText2: '27'}, 
-        {key: 'menuItem3', innerText1: 'P', innerText2: '16'}, 
-        {key: 'menuItem4', innerText1: 'L', innerText2: '53'}, 
-        {key: 'menuItem5', innerText1: 'Peso', innerText2: '20'}]}
-        
-        renderItem={({item}) => 
-
-                <View style={styles.tableRow}>
+        <FlatList
+					keyExtractor={this.keyExtractor}
+					data={this.props.dataTable}
+        	renderItem={({item}) =>
+                <View style={styles.tableRow} key={item.key}>
                   <LinearGradient colors={["#deecfd","#c4d2e3"]} style={styles.tableRow1}>
-                    <Text style={styles.innerText1}>{item.innerText1}</Text>
+                    <Text style={styles.innerText1}>{item.innerLeft}</Text>
                   </LinearGradient>
                   <View style={styles.tableRow2}>
-                    <Text style={styles.innerText2}>{item.innerText2}</Text>
+                    <Text style={styles.innerText2}>{item.innerRight}</Text>
                   </View>
                 </View>
-      }
-      />
+							}/>
        </View>
-
 		);
-	}	
+	}
 }
 
-
 const styles = StyleSheet.create({
-
-
     table:{
       flexDirection: 'column',
       width: '100%',
-      }, 
+      },
     tableRow:{
         backgroundColor: '#ffffff',
         flexDirection: 'row',
@@ -84,8 +78,6 @@ const styles = StyleSheet.create({
         fontFamily: 'Signika-Regular',
         fontSize: 14,
       },
-
-    
 });
 
 

@@ -7,23 +7,17 @@ import Accordion from 'react-native-collapsible/Accordion';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
 
-import Table1 from './Table1';
-import Table2 from './Table2';
-import SelectPlanos from './SelectPlanos';
+class AccordionProductComponent extends Component {
+  static navigationOptions = {};
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: true,
+    };
+  }
 
-
-class AccordionProd extends Component {
-  static navigationOptions = {
-		tabBarLabel: 'AccordionProd',
-		// Note: By default the icon is only shown on iOS. Search the showIcon option below.
-		tabBarIcon: ({ tintColor }) => (
-			<Image
-				source={require('../../assets/img/icon1.png')}
-				style={[styles.icon, {tintColor: tintColor}]}
-			/>
-		),
-	};
+  componentDidMount(){}
 
   _renderContent(section) {
     return (
@@ -37,59 +31,22 @@ class AccordionProd extends Component {
     return (
       <LinearGradient style={styles.tab} colors={["#19a5e1","#018dc9"]}>
           <Icon name='angle-down' style={[styles.iconHeader, isActive ? styles.active : styles.inactive]}></Icon>
-        <Text style={styles.tabTitle}>{section.title}</Text>
+          <Text style={styles.tabTitle}>{section.title}</Text>
       </LinearGradient>
     );
   }
 
   render() {
-
-      const SECTIONS = [
-  {
-    title: 'Correspondencia',
-    content:
-
-      <View style={styles.content}>
-        <Text style={styles.title}>Características</Text>
-        <Table1 />
-      </View>
-
-  },
-  {
-    title: 'Planos',
-    content:
-    <View style={styles.contentPlano}>
-      <Image style={{width: '100%', height:250, resizeMode: Image.resizeMode.contain}}  source={require('../../assets/img/plano.png')} />
-      <View style={styles.selectPlanos}>
-        <SelectPlanos />
-      </View>
-      <Table2 />
-    </View>
-
-
-  },
-  {
-    title: 'Equivalencias',
-    content:
-
-      <View style={styles.content}>
-        <Table1 />
-      </View>
-  }
-];
-
     return (
-
       <Accordion
-        sections={SECTIONS}
+        sections={this.props.sections}
         renderHeader={this._renderHeader}
         renderContent={this._renderContent}
-
+        initiallyActiveSection={this.props.activeItem}
       />
     );
   }
 }
-
 
 const styles = StyleSheet.create({
   container: {
@@ -115,13 +72,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Signika-Bold',
     textAlign: 'left',
   },
-  title:{
-    fontSize: 18,
-    color: '#0075bc',
-    fontFamily: 'Signika-Regular',
-    marginLeft: 20,
-    marginBottom: 20,
-    },
   content: {
     backgroundColor: '#fff',
     padding:'2%',
@@ -155,4 +105,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default AccordionProd;
+export default AccordionProductComponent;

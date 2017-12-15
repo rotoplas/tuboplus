@@ -1,39 +1,36 @@
 import React, { Component } from 'react';
 import { Text, View, Image, StyleSheet, TextInput, ScrollView,FlatList } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient'; 
+import LinearGradient from 'react-native-linear-gradient';
 
 
 
 class Table1 extends Component{
 
+	constructor(props) {
+		super(props);
+	}
+
+	componentDidMount(){}
+
 	render() {
 		return (
-
       <View style={styles.table}>
 
       <LinearGradient colors={["#deecfd","#c4d2e3"]} style={styles.tableTitle}>
-          <Text style={styles.tit1}>Años de Servicio</Text>
-          <Text style={styles.tit2}>Presión de servicio (kg/cm2) Tuboplus Fortech-CT® SDR 7.4</Text>
+          <Text style={styles.tit1}>{this.props.titleLeft}</Text>
+          <Text style={styles.tit2}>{this.props.titleRight}</Text>
       </LinearGradient>
 
-
-        <FlatList data={[
-        {key: 'menuItem1', innerText1: 'Lorem ipsum', innerText2: 'Lorem ipsum dolor sit amet, consectetur'}, 
-        {key: 'menuItem2', innerText1: 'Lorem ipsum', innerText2: 'Lorem ipsum dolor sit amet, consectetur'}, 
-        {key: 'menuItem3', innerText1: 'Lorem ipsum', innerText2: 'Lorem ipsum dolor sit amet, consectetur'}]}
-        
-        renderItem={({item}) => 
-
+        <FlatList data={this.props.dataTable}
+        	renderItem={({item}) =>
                 <View style={styles.tableTexts}>
-                  <Text style={styles.innerText}>{item.innerText1}</Text>
-                  <Text style={styles.innerText}>{item.innerText2}</Text>
-                </View>
-      }
-      />
-       </View>
+                  <Text style={styles.innerText}>{item.innerLeft}</Text>
+                  <Text style={styles.innerText}>{item.innerRight}</Text>
+                </View> }/>
 
+       </View>
 		);
-	}	
+	}
 }
 
 
@@ -43,7 +40,7 @@ const styles = StyleSheet.create({
     table:{
       flexDirection: 'column',
       width: '100%',
-      }, 
+      },
       tableTitle:{
         backgroundColor: 'transparent',
         flexDirection: 'row',
@@ -88,7 +85,7 @@ const styles = StyleSheet.create({
         color:'#999999',
         fontSize: 14,
       },
-    
+
 });
 
 

@@ -10,16 +10,15 @@ import SelectProductsList from './SelectProductsList';
 import FormatUtil from '../lib/format';
 import MenuBottomComponent from './MenuBottomComponent';
 
-class CategoriesComponent extends Component {
+class TermofusionComponent extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       isLoading: true,
-      categoryPayload: [],
-      placeholder : 'Filtrar por...' ,
-      selected : null,
-      dataTable: []
+      termofusionPayload: {},
+      placeholder : 'Seleccionar diámetro...' ,
+      dataTable : [],
     };
   }
 
@@ -28,9 +27,9 @@ class CategoriesComponent extends Component {
   }
 
   initialFetch = () => {
-    this.props.screenProps.fetchCategories().then((res) => {
-      let categoryPayload = FormatUtil.toCategoryPayload(this.props.searchedCategories);
-      this.setState({ categoryPayload: categoryPayload , isLoading : false, dataTable : [] });
+    this.props.screenProps.fetchTermofusion().then((res) => {
+      let termofusionPayload = FormatUtil.toTermofusionPayload(this.props.searchedTermofusion);
+      this.setState({ termofusionPayload: termofusionPayload , isLoading : false, dataTable : [termofusionPayload.diameters[0]] });
     }).catch(err => {
         console.log(`err -> ${err}`);
         this.setState({ isLoading : false });
@@ -41,19 +40,12 @@ class CategoriesComponent extends Component {
 
   keyExtractor = (item, index) => item.key;
 
-  renderItem = ({item}) => (
-    <TouchableHighlight
-      onPress={() => this.props.navigation.navigate('ProductsXCategoryComponent', { category : item.key, name : item.name })}>
-        <View style={styles.productItem}>
-            <Image style={styles.prodImage} source={item.image} />
-            <Text style={styles.productName}>{item.name}</Text>
-            <Text style={styles.prodDescription}>{item.description}</Text>
-        </View>
-    </TouchableHighlight>
-  );
+  renderItem = ({item}) => (<View>rewtre</View>);
 
-  onSelect(value, label) {
-    this.props.navigation.navigate('ProductsXCategoryComponent', { category : value, name : label });
+  onSelect(value, label) {}
+
+  childValues(items) {
+    return {items.map((itemc) => <View><Text>{itemc.id}</Text></View>)};
   }
 
   render() {
@@ -61,7 +53,7 @@ class CategoriesComponent extends Component {
       view = <Text> Cargando... </Text>;
     } else {
       view = (<View>
-                <Slideshow dataSource={this.state.categoryPayload.slides}/>
+                <Slideshow dataSource={this.state.termofusionPayload.slides}/>
                 <View style={styles.filterBy} >
                     <View style={styles.container}>
                       <Select
@@ -74,19 +66,20 @@ class CategoriesComponent extends Component {
                           backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
                           indicatorIcon = {<View style={styles.selectIconContainer}><Icon style={styles.selectIcon} name='angle-down'></Icon></View>}
                           optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999' }}>
-                        {this.state.categoryPayload.filters.map((item) => (
+                        {this.state.termofusionPayload.filters.map((item) => (
                           <Option key={item.key} value={item.key}>{item.value}</Option>
                         ))}
                       </Select>
                     </View>
                 </View>
-                <FlatList
-                      keyExtractor={this.keyExtractor}
-                      numColumns={2}
-                      data={this.state.categoryPayload.categories}
-                      renderItem={this.renderItem}/>
+                <View>
+                  {this.state.dataTable.map((item, key) => (
+                    <View><Text>{item.key}</Text></View>
+                    {<childValues items={item.values} />}
+                  ))}
+                </View>
             </View>);
-   }
+  }
 
   return (
     <View style={styles.wrapperAll} >
@@ -188,8 +181,8 @@ const styles = StyleSheet.create({
 
 function mapStateToProps(state){
   return {
-    searchedCategories: state.searchedCategories,
+    searchedTermofusion: state.searchedTermofusion,
   }
 }
 
-export default connect(mapStateToProps)(CategoriesComponent);
+export default connect(mapStateToProps)(TermofusionComponent);

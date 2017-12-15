@@ -1,54 +1,168 @@
 import React, { Component } from 'react';
-import { Text, View, Image, StyleSheet, TextInput, ScrollView,FlatList } from 'react-native';
+import { Text, View, Image, StyleSheet, TextInput, ScrollView, FlatList, TouchableHighlight } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
 import { TextField } from 'react-native-material-textfield';
 import { connect } from 'react-redux';
+import { Select, Option} from 'react-native-chooser';
 
 import Header from './Header';
 import Table1 from './Table1';
 import MenuBottomComponent from './MenuBottomComponent';
+import AccordionProductComponent from './AccordionProductComponent';
+import FormatUtil from '../lib/format';
 
 class EquivalenceComponent extends Component{
 
 	static navigationOptions = {};
 
-	render() {
-		return (
+		constructor(props) {
+			super(props);
+			this.state = {
+				equivalencePayload : {},
+				isLoading : true,
+				dataTable : [],
+			  lastSelect : 0,
+				defaultTextMillimeters : "Milímetros (mm)",
+				defaultTextInches : "Pulgadas",
+			};
+		}
 
-		<View style={styles.wrapperContact}>
+		componentDidMount() {
+			this.initialFetch();
+		}
 
-      <ScrollView>
-      <Header />
+	  initialFetch = () => {
+			this.props.screenProps.fetchEquivalence().then((res) => {
+	      let equivalencePayload = FormatUtil.toEquivalencePayload(this.props.searchedEquivalence);
+	      this.setState({ equivalencePayload : equivalencePayload , isLoading : false, dataTable : equivalencePayload.equivalences });
+	    }).catch(err => {
+	        console.log(`err -> ${err}`);
+	        this.setState({ isLoading : false });
+	    });
+	  };
 
-      <Text style={styles.titCorresp}>Correspondencia</Text>
+		keyExtractor = (item, index) => item.key;
 
-       <View style={styles.corresptBox}>
-        <Text style={styles.titCorrespBox}>Ingresa datos</Text>
-        <LinearGradient colors={["#1a4585","#012d6c"]} style={styles.butCorresp}>
-          <Text style={styles.txtBut}>Correspondencia</Text>
-        </LinearGradient>
-      </View>
+		onChangeMillimeters(value, label) {
+			this.setState({
+				lastSelect : 1,
+				defaultTextMillimeters : label,
+				defaultTextInches : "Pulgadas"
+			});
+		}
 
-      <View style={styles.textContainer}>
-       <Text style={styles.textIntro}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et tincidunt nibh, vestibulum mollis odio. Nunc aliquam ipsum sed ante mollis, vitae rhoncus felis dignissim. Duis tellus odio, facilisis vitae purus eget, pretium auctor nisl. </Text>
-      </View>
+		onChangeInches(value, label) {
+			this.setState({
+				lastSelect : 2,
+				defaultTextInches : label,
+				defaultTextMillimeters : "Milímetros (mm)"
+			});
+		}
 
-      <View style={styles.tableCorresp}>
-        <Table1 />
-      </View>
+		render() {
+			if(this.state.isLoading){
+	      view = <Text> Cargando... </Text>;
+	    } else {
 
-      <View style={styles.space}></View>
-      </ScrollView>
-			<MenuBottomComponent {...this.props} />
-		</View>
+				const sections = [
+	          {
+	            title: 'Equivalencias',
+	            content:
+	              <View style={styles.content}>
+											<Table1 dataTable={this.state.dataTable}
+												titleLeft="Milímetros"
+												titleRight="Pulgadas"/>
+	              </View>
+	          }
+	      ];
 
-		);
-	}
+				view = (<View>
+									<Text style={styles.titCorresp}>Correspondencia</Text>
+
+									 <View style={styles.corresptBox}>
+										<Text style={styles.titCorrespBox}>Ingresa datos</Text>
+										<Select
+												onSelect = {this.onChangeMillimeters.bind(this)}
+												defaultText  = {this.state.defaultTextMillimeters}
+												style = {{borderColor : 'transparent', backgroundColor : 'transparent', width: '100%'}}
+												textStyle = {{color: '#999999'}}
+												animationType = {'fade'}
+												transparent = {true}
+												backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
+												indicatorIcon = {<View style={styles.selectIconContainer}><Icon style={styles.selectIcon} name='angle-down'></Icon></View>}
+												optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999' }}>
+											{this.state.dataTable.map((item) => (
+												<Option key={item.key} value={item.key}>{item.innerLeft}</Option>
+											))}
+										</Select>
+										<Select
+												onSelect = {this.onChangeInches.bind(this)}
+												defaultText  = {this.state.defaultTextInches}
+												style = {{borderColor : 'transparent', backgroundColor : 'transparent', width: '100%'}}
+												textStyle = {{color: '#999999'}}
+												animationType = {'fade'}
+												transparent = {true}
+												backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
+												indicatorIcon = {<View style={styles.selectIconContainer}><Icon style={styles.selectIcon} name='angle-down'></Icon></View>}
+												optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999' }}>
+											{this.state.dataTable.map((item) => (
+												<Option key={item.key} value={item.key}>{item.innerRight}</Option>
+											))}
+										</Select>
+										<TouchableHighlight
+											onPress={() => {
+												if(this.state.lastSelect != 0){
+													if(this.state.lastSelect == 1){
+														let inches = this.state.equivalencePayload.equivalences.filter(data => data.innerLeft == this.state.defaultTextMillimeters);
+														this.setState({
+															defaultTextInches : inches[0].innerRight
+														});
+													} else {
+														let millimeters = this.state.equivalencePayload.equivalences.filter(data => data.innerRight == this.state.defaultTextInches);
+														this.setState({
+															defaultTextMillimeters : millimeters[0].innerLeft
+														});
+													}
+												} else {
+													alert("Debes seleccionar al manos una opción.");
+												}
+											}}>
+											<LinearGradient colors={["#1a4585","#012d6c"]} style={styles.butCorresp}>
+												<Text style={styles.txtBut}>Correspondencia</Text>
+											</LinearGradient>
+										</TouchableHighlight>
+									</View>
+
+									<View style={styles.textContainer}>
+									 <Text style={styles.textIntro}>{ this.state.equivalencePayload.description }</Text>
+									</View>
+
+									<AccordionProductComponent sections={sections} activeItem={0} />
+								</View>);
+			}
+			return (
+
+			<View style={styles.wrapperContact}>
+
+	      <ScrollView>
+
+	      <Header />
+
+				{ view }
+
+	      <View style={styles.space}></View>
+
+	      </ScrollView>
+				<MenuBottomComponent {...this.props} />
+			</View>
+
+			);
+		}
 }
 
 const styles = StyleSheet.create({
-  wrapperContact: {
+  	wrapperContact: {
     width: '100%',
     height: '100%',
     backgroundColor: '#eeeff1',
@@ -179,6 +293,7 @@ const styles = StyleSheet.create({
 
 function mapStateToProps(state){
   return {
+		searchedEquivalence : state.searchedEquivalence
   }
 }
 

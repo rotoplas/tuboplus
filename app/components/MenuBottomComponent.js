@@ -27,32 +27,32 @@ class MenuBottomComponent extends Component {
 
           <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
           <TouchableHighlight
-          style={styles.activeItem}
-					onPress={() => this.props.navigation.navigate('EquivalenceComponent', { category : 'Catálogo'})}>
+	          style={styles.activeItem}
+						onPress={() => this.props.navigation.navigate('EquivalenceComponent', { category : 'Catálogo'})}>
               <Image style={styles.iconItem} source={require('../../assets/img/icon2.png')}/>
            </TouchableHighlight>
           </LinearGradient>
 
           <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
           <TouchableHighlight
-          style={styles.inactiveItem}
-					onPress={() => this.props.navigation.navigate('EquivalenceComponent', { category : 'Catálogo'})}>
+	          style={styles.inactiveItem}
+						onPress={() => this.props.navigation.navigate('EquivalenceComponent', { category : 'Catálogo'})}>
               <Image style={styles.iconItem} source={require('../../assets/img/icon3.png')}/>
            </TouchableHighlight>
           </LinearGradient>
 
           <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
           <TouchableHighlight
-          style={styles.inactiveItem}
-					onPress={() => this.props.navigation.navigate('ContactformComponent', { category : 'Contacta a los expertos'})}>
+	          style={styles.inactiveItem}
+						onPress={() => this.props.navigation.navigate('ContactformComponent', { category : 'Contacta a los expertos'})}>
               <Image style={styles.iconItem} source={require('../../assets/img/icon4.png')}/>
            </TouchableHighlight>
           </LinearGradient>
 
           <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
           <TouchableHighlight
-          style={styles.inactiveItemLast}
-					onPress={() => this.props.navigation.navigate('ContactComponent', { category : 'Contácto'})}>
+	          style={styles.inactiveItemLast}
+						onPress={() => this.props.navigation.navigate('ContactComponent', { category : 'Contácto'})}>
               <Image style={styles.iconItem} source={require('../../assets/img/icon5.png')}/>
            </TouchableHighlight>
           </LinearGradient>
