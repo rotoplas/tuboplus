@@ -36,7 +36,7 @@ class MenuBottomComponent extends Component {
           <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
           <TouchableHighlight
 	          style={styles.inactiveItem}
-						onPress={() => this.props.navigation.navigate('EquivalenceComponent', { category : 'Catálogo'})}>
+						onPress={() => this.props.navigation.navigate('TermofusionComponent', { category : 'Correspondencias'})}>
               <Image style={styles.iconItem} source={require('../../assets/img/icon3.png')}/>
            </TouchableHighlight>
           </LinearGradient>

@@ -4,6 +4,7 @@ import Slideshow from 'react-native-slideshow';
 import { connect } from 'react-redux';
 import { Select, Option} from 'react-native-chooser';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { Stopwatch, Timer } from 'react-native-stopwatch-timer'
 
 import Header from './Header';
 import SelectProductsList from './SelectProductsList';
@@ -19,7 +20,16 @@ class TermofusionComponent extends Component {
       termofusionPayload: {},
       placeholder : 'Seleccionar diámetro...' ,
       dataTable : [],
+      keysDT : [],
+      totalDuration: 0,
+      timerStart: false,
+      timerReset: false,
     };
+
+    this.toggleTimer = this.toggleTimer.bind(this);
+    this.resetTimer = this.resetTimer.bind(this);
+    this.toggleStopwatch = this.toggleStopwatch.bind(this);
+    this.resetStopwatch = this.resetStopwatch.bind(this);
   }
 
   componentDidMount() {
@@ -29,7 +39,14 @@ class TermofusionComponent extends Component {
   initialFetch = () => {
     this.props.screenProps.fetchTermofusion().then((res) => {
       let termofusionPayload = FormatUtil.toTermofusionPayload(this.props.searchedTermofusion);
-      this.setState({ termofusionPayload: termofusionPayload , isLoading : false, dataTable : [termofusionPayload.diameters[0]] });
+      let keysDT = Object.keys(termofusionPayload.diameters[0].values);
+      let ntotalDuration = Number(termofusionPayload.diameters[0].values['tiempo_cronometro']);
+      this.setState({ termofusionPayload: termofusionPayload ,
+        isLoading : false,
+        dataTable : [termofusionPayload.diameters[0].values],
+        keysDT : keysDT,
+        totalDuration : ntotalDuration
+       });
     }).catch(err => {
         console.log(`err -> ${err}`);
         this.setState({ isLoading : false });
@@ -42,18 +59,50 @@ class TermofusionComponent extends Component {
 
   renderItem = ({item}) => (<View>rewtre</View>);
 
-  onSelect(value, label) {}
-
-  childValues(items) {
-    return {items.map((itemc) => <View><Text>{itemc.id}</Text></View>)};
+  onSelect(value, label) {
+    let ndataTable = this.state.termofusionPayload.diameters.filter(data => data.key === value);
+    let keysDT = Object.keys(this.state.dataTable[0]);
+    let ntotalDuration = Number(ndataTable[0].values['tiempo_cronometro']);
+    this.resetTimer();
+    this.setState({
+      dataTable : [ndataTable[0].values],
+      keysDT : keysDT,
+      placeholder : label,
+      totalDuration : ntotalDuration
+    });
   }
+
+  toggleTimer() {
+		 this.setState({timerStart: !this.state.timerStart, timerReset: false});
+	 }
+
+	 resetTimer() {
+		 this.setState({timerStart: false, timerReset: true});
+	 }
+
+	 toggleStopwatch() {
+		 this.setState({stopwatchStart: !this.state.stopwatchStart, stopwatchReset: false});
+	 }
+
+	 resetStopwatch() {
+		 this.setState({stopwatchStart: false, stopwatchReset: true});
+	 }
+
+	 getFormattedTime(time) {
+			 this.currentTime = time;
+	 };
 
   render() {
     if(this.state.isLoading){
       view = <Text> Cargando... </Text>;
     } else {
+
       view = (<View>
-                <Slideshow dataSource={this.state.termofusionPayload.slides}/>
+
+                <View>
+                  <Text>Proceso de termofusión</Text>
+                  <Slideshow dataSource={this.state.termofusionPayload.slides}/>
+                </View>
                 <View style={styles.filterBy} >
                     <View style={styles.container}>
                       <Select
@@ -73,10 +122,36 @@ class TermofusionComponent extends Component {
                     </View>
                 </View>
                 <View>
-                  {this.state.dataTable.map((item, key) => (
-                    <View><Text>{item.key}</Text></View>
-                    {<childValues items={item.values} />}
-                  ))}
+                  {this.state.keysDT.map((item, key) =>
+                    <View key={key}>
+                      <Text>{`${item} -> ${this.state.dataTable[0][item]}`}</Text>
+                    </View>
+                  )}
+                </View>
+                <View>
+                <Text>Timer (crónometro en reversa)</Text>
+                <View>
+                  <View>
+                    <View>
+                    <Timer
+                        hours
+                        totalDuration={this.state.totalDuration}
+                        start={this.state.timerStart}
+                        reset={this.state.timerReset}
+                        options={options}
+                        handleFinish={handleTimerComplete}
+                        getTime={this.getFormattedTime} />
+                    </View>
+                  </View>
+                  <View>
+                    <TouchableHighlight onPress={this.resetTimer}>
+                      <Text style={{fontSize: 30}}>Restablecer</Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight onPress={this.toggleTimer}>
+                      <Text style={{fontSize: 30}}>{!this.state.timerStart ? "Iniciar" : "Detener"}</Text>
+                    </TouchableHighlight>
+                  </View>
+                </View>
                 </View>
             </View>);
   }
@@ -178,6 +253,22 @@ const styles = StyleSheet.create({
       width: '100%',
     },
 });
+
+const handleTimerComplete = () => alert("custom completion function");
+
+const options = {
+  container: {
+    backgroundColor: '#000',
+    padding: 5,
+    borderRadius: 5,
+    width: 220,
+  },
+  text: {
+    fontSize: 30,
+    color: '#FFF',
+    marginLeft: 7,
+  }
+};
 
 function mapStateToProps(state){
   return {

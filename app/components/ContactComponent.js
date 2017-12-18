@@ -93,47 +93,12 @@ class ContactComponent extends Component{
         </LinearGradient>
       </View>
 
-			<View style={styles.contactBox2}>
-        <View style={styles.contactBoxInner}>
-          <View style={styles.contactIcon}>
-					<Timer totalDuration={this.state.totalDuration} start={this.state.timerStart}
-							reset={this.state.timerReset}
-							options={options}
-							handleFinish={handleTimerComplete}
-							getTime={this.getFormattedTime} />
-          </View>
-        </View>
-				<View>
-					<TouchableHighlight onPress={this.toggleTimer}>
-						<Text style={{fontSize: 30}}>{!this.state.timerStart ? "Start" : "Stop"}</Text>
-					</TouchableHighlight>
-					<TouchableHighlight onPress={this.resetTimer}>
-						<Text style={{fontSize: 30}}>Reset</Text>
-					</TouchableHighlight>
-				</View>
-      </View>
       </ScrollView>
 			<MenuBottomComponent {...this.props} />
 		</View>
 		);
 	}
 }
-
-const handleTimerComplete = () => alert("custom completion function");
-
-const options = {
-  container: {
-    backgroundColor: '#000',
-    padding: 5,
-    borderRadius: 5,
-    width: 220,
-  },
-  text: {
-    fontSize: 30,
-    color: '#FFF',
-    marginLeft: 7,
-  }
-};
 
 const styles = StyleSheet.create({
   wrapperContact: {
