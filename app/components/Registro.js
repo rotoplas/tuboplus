@@ -31,7 +31,10 @@ class Registro extends Component{
 
     <View style={styles.wrapperAll} >
 
-      <ScrollView style={styles.wrapperContactform}>
+      <ScrollView style={styles.wrapperContactform}
+      overScrollMode={"auto"}
+									showsVerticalScrollIndicator={false}
+									bounces={false}>
 
        <Header />
 

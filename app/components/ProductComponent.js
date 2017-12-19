@@ -123,9 +123,12 @@ class ProductComponent extends Component{
 
       <View style={styles.container}>
 
-      <ScrollView style={styles.containerScroll}>
+      <ScrollView style={styles.containerScroll}
+      overScrollMode={"auto"}
+									showsVerticalScrollIndicator={false}
+									bounces={false}>
 
-        <Header />
+        <Header {...this.props}/>
 
         <View>
           <Text>Producto -> { params.product }</Text>

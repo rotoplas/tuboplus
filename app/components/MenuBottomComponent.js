@@ -19,7 +19,7 @@ class MenuBottomComponent extends Component {
 
           <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
           <TouchableHighlight
-          	style={styles.inactiveItem}
+          	style={this.props.navigation.state.routeName == 'CategoriesComponent' ? styles.activeItem : styles.inactiveItem}
 						onPress={() => this.props.navigation.navigate('CategoriesComponent', { category : 'Ventajas de Tuboplus'})}>
               <Image style={styles.iconItem} source={require('../../assets/img/icon1.png')}/>
            </TouchableHighlight>
@@ -27,7 +27,7 @@ class MenuBottomComponent extends Component {
 
           <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
           <TouchableHighlight
-	          style={styles.activeItem}
+	          style={this.props.navigation.state.routeName == 'EquivalenceComponent' ? styles.activeItem : styles.inactiveItem}
 						onPress={() => this.props.navigation.navigate('EquivalenceComponent', { category : 'Catálogo'})}>
               <Image style={styles.iconItem} source={require('../../assets/img/icon2.png')}/>
            </TouchableHighlight>
@@ -35,7 +35,7 @@ class MenuBottomComponent extends Component {
 
           <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
           <TouchableHighlight
-	          style={styles.inactiveItem}
+	          style={this.props.navigation.state.routeName == 'TermofusionComponent' ? styles.activeItem : styles.inactiveItem}
 						onPress={() => this.props.navigation.navigate('TermofusionComponent', { category : 'Correspondencias'})}>
               <Image style={styles.iconItem} source={require('../../assets/img/icon3.png')}/>
            </TouchableHighlight>
@@ -43,7 +43,7 @@ class MenuBottomComponent extends Component {
 
           <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
           <TouchableHighlight
-	          style={styles.inactiveItem}
+	          style={this.props.navigation.state.routeName == 'ContactformComponent' ? styles.activeItem : styles.inactiveItem}
 						onPress={() => this.props.navigation.navigate('ContactformComponent', { category : 'Contacta a los expertos'})}>
               <Image style={styles.iconItem} source={require('../../assets/img/icon4.png')}/>
            </TouchableHighlight>
@@ -51,7 +51,7 @@ class MenuBottomComponent extends Component {
 
           <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
           <TouchableHighlight
-	          style={styles.inactiveItemLast}
+	          style={this.props.navigation.state.routeName == 'ContactComponent' ? styles.activeItem : styles.inactiveItem}
 						onPress={() => this.props.navigation.navigate('ContactComponent', { category : 'Contácto'})}>
               <Image style={styles.iconItem} source={require('../../assets/img/icon5.png')}/>
            </TouchableHighlight>

@@ -91,9 +91,12 @@ class CategoriesComponent extends Component {
   return (
     <View style={styles.wrapperAll} >
 
-      <ScrollView style={styles.wrapperProducts}>
+      <ScrollView style={styles.wrapperProducts}
+      overScrollMode={"auto"}
+									showsVerticalScrollIndicator={false}
+									bounces={false}>
 
-        <Header />
+        <Header {...this.props}/>
 
         { view }
 

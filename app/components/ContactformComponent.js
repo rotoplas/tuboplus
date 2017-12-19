@@ -35,9 +35,12 @@ static navigationOptions = {};
 
     <View style={styles.wrapperAll} >
 
-      <ScrollView style={styles.wrapperContactform}>
+      <ScrollView style={styles.wrapperContactform}
+      overScrollMode={"auto"}
+									showsVerticalScrollIndicator={false}
+									bounces={false}>
 
-       <Header />
+       <Header {...this.props}/>
 
        <View style={styles.wrapperForm} >
           <Text style={styles.textIntro}>

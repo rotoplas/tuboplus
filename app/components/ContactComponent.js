@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 
 import Header from './Header';
 import MenuBottomComponent from './MenuBottomComponent';
+import FormatUtil from '../lib/format';
 
 class ContactComponent extends Component{
 
@@ -19,6 +20,8 @@ class ContactComponent extends Component{
 			totalDuration: 90000,
 			timerStart: false,
 			timerReset: false,
+			isLoading: true,
+			contactPayload: {}
     };
 
 		this.toggleTimer = this.toggleTimer.bind(this);
@@ -26,6 +29,26 @@ class ContactComponent extends Component{
 	 	this.toggleStopwatch = this.toggleStopwatch.bind(this);
 	 	this.resetStopwatch = this.resetStopwatch.bind(this);
   }
+
+
+	componentDidMount() {
+	  this.initialFetch();
+	}
+
+	  initialFetch = () => {
+	    //Fetch product by category and ID
+	    this.props.screenProps.fetchContact().then((res) => {
+	      let contactPayload = FormatUtil.toContactPayload(this.props.searchedContact);
+	      this.setState({
+	        contactPayload : contactPayload,
+	        isLoading : false
+	      });
+				console.log(this.state.contactPayload);
+	    }).catch(err => {
+	        console.log(`err -> ${err}`);
+	        this.setState({ isLoading : false });
+	    });
+	  };
 
 	static navigationOptions = {};
 
@@ -50,49 +73,60 @@ class ContactComponent extends Component{
 	 };
 
 	render() {
+
+		if(this.state.isLoading){
+			view = <View><Text> Cargando ... </Text></View>;
+		} else {
+				view = <View>
+											<View style={styles.imgContent}>
+												<Image style={styles.imgContact}  source={{url : this.state.contactPayload.header.url}} />
+											</View>
+
+											<View style={styles.contactBox1}>
+												<View style={styles.contactIcon}>
+													<Image style={styles.contactIconImg} source={require('../../assets/img/contact_icon1.png')} />
+												</View>
+												<View style={styles.innerTexts}>
+												 <Text style={styles.titContact}>Horarios de atención</Text>
+												 <Text style={styles.innerTxt}>{this.state.contactPayload.schedule_of_attention.days}</Text>
+												 <Text style={styles.innerTxt}>{this.state.contactPayload.schedule_of_attention.schedule}</Text>
+												</View>
+											</View>
+
+											<View style={styles.contactBox2}>
+												<View style={styles.contactBoxInner}>
+													<View style={styles.contactIcon}>
+															<Image style={styles.contactIconImg} source={require('../../assets/img/contact_icon2.png')} />
+													</View>
+													<View style={styles.innerTexts}>
+														<Text style={styles.titContact}>Teléfonos</Text>
+														<Text style={styles.innerTxt}>{this.state.contactPayload.phones.phone}</Text>
+														<Text style={styles.innerTxt}>{this.state.contactPayload.phones.cellphone}</Text>
+													</View>
+												</View>
+												<LinearGradient colors={["#1a4585","#012d6c"]} style={styles.butCall}>
+												 <TouchableHighlight
+														 onPress={() => {
+															 Communications.phonecall(this.state.contactPayload.call.cellphone, true);
+														 }}>
+														 <Text style={styles.txtBut}>Llamar</Text>
+												 </TouchableHighlight>
+												</LinearGradient>
+											</View>
+									</View>;
+		}
+
 		return (
 		<View style={styles.wrapperContact}>
 
-      <ScrollView>
-      <Header />
+      <ScrollView overScrollMode={"auto"}
+									showsVerticalScrollIndicator={false}
+									bounces={false}>
+	      <Header {...this.props}/>
 
-      <View style={styles.imgContent}>
-        <Image style={styles.imgContact}  source={require('../../assets/img/img_contact.jpg')} />
-      </View>
+				{ view }
 
-      <View style={styles.contactBox1}>
-        <View style={styles.contactIcon}>
-          <Image style={styles.contactIconImg} source={require('../../assets/img/contact_icon1.png')} />
-        </View>
-        <View style={styles.innerTexts}>
-         <Text style={styles.titContact}>Horarios de atención</Text>
-         <Text style={styles.innerTxt}>Lunes - Sábados</Text>
-         <Text style={styles.innerTxt}>8:00am - 7:00pm</Text>
-        </View>
-      </View>
-
-      <View style={styles.contactBox2}>
-        <View style={styles.contactBoxInner}>
-          <View style={styles.contactIcon}>
-              <Image style={styles.contactIconImg} source={require('../../assets/img/contact_icon2.png')} />
-          </View>
-          <View style={styles.innerTexts}>
-            <Text style={styles.titContact}>Teléfonos</Text>
-            <Text style={styles.innerTxt}>018005063000</Text>
-            <Text style={styles.innerTxt}>+5713467589</Text>
-          </View>
-        </View>
-        <LinearGradient colors={["#1a4585","#012d6c"]} style={styles.butCall}>
-					<TouchableHighlight
-							onPress={() => {
-								Communications.phonecall(this.state.phoneNumberCall, true);
-								//Communications.email(["crijosicar@hotmail.com"], null, null, "Test", "Correo de prueba");
-							}}>
-          		<Text style={styles.txtBut}>Llamar</Text>
-					</TouchableHighlight>
-        </LinearGradient>
-      </View>
-
+				<View style={styles.space}></View>
       </ScrollView>
 			<MenuBottomComponent {...this.props} />
 		</View>
@@ -184,11 +218,15 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       fontFamily: 'Signika-Regular',
       fontSize: 16,
-    }
+    },
+		space:{
+	      paddingTop: 80,
+	   },
 });
 
 function mapStateToProps(state){
   return {
+		searchedContact: state.searchedContact
   }
 }
 

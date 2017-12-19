@@ -7,17 +7,18 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { Stopwatch, Timer } from 'react-native-stopwatch-timer'
 
 import Header from './Header';
-import SelectProductsList from './SelectProductsList';
-import FormatUtil from '../lib/format';
-import MenuBottomComponent from './MenuBottomComponent';
-import SlidesTilesComponent from './SlidesTilesComponent';
 import AccordionProductComponent from './AccordionProductComponent';
+import MenuBottomComponent from './MenuBottomComponent';
+import FormatUtil from '../lib/format';
+import SlidesSingleInfoComponent from './SlidesSingleInfoComponent';
 
-class TermofusionComponent extends Component {
+
+class StepInfoSingleComponent extends Component{
 
   constructor(props) {
     super(props);
     this.state = {
+      singleTermofusionPayload: [],
       isLoading: true,
       termofusionPayload: {},
       placeholder : 'Seleccionar diámetro...' ,
@@ -36,28 +37,28 @@ class TermofusionComponent extends Component {
 
   componentDidMount() {
     this.initialFetch();
+    console.log(this.props.navigation.state.params.step);
   }
 
   initialFetch = () => {
+    //Fetch product by category and ID
     this.props.screenProps.fetchTermofusion().then((res) => {
       let termofusionPayload = FormatUtil.toTermofusionPayload(this.props.searchedTermofusion);
       let keysDT = Object.keys(termofusionPayload.diameters[0].values);
       let ntotalDuration = Number(termofusionPayload.diameters[0].values['tiempo_cronometro']);
+      let singleTermofusionPayload = [];
       this.setState({ termofusionPayload: termofusionPayload ,
         isLoading : false,
         dataTable : [termofusionPayload.diameters[0].values],
         keysDT : keysDT,
-        totalDuration : ntotalDuration
+        totalDuration : ntotalDuration,
+        singleTermofusionPayload: singleTermofusionPayload
        });
     }).catch(err => {
         console.log(`err -> ${err}`);
         this.setState({ isLoading : false });
     });
   };
-
-  static navigationOptions = {};
-
-  keyExtractor = (item, index) => item.key;
 
   onSelect(value, label) {
     let ndataTable = this.state.termofusionPayload.diameters.filter(data => data.key === value);
@@ -73,28 +74,26 @@ class TermofusionComponent extends Component {
   }
 
   toggleTimer() {
-		 this.setState({timerStart: !this.state.timerStart, timerReset: false});
-	 }
-
-	 resetTimer() {
-		 this.setState({timerStart: false, timerReset: true});
-	 }
-
-	 toggleStopwatch() {
-		 this.setState({stopwatchStart: !this.state.stopwatchStart, stopwatchReset: false});
-	 }
-
-	 resetStopwatch() {
-		 this.setState({stopwatchStart: false, stopwatchReset: true});
-	 }
-
-	 getFormattedTime(time) {
-			 this.currentTime = time;
-	 };
-
-   onChangeView(e){
-     this.props.navigation.navigate('StepInfoSingleComponent', { step : e.image.key });
+     this.setState({timerStart: !this.state.timerStart, timerReset: false});
    }
+
+   resetTimer() {
+     this.setState({timerStart: false, timerReset: true});
+   }
+
+   toggleStopwatch() {
+     this.setState({stopwatchStart: !this.state.stopwatchStart, stopwatchReset: false});
+   }
+
+   resetStopwatch() {
+     this.setState({stopwatchStart: false, stopwatchReset: true});
+   }
+
+   getFormattedTime(time) {
+       this.currentTime = time;
+   };
+
+  static navigationOptions = {};
 
   render() {
     if(this.state.isLoading){
@@ -159,19 +158,19 @@ class TermofusionComponent extends Component {
           }
       ];
       view = (<View>
-                <View>
-                  <Text>Proceso de termofusión</Text>
-                  <SlidesTilesComponent dataSource={this.state.termofusionPayload.slides}
-                                        onPress={(img) => { this.onChangeView(img) }}/>
-                </View>
+                <SlidesSingleInfoComponent
+                dataSource={this.state.termofusionPayload.slides}
+                position={this.props.navigation.state.params.step - 1}
+                />
                 <AccordionProductComponent sections={sections} activeItem={0}/>
             </View>);
-  }
+    }
 
-  return (
-    <View style={styles.wrapperAll} >
+    return (
 
-      <ScrollView style={styles.wrapperProducts}
+      <View style={styles.container}>
+
+      <ScrollView style={styles.containerScroll}
       overScrollMode={"auto"}
 									showsVerticalScrollIndicator={false}
 									bounces={false}>
@@ -182,91 +181,84 @@ class TermofusionComponent extends Component {
 
         <View style={styles.space}></View>
 
-     </ScrollView>
+      </ScrollView>
 
-     <MenuBottomComponent {...this.props} />
+      <MenuBottomComponent {...this.props} />
 
-    </View>
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-    wrapperProducts:{
-     height: '100%',
-     backgroundColor: '#edeef0',
+  imgContent: {
+      flexDirection: 'row',
+  },
+  iconItem:{
+    width: 35,
+    height: 30,
+    backgroundColor: 'transparent',
+  },
+  imgProd:{
+      flex: 1,
+      resizeMode: Image.resizeMode.contain,
+      height: 240,
+  },
+  titlesContainer: {
+      backgroundColor: '#eeeff1',
+      padding: 20,
+  },
+  mainTitle: {
+    color: '#515253',
+    fontFamily: 'Signika-Bold',
+    fontSize: 18,
+  },
+  categoryContainer: {
+    flexDirection: 'row',
+  },
+  titleCat: {
+    color: '#0075bc',
+    fontFamily: 'Signika-Bold',
+    fontSize: 16,
     },
-    iconItem:{
-      width: 35,
-      height: 30,
-      backgroundColor: 'transparent',
+  category: {
+    color: '#0075bc',
+    fontFamily: 'Signika-Regular',
+    fontSize: 16,
     },
-    filterBy:{
-      backgroundColor: '#ffffff',
-      height:44,
-      shadowColor: '#000',
-      shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.2,
-      shadowRadius: 5,
-      marginTop:20,
-      paddingLeft:10,
-      paddingRight:10,
-      paddingBottom:10,
-      borderRadius: 4,
-      },
-    productItem:{
-      width: '50%',
-      paddingLeft: 10,
-      paddingRight: 10,
-      flexDirection:'row',
-      flexWrap:'wrap',
-      },
-    prodImage:{
-      width: '100%',
-      height: 200,
-      shadowColor: '#000000',
-      shadowOffset: { width: 4, height: 2 },
-      shadowOpacity: 0.2,
-      shadowRadius: 2,
-      marginBottom: 5,
-      marginTop:5,
-      resizeMode: 'contain',
-      },
-    productName:{
-      color:'#515253',
-      fontSize:16,
-      width: '100%',
-      fontFamily: 'Signika-Bold',
-      backgroundColor: 'transparent',
-
+  introContainer: {
+    backgroundColor: '#eeeff1',
+    color: '#929292',
+    padding: 20,
+    fontFamily: 'Signika-Regular',
+    fontSize: 16,
     },
-     prodDescription:{
-      color:'#0075bc',
-      fontSize:14,
-      width: '100%',
+  space:{
+    paddingBottom: 50,
+  },
+  titleTable: {
+      fontSize: 18,
+      color: '#0075bc',
       fontFamily: 'Signika-Regular',
-      backgroundColor: 'transparent',
-    },
-    space:{
-      paddingBottom: 60,
-    },
-    btnProduct:{
-        padding: 30,
-    },
-    containerSelect: {
-        flex: 1,
-        backgroundColor: 'transparent',
-    },
-    selectIconContainer:{
-      backgroundColor: 'transparent',
-      width: 30,
-      right: 0,
-      },
-    selectIcon: {
-      fontSize: 20,
-      color: '#999999',
-      width: '100%',
-    },
+      marginLeft: 20,
+      marginBottom: 20,
+  },
+  containerSelect: {
+    height: 40
+  },
+  selectIconContainer:{
+    backgroundColor: 'transparent',
+    width: 30,
+    right: 10,
+  },
+  selectIcon: {
+    fontSize: 20,
+    color: '#999999',
+    width: '100%',
+  },
+  containerScroll: {
+    height : '100%',
+  },
 });
 
 const handleTimerComplete = () => alert("custom completion function");
@@ -291,4 +283,4 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps)(TermofusionComponent);
+export default connect(mapStateToProps)(StepInfoSingleComponent);

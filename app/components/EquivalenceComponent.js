@@ -145,9 +145,11 @@ class EquivalenceComponent extends Component{
 
 			<View style={styles.wrapperContact}>
 
-	      <ScrollView>
+	      <ScrollView overScrollMode={"auto"}
+										showsVerticalScrollIndicator={false}
+										bounces={false}>
 
-	      <Header />
+	      <Header {...this.props}/>
 
 				{ view }
 

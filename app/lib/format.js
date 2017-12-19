@@ -74,6 +74,67 @@ class FormatUtil {
             }
   }
 
+  static toContactPayload(rawData) {
+            try {
+              return {
+                  header : rawData.hasOwnProperty('img_tablet') && rawData.hasOwnProperty('img_movil') ? DeviceInfo.isTablet() ? { url : rawData.img_tablet } : { url : rawData.img_movil } : null,
+                  schedule_of_attention : rawData.hasOwnProperty('horario_atencion') ? {
+                    days : rawData.horario_atencion.dias,
+                    schedule : rawData.horario_atencion.horarios
+                  } : {
+                    days : "",
+                    schedule : ""
+                  },
+                  phones : rawData.hasOwnProperty('telefonos') ?  {
+                    phone : rawData.telefonos.telefono,
+                    cellphone : rawData.telefonos.celular
+                  } : {
+                    phone : "",
+                    cellphone : ""
+                  },
+                  call : rawData.hasOwnProperty('telefonos') ? {
+                    cellphone : rawData.telefonos.celular
+                  } : {
+                    cellphone : ""
+                  }
+              };
+            } catch (err) {
+                console.log(err);
+                return {};
+            }
+  }
+
+  static toTimeLifePayload(rawData) {
+            try {
+              return {
+                  title : rawData.hasOwnProperty('titulo') ? rawData.titulo : "",
+                  description : rawData.hasOwnProperty('descripcion') ? rawData.descripcion : "",
+                  header : rawData.hasOwnProperty('img_tablet') && rawData.hasOwnProperty('img_movil') ? DeviceInfo.isTablet() ? { url : rawData.img_tablet } : { url : rawData.img_movil } : null,
+                  filters : rawData.hasOwnProperty('filtros') ? this.toFilter(rawData.filtros) : [],
+                  pressures : rawData.hasOwnProperty('tabla_presiones') ? this.toPressures(rawData.tabla_presiones) : []
+              };
+            } catch (err) {
+                console.log(err);
+                return {};
+            }
+  }
+
+  static toBenefitsPayload(rawData) {
+            try {
+              return Object.keys(rawData).reduce((out, key) => {
+                          out.push({
+                            key : rawData[key].hasOwnProperty('id') ? rawData[key].id : this.makeid(),
+                            url : rawData[key].hasOwnProperty('img_tablet') && rawData[key].hasOwnProperty('img_movil') ? DeviceInfo.isTablet() ? rawData[key].img_tablet : rawData[key].img_movil : null,
+                            caption : rawData[key].hasOwnProperty('descripcion') ? rawData[key].descripcion : ""
+                          });
+                return out;
+              }, []);
+            } catch (err) {
+                console.log(err);
+                return [];
+            }
+  }
+
   static toFilter(rawData) {
         try {
           return Object.keys(rawData).reduce((out, key) => {
@@ -128,6 +189,7 @@ class FormatUtil {
                         key: rawData[key].hasOwnProperty('id') ? rawData[key].id : this.makeid(),
                         title: rawData[key].hasOwnProperty('titulo') ? rawData[key].titulo : "",
                         caption: rawData[key].hasOwnProperty('descripcion') ? rawData[key].descripcion : "",
+                        captionLarge: rawData[key].hasOwnProperty('descripcion_larga') ? rawData[key].descripcion_larga : "",
                         url: rawData[key].hasOwnProperty('img_tablet') && rawData[key].hasOwnProperty('img_movil') ? DeviceInfo.isTablet() ? rawData[key].img_tablet : rawData[key].img_movil : null
                       });
             return out;
@@ -145,6 +207,23 @@ class FormatUtil {
                         key: rawData[key].hasOwnProperty('id') ? rawData[key].id : this.makeid(),
                         innerLeft: rawData[key].hasOwnProperty('milimetros') ? rawData[key].milimetros : "",
                         innerRight: rawData[key].hasOwnProperty('pulgadas') ? rawData[key].pulgadas : "",
+                      });
+            return out;
+          }, []);
+        } catch (err) {
+            console.log(err);
+            return [];
+        }
+  }
+
+  static toPressures(rawData) {
+        try {
+            return Object.keys(rawData).reduce((out, key) => {
+                      out.push({
+                        key: rawData[key].hasOwnProperty('id') ? rawData[key].id : this.makeid(),
+                        idTemperature : rawData[key].hasOwnProperty('idTemperatura') ? rawData[key].idTemperatura : this.makeid(),
+                        innerLeft: rawData[key].hasOwnProperty('duracion') ? rawData[key].duracion : "",
+                        innerRight: rawData[key].hasOwnProperty('presion') ? rawData[key].presion : "",
                       });
             return out;
           }, []);

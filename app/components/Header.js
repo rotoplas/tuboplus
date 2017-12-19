@@ -1,28 +1,52 @@
 import React, { Component } from 'react';
-import { Text, View, Image, StyleSheet} from 'react-native';
+import { Text, View, Image, StyleSheet, TouchableHighlight} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
 import Search from './Search';
 
 class Header extends Component{
+	constructor(props) {
+		super(props);
+	}
 
 	render() {
+
+		if(this.props.navigation.state.routeName == "MainMenuComponent"){
+				btnMenu = <View></View>;
+				btnSearch = <View style={styles.iconView}>
+			         				<Icon name='search' style={styles.iconSearch}></Icon>
+			      			 </View>;
+		} else {
+				btnMenu = <View>
+										<TouchableHighlight
+												      onPress={() => this.props.navigation.navigate('MainMenuComponent', { category : "Menú principal" })}>
+															<View style={styles.displayMeneu}>
+																 <Image style={{width: 6, resizeMode: Image.resizeMode.contain}}  source={require('../../assets/img/menu-open.png')} />
+															</View>
+								    </TouchableHighlight>
+								</View>;
+				btnSearch = <View style={styles.iconView}>
+												<TouchableHighlight
+									        onPress={() => this.props.navigation.goBack()}>
+									          <View>
+									            <Text> Volver </Text>
+									          </View>
+									        </TouchableHighlight>
+										</View>;
+		}
+
 		return (
       <View>
 
 				<LinearGradient style={styles.wrapperHeader} colors={["#23a7df","#0186be"]} >
 
-		      <View style={styles.iconView}>
-		         <Icon name='search' style={styles.iconSearch}></Icon>
-		      </View>
+					{ btnSearch }
 
 					<View style={styles.logo}>
 						<Image style={{width: 140, resizeMode: Image.resizeMode.contain}}  source={require('../../assets/img/logo.png')} />
 					</View>
 
-		      <View style={styles.displayMeneu}>
-		         <Image style={{width: 6, resizeMode: Image.resizeMode.contain}}  source={require('../../assets/img/menu-open.png')} />
-		      </View>
+					{ btnMenu }
 
 				</LinearGradient>
 

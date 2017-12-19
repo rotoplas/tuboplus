@@ -3,7 +3,9 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Animated,
+  Easing
 } from 'react-native';
 import {
   TabNavigator,
@@ -22,6 +24,9 @@ import EquivalenceComponent from './app/components/EquivalenceComponent';
 import ContactformComponent from './app/components/ContactformComponent';
 import ContactComponent from './app/components/ContactComponent';
 import TermofusionComponent from './app/components/TermofusionComponent';
+import StepInfoSingleComponent from './app/components/StepInfoSingleComponent';
+import TimeLifeComponent from './app/components/TimeLifeComponent';
+import BenefitsComponent from './app/components/BenefitsComponent';
 
 const RootStack = StackNavigator({
   MainMenuComponent: {
@@ -48,6 +53,15 @@ const RootStack = StackNavigator({
   TermofusionComponent: {
     screen: TermofusionComponent
   },
+  StepInfoSingleComponent: {
+    screen: StepInfoSingleComponent
+  },
+  TimeLifeComponent: {
+    screen: TimeLifeComponent
+  },
+  BenefitsComponent:{
+    screen: BenefitsComponent
+  }
 },{
     headerMode: 'none',
     animationEnabled: false,
@@ -56,6 +70,30 @@ const RootStack = StackNavigator({
     navigationOptions: {
      gesturesEnabled: false,
     },
+    transitionConfig: () => ({
+     transitionSpec: {
+       duration: 500,
+       easing: Easing.out(Easing.poly(4)),
+       timing: Animated.timing,
+     },
+     screenInterpolator: sceneProps => {
+       const { layout, position, scene } = sceneProps;
+       const { index } = scene;
+
+       const height = layout.initHeight;
+       const translateY = position.interpolate({
+         inputRange: [index - 1, index, index + 1],
+         outputRange: [height, 0, 0],
+       });
+
+       const opacity = position.interpolate({
+         inputRange: [index - 1, index - 0.99, index],
+         outputRange: [0, 1, 1],
+       });
+
+       return { opacity, transform: [{ translateY }] };
+     },
+   }),
 });
 
 class AppContainer extends Component {

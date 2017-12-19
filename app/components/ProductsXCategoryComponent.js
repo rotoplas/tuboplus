@@ -72,19 +72,12 @@ class ProductsXCategoryComponent extends Component {
   return (
     <View style={styles.wrapperAll} >
 
-      <ScrollView style={styles.wrapperProducts} >
+      <ScrollView style={styles.wrapperProducts}
+        overScrollMode={"auto"}
+									showsVerticalScrollIndicator={false}
+									bounces={false}>
 
-        <Header />
-
-        <View>
-          <Text>Categoría -> { params.name }</Text>
-        </View>
-        <TouchableHighlight
-        onPress={() => this.props.navigation.goBack()}>
-          <View>
-            <Text> Volver </Text>
-          </View>
-        </TouchableHighlight>
+        <Header {...this.props}/>
 
         { view }
 

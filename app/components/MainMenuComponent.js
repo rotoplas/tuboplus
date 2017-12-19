@@ -13,11 +13,11 @@ class MainMenuComponent extends Component{
 		super(props);
 		this.state = {
 			listMenuItems: [
-        {key: '1', title:'Ventajas de Tuboplus', imageIcon:require('../../assets/img/icon1.png'), colors: ["#0186be","#12a5c7"], componentName: 'CategoriesComponent'},
+        {key: '1', title:'Ventajas de Tuboplus', imageIcon:require('../../assets/img/icon1.png'), colors: ["#0186be","#12a5c7"], componentName: 'BenefitsComponent'},
 				{key: '2', title:'Catálogo', imageIcon:require('../../assets/img/icon2.png'), colors: ["#24bee2","#019bbe"], componentName: 'CategoriesComponent'},
 				{key: '3', title:'Proceso de termofusión', imageIcon:require('../../assets/img/icon3.png'), colors: ["#23a6dd","#0184bb"], componentName: 'TermofusionComponent'},
 				{key: '4', title:'Correspondencias', imageIcon:require('../../assets/img/icon4.png'), colors: ["#1881c1","#016aaa"], componentName: 'EquivalenceComponent'},
-				{key: '5', title:'Vida Útil', imageIcon:require('../../assets/img/icon5.png'), colors: ["#005991","#00385c"], componentName: 'CategoriesComponent'},
+				{key: '5', title:'Vida Útil', imageIcon:require('../../assets/img/icon5.png'), colors: ["#005991","#00385c"], componentName: 'TimeLifeComponent'},
 				{key: '6', title:'Localiza a un distribuidor', imageIcon:require('../../assets/img/icon6.png'), colors: ["#003455","#00243a"], componentName: 'ContactformComponent'},
 				{key: '7', title:'Contáctenos', text: 'Lorem ipsum', imageIcon:require('../../assets/img/icon7.png'), colors: ["#001e31","#00111b"], componentName: 'ContactComponent'}
 			],
@@ -44,7 +44,7 @@ class MainMenuComponent extends Component{
 		return (
       <View style={styles.wrapperMenu}>
 
-      <Header />
+      <Header {...this.props}/>
 
 			<FlatList data={this.state.listMenuItems}
 			  renderItem={this.renderItem}
