@@ -5,7 +5,8 @@ import {
   Text,
   View,
   Animated,
-  Easing
+  Easing,
+  NetInfo
 } from 'react-native';
 import {
   TabNavigator,
@@ -97,8 +98,36 @@ const RootStack = StackNavigator({
 });
 
 class AppContainer extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      status : false
+    };
+  }
+
+  componentDidMount() {
+    NetInfo.addEventListener('connectionChange', this.handleConnectionChange);
+
+    NetInfo.getConnectionInfo().then((connectionInfo) => {
+      this.setState({ status: connectionInfo.type === "none" || connectionInfo.type === "unknown" ? false : true });
+    });
+  }
+
+  componentWillUnmount() {
+      NetInfo.removeEventListener('connectionChange', this.handleConnectionChange);
+  }
+
+  handleConnectionChange = ( connectionInfo ) => {
+    this.setState({ status: connectionInfo.type === "none" || connectionInfo.type === "unknown" ? false : true });
+  }
+
   render() {
-    return <RootStack screenProps={this.props} />;
+    if(this.state.status){
+      return <RootStack screenProps={this.props} />;
+    } else {
+      return <View><Text>"No tienes conexión a internet!"</Text></View>;
+    }
   }
 }
 

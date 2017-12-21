@@ -8,9 +8,14 @@ import { connect } from 'react-redux';
 class MenuBottomComponent extends Component {
 	constructor(props) {
 		super(props);
+		this.navigateTo = this.navigateTo.bind(this);
 	}
 
 	componentDidMount() {}
+
+	navigateTo = (componentName, categoryName) => {
+		this.props.navigation.navigate(componentName, { category : categoryName})
+	}
 
 	render() {
 		return (
@@ -20,7 +25,7 @@ class MenuBottomComponent extends Component {
           <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
           <TouchableHighlight
           	style={this.props.navigation.state.routeName == 'CategoriesComponent' ? styles.activeItem : styles.inactiveItem}
-						onPress={() => this.props.navigation.navigate('CategoriesComponent', { category : 'Ventajas de Tuboplus'})}>
+						onPress={() => this.props.navigation.state.routeName == 'CategoriesComponent' ? () => {return false} : this.navigateTo('CategoriesComponent', 'Ventajas de Tuboplus')}>
               <Image style={styles.iconItem} source={require('../../assets/img/icon1.png')}/>
            </TouchableHighlight>
           </LinearGradient>
@@ -28,7 +33,7 @@ class MenuBottomComponent extends Component {
           <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
           <TouchableHighlight
 	          style={this.props.navigation.state.routeName == 'EquivalenceComponent' ? styles.activeItem : styles.inactiveItem}
-						onPress={() => this.props.navigation.navigate('EquivalenceComponent', { category : 'Catálogo'})}>
+						onPress={() => this.props.navigation.state.routeName == 'EquivalenceComponent' ? () => {return false} : this.navigateTo('EquivalenceComponent', 'Catálogo')}>
               <Image style={styles.iconItem} source={require('../../assets/img/icon2.png')}/>
            </TouchableHighlight>
           </LinearGradient>
@@ -36,7 +41,7 @@ class MenuBottomComponent extends Component {
           <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
           <TouchableHighlight
 	          style={this.props.navigation.state.routeName == 'TermofusionComponent' ? styles.activeItem : styles.inactiveItem}
-						onPress={() => this.props.navigation.navigate('TermofusionComponent', { category : 'Correspondencias'})}>
+						onPress={() => this.props.navigation.state.routeName == 'TermofusionComponent' ? () => {return false} : this.navigateTo('TermofusionComponent', 'Correspondencias')}>
               <Image style={styles.iconItem} source={require('../../assets/img/icon3.png')}/>
            </TouchableHighlight>
           </LinearGradient>
@@ -44,7 +49,7 @@ class MenuBottomComponent extends Component {
           <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
           <TouchableHighlight
 	          style={this.props.navigation.state.routeName == 'ContactformComponent' ? styles.activeItem : styles.inactiveItem}
-						onPress={() => this.props.navigation.navigate('ContactformComponent', { category : 'Contacta a los expertos'})}>
+						onPress={() => this.props.navigation.state.routeName == 'ContactformComponent' ? () => {return false} : this.navigateTo('ContactformComponent', 'Contacta a los expertos')}>
               <Image style={styles.iconItem} source={require('../../assets/img/icon4.png')}/>
            </TouchableHighlight>
           </LinearGradient>
@@ -52,7 +57,7 @@ class MenuBottomComponent extends Component {
           <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
           <TouchableHighlight
 	          style={this.props.navigation.state.routeName == 'ContactComponent' ? styles.activeItem : styles.inactiveItem}
-						onPress={() => this.props.navigation.navigate('ContactComponent', { category : 'Contácto'})}>
+						onPress={() => this.props.navigation.state.routeName == 'ContactComponent' ? () => {return false} : this.navigateTo('ContactComponent', 'Contácto')}>
               <Image style={styles.iconItem} source={require('../../assets/img/icon5.png')}/>
            </TouchableHighlight>
           </LinearGradient>

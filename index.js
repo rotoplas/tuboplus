@@ -15,7 +15,7 @@ function configureStore(initialState){
   const enhancer = compose(
     applyMiddleware(
       thunkMiddleware,
-      loggerMiddleware,
+      loggerMiddleware
     ),
   );
   return createStore(reducer, initialState, enhancer);
@@ -29,4 +29,4 @@ const App = () => (
   </Provider>
 );
 
-AppRegistry.registerComponent('AwesomeProject', () => App);
+AppRegistry.registerComponent('AwesomeProject', () =>  App);

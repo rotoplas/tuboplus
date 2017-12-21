@@ -37,7 +37,6 @@ class BenefitsComponent extends Component {
   static navigationOptions = {};
 
   render() {
-    console.log(this.state.benefitsPayload);
     if(this.state.isLoading){
       view = <Text> Cargando... </Text>;
     } else {
@@ -53,7 +52,7 @@ class BenefitsComponent extends Component {
     <View style={styles.wrapperAll} >
 
       <ScrollView style={styles.wrapperProducts}
-                  overScrollMode={"auto"} 
+                  overScrollMode={"auto"}
 									showsVerticalScrollIndicator={false}
 									bounces={false}>
 

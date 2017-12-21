@@ -11,6 +11,7 @@ class MainMenuComponent extends Component{
 
 	constructor(props) {
 		super(props);
+    this.navigateTo = this.navigateTo.bind(this);
 		this.state = {
 			listMenuItems: [
         {key: '1', title:'Ventajas de Tuboplus', imageIcon:require('../../assets/img/icon1.png'), colors: ["#0186be","#12a5c7"], componentName: 'BenefitsComponent'},
@@ -28,9 +29,13 @@ class MainMenuComponent extends Component{
 
   componentDidMount() {}
 
+  navigateTo(item){
+    this.props.navigation.navigate(item.componentName, { category : item.title })
+  }
+
 	renderItem = ({item}) => (
 				<TouchableHighlight
-		      onPress={() => this.props.navigation.navigate(item.componentName, { category : item.title })}>
+		      onPress={() => this.navigateTo(item)}>
 					<LinearGradient colors={item.colors} style={styles.linearGradient} key={item.key}>
 							<Image style={styles.iconItem} source={item.imageIcon}/>
 						 <View style={styles.textItem}>

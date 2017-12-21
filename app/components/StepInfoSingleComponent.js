@@ -37,7 +37,6 @@ class StepInfoSingleComponent extends Component{
 
   componentDidMount() {
     this.initialFetch();
-    console.log(this.props.navigation.state.params.step);
   }
 
   initialFetch = () => {

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput, TouchableHighlight} from 'react-native';
+import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput, TouchableHighlight, NetInfo} from 'react-native';
 import Slideshow from 'react-native-slideshow';
 import { connect } from 'react-redux';
 import { Select, Option} from 'react-native-chooser';
 import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 import Header from './Header';
 import SelectProductsList from './SelectProductsList';
@@ -19,21 +20,42 @@ class CategoriesComponent extends Component {
       categoryPayload: [],
       placeholder : 'Filtrar por...' ,
       selected : null,
-      dataTable: []
+      dataTable: [],
+      status: false
     };
   }
 
   componentDidMount() {
-    this.initialFetch();
+    NetInfo.addEventListener('connectionChange', this.handleConnectionChange);
+
+    NetInfo.getConnectionInfo().then((connectionInfo) => {
+      this.setState({ status: connectionInfo.type === "none" || connectionInfo.type === "unknown" ? false : true });
+    });
+    
+    if(this.state.status){
+      this.initialFetch();
+    }
+  }
+
+  componentWillUnmount() {
+    NetInfo.removeEventListener('connectionChange', this.handleConnectionChange);
+  }
+
+  handleConnectionChange = ( connectionInfo ) => {
+    this.setState({ status: connectionInfo.type === "none" || connectionInfo.type === "unknown" ? false : true });
+    if(this.state.status){
+      this.initialFetch();
+    }
   }
 
   initialFetch = () => {
     this.props.screenProps.fetchCategories().then((res) => {
       let categoryPayload = FormatUtil.toCategoryPayload(this.props.searchedCategories);
+      console.log("categoryPayload", categoryPayload);
       this.setState({ categoryPayload: categoryPayload , isLoading : false, dataTable : [] });
     }).catch(err => {
         console.log(`err -> ${err}`);
-        this.setState({ isLoading : false });
+        this.setState({ isLoading : false, status : false });
     });
   };
 
@@ -57,36 +79,40 @@ class CategoriesComponent extends Component {
   }
 
   render() {
-    if(this.state.isLoading){
-      view = <Text> Cargando... </Text>;
-    } else {
-      view = (<View>
-                <Slideshow dataSource={this.state.categoryPayload.slides}/>
-                <View style={styles.filterBy} >
-                    <View style={styles.container}>
-                      <Select
-                          onSelect = {this.onSelect.bind(this)}
-                          defaultText  = {this.state.placeholder}
-                          style = {{borderColor : 'transparent', backgroundColor : 'transparent', width: '100%'}}
-                          textStyle = {{color: '#999999'}}
-                          animationType = {'fade'}
-                          transparent = {true}
-                          backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
-                          indicatorIcon = {<View style={styles.selectIconContainer}><Icon style={styles.selectIcon} name='angle-down'></Icon></View>}
-                          optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999' }}>
-                        {this.state.categoryPayload.filters.map((item) => (
-                          <Option key={item.key} value={item.key}>{item.value}</Option>
-                        ))}
-                      </Select>
+    if(this.state.status){
+        if(this.state.isLoading){
+          view = <Text> Cargando... </Text>;
+        } else {
+          view = (<View>
+                    <Slideshow dataSource={this.state.categoryPayload.slides}/>
+                    <View style={styles.filterBy} >
+                        <View style={styles.container}>
+                          <Select
+                              onSelect = {this.onSelect.bind(this)}
+                              defaultText  = {this.state.placeholder}
+                              style = {{borderColor : 'transparent', backgroundColor : 'transparent', width: '100%'}}
+                              textStyle = {{color: '#999999'}}
+                              animationType = {'fade'}
+                              transparent = {true}
+                              backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
+                              indicatorIcon = {<View style={styles.selectIconContainer}><Icon style={styles.selectIcon} name='angle-down'></Icon></View>}
+                              optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999' }}>
+                            {this.state.categoryPayload.filters.map((item) => (
+                              <Option key={item.key} value={item.key}>{item.value}</Option>
+                            ))}
+                          </Select>
+                        </View>
                     </View>
-                </View>
-                <FlatList
-                      keyExtractor={this.keyExtractor}
-                      numColumns={2}
-                      data={this.state.categoryPayload.categories}
-                      renderItem={this.renderItem}/>
-            </View>);
-   }
+                    <FlatList
+                          keyExtractor={this.keyExtractor}
+                          numColumns={2}
+                          data={this.state.categoryPayload.categories}
+                          renderItem={this.renderItem}/>
+                </View>);
+       }
+    } else {
+      view = <Text> No tienes conexión a internet. </Text>;
+    }
 
   return (
     <View style={styles.wrapperAll} >
@@ -191,7 +217,7 @@ const styles = StyleSheet.create({
 
 function mapStateToProps(state){
   return {
-    searchedCategories: state.searchedCategories,
+    searchedCategories: state.searchedCategories
   }
 }
 

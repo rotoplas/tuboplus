@@ -15,13 +15,13 @@ export function fetchProducts(){
 }
 
 export function fetchCategories(){
-  return (dispatch, getState) => {
-    return Api.get(`/catalogo`).then(res => {
-      dispatch(setSearchedCategories({ categories: res }));
-    }).catch((err) => {
-      console.log(err);
-      dispatch(setSearchedCategories({ categories: [] }));
-    })
+   return (dispatch, getState) => {
+      return Api.get(`/catalogo`).then(res => {
+        dispatch(setSearchedCategories({ categories: res }));
+      }).catch((err) => {
+        console.log(err);
+        dispatch(setSearchedCategories({ categories: [] }));
+      })
   }
 }
 

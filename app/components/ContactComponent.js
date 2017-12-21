@@ -43,7 +43,6 @@ class ContactComponent extends Component{
 	        contactPayload : contactPayload,
 	        isLoading : false
 	      });
-				console.log(this.state.contactPayload);
 	    }).catch(err => {
 	        console.log(`err -> ${err}`);
 	        this.setState({ isLoading : false });

@@ -5,8 +5,16 @@ import LinearGradient from 'react-native-linear-gradient';
 import Search from './Search';
 
 class Header extends Component{
+
 	constructor(props) {
 		super(props);
+		this.navigateTo = this.navigateTo.bind(this);
+	}
+
+	componentDidMount() {}
+
+	navigateTo = () => {
+		this.props.navigation.navigate('MainMenuComponent', { category : "Menú principal" })
 	}
 
 	render() {
@@ -19,7 +27,7 @@ class Header extends Component{
 		} else {
 				btnMenu = <View>
 										<TouchableHighlight
-												      onPress={() => this.props.navigation.navigate('MainMenuComponent', { category : "Menú principal" })}>
+												      onPress={() => this.navigateTo()}>
 															<View style={styles.displayMeneu}>
 																 <Image style={{width: 6, resizeMode: Image.resizeMode.contain}}  source={require('../../assets/img/menu-open.png')} />
 															</View>

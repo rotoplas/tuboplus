@@ -13,7 +13,6 @@ class SelectPlanosComponent extends Component {
 
   constructor(props) {
     super(props);
-    console.log(this.props.options);
     this.state = { selected : this.props.options[0].value }
   }
 
