@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { Select, Option} from 'react-native-chooser';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-
 import Header from './Header';
 import SelectProductsList from './SelectProductsList';
 import FormatUtil from '../lib/format';
@@ -31,9 +30,11 @@ class CategoriesComponent extends Component {
     NetInfo.getConnectionInfo().then((connectionInfo) => {
       this.setState({ status: connectionInfo.type === "none" || connectionInfo.type === "unknown" ? false : true });
     });
-    
+
     if(this.state.status){
       this.initialFetch();
+    } else {
+      this.setState({ isLoading: false });
     }
   }
 
@@ -45,13 +46,14 @@ class CategoriesComponent extends Component {
     this.setState({ status: connectionInfo.type === "none" || connectionInfo.type === "unknown" ? false : true });
     if(this.state.status){
       this.initialFetch();
+    } else {
+      this.setState({ isLoading : false, dataTable : [] });
     }
   }
 
   initialFetch = () => {
     this.props.screenProps.fetchCategories().then((res) => {
       let categoryPayload = FormatUtil.toCategoryPayload(this.props.searchedCategories);
-      console.log("categoryPayload", categoryPayload);
       this.setState({ categoryPayload: categoryPayload , isLoading : false, dataTable : [] });
     }).catch(err => {
         console.log(`err -> ${err}`);
