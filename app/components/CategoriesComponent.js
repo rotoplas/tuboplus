@@ -19,7 +19,6 @@ class CategoriesComponent extends Component {
       categoryPayload: [],
       placeholder : 'Filtrar por...' ,
       selected : null,
-      dataTable: [],
       status: false
     };
   }
@@ -29,13 +28,12 @@ class CategoriesComponent extends Component {
 
     NetInfo.getConnectionInfo().then((connectionInfo) => {
       this.setState({ status: connectionInfo.type === "none" || connectionInfo.type === "unknown" ? false : true });
+      if(this.state.status){
+        this.initialFetch();
+      } else {
+        this.setState({ isLoading: false });
+      }
     });
-
-    if(this.state.status){
-      this.initialFetch();
-    } else {
-      this.setState({ isLoading: false });
-    }
   }
 
   componentWillUnmount() {
@@ -47,7 +45,7 @@ class CategoriesComponent extends Component {
     if(this.state.status){
       this.initialFetch();
     } else {
-      this.setState({ isLoading : false, dataTable : [] });
+      this.setState({ isLoading : false });
     }
   }
 
@@ -85,6 +83,7 @@ class CategoriesComponent extends Component {
         if(this.state.isLoading){
           view = <Text> Cargando... </Text>;
         } else {
+          console.log("state->render", this.state);
           view = (<View>
                     <Slideshow dataSource={this.state.categoryPayload.slides}/>
                     <View style={styles.filterBy} >
