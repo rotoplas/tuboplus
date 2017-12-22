@@ -73,7 +73,7 @@ const RootStack = StackNavigator({
     },
     transitionConfig: () => ({
      transitionSpec: {
-       duration: 500,
+       duration: 300,
        easing: Easing.out(Easing.poly(4)),
        timing: Animated.timing,
      },
@@ -128,14 +128,12 @@ class AppContainer extends Component {
         <RootStack screenProps={this.props} />
       );
     } else {
-      view = <Text>"No tienes conexión a internet!"</Text>;
       return (
         <View >
-          { view }
+          <Text>"No tienes conexión a internet!"</Text>
         </View>
       );
     }
-
   }
 }
 

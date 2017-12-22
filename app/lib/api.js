@@ -29,7 +29,6 @@ class Api {
   static xhr(route, params, verb) {
     const host = Config.BASE_URL;
     const url = `${host}${route}`;
-    console.log(url);
     let options = Object.assign({ method: verb }, params ? { body: JSON.stringify(params) } : null );
     options.headers = Api.headers();
     return fetch(url, options).then( resp => {

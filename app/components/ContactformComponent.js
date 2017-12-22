@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput} from 'react-native';
+import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput, TouchableHighlight} from 'react-native';
 import { TextField } from 'react-native-material-textfield';
 import CheckBox from 'react-native-modest-checkbox'
 import LinearGradient from 'react-native-linear-gradient';
-import SelectPais from './SelectPais';
-import SelectEstado from './SelectEstado';
-import SelectDirigido from './SelectDirigido';
 import { connect } from 'react-redux';
+import { Select, Option} from 'react-native-chooser';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Header from './Header';
 import MenuBottomComponent from './MenuBottomComponent';
@@ -17,17 +16,74 @@ static navigationOptions = {};
 
  constructor(props) {
     super(props);
+    this.onSendFrom = this.onSendFrom.bind(this);
     this.state = {
-                  text: '',
                   placeholderNombre: 'Nombre',
                   placeholderMunicipio: 'Delegación o Municipio',
                   placeholderEmail: 'Email',
                   placeholderColonia: 'Colonia',
                   placeholderTelefono: 'Teléfono',
-                  placeholderMun: 'Delegación o Municipio',
                   placeholderCalle: 'Calle y número',
+                  placeholderPais: 'País',
+                  placeholderEstado: 'Estado',
+                  placeholderCP: 'Código postal',
+                  placeholderDirigidoA: 'Ventas',
                   placeholderMensaje: 'Mensaje',
+                  placeholderTerminos: false,
+                  placeholderRecibir: false,
     };
+  }
+
+  onSelect(value, label) {
+    this.setState({placeholderDirigidoA : value});
+  }
+
+  validateForm(state){
+    let valid = true;
+
+    if(state.placeholderNombre == 'Nombre' || state.placeholderNombre == ""){
+      valid = false;
+    }
+    if(state.placeholderMunicipio == 'Delegación o Municipio' || state.placeholderMunicipio == ""){
+      valid = false;
+    }
+    if(state.placeholderEmail == 'Email' || state.placeholderEmail == ""){
+      valid = false;
+    }
+    if(state.placeholderColonia == 'Colonia' || state.placeholderColonia == ""){
+      valid = false;
+    }
+    if(state.placeholderTelefono == 'Teléfono' || state.placeholderTelefono == ""){
+      valid = false;
+    }
+    if(state.placeholderCalle == 'Calle y número' || state.placeholderCalle == ""){
+      valid = false;
+    }
+    if(state.placeholderPais == 'País' || state.placeholderPais == ""){
+      valid = false;
+    }
+    if(state.placeholderEstado == 'Estado' || state.placeholderEstado == ""){
+      valid = false;
+    }
+    if(state.placeholderMensaje == 'Mensaje' || state.placeholderMensaje == ""){
+      valid = false;
+    }
+    if(state.placeholderCP == 'Código postal' || state.placeholderCP == ""){
+      valid = false;
+    }
+    if(state.placeholderTerminos.checked == false){
+      valid = false;
+    }
+    return valid;
+  }
+
+  onSendFrom = () => {
+    if(this.validateForm(this.state)){
+      alert("si");
+    } else {
+      alert("no");
+      //input_1_InputID
+    }
   }
 
   render() {
@@ -53,45 +109,80 @@ static navigationOptions = {};
           <TextInput
             style={styles.inputForm}
             placeholder={this.state.placeholderNombre}
+            onChangeText={(placeholderNombre) => this.setState({placeholderNombre})}
             />
           <Text style={styles.inputLabel}>Delegación o Municipio</Text>
           <TextInput
             style={styles.inputForm}
             placeholder={this.state.placeholderMunicipio}
+            onChangeText={(placeholderMunicipio) => this.setState({placeholderMunicipio})}
           />
           <Text style={styles.inputLabel}>Email</Text>
           <TextInput
             style={styles.inputForm}
             placeholder={this.state.placeholderEmail}
+            onChangeText={(placeholderEmail) => this.setState({placeholderEmail})}
             />
           <Text style={styles.inputLabel}>Colonia</Text>
           <TextInput
             style={styles.inputForm}
             placeholder={this.state.placeholderColonia}
+            onChangeText={(placeholderColonia) => this.setState({placeholderColonia})}
           />
           <Text style={styles.inputLabel}>Teléfono</Text>
           <TextInput
             style={styles.inputForm}
             placeholder={this.state.placeholderTelefono}
+            onChangeText={(placeholderTelefono) => this.setState({placeholderTelefono})}
             />
           <Text style={styles.inputLabel}>Calle y número</Text>
           <TextInput
             style={styles.inputForm}
             placeholder={this.state.placeholderCalle}
+            onChangeText={(placeholderCalle) => this.setState({placeholderCalle})}
             />
             <Text style={styles.inputLabel}>País</Text>
-            <SelectPais />
+            <TextInput
+              style={styles.inputForm}
+              placeholder={this.state.placeholderPais}
+              onChangeText={(placeholderPais) => this.setState({placeholderPais})}
+              />
             <Text style={styles.inputLabel}>Estado</Text>
-            <SelectEstado />
+            <TextInput
+              style={styles.inputForm}
+              placeholder={this.state.placeholderEstado}
+              onChangeText={(placeholderEstado) => this.setState({placeholderEstado})}
+              />
+            <Text style={styles.inputLabel}>C.P.</Text>
+              <TextInput
+                style={styles.inputForm}
+                placeholder={this.state.placeholderCP}
+                onChangeText={(placeholderCP) => this.setState({placeholderCP})}
+                />
             <Text style={styles.inputLabel}>Dirigido a</Text>
-            <SelectDirigido />
+            <Select
+                onSelect = {this.onSelect.bind(this)}
+                defaultText  = {this.state.placeholderDirigidoA}
+                style = {{borderColor : 'transparent', backgroundColor : 'transparent', width: '100%'}}
+                textStyle = {{color: '#999999'}}
+                animationType = {'fade'}
+                transparent = {true}
+                backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
+                indicatorIcon = {<View ><Icon name='angle-down'></Icon></View>}
+                optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999' }}>
+              <Option value = 'Ventas'>Ventas</Option>
+              <Option value = 'Comentarios'>Comentarios</Option>
+              <Option value = 'Dudas'>Dudas</Option>
+              <Option value = 'Quiero ser distribuidor'>Quiero ser distribuidor</Option>
+              <Option value = 'Servicio técnico'>Servicio técnico</Option>
+            </Select>
             <Text style={styles.inputLabel}>Mensaje</Text>
-          <TextInput style={styles.inputlMessage}
-            style={styles.inputForm}
-            placeholder={this.state.placeholderMensaje}
-            multiline={true}
-            />
-
+            <TextInput style={styles.inputlMessage}
+              style={styles.inputForm}
+              placeholder={this.state.placeholderMensaje}
+              numberOfLines = {5}
+              multiline={true}
+              onChangeText={(placeholderMensaje) => this.setState({placeholderMensaje})}/>
           <View style={styles.checkboxItem}>
           <CheckBox
             label ='Acepto términos y condiciones. Aviso de privacidad'
@@ -99,8 +190,7 @@ static navigationOptions = {};
             checkedImage={require('../../assets/img/checked.png')}
             uncheckedImage={require('../../assets/img/unchecked.png')}
             checkboxStyle={{ width: 20, height: 20 }}
-            onChange={(checked) => console.log('Checked!')}
-          />
+            onChange={(placeholderTerminos) => this.setState({placeholderTerminos})}/>
           </View>
            <CheckBox
             label='Deseo recibir información de productos y servicios.'
@@ -108,12 +198,16 @@ static navigationOptions = {};
             checkedImage={require('../../assets/img/checked.png')}
             uncheckedImage={require('../../assets/img/unchecked.png')}
             checkboxStyle={{ width: 20, height: 20 }}
-            onChange={(checked) => console.log('Checked!')}
-          />
+            onChange={(placeholderRecibir) => this.setState({placeholderRecibir})}/>
           </View>
 
-          <LinearGradient colors={["#1a4585","#012d6c"]} style={styles.butEnviar}>
-              <Text style={styles.txtBut}>Enviar</Text>
+          <LinearGradient
+              colors={["#1a4585","#012d6c"]}
+              style={styles.butEnviar}>
+              <TouchableHighlight
+                onPress={() => {this.onSendFrom()}}>
+                <Text style={styles.txtBut}>Enviar</Text>
+              </TouchableHighlight>
           </LinearGradient>
 
        <View style={styles.space}></View>

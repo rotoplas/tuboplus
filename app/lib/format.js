@@ -150,6 +150,29 @@ class FormatUtil {
         }
   }
 
+  static toContactForm(rawData) {
+        try {
+          return {
+            input_1_1 : rawData.hasOwnProperty('placeholderNombre') ? rawData.placeholderNombre : "",
+            input_1_2 : rawData.hasOwnProperty('placeholderMunicipio') ? rawData.placeholderMunicipio : "",
+            input_1_3 : rawData.hasOwnProperty('placeholderEmail') ? rawData.placeholderEmail : "",
+            input_1_4 : rawData.hasOwnProperty('placeholderColonia') ? rawData.placeholderColonia : "",
+            input_1_5 : rawData.hasOwnProperty('placeholderTelefono') ? rawData.placeholderTelefono : "",
+            input_1_6 : rawData.hasOwnProperty('placeholderCalle') ? rawData.placeholderCalle : "",
+            input_1_7 : rawData.hasOwnProperty('placeholderPais') ? rawData.placeholderPais : "",
+            input_1_8 : rawData.hasOwnProperty('placeholderEstado') ? rawData.placeholderEstado : "",
+            input_1_9 : rawData.hasOwnProperty('placeholderCP') ? rawData.placeholderCP : "",
+            input_1_11 : rawData.hasOwnProperty('placeholderDirigidoA') ? rawData.placeholderDirigidoA : "",
+            input_1_12 : rawData.hasOwnProperty('placeholderMensaje') ? rawData.placeholderMensaje : "",
+            input_1_13 : rawData.hasOwnProperty('placeholderTerminos') ? rawData.placeholderTerminos : "",
+            input_1_14 : rawData.hasOwnProperty('placeholderRecibir') ? rawData.placeholderRecibir : "",
+          };
+        } catch (err) {
+            console.log(err);
+            return {};
+        }
+  }
+
   static toDiameter(rawData) {
         try {
           return rawData.map((val, idx) => {
