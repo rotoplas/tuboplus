@@ -45,14 +45,18 @@ class CategoriesComponent extends Component {
     if(this.state.status){
       this.initialFetch();
     } else {
-      this.setState({ isLoading : false });
+      this.setState({ isLoading : false, status : false });
     }
   }
 
   initialFetch = () => {
     this.props.screenProps.fetchCategories().then((res) => {
       let categoryPayload = FormatUtil.toCategoryPayload(this.props.searchedCategories);
-      this.setState({ categoryPayload: categoryPayload , isLoading : false, dataTable : [] });
+      if(categoryPayload.slides.length === 0 && categoryPayload.filters.length === 0 && categoryPayload.categories.length === 0){
+        this.setState({ categoryPayload: categoryPayload , isLoading : false, status : false });
+      } else {
+        this.setState({ categoryPayload: categoryPayload , isLoading : false});
+      }
     }).catch(err => {
         console.log(`err -> ${err}`);
         this.setState({ isLoading : false, status : false });
@@ -83,7 +87,6 @@ class CategoriesComponent extends Component {
         if(this.state.isLoading){
           view = <Text> Cargando... </Text>;
         } else {
-          console.log("state->render", this.state);
           view = (<View>
                     <Slideshow dataSource={this.state.categoryPayload.slides}/>
                     <View style={styles.filterBy} >

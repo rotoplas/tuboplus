@@ -124,10 +124,18 @@ class AppContainer extends Component {
 
   render() {
     if(this.state.status){
-      return <RootStack screenProps={this.props} />;
+      return (
+        <RootStack screenProps={this.props} />
+      );
     } else {
-      return <View><Text>"No tienes conexión a internet!"</Text></View>;
+      view = <Text>"No tienes conexión a internet!"</Text>;
+      return (
+        <View >
+          { view }
+        </View>
+      );
     }
+
   }
 }
 
