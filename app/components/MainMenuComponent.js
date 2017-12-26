@@ -14,13 +14,13 @@ class MainMenuComponent extends Component{
     this.navigateTo = this.navigateTo.bind(this);
 		this.state = {
 			listMenuItems: [
-        {key: '1', title:'Ventajas de Tuboplus', imageIcon:require('../../assets/img/icon1.png'), colors: ["#0186be","#12a5c7"], componentName: 'BenefitsComponent'},
-				{key: '2', title:'Catálogo', imageIcon:require('../../assets/img/icon2.png'), colors: ["#24bee2","#019bbe"], componentName: 'CategoriesComponent'},
-				{key: '3', title:'Proceso de termofusión', imageIcon:require('../../assets/img/icon3.png'), colors: ["#23a6dd","#0184bb"], componentName: 'TermofusionComponent'},
-				{key: '4', title:'Correspondencias', imageIcon:require('../../assets/img/icon4.png'), colors: ["#1881c1","#016aaa"], componentName: 'EquivalenceComponent'},
-				{key: '5', title:'Vida Útil', imageIcon:require('../../assets/img/icon5.png'), colors: ["#005991","#00385c"], componentName: 'TimeLifeComponent'},
-				{key: '6', title:'Localiza a un distribuidor', imageIcon:require('../../assets/img/icon6.png'), colors: ["#003455","#00243a"], componentName: 'ContactformComponent'},
-				{key: '7', title:'Contáctenos', text: 'Lorem ipsum', imageIcon:require('../../assets/img/icon7.png'), colors: ["#001e31","#00111b"], componentName: 'ContactComponent'}
+        {key: '1', title:'Ventajas de Tuboplus', imageIcon:require('../../assets/img/icon1.png'), colors: ["#24b9dc","#0196b9"], componentName: 'BenefitsComponent'},
+				{key: '2', title:'Catálogo', imageIcon:require('../../assets/img/icon2.png'), colors: ["#24a5db","#0182b9"], componentName: 'CategoriesComponent'},
+				{key: '3', title:'Proceso de termofusión', imageIcon:require('../../assets/img/icon3.png'), colors: ["#22a3da","#0183b9"], componentName: 'TermofusionComponent'},
+				{key: '4', title:'Correspondencias', imageIcon:require('../../assets/img/icon4.png'), colors: ["#3e7bc0","#2663a9"], componentName: 'EquivalenceComponent'},
+				{key: '5', title:'Vida Útil', imageIcon:require('../../assets/img/icon5.png'), colors: ["#165585","#0e3553"], componentName: 'TimeLifeComponent'},
+				{key: '6', title:'Localiza a un distribuidor', imageIcon:require('../../assets/img/icon6.png'), colors: ["#00204d","#001431"], componentName: 'ContactformComponent'},
+				{key: '7', title:'Contáctenos', text: 'Lorem ipsum', imageIcon:require('../../assets/img/icon7.png'), colors: ["#0f0f22","#000917"], componentName: 'ContactComponent'}
 			],
 		};
 	}
@@ -60,21 +60,23 @@ class MainMenuComponent extends Component{
 }
 
 const styles = StyleSheet.create({
+
    linearGradient: {
     flex: 1,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.4,
     shadowRadius: 5,
-    paddingTop: "5.65%",
+    paddingTop: "4.8%",
     paddingLeft: "14%",
-    paddingBottom: "5.65%",
+    paddingBottom: "4.8%",
     flexDirection: 'row',
   },
   iconItem:{
     backgroundColor: 'transparent',
     width: '15%',
     height: 45,
+    width:55,
     },
   textItem: {
       justifyContent: 'space-between',

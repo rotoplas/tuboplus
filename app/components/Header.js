@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
 import Search from './Search';
 
+
 class Header extends Component{
 
 	constructor(props) {
@@ -14,39 +15,43 @@ class Header extends Component{
 	componentDidMount() {}
 
 	navigateTo = () => {
-		this.props.navigation.navigate('MainMenuComponent', { category : "Menú principal" })
+
+		this.props.navigation.navigate('MainMenuComponent', { category : "Menú principal" });
 	}
 
 	render() {
-
+		let colors = ["#82e7ff","#5dc1d9"]; 
 		if(this.props.navigation.state.routeName == "MainMenuComponent"){
 				btnMenu = <View></View>;
-				btnSearch = <View style={styles.iconView}>
+				btnSearch = <TouchableHighlight style={styles.iconView}
+								onPress={() => this.props.navigation.SearchComponent()}>
 			         				<Icon name='search' style={styles.iconSearch}></Icon>
-			      			 </View>;
+			      			 </TouchableHighlight>;
 		} else {
-				btnMenu = <View>
-										<TouchableHighlight
-												      onPress={() => this.navigateTo()}>
-															<View style={styles.displayMeneu}>
-																 <Image style={{width: 6, resizeMode: Image.resizeMode.contain}}  source={require('../../assets/img/menu-open.png')} />
-															</View>
-								    </TouchableHighlight>
-								</View>;
-				btnSearch = <View style={styles.iconView}>
-												<TouchableHighlight
-									        onPress={() => this.props.navigation.goBack()}>
-									          <View>
-									            <Text> Volver </Text>
-									          </View>
-									        </TouchableHighlight>
-										</View>;
+				colors = ["#254067","#011d44"]; 
+				btnMenu = 
+
+				<View style={styles.displayMeneu}>
+					<TouchableHighlight
+					      onPress={() => this.navigateTo()}>
+							<Image style={{width: 6, resizeMode: Image.resizeMode.contain}}  source={require('../../assets/img/menu-open.png')} />
+				    </TouchableHighlight>
+				</View>;
+
+				btnSearch = 
+
+				<View style={styles.iconView} style={styles.iconView}>
+					<TouchableHighlight
+				        onPress={() => this.props.navigation.goBack()}>
+				            <Icon name='arrow-left' style={styles.iconSearch}></Icon>
+				    </TouchableHighlight>
+				</View>;
 		}
 
 		return (
       <View>
 
-				<LinearGradient style={styles.wrapperHeader} colors={["#23a7df","#0186be"]} >
+				<LinearGradient style={styles.wrapperHeader} colors={colors} >
 
 					{ btnSearch }
 
@@ -65,6 +70,10 @@ class Header extends Component{
 
 
 const styles = StyleSheet.create({
+
+  wrapperHeader:{
+	flexDirection: 'row'	
+	},
   searchComp: {
     flex: 1,
     position: 'absolute',
@@ -74,10 +83,6 @@ const styles = StyleSheet.create({
     width: '100%',
     marginLeft: 0,
     },
-  wrapperHeader: {
-    width: '100%',
-    flexDirection: 'row',
-  },
   iconView:{
     width: '15%',
     height: 10,
@@ -94,11 +99,12 @@ const styles = StyleSheet.create({
     width: '70%',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingTop: 10,
   },
   displayMeneu:{
     width: '15%',
     height: 10,
-    paddingTop: 80,
+    paddingTop: 70,
     justifyContent: 'center',
     alignItems: 'center',
     },
