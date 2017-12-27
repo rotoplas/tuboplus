@@ -104,7 +104,7 @@ class ContactComponent extends Component{
 													</View>
 												</View>
 												<LinearGradient colors={["#1a4585","#012d6c"]} style={styles.butCall}>
-												 <TouchableHighlight
+												 <TouchableHighlight underlayColor={'transparent'}
 														 onPress={() => {
 															 Communications.phonecall(this.state.contactPayload.call.cellphone, true);
 														 }}>

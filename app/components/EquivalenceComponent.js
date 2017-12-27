@@ -82,35 +82,44 @@ class EquivalenceComponent extends Component{
 
 									 <View style={styles.corresptBox}>
 										<Text style={styles.titCorrespBox}>Ingresa datos</Text>
-										<Select
-												onSelect = {this.onChangeMillimeters.bind(this)}
-												defaultText  = {this.state.defaultTextMillimeters}
-												style = {{borderColor : 'transparent', backgroundColor : 'transparent', width: '100%'}}
-												textStyle = {{color: '#999999'}}
-												animationType = {'fade'}
-												transparent = {true}
-												backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
-												indicatorIcon = {<View style={styles.selectIconContainer}><Icon style={styles.selectIcon} name='angle-down'></Icon></View>}
-												optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999' }}>
-											{this.state.dataTable.map((item) => (
-												<Option key={item.key} value={item.key}>{item.innerLeft}</Option>
-											))}
-										</Select>
-										<Select
-												onSelect = {this.onChangeInches.bind(this)}
-												defaultText  = {this.state.defaultTextInches}
-												style = {{borderColor : 'transparent', backgroundColor : 'transparent', width: '100%'}}
-												textStyle = {{color: '#999999'}}
-												animationType = {'fade'}
-												transparent = {true}
-												backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
-												indicatorIcon = {<View style={styles.selectIconContainer}><Icon style={styles.selectIcon} name='angle-down'></Icon></View>}
-												optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999' }}>
-											{this.state.dataTable.map((item) => (
-												<Option key={item.key} value={item.key}>{item.innerRight}</Option>
-											))}
-										</Select>
-										<TouchableHighlight
+										 <View style={styles.selectContainer}>
+											<View style={styles.selectCorrespond}>
+												<Select
+														onSelect = {this.onChangeMillimeters.bind(this)}
+														defaultText  = {this.state.defaultTextMillimeters}
+														style = {{backgroundColor : 'transparent', width: '100%', paddingTop: 0, paddingBottom: 0, paddingRight:0, borderWidth:0}}
+														textStyle = {{color: '#999999', fontSize:12,}}
+														animationType = {'fade'}
+														transparent = {true}
+														backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
+														indicatorIcon = {<View style={styles.selectIconContainer}><Icon style={styles.selectIcon} name='angle-down'></Icon></View>}
+														optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999' }}>
+													{this.state.dataTable.map((item) => (
+														<Option key={item.key} value={item.key}>{item.innerLeft}</Option>
+													))}
+												</Select>
+											</View>
+											<View style={styles.flechasCorresp}> 
+												<Image style={styles.iconItem} source={require('../../assets/img/flechas-corres.png')}/>
+											</View>
+											<View style={styles.selectCorrespond}>
+												<Select
+														onSelect = {this.onChangeInches.bind(this)}
+														defaultText  = {this.state.defaultTextInches}
+														style = {{backgroundColor : 'transparent', width: '100%', paddingTop: 0, paddingBottom: 0, paddingRight:0, borderWidth:0}}
+														textStyle = {{color: '#999999', fontSize:12,}}
+														animationType = {'fade'}
+														transparent = {true}
+														backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
+														indicatorIcon = {<View style={styles.selectIconContainer}><Icon style={styles.selectIcon} name='angle-down'></Icon></View>}
+														optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999' }}>
+													{this.state.dataTable.map((item) => (
+														<Option key={item.key} value={item.key}>{item.innerRight}</Option>
+													))}
+												</Select>
+											</View>
+										</View>
+										<TouchableHighlight underlayColor={'transparent'}
 											onPress={() => {
 												if(this.state.lastSelect != 0){
 													if(this.state.lastSelect == 1){
@@ -135,7 +144,7 @@ class EquivalenceComponent extends Component{
 									</View>
 
 									<View style={styles.textContainer}>
-									 <Text style={styles.textIntro}>{ this.state.equivalencePayload.description }</Text>
+									 {/*<Text style={styles.textIntro}>{ this.state.equivalencePayload.description }</Text>*/}
 									</View>
 
 									<AccordionProductComponent sections={sections} activeItem={0} />
@@ -169,6 +178,31 @@ const styles = StyleSheet.create({
     height: '100%',
     backgroundColor: '#eeeff1',
     },
+    selectCorrespond:{
+    	width: '42%',
+    	borderColor: '#2a6ebb',
+    	borderWidth: 1,
+    	marginTop: 20,
+    	padding:0,
+    	height: 40,
+    },
+    selectIconContainer:{
+    	backgroundColor: '#2a6ebb',
+    	paddingTop: 15,
+    	paddingLeft: 10,
+    	paddingRight: 10,
+    	margin:0,
+    	height: 39,
+    },
+    flechasCorresp:{
+    	width: '14%',
+    	marginTop: 24,
+    	paddingLeft: '2%',
+    	paddingRight: '2%',
+    },
+    selectIcon:{
+    	color: '#ffffff',
+    },
     iconItem:{
     width: 35,
     height: 30,
@@ -200,6 +234,9 @@ const styles = StyleSheet.create({
       paddingRight:15,
       paddingBottom:10,
       paddingTop: 10,
+    },
+    selectContainer:{
+    	flexDirection: 'row',
     },
     titCorresp:{
       width: '96%',
@@ -265,9 +302,6 @@ const styles = StyleSheet.create({
         color: '#0075bc',
         fontFamily: 'Signika-Regular',
         fontSize: 14,
-      },
-      contactBoxInner:{
-        width: '100%',
       },
       tableTexts:{
         backgroundColor: '#ffffff',

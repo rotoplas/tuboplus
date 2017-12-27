@@ -72,80 +72,9 @@ class BenefitsComponent extends Component {
 }
 
 const styles = StyleSheet.create({
-    wrapperProducts:{
+    wrapperAll:{
      height: '100%',
      backgroundColor: '#edeef0',
-    },
-    iconItem:{
-      width: 35,
-      height: 30,
-      backgroundColor: 'transparent',
-    },
-    filterBy:{
-      backgroundColor: '#ffffff',
-      height:44,
-      shadowColor: '#000',
-      shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.2,
-      shadowRadius: 5,
-      marginTop:20,
-      paddingLeft:10,
-      paddingRight:10,
-      paddingBottom:10,
-      borderRadius: 4,
-      },
-    productItem:{
-      width: '50%',
-      paddingLeft: 10,
-      paddingRight: 10,
-      flexDirection:'row',
-      flexWrap:'wrap',
-      },
-    prodImage:{
-      width: '100%',
-      height: 200,
-      shadowColor: '#000000',
-      shadowOffset: { width: 4, height: 2 },
-      shadowOpacity: 0.2,
-      shadowRadius: 2,
-      marginBottom: 5,
-      marginTop:5,
-      resizeMode: 'contain',
-      },
-    productName:{
-      color:'#515253',
-      fontSize:16,
-      width: '100%',
-      fontFamily: 'Signika-Bold',
-      backgroundColor: 'transparent',
-
-    },
-     prodDescription:{
-      color:'#0075bc',
-      fontSize:14,
-      width: '100%',
-      fontFamily: 'Signika-Regular',
-      backgroundColor: 'transparent',
-    },
-    space:{
-      paddingBottom: 60,
-    },
-    btnProduct:{
-        padding: 30,
-    },
-    containerSelect: {
-        flex: 1,
-        backgroundColor: 'transparent',
-    },
-    selectIconContainer:{
-      backgroundColor: 'transparent',
-      width: 30,
-      right: 0,
-      },
-    selectIcon: {
-      fontSize: 20,
-      color: '#999999',
-      width: '100%',
     },
 });
 

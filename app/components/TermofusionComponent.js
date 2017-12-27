@@ -131,7 +131,7 @@ class TermofusionComponent extends Component {
                 )}
               </View>
               <View>
-              <Text>Timer (crónometro en reversa)</Text>
+              <Text style={styles.titCronometro}>Timer (crónometro en reversa)</Text>
               <View>
                 <View>
                   <View>
@@ -146,10 +146,10 @@ class TermofusionComponent extends Component {
                   </View>
                 </View>
                 <View>
-                  <TouchableHighlight onPress={this.resetTimer}>
+                  <TouchableHighlight underlayColor={'transparent'} onPress={this.resetTimer}>
                     <Text style={{fontSize: 30}}>Restablecer</Text>
                   </TouchableHighlight>
-                  <TouchableHighlight onPress={this.toggleTimer}>
+                  <TouchableHighlight underlayColor={'transparent'} onPress={this.toggleTimer}>
                     <Text style={{fontSize: 30}}>{!this.state.timerStart ? "Iniciar" : "Detener"}</Text>
                   </TouchableHighlight>
                 </View>
@@ -160,7 +160,7 @@ class TermofusionComponent extends Component {
       ];
       view = (<View>
                 <View>
-                  <Text>Proceso de termofusión</Text>
+                  <Text style={styles.titTermof}>Proceso de termofusión</Text>
                   <SlidesTilesComponent dataSource={this.state.termofusionPayload.slides}
                                         onPress={(img) => { this.onChangeView(img) }}/>
                 </View>
@@ -196,11 +196,15 @@ const styles = StyleSheet.create({
      height: '100%',
      backgroundColor: '#edeef0',
     },
-    iconItem:{
-      width: 35,
-      height: 30,
-      backgroundColor: 'transparent',
-    },
+    titTermof:{
+      width: '96%',
+      marginLeft: '2%',
+      marginRight: '2%',
+      fontFamily: 'Signika-Bold',
+      fontSize: 18,
+      color:'#515253',
+      marginTop:30,
+      },
     filterBy:{
       backgroundColor: '#ffffff',
       height:44,
@@ -212,46 +216,11 @@ const styles = StyleSheet.create({
       paddingLeft:10,
       paddingRight:10,
       paddingBottom:10,
-      borderRadius: 4,
+      borderTopLeftRadius: 4,
+      borderTopRightRadius: 4,
       },
-    productItem:{
-      width: '50%',
-      paddingLeft: 10,
-      paddingRight: 10,
-      flexDirection:'row',
-      flexWrap:'wrap',
-      },
-    prodImage:{
-      width: '100%',
-      height: 200,
-      shadowColor: '#000000',
-      shadowOffset: { width: 4, height: 2 },
-      shadowOpacity: 0.2,
-      shadowRadius: 2,
-      marginBottom: 5,
-      marginTop:5,
-      resizeMode: 'contain',
-      },
-    productName:{
-      color:'#515253',
-      fontSize:16,
-      width: '100%',
-      fontFamily: 'Signika-Bold',
-      backgroundColor: 'transparent',
-
-    },
-     prodDescription:{
-      color:'#0075bc',
-      fontSize:14,
-      width: '100%',
-      fontFamily: 'Signika-Regular',
-      backgroundColor: 'transparent',
-    },
     space:{
       paddingBottom: 60,
-    },
-    btnProduct:{
-        padding: 30,
     },
     containerSelect: {
         flex: 1,

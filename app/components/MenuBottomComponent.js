@@ -23,23 +23,23 @@ class MenuBottomComponent extends Component {
       <View style={styles.menuBottom}>
 
           <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
-          <TouchableHighlight
+          <TouchableHighlight underlayColor={'transparent'}
           	style={this.props.navigation.state.routeName == 'CategoriesComponent' ? styles.activeItem : styles.inactiveItem}
 						onPress={() => this.props.navigation.state.routeName == 'CategoriesComponent' ? () => {return false} : this.navigateTo('CategoriesComponent', 'Ventajas de Tuboplus')}>
-              <Image style={styles.iconItem} source={require('../../assets/img/icon1.png')}/>
-           </TouchableHighlight>
-          </LinearGradient>
-
-          <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
-          <TouchableHighlight
-	          style={this.props.navigation.state.routeName == 'EquivalenceComponent' ? styles.activeItem : styles.inactiveItem}
-						onPress={() => this.props.navigation.state.routeName == 'EquivalenceComponent' ? () => {return false} : this.navigateTo('EquivalenceComponent', 'Catálogo')}>
               <Image style={styles.iconItem} source={require('../../assets/img/icon2.png')}/>
            </TouchableHighlight>
           </LinearGradient>
 
           <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
-          <TouchableHighlight
+          <TouchableHighlight underlayColor={'transparent'}
+	          style={this.props.navigation.state.routeName == 'EquivalenceComponent' ? styles.activeItem : styles.inactiveItem}
+						onPress={() => this.props.navigation.state.routeName == 'EquivalenceComponent' ? () => {return false} : this.navigateTo('EquivalenceComponent', 'Catálogo')}>
+              <Image style={styles.iconItem} source={require('../../assets/img/icon4.png')}/>
+           </TouchableHighlight>
+          </LinearGradient>
+
+          <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
+          <TouchableHighlight underlayColor={'transparent'}
 	          style={this.props.navigation.state.routeName == 'TermofusionComponent' ? styles.activeItem : styles.inactiveItem}
 						onPress={() => this.props.navigation.state.routeName == 'TermofusionComponent' ? () => {return false} : this.navigateTo('TermofusionComponent', 'Correspondencias')}>
               <Image style={styles.iconItem} source={require('../../assets/img/icon3.png')}/>
@@ -47,18 +47,18 @@ class MenuBottomComponent extends Component {
           </LinearGradient>
 
           <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
-          <TouchableHighlight
+          <TouchableHighlight underlayColor={'transparent'}
 	          style={this.props.navigation.state.routeName == 'ContactformComponent' ? styles.activeItem : styles.inactiveItem}
 						onPress={() => this.props.navigation.state.routeName == 'ContactformComponent' ? () => {return false} : this.navigateTo('ContactformComponent', 'Contacta a los expertos')}>
-              <Image style={styles.iconItem} source={require('../../assets/img/icon4.png')}/>
+              <Image style={styles.iconItem} source={require('../../assets/img/icon6.png')}/>
            </TouchableHighlight>
           </LinearGradient>
 
           <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
-          <TouchableHighlight
+          <TouchableHighlight underlayColor={'transparent'}
 	          style={this.props.navigation.state.routeName == 'ContactComponent' ? styles.activeItem : styles.inactiveItem}
 						onPress={() => this.props.navigation.state.routeName == 'ContactComponent' ? () => {return false} : this.navigateTo('ContactComponent', 'Contácto')}>
-              <Image style={styles.iconItem} source={require('../../assets/img/icon5.png')}/>
+              <Image style={styles.iconItem} source={require('../../assets/img/icon7.png')}/>
            </TouchableHighlight>
           </LinearGradient>
 

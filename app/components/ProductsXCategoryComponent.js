@@ -39,12 +39,12 @@ class ProductsXCategoryComponent extends Component {
   keyExtractor = (item, index) => item.key;
 
   renderItem = ({item}) => (
-    <TouchableHighlight
+    <TouchableHighlight underlayColor={'transparent'} style={styles.productItem}
       onPress={() => this.props.navigation.navigate('ProductComponent', { product : item.key, category : item.category })}>
-      <View style={styles.productItem}>
+      <View style={styles.imageContainer}>
           <Image style={styles.prodImage} source={item.image} />
           <Text style={styles.productName}>{item.name}</Text>
-          <Text style={styles.prodDescription}>{item.description}</Text>
+          {/*<Text style={styles.prodDescription}>{item.description}</Text>*/}
       </View>
     </TouchableHighlight>
   );
@@ -117,6 +117,10 @@ const styles = StyleSheet.create({
     paddingRight: 10,
     flexDirection:'row',
     flexWrap:'wrap',
+    },
+    imageContainer:{
+      width: '100%',
+      height: 250,
     },
     prodImage:{
       width: '100%',

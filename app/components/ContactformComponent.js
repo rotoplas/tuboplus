@@ -160,22 +160,24 @@ static navigationOptions = {};
                 onChangeText={(placeholderCP) => this.setState({placeholderCP})}
                 />
             <Text style={styles.inputLabel}>Dirigido a</Text>
-            <Select
-                onSelect = {this.onSelect.bind(this)}
-                defaultText  = {this.state.placeholderDirigidoA}
-                style = {{borderColor : 'transparent', backgroundColor : 'transparent', width: '100%'}}
-                textStyle = {{color: '#999999'}}
-                animationType = {'fade'}
-                transparent = {true}
-                backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
-                indicatorIcon = {<View ><Icon name='angle-down'></Icon></View>}
-                optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999' }}>
-              <Option value = 'Ventas'>Ventas</Option>
-              <Option value = 'Comentarios'>Comentarios</Option>
-              <Option value = 'Dudas'>Dudas</Option>
-              <Option value = 'Quiero ser distribuidor'>Quiero ser distribuidor</Option>
-              <Option value = 'Servicio técnico'>Servicio técnico</Option>
-            </Select>
+            <View style={styles.filterBy}>
+              <Select
+                  onSelect = {this.onSelect.bind(this)}
+                  defaultText  = {this.state.placeholderDirigidoA}
+                  style = {{borderColor : 'transparent', backgroundColor : 'transparent', width: '100%'}}
+                  textStyle = {{color: '#999999'}}
+                  animationType = {'fade'}
+                  transparent = {true}
+                  backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
+                  indicatorIcon = {<View ><Icon name='angle-down'></Icon></View>}
+                  optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999' }}>
+                <Option value = 'Ventas'>Ventas</Option>
+                <Option value = 'Comentarios'>Comentarios</Option>
+                <Option value = 'Dudas'>Dudas</Option>
+                <Option value = 'Quiero ser distribuidor'>Quiero ser distribuidor</Option>
+                <Option value = 'Servicio técnico'>Servicio técnico</Option>
+              </Select>
+            </View>
             <Text style={styles.inputLabel}>Mensaje</Text>
             <TextInput style={styles.inputlMessage}
               style={styles.inputForm}
@@ -200,11 +202,11 @@ static navigationOptions = {};
             checkboxStyle={{ width: 20, height: 20 }}
             onChange={(placeholderRecibir) => this.setState({placeholderRecibir})}/>
           </View>
-
+          
           <LinearGradient
               colors={["#1a4585","#012d6c"]}
               style={styles.butEnviar}>
-              <TouchableHighlight
+              <TouchableHighlight underlayColor={'transparent'}
                 onPress={() => {this.onSendFrom()}}>
                 <Text style={styles.txtBut}>Enviar</Text>
               </TouchableHighlight>
@@ -304,6 +306,21 @@ const styles = StyleSheet.create({
     space:{
       paddingTop: 80,
     },
+    filterBy:{
+      backgroundColor: '#ffffff',
+      height:44,
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.2,
+      shadowRadius: 5,
+      marginTop:5,
+      marginBottom:20,
+      paddingLeft:10,
+      paddingRight:10,
+      paddingBottom:10,
+      borderRadius: 4,
+      width: '100%',
+      },
 });
 
 function mapStateToProps(state){

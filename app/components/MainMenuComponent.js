@@ -34,7 +34,7 @@ class MainMenuComponent extends Component{
   }
 
 	renderItem = ({item}) => (
-				<TouchableHighlight
+				<TouchableHighlight underlayColor={'transparent'}
 		      onPress={() => this.navigateTo(item)}>
 					<LinearGradient colors={item.colors} style={styles.linearGradient} key={item.key}>
 							<Image style={styles.iconItem} source={item.imageIcon}/>

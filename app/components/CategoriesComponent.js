@@ -68,12 +68,12 @@ class CategoriesComponent extends Component {
   keyExtractor = (item, index) => item.key;
 
   renderItem = ({item}) => (
-    <TouchableHighlight
+    <TouchableHighlight underlayColor={'transparent'} style={styles.productItem}
       onPress={() => this.props.navigation.navigate('ProductsXCategoryComponent', { category : item.key, name : item.name })}>
-        <View style={styles.productItem}>
+        <View style={styles.imageContainer}>
             <Image style={styles.prodImage} source={item.image} />
             <Text style={styles.productName}>{item.name}</Text>
-            <Text style={styles.prodDescription}>{item.description}</Text>
+            {/*<Text style={styles.prodDescription}>{item.description}</Text>*/}
         </View>
     </TouchableHighlight>
   );
@@ -101,7 +101,7 @@ class CategoriesComponent extends Component {
                               backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
                               indicatorIcon = {<View style={styles.selectIconContainer}><Icon style={styles.selectIcon} name='angle-down'></Icon></View>}
                               optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999' }}>
-                            {this.state.categoryPayload.filters.map((item) => (
+                             {this.state.categoryPayload.filters.map((item) => (
                               <Option key={item.key} value={item.key}>{item.value}</Option>
                             ))}
                           </Select>
@@ -163,6 +163,9 @@ const styles = StyleSheet.create({
       paddingRight:10,
       paddingBottom:10,
       borderRadius: 4,
+      width: '94%',
+      marginLeft:'2%',
+      marginRight:'2%',
       },
     productItem:{
       width: '50%',
@@ -171,6 +174,10 @@ const styles = StyleSheet.create({
       flexDirection:'row',
       flexWrap:'wrap',
       },
+    imageContainer:{
+      width: '100%',
+      height: 250,
+    },
     prodImage:{
       width: '100%',
       height: 200,
@@ -217,6 +224,9 @@ const styles = StyleSheet.create({
       color: '#999999',
       width: '100%',
     },
+    space:{
+        paddingTop: 80,
+     },
 });
 
 function mapStateToProps(state){

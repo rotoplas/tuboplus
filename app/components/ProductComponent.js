@@ -25,6 +25,7 @@ class ProductComponent extends Component{
     };
   }
 
+
   componentDidMount() {
     this.initialFetch();
   }
@@ -66,8 +67,8 @@ class ProductComponent extends Component{
               <View style={styles.content}>
                 <Text style={styles.titleTable}>Equivalencias</Text>
                 <Table1 dataTable={this.state.productPayload.equivalence}
-                  titleLeft="Medidas"
-                  titleRight="Tabla de"/>
+                  titleLeft="Milímetros (mm)"
+                  titleRight="Pulgadas (”)"/>
               </View>
           },{
             title: 'Planos',
@@ -76,7 +77,7 @@ class ProductComponent extends Component{
               <Image
                 style={{width: '100%', height:250, resizeMode: Image.resizeMode.contain}}
                 source={this.state.productPayload.image} />
-              <View style={styles.selectPlanos}>
+              <View style={styles.filterBy}>
                 <View style={styles.containerSelect}>
                   <Select
                       onSelect = {this.onSelect.bind(this)}
@@ -111,7 +112,7 @@ class ProductComponent extends Component{
                   <Image style={styles.imgProd}  source={ this.state.productPayload.image } />
                 </View>
 
-                <Text style={styles.introContainer}>{ this.state.productPayload.description }</Text>
+                {/*<Text style={styles.introContainer}>{ this.state.productPayload.description }</Text>*/}
 
                 <AccordionProductComponent sections={sections} activeItem={-1}/>
             </View>);
@@ -130,9 +131,6 @@ class ProductComponent extends Component{
 
         <Header {...this.props}/>
 
-        <View>
-          <Text>Producto -> { params.product }</Text>
-        </View>
 
         <TouchableHighlight
         onPress={() => this.props.navigation.goBack()}>
@@ -155,6 +153,7 @@ class ProductComponent extends Component{
 const styles = StyleSheet.create({
   imgContent: {
       flexDirection: 'row',
+      backgroundColor: '#ffffff',
   },
   iconItem:{
     width: 35,
@@ -221,6 +220,26 @@ const styles = StyleSheet.create({
   containerScroll: {
     height : '100%',
   },
+  space:{
+    paddingBottom: 80,
+  },
+  filterBy:{
+      backgroundColor: '#ffffff',
+      height:44,
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.2,
+      shadowRadius: 5,
+      marginTop:20,
+      marginBottom:20,
+      paddingLeft:10,
+      paddingRight:10,
+      paddingBottom:10,
+      borderRadius: 4,
+      width: '94%',
+      marginLeft:'2%',
+      marginRight:'2%',
+      },
 });
 
 function mapStateToProps(state){
