@@ -3,7 +3,6 @@ import { Text, View, Image, StyleSheet, TouchableHighlight} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LinearGradient from 'react-native-linear-gradient';
 import Search from './Search';
-import HideableView from 'react-native-hideable-view';
 import { TextField } from 'react-native-material-textfield';
 
 class Header extends Component{

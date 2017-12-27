@@ -158,6 +158,9 @@ const styles = StyleSheet.create({
       paddingRight:10,
       paddingBottom:10,
       borderRadius: 4,
+      width: '96%',
+      marginLeft:'2%',
+      marginRight: '2%',
       },
     tableContainer:{
       width: '94%',
