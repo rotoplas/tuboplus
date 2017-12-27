@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Image, StyleSheet, TextInput} from 'react-native';
+import { Text, View, Image, StyleSheet, TextInput, TouchableHighlight} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { TextField } from 'react-native-material-textfield';
 import LinearGradient from 'react-native-linear-gradient';
@@ -10,12 +10,23 @@ class Search extends Component{
   constructor(props) {
     super(props);
     this.state = {
-                  text: '',
-                  placeholder: 'Buscar' };
+      text: '',
+      placeholder: 'Buscar',
+      visible: true
+    };
+    this.toggle = this.toggle.bind(this);
   }
+
+  toggle() {
+        this.setState({
+            visible: false
+        });
+    }
 
 	render() {
 		return (
+
+      <HideableView visible={this.state.visible}>
 
       <LinearGradient style={styles.wrapperHeader} colors={["#23a7df","#0186be"]} >
       <TextField style={styles.inputSearch}
@@ -24,8 +35,16 @@ class Search extends Component{
         placeholder={this.state.placeholder}
         onChangeText={ (text) => this.setState({ text })}
       />
-       <Image style={styles.arrowSearch}  source={require('../../assets/img/searchArrow.png')} />
+
+      <TouchableHighlight style={styles.arrowSearch}
+                onPress={this.toggle}>
+                 <Image source={require('../../assets/img/searchArrow.png')} />
+      </TouchableHighlight>
+       
       </LinearGradient>
+
+      </HideableView>
+
 		);
 	}
 }
