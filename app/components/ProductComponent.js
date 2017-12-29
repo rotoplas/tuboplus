@@ -58,7 +58,7 @@ class ProductComponent extends Component{
 
   render() {
     if(this.state.isLoading){
-      view = <Text> Cargando... </Text>;
+      view = <Text style={styles.cargando}> Cargando... </Text>;
     } else {
       const sections = [
           {
@@ -240,6 +240,10 @@ const styles = StyleSheet.create({
       marginLeft:'2%',
       marginRight:'2%',
       },
+      cargando:{
+      flex: 1,
+      backgroundColor: 'transparent',
+    },
 });
 
 function mapStateToProps(state){

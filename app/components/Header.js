@@ -32,66 +32,97 @@ class Header extends Component{
 	componentDidMount() {}
 
 	navigateTo = () => {
-
 		this.props.navigation.navigate('MainMenuComponent', { category : "Menú principal" });
 	}
 
+	onClickedSearchProduct = () => {
+		this.props.navigation.navigate('ProductsXSearchedComponent', { productName : this.state.text });
+	}
+
 	render() {
-		let colors = ["#82e7ff","#5dc1d9"]; 
+		let colors = ["#82e7ff","#24b9dc"];
 		if(this.props.navigation.state.routeName == "MainMenuComponent"){
 				btnMenu = <View></View>;
-				btnSearch = <TouchableHighlight style={styles.iconView}
+				btnSearch = <TouchableHighlight underlayColor={'transparent'} style={styles.iconView}
 								onPress={this.onClickedIcon}>
 			         				<Icon name='search' style={styles.iconSearch}></Icon>
 			      			 </TouchableHighlight>;
-		} else {
-				colors = ["#254067","#011d44"]; 
-				btnMenu = 
 
-				<View style={styles.displayMeneu}>
-					<TouchableHighlight
-					      onPress={() => this.navigateTo()}>
-							<Image style={{width: 6, resizeMode: Image.resizeMode.contain}}  source={require('../../assets/img/menu-open.png')} />
-				    </TouchableHighlight>
-				</View>;
+		} else if(this.props.navigation.state.routeName == "BenefitsComponent"){
 
-				btnSearch = 
+      colors = ["#82e7ff","#5dc1d9"];
 
-				<View style={styles.iconView} style={styles.iconView}>
-					<TouchableHighlight
-				        onPress={() => this.props.navigation.goBack()}>
-				            <Icon name='arrow-left' style={styles.iconSearch}></Icon>
-				    </TouchableHighlight>
-				</View>;
+      btnMenu =
+
+        <View style={styles.displayMeneu}>
+          <TouchableHighlight underlayColor={'transparent'}
+                onPress={() => this.navigateTo()}>
+              <Image style={{width: 6, resizeMode: Image.resizeMode.contain}}  source={require('../../assets/img/menu-open.png')} />
+            </TouchableHighlight>
+        </View>;
+
+        btnSearch =
+
+        <View style={styles.iconView} style={styles.iconView}>
+          <TouchableHighlight underlayColor={'transparent'}
+                onPress={() => this.props.navigation.goBack()}>
+                    <Icon name='arrow-left' style={styles.iconSearch}></Icon>
+            </TouchableHighlight>
+        </View>;
+
+    } else {
+				colors = ["#254067","#011d44"];
+        btnMenu =
+
+        <View style={styles.displayMeneu}>
+          <TouchableHighlight underlayColor={'transparent'}
+                onPress={() => this.navigateTo()}>
+              <Image style={{width: 6, resizeMode: Image.resizeMode.contain}}  source={require('../../assets/img/menu-open.png')} />
+            </TouchableHighlight>
+        </View>;
+
+        btnSearch =
+
+        <View style={styles.iconView} style={styles.iconView}>
+          <TouchableHighlight underlayColor={'transparent'}
+                onPress={() => this.props.navigation.goBack()}>
+                    <Icon name='arrow-left' style={styles.iconSearch}></Icon>
+            </TouchableHighlight>
+        </View>;
 		}
 		var searchInput;
 		var headerView;
 
-		    if (this.state.visible == true){ 
+		    if (this.state.visible == true){
 
-		      searchInput = 
-
+		      searchInput =
 
 			        <LinearGradient colors={["#23a7df","#0186be"]} style={styles.wrapperInner} >
 				      <TextField style={styles.inputSearch}
 				        value={this.state.text}
 				        label=''
 				        placeholder={this.state.placeholder}
-				        onChangeText={ (text) => this.setState({ text })}
+								onChangeText={(text) => this.setState({text})}
 				      />
 
-				      <TouchableHighlight style={styles.arrowSearch}
+
+				      <TouchableHighlight underlayColor={'transparent'} style={styles.arrowSearch}
 				                onPress={this.onClickedArrow}>
 				                 <Image source={require('../../assets/img/searchArrow.png')} />
 				      </TouchableHighlight>
-				       
-				    </LinearGradient>
 
-		        
+							<TouchableHighlight underlayColor={'transparent'} style={styles.butSearch}
+											 onPress={() => this.onClickedSearchProduct()}>
+												<Icon name='search' style={styles.iconSearch}></Icon>
+						 </TouchableHighlight>
+
+							</LinearGradient>
+
+
 		    }
-		    else{ 
-		      headerView = 
-		          
+		    else{
+		      headerView =
+
 		          <LinearGradient style={styles.wrapperHeader} colors={colors} >
 
 					{ btnSearch }
@@ -104,7 +135,7 @@ class Header extends Component{
 
 				</LinearGradient>
 
-		        
+
 		    }
 
 		return (
@@ -160,21 +191,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     },
-  wrapperSearch: {
-  	width: '100%',
-    //position: 'absolute',
-    top: 0,
-    left: 0,
-    zIndex: 201,
-  },
-   wrapperSearch2: {
-  	width: '80%',
-    //position: 'absolute',
-    top: 0,
-    right: 0,
-    zIndex: 400,
-  },
-    wrapperInner: {
+  wrapperInner: {
   	width: '100%',
     height:105,
   },
@@ -190,18 +207,21 @@ const styles = StyleSheet.create({
     paddingRight: 8,
     marginLeft:'3%',
     marginRight:'3%',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 5,
-    borderRadius: 5,
+    borderRadius: 4,
   },
   arrowSearch: {
     position: 'absolute',
     top: 45,
     left: 20,
     zIndex: 1,
-  }
+  },
+  butSearch:{
+    position: 'absolute',
+    backgroundColor: '#23a7df',
+    padding: 10,
+    right: 20,
+    top: 35,
+  },
 
 });
 

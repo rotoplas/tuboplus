@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   },
   tabTitle: {
     textAlign: 'center',
-    fontSize: 18,
+    fontSize: 14,
     fontWeight: '500',
     color: '#fff',
     fontFamily: 'Signika-Bold',

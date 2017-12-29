@@ -98,7 +98,7 @@ class TermofusionComponent extends Component {
 
   render() {
     if(this.state.isLoading){
-      view = <Text> Cargando... </Text>;
+      view = <Text style={styles.cargando}> Cargando... </Text>;
     } else {
       const sections = [
           {
@@ -125,16 +125,19 @@ class TermofusionComponent extends Component {
               </View>
               <View>
                 {this.state.keysDT.map((item, key) =>
-                  <View key={key}>
-                    <Text>{`${item} -> ${this.state.dataTable[0][item]}`}</Text>
+                  <View key={key} style={styles.textsTermof}>
+                      <Text style={styles.text1}>{`${item}`}</Text>
+                      <Text style={styles.text2}>{`${this.state.dataTable[0][item]}`}</Text>
                   </View>
                 )}
               </View>
               <View>
-              <Text style={styles.titCronometro}>Timer (crónometro en reversa)</Text>
+              <View style={styles.titContainerCron}>
+                  <Text style={styles.titCronometro}>Timer (crónometro en reversa)</Text>
+              </View>
               <View>
                 <View>
-                  <View>
+                  <View style={styles.timerContainer}>
                   <Timer
                       hours
                       totalDuration={this.state.totalDuration}
@@ -145,12 +148,12 @@ class TermofusionComponent extends Component {
                       getTime={this.getFormattedTime} />
                   </View>
                 </View>
-                <View>
-                  <TouchableHighlight underlayColor={'transparent'} onPress={this.resetTimer}>
-                    <Text style={{fontSize: 30}}>Restablecer</Text>
+                <View style={styles.buttonsTermof}>
+                  <TouchableHighlight style={styles.botRestablecer} underlayColor={'transparent'} onPress={this.resetTimer}>
+                    <Text style={styles.botText}>Restablecer</Text>
                   </TouchableHighlight>
-                  <TouchableHighlight underlayColor={'transparent'} onPress={this.toggleTimer}>
-                    <Text style={{fontSize: 30}}>{!this.state.timerStart ? "Iniciar" : "Detener"}</Text>
+                  <TouchableHighlight style={styles.botIniciar} underlayColor={'transparent'} onPress={this.toggleTimer}>
+                    <Text style={styles.botText}>{!this.state.timerStart ? "Iniciar" : "Detener"}</Text>
                   </TouchableHighlight>
                 </View>
               </View>
@@ -159,10 +162,13 @@ class TermofusionComponent extends Component {
           }
       ];
       view = (<View>
-                <View>
+                <View style={styles.titContainer}>
                   <Text style={styles.titTermof}>Proceso de termofusión</Text>
-                  <SlidesTilesComponent dataSource={this.state.termofusionPayload.slides}
-                                        onPress={(img) => { this.onChangeView(img) }}/>
+
+                  <View style={styles.sliderTermof}>
+                    <SlidesTilesComponent dataSource={this.state.termofusionPayload.slides}
+                                          onPress={(img) => { this.onChangeView(img) }}/>
+                  </View>
                 </View>
                 <AccordionProductComponent sections={sections} activeItem={0}/>
             </View>);
@@ -197,13 +203,16 @@ const styles = StyleSheet.create({
      backgroundColor: '#edeef0',
     },
     titTermof:{
-      width: '96%',
-      marginLeft: '2%',
-      marginRight: '2%',
       fontFamily: 'Signika-Bold',
-      fontSize: 18,
-      color:'#515253',
+      fontSize: 22,
+      color:'#0b2851',
       marginTop:30,
+      marginBottom:30,
+      },
+    titContainer:{
+      width: '100%',
+      justifyContent: 'center',
+      alignItems: 'center',
       },
     filterBy:{
       backgroundColor: '#ffffff',
@@ -213,14 +222,14 @@ const styles = StyleSheet.create({
       shadowOpacity: 0.2,
       shadowRadius: 5,
       marginTop:20,
+      marginBottom:20,
       paddingLeft:10,
       paddingRight:10,
       paddingBottom:10,
-      borderTopLeftRadius: 4,
-      borderTopRightRadius: 4,
+      borderRadius: 4,
       },
     space:{
-      paddingBottom: 60,
+      paddingBottom: 100,
     },
     containerSelect: {
         flex: 1,
@@ -236,22 +245,96 @@ const styles = StyleSheet.create({
       color: '#999999',
       width: '100%',
     },
+    botRestablecer:{
+      backgroundColor: '#0b2851',
+      paddingTop: 8,
+      paddingBottom:8,
+      paddingLeft:15,
+      paddingRight:15,
+      width: '49%',
+      marginRight: '2%',
+      justifyContent: 'center',
+    alignItems: 'center',
+    },
+    botIniciar:{
+      backgroundColor: '#2f75b7',
+      width: '49%',
+      paddingTop: 8,
+      paddingBottom:8,
+      paddingLeft:15,
+      paddingRight:15,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    botText:{
+      fontFamily: 'Signika-Bold',
+      fontSize: 12,
+      color:'#ffffff'
+      },
+      buttonsTermof:{
+        flexDirection: 'row',
+      },
+      timerContainer:{
+        justifyContent: 'center',
+        alignItems: 'center',
+        },
+      sliderTermof:{
+        width: '90%',
+        marginLeft: '5%',
+        marginRight: '5%',
+        marginBottom: 30,
+      },
+      titCronometro:{
+        fontSize: 16,
+        color: '#2f75b7',
+        fontFamily: 'Signika-Bold',
+        fontWeight: '400',
+      },
+      titContainerCron:{
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 30,
+      },
+      textsTermof:{
+        flexDirection: 'row',
+        width: '94%',
+        marginLeft: '3%',
+        marginRight: '3%',
+        marginBottom:8,
+      },
+      text1:{
+        width: '70%',
+        fontFamily: 'Signika-Regular',
+        fontSize: 14,
+        color: '#2f75b7',
+        },
+      text2:{
+        width: '30%',
+        fontFamily: 'Signika-Regular',
+        fontSize: 14,
+        color: '#666666',
+      }
 });
 
 const handleTimerComplete = () => alert("custom completion function");
 
 const options = {
   container: {
-    backgroundColor: '#000',
+    backgroundColor: 'transparent',
     padding: 5,
     borderRadius: 5,
-    width: 220,
+    width: 'auto',
   },
   text: {
-    fontSize: 30,
-    color: '#FFF',
-    marginLeft: 7,
-  }
+    fontSize: 44,
+    color: '#0b2851',
+    fontFamily: 'Signika-Bold',
+    fontWeight: '400',
+  },
+  cargando:{
+    flex: 1,
+    backgroundColor: 'transparent',
+  },
 };
 
 function mapStateToProps(state){

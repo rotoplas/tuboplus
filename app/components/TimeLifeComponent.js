@@ -55,7 +55,7 @@ class TimeLifeComponent extends Component {
 
 	render() {
 		if(this.state.isLoading){
-			view = <Text> Cargando... </Text>;
+			view = <Text style={styles.cargando}> Cargando... </Text>;
 		} else {
 			view = <View>
 								<View style={styles.titContainer}>
@@ -158,9 +158,9 @@ const styles = StyleSheet.create({
       paddingRight:10,
       paddingBottom:10,
       borderRadius: 4,
-      width: '96%',
-      marginLeft:'2%',
-      marginRight: '2%',
+      width: '94%',
+      marginLeft:'3%',
+      marginRight: '3%',
       },
     tableContainer:{
       width: '94%',
@@ -216,7 +216,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
       },
       space:{
-      	paddingBottom: 80,
+      	paddingBottom: 100,
       },
 			activeItem:{
 				backgroundColor: '#013178',
@@ -225,7 +225,11 @@ const styles = StyleSheet.create({
 				paddingTop: 10,
 				paddingBottom: 10,
 				alignItems: 'center'
-			}
+			},
+      cargando:{
+      flex: 1,
+      backgroundColor: 'transparent',
+    },
 });
 
 function mapStateToProps(state){

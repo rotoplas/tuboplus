@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { FlatList, View, Text, Image, StyleSheet, ScrollView, TouchableHighlight} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { connect } from 'react-redux';
-//import { StackNavigator } from 'react-navigation';
 
 
 class MenuBottomComponent extends Component {

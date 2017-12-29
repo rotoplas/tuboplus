@@ -96,7 +96,7 @@ class StepInfoSingleComponent extends Component{
 
   render() {
     if(this.state.isLoading){
-      view = <Text> Cargando... </Text>;
+      view = <Text style={styles.cargando}> Cargando... </Text>;
     } else {
       const sections = [
           {
@@ -273,7 +273,11 @@ const options = {
     fontSize: 30,
     color: '#FFF',
     marginLeft: 7,
-  }
+  },
+  cargando:{
+    flex: 1,
+    backgroundColor: 'transparent',
+  },
 };
 
 function mapStateToProps(state){

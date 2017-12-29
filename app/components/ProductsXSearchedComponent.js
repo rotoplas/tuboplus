@@ -8,13 +8,13 @@ import SelectProductsList from './SelectProductsList';
 import FormatUtil from '../lib/format';
 import MenuBottomComponent from './MenuBottomComponent';
 
-class ProductsXCategoryComponent extends Component {
+class ProductsXSearchedComponent extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       isLoading: true,
-      listProductsXCategory: [],
+      listProductsXSearched: [],
       searchedProductsList: [],
     };
   }
@@ -27,9 +27,9 @@ class ProductsXCategoryComponent extends Component {
 
   initialFetch = () => {
     //Fetch products by category
-    this.props.screenProps.fetchProductsXCategory(this.props.navigation.state.params.category).then((res) => {
-      let searchedProductsXCategory = FormatUtil.toCategory(this.props.searchedProductsXCategory);
-      this.setState({ listProductsXCategory: searchedProductsXCategory, isLoading: false });
+    this.props.screenProps.fetchSearch(this.props.navigation.state.params.productName).then((res) => {
+      let searchedProductsXCategory = FormatUtil.toCategory(this.props.itemsSearched);
+      this.setState({ listProductsXSearched: searchedProductsXCategory, isLoading: false });
     }).catch(err => {
         console.log(err, "err");
         this.setState({ isLoading: false });
@@ -52,16 +52,15 @@ class ProductsXCategoryComponent extends Component {
   render() {
 
   const { params } = this.props.navigation.state;
-
   if(this.state.isLoading){
     view = <Text style={styles.cargando}> Cargando... </Text>;
   } else {
-    if(this.state.listProductsXCategory.length){
+    if(this.state.listProductsXSearched.length){
       view = (<View>
                 <FlatList
                 keyExtractor={ this.keyExtractor }
                 numColumns={ 2 }
-                data={ this.state.listProductsXCategory }
+                data={ this.state.listProductsXSearched }
                 renderItem={ this.renderItem }/>
             </View>);
     } else {
@@ -162,8 +161,8 @@ const styles = StyleSheet.create({
 
 function mapStateToProps(state){
   return {
-    searchedProductsXCategory: state.searchedProductsXCategory,
+    itemsSearched: state.itemsSearched,
   }
 }
 
-export default connect(mapStateToProps)(ProductsXCategoryComponent);
+export default connect(mapStateToProps)(ProductsXSearchedComponent);

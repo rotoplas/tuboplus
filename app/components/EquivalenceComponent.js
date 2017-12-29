@@ -62,7 +62,7 @@ class EquivalenceComponent extends Component{
 
 		render() {
 			if(this.state.isLoading){
-	      view = <Text> Cargando... </Text>;
+	      view = <Text style={styles.cargando}> Cargando... </Text>;
 	    } else {
 
 				const sections = [
@@ -325,6 +325,10 @@ const styles = StyleSheet.create({
       space:{
       paddingBottom: 80,
       },
+      cargando:{
+    flex: 1,
+      backgroundColor: 'transparent',
+    },
 });
 
 function mapStateToProps(state){

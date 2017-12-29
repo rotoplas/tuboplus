@@ -15,3 +15,7 @@ export const SET_CONTACT = "SET_CONTACT";
 export const SET_TIME_LIFE = "SET_TIME_LIFE";
 
 export const SET_BENEFIT = "SET_BENEFIT";
+
+export const POST_CONTACT_FORM = "POST_CONTACT_FORM";
+
+export const GET_ITEMS_SEARCHED = "GET_ITEMS_SEARCHED";

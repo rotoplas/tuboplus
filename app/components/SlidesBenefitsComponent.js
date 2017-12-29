@@ -18,66 +18,14 @@ const splitVersion = reactNativePackage.version.split('.');
 const majorVersion = +splitVersion[0];
 const minorVersion = +splitVersion[1];
 
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    backgroundColor: '#222',
-  },
-  layoutIndicator: {
-    height: 15,
-    position: 'absolute',
-    bottom: 5,
-    left: 0,
-    right: 0,
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
-    backgroundColor: 'transparent',
-  },
-  indicator: {
-    margin: 3,
-    opacity: 0.9
-  },
-  indicatorSelected: {
-    opacity: 1,
-  },
-  containerImage : {
-    flex: 1,
-    width: Dimensions.get('window').width,
-  },
-  overlay: {
-    opacity: 0.5,
-    backgroundColor: 'black',
-  },
-  layoutText: {
-    position: 'absolute',
-    paddingHorizontal: 15,
-    bottom: 30,
-    left: 0,
-    right: 0,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    flexDirection: 'column',
-    backgroundColor: 'transparent',
-  },
-  textTitle: {
-    fontWeight: 'bold',
-    fontSize: 15,
-    color: 'white',
-  },
-  textCaption: {
-    fontWeight: '400',
-    fontSize: 12,
-    color: 'white',
-  }
-});
+
 
 export default class SlidesBenefitsComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
       position: 0,
-      height: Dimensions.get('window').width * (4 / 9),
+      height: Dimensions.get('window').width * (2 / 9),
       width: Dimensions.get('window').width,
       scrolling: false,
     };
@@ -174,10 +122,7 @@ export default class SlidesBenefitsComponent extends Component {
     const height = this.props.height || this.state.height;
     const position = this._getPosition();
     return (
-      <View style={[
-          this.props.containerStyle,
-          { height: height }
-        ]}>
+      <View >
         {/* SECTION IMAGE */}
         <ScrollView
           ref={ref => this._onRef(ref)}
@@ -185,11 +130,7 @@ export default class SlidesBenefitsComponent extends Component {
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           scrollEnabled={this.props.scrollEnabled}
-          {...this._panResponder.panHandlers}
-          style={[
-            styles.container,
-            { height: height }
-          ]}>
+          {...this._panResponder.panHandlers}>
 
           {this.props.dataSource.map((image, index) => {
 
@@ -206,7 +147,7 @@ export default class SlidesBenefitsComponent extends Component {
                 <View style={styles.overlay}>
                   <Image
                     source={imageObject}
-                    style={{height, width}}/>
+                    style={styles.imageSlider}/>
                 </View>
                 {textComponent}
               </View>
@@ -222,7 +163,7 @@ export default class SlidesBenefitsComponent extends Component {
           style={[
             styles.layoutIndicator,
           ]}>
-          {<View><Text>{`${position + 1} / ${this.props.dataSource.length}`}</Text></View>}
+          {<View><Text style={styles.indicadorNumbers}>{`${position + 1} / ${this.props.dataSource.length}`}</Text></View>}
         </View>
         {/* END SECTION INDICATOR */}
       </View>
@@ -231,7 +172,7 @@ export default class SlidesBenefitsComponent extends Component {
 }
 
 SlidesBenefitsComponent.defaultProps = {
-  height: 200,
+  height: 350,
   indicatorSize: 8,
   indicatorColor: '#CCCCCC',
   indicatorSelectedColor: '#FFFFFF',
@@ -259,3 +200,63 @@ SlidesBenefitsComponent.propTypes = {
 	onPress: PropTypes.func,
 	onPositionChanged: PropTypes.func,
 };
+
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    backgroundColor: '#ffffff',
+  },
+  layoutIndicator: {
+    height: 15,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    backgroundColor: 'transparent',
+    marginTop: 20,
+  },
+  indicadorNumbers:{
+    fontFamily: 'Signika-Bold',
+    fontSize: 18,
+    color: '#ffffff',
+    },
+  indicator: {
+    margin: 3,
+    opacity: 0.9
+  },
+  indicatorSelected: {
+    opacity: 1,
+  },
+  containerImage : {
+    flex: 1,
+    width: '100%',
+  },
+  overlay: {
+    opacity: 1,
+    backgroundColor: '#ffffff',
+  },
+  imageSlider:{
+    width:350,
+    height:350,
+    },
+  layoutText: {
+    position: 'absolute',
+    paddingHorizontal: 15,
+    bottom: 30,
+    left: 0,
+    right: 0,
+    flexDirection: 'row',
+    backgroundColor: 'transparent',
+  },
+  textTitle: {
+    fontWeight: 'bold',
+    fontSize: 15,
+    color: 'white',
+  },
+  textCaption: {
+    fontWeight: '400',
+    fontFamily: 'Signika-Bold',
+    fontSize: 16,
+    color:'#0075bc',
+  }
+});

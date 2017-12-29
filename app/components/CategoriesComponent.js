@@ -85,7 +85,7 @@ class CategoriesComponent extends Component {
   render() {
     if(this.state.status){
         if(this.state.isLoading){
-          view = <Text> Cargando... </Text>;
+          view = <Text style={styles.cargando}> Cargando... </Text>;
         } else {
           view = (<View>
                     <Slideshow dataSource={this.state.categoryPayload.slides}/>
@@ -227,6 +227,10 @@ const styles = StyleSheet.create({
     space:{
         paddingTop: 80,
      },
+     cargando:{
+    flex: 1,
+      backgroundColor: 'transparent',
+    },
 });
 
 function mapStateToProps(state){

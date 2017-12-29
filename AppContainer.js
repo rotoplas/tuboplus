@@ -28,6 +28,7 @@ import TermofusionComponent from './app/components/TermofusionComponent';
 import StepInfoSingleComponent from './app/components/StepInfoSingleComponent';
 import TimeLifeComponent from './app/components/TimeLifeComponent';
 import BenefitsComponent from './app/components/BenefitsComponent';
+import ProductsXSearchedComponent from './app/components/ProductsXSearchedComponent';
 
 const RootStack = StackNavigator({
   MainMenuComponent: {
@@ -62,6 +63,9 @@ const RootStack = StackNavigator({
   },
   BenefitsComponent:{
     screen: BenefitsComponent
+  },
+  ProductsXSearchedComponent:{
+    screen: ProductsXSearchedComponent
   }
 },{
     headerMode: 'none',

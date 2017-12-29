@@ -77,42 +77,42 @@ class ContactComponent extends Component{
 			view = <View><Text> Cargando ... </Text></View>;
 		} else {
 				view = <View>
-											<View style={styles.imgContent}>
-												<Image style={styles.imgContact}  source={{url : this.state.contactPayload.header.url}} />
-											</View>
+							<View style={styles.imgContent}>
+								<Image style={styles.imgContact}  source={{url : this.state.contactPayload.header.url}} />
+							</View>
 
-											<View style={styles.contactBox1}>
-												<View style={styles.contactIcon}>
-													<Image style={styles.contactIconImg} source={require('../../assets/img/contact_icon1.png')} />
-												</View>
-												<View style={styles.innerTexts}>
-												 <Text style={styles.titContact}>Horarios de atención</Text>
-												 <Text style={styles.innerTxt}>{this.state.contactPayload.schedule_of_attention.days}</Text>
-												 <Text style={styles.innerTxt}>{this.state.contactPayload.schedule_of_attention.schedule}</Text>
-												</View>
-											</View>
+							<View style={styles.contactBox1}>
+								<View style={styles.contactIcon}>
+									<Image style={styles.contactIconImg} source={require('../../assets/img/contact_icon1.png')} />
+								</View>
+								<View style={styles.innerTexts}>
+								 <Text style={styles.titContact}>Horarios de atención</Text>
+								 <Text style={styles.innerTxt}>{this.state.contactPayload.schedule_of_attention.days}</Text>
+								 <Text style={styles.innerTxt}>{this.state.contactPayload.schedule_of_attention.schedule}</Text>
+								</View>
+							</View>
 
-											<View style={styles.contactBox2}>
-												<View style={styles.contactBoxInner}>
-													<View style={styles.contactIcon}>
-															<Image style={styles.contactIconImg} source={require('../../assets/img/contact_icon2.png')} />
-													</View>
-													<View style={styles.innerTexts}>
-														<Text style={styles.titContact}>Teléfonos</Text>
-														<Text style={styles.innerTxt}>{this.state.contactPayload.phones.phone}</Text>
-														<Text style={styles.innerTxt}>{this.state.contactPayload.phones.cellphone}</Text>
-													</View>
-												</View>
-												<LinearGradient colors={["#1a4585","#012d6c"]} style={styles.butCall}>
-												 <TouchableHighlight underlayColor={'transparent'}
-														 onPress={() => {
-															 Communications.phonecall(this.state.contactPayload.call.cellphone, true);
-														 }}>
-														 <Text style={styles.txtBut}>Llamar</Text>
-												 </TouchableHighlight>
-												</LinearGradient>
-											</View>
-									</View>;
+							<View style={styles.contactBox2}>
+								<View style={styles.contactBoxInner}>
+									<View style={styles.contactIcon}>
+											<Image style={styles.contactIconImg} source={require('../../assets/img/contact_icon2.png')} />
+									</View>
+									<View style={styles.innerTexts}>
+										<Text style={styles.titContact}>Teléfonos</Text>
+										<Text style={styles.innerTxt}>{this.state.contactPayload.phones.phone}</Text>
+										<Text style={styles.innerTxt}>{this.state.contactPayload.phones.cellphone}</Text>
+									</View>
+								</View>
+								<LinearGradient colors={["#1a4585","#012d6c"]} style={styles.butCall}>
+								 <TouchableHighlight underlayColor={'transparent'}
+										 onPress={() => {
+											 Communications.phonecall(this.state.contactPayload.call.cellphone, true);
+										 }}>
+										 <Text style={styles.txtBut}>Llamar</Text>
+								 </TouchableHighlight>
+								</LinearGradient>
+							</View>
+					</View>;
 		}
 
 		return (

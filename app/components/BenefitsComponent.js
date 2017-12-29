@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput, TouchableHighlight } from 'react-native';
 import { connect } from 'react-redux';
+import LinearGradient from 'react-native-linear-gradient';
 
 import Header from './Header';
 import FormatUtil from '../lib/format';
@@ -38,11 +39,14 @@ class BenefitsComponent extends Component {
 
   render() {
     if(this.state.isLoading){
-      view = <Text> Cargando... </Text>;
+      view =  <Text style={styles.cargando}> Cargando... </Text>;
+
     } else {
       view = (<View>
-                <View>
-                  <Text>Beneficios</Text>
+                <View style={styles.wrapperBenefits}>
+                  <Text style={styles.titBenefits}>Beneficios</Text>
+                </View>
+                 <View style={styles.sliderBenefits}>
                   <SlidesBenefitsComponent dataSource={this.state.benefitsPayload}/>
                 </View>
               </View>);
@@ -51,18 +55,23 @@ class BenefitsComponent extends Component {
   return (
     <View style={styles.wrapperAll} >
 
-      <ScrollView style={styles.wrapperProducts}
+
+      <ScrollView 
                   overScrollMode={"auto"}
 									showsVerticalScrollIndicator={false}
 									bounces={false}>
 
         <Header {...this.props}/>
 
+        <LinearGradient colors={["#5dc1d9","#092d4a"]} style={styles.linearGradient} >
+
         { view }
 
-        <View style={styles.space}></View>
+        </LinearGradient>
+
 
      </ScrollView>
+
 
      <MenuBottomComponent {...this.props} />
 
@@ -76,6 +85,32 @@ const styles = StyleSheet.create({
      height: '100%',
      backgroundColor: '#edeef0',
     },
+    linearGradient:{
+      height: '100%',
+    },
+    wrapperBenefits:{
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+    titBenefits:{
+      fontFamily: 'Signika-Bold',
+      fontSize: 28,
+      color:'#ffffff',
+      marginTop:30,
+      marginBottom:20,
+      backgroundColor: 'transparent',
+      },
+      sliderBenefits:{
+        width: '92%',
+        marginLeft: '4%',
+        marginRight: '4%',
+        paddingBottom: '60%',
+      },
+      cargando:{
+      backgroundColor: 'transparent',
+      },
 });
 
 function mapStateToProps(state){

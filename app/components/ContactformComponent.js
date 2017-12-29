@@ -9,7 +9,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Header from './Header';
 import MenuBottomComponent from './MenuBottomComponent';
-
+import FormatUtil from '../lib/format';
 
 class ContactformComponent extends Component{
 static navigationOptions = {};
@@ -18,6 +18,7 @@ static navigationOptions = {};
     super(props);
     this.onSendFrom = this.onSendFrom.bind(this);
     this.state = {
+                  isSending: false,
                   placeholderNombre: 'Nombre',
                   placeholderMunicipio: 'Delegación o Municipio',
                   placeholderEmail: 'Email',
@@ -30,8 +31,8 @@ static navigationOptions = {};
                   placeholderDirigidoA: 'Ventas',
                   placeholderMensaje: 'Mensaje',
                   placeholderTerminos: false,
-                  placeholderRecibir: false,
-    };
+                  placeholderRecibir: false
+    }
   }
 
   onSelect(value, label) {
@@ -74,15 +75,23 @@ static navigationOptions = {};
     if(state.placeholderTerminos.checked == false){
       valid = false;
     }
+    console.log(state);
     return valid;
   }
 
   onSendFrom = () => {
     if(this.validateForm(this.state)){
-      alert("si");
+      let payload = FormatUtil.toContactForm(this.state);
+      console.log(payload);
+      this.props.screenProps.sendContactForm(payload).then((res) => {
+          console.log(this.props.postedContactForm);
+          this.setState({ isSending : false, status : false });
+      }).catch(err => {
+          console.log(`err -> ${err}`);
+          this.setState({ isSending : false, status : false });
+      });
     } else {
       alert("no");
-      //input_1_InputID
     }
   }
 
@@ -202,7 +211,7 @@ static navigationOptions = {};
             checkboxStyle={{ width: 20, height: 20 }}
             onChange={(placeholderRecibir) => this.setState({placeholderRecibir})}/>
           </View>
-          
+
           <LinearGradient
               colors={["#1a4585","#012d6c"]}
               style={styles.butEnviar}>
@@ -325,6 +334,7 @@ const styles = StyleSheet.create({
 
 function mapStateToProps(state){
   return {
+    postedContactForm: state.postedContactForm
   }
 }
 

@@ -4,6 +4,9 @@ import * as TermofusionActions from './termofusion';
 import * as ContactActions from './contact';
 import * as TimeLifeActions from './timeLife';
 import * as BenefitsActions from './benefits';
+import * as ContactFormActions from './contactForm';
+import * as SearchActions from './search';
+
 
 export const ActionCreators = Object.assign([],
   ProductActions,
@@ -12,4 +15,6 @@ export const ActionCreators = Object.assign([],
   ContactActions,
   TimeLifeActions,
   BenefitsActions,
+  ContactFormActions,
+  SearchActions,
 );

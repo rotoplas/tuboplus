@@ -21,7 +21,7 @@ class Search extends Component{
         this.setState({
             visible: false
         });
-    }
+  }
 
 	render() {
 		return (
@@ -40,7 +40,7 @@ class Search extends Component{
                 onPress={this.toggle}>
                  <Image source={require('../../assets/img/searchArrow.png')} />
       </TouchableHighlight>
-       
+
       </LinearGradient>
 
       </HideableView>

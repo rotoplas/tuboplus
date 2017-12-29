@@ -5,6 +5,8 @@ import * as termofusionReducer from './termofusion';
 import * as contactReducer from './contact';
 import * as timeLifeReducer from './timeLife';
 import * as benefitReducer from './benefit';
+import * as contactFormReducer from './contactForm';
+import * as itemsSearchedReducer from './search';
 
 export default combineReducers(Object.assign(
   productsReducer,
@@ -13,4 +15,6 @@ export default combineReducers(Object.assign(
   contactReducer,
   timeLifeReducer,
   benefitReducer,
+  contactFormReducer,
+  itemsSearchedReducer,
 ));
