@@ -1,4 +1,4 @@
-package com.awesomeproject;
+package com.rotoplasapp;
 
 import android.app.Application;
 

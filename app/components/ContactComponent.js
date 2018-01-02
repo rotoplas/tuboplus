@@ -191,6 +191,7 @@ const styles = StyleSheet.create({
       width: '85%',
     },
     innerTexts:{
+      width: '80%',
       justifyContent: 'space-between',
       },
     innerTxt:{

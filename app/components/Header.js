@@ -43,7 +43,7 @@ class Header extends Component{
 		let colors = ["#82e7ff","#24b9dc"];
 		if(this.props.navigation.state.routeName == "MainMenuComponent"){
 				btnMenu = <View></View>;
-				btnSearch = <TouchableHighlight underlayColor={'transparent'} style={styles.iconView}
+				btnSearch = <TouchableHighlight underlayColor={'transparent'} style={styles.iconSearch1}
 								onPress={this.onClickedIcon}>
 			         				<Icon name='search' style={styles.iconSearch}></Icon>
 			      			 </TouchableHighlight>;
@@ -178,6 +178,13 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 24,
   },
+  iconSearch1:{
+    width: '15%',
+    height: 10,
+    paddingTop: 95,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   logo:{
     width: '70%',
     justifyContent: 'center',
@@ -217,10 +224,12 @@ const styles = StyleSheet.create({
   },
   butSearch:{
     position: 'absolute',
-    backgroundColor: '#23a7df',
-    padding: 10,
-    right: 20,
-    top: 35,
+    backgroundColor: '#82e7ff',
+    padding: 11,
+    right: 11,
+    top: 34,
+    borderTopRightRadius: 4,
+    borderBottomRightRadius: 4,
   },
 
 });
