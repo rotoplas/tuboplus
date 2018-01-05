@@ -71,6 +71,3 @@
 
 # add by user mds
 -dontwarn io.sentry.**
--keepattributes LineNumberTable,SourceFile
--dontwarn org.slf4j.**
--dontwarn javax.**
