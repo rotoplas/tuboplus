@@ -74,8 +74,3 @@
 -keepattributes LineNumberTable,SourceFile
 -dontwarn org.slf4j.**
 -dontwarn javax.**
-
--dontwarn org.apache.http.**
--dontwarn android.net.http.AndroidHttpClient
--dontwarn com.google.android.gms.**
--dontwarn com.android.volley.toolbox.**
