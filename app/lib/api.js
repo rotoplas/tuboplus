@@ -27,7 +27,7 @@ class Api {
   }
 
   static xhr(route, params, verb) {
-    const host = Config.BASE_URL;
+    const host = "http://35.168.212.248/wp-json/servicios";
     const url = `${host}${route}`;
 
     console.log("Ruta",url);
@@ -44,7 +44,7 @@ class Api {
 
   static xhrPost(route, params, verb) {
     console.log("params", params);
-    const url = Config.BASE_POST_FORM;
+    const url = "http://35.168.212.248/wp-json/servicios/guardar-datos-formularios";
     //let options = Object.assign({ method: verb }, params ? { body: JSON.stringify(params) } : null );
 
     var formData = new FormData();

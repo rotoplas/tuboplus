@@ -76,7 +76,10 @@ class ProductComponent extends Component{
             <View style={styles.contentPlano}>
               <Image
                 style={{width: '100%', height:250, resizeMode: Image.resizeMode.contain}}
-                source={this.state.productPayload.image} />
+                source={{uri: this.state.productPayload.plane}} />
+
+
+
               <View style={styles.filterBy}>
                 <View style={styles.containerSelect}>
                   <Select
@@ -109,7 +112,7 @@ class ProductComponent extends Component{
                 </View>
 
                 <View style={styles.imgContent}>
-                  <Image style={styles.imgProd}  source={ this.state.productPayload.image } />
+                  <Image style={styles.imgProd}  source={{uri: this.state.productPayload.image}} />
                 </View>
 
                 {/*<Text style={styles.introContainer}>{ this.state.productPayload.description }</Text>*/}
