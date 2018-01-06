@@ -132,11 +132,11 @@ class TermofusionComponent extends Component {
                 )}
               </View>
               <View>
-              <View style={styles.titContainerCron}>
+              {/*<View style={styles.titContainerCron}>
                   <Text style={styles.titCronometro}>Timer (crónometro en reversa)</Text>
               </View>
               <View>
-                {/*<View>
+                <View>
                   <View style={styles.timerContainer}>
                   <Timer
                       hours
