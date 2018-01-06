@@ -135,7 +135,6 @@ class TermofusionComponent extends Component {
               {/*<View style={styles.titContainerCron}>
                   <Text style={styles.titCronometro}>Timer (crónometro en reversa)</Text>
               </View>
-              <View>
                 <View>
                   <View style={styles.timerContainer}>
                   <Timer
@@ -148,6 +147,7 @@ class TermofusionComponent extends Component {
                       getTime={this.getFormattedTime} />
                   </View>
                 </View>*/}
+              <View>
                 <View style={styles.buttonsTermof}>
                   <TouchableHighlight style={styles.botRestablecer} underlayColor={'transparent'} onPress={this.resetTimer}>
                     <Text style={styles.botText}>Restablecer</Text>
