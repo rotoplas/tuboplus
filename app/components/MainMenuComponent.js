@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList, Text, View, Image, StyleSheet, TouchableHighlight} from 'react-native';
+import { FlatList, Text, View, Image, StyleSheet, TouchableHighlight, ScrollView} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Header from './Header';
 import {
@@ -20,7 +20,7 @@ class MainMenuComponent extends Component{
 				{key: '4', title:'Correspondencias', imageIcon:require('../../assets/img/icon4.png'), colors: ["#3e7bc0","#2663a9"], componentName: 'EquivalenceComponent'},
 				{key: '5', title:'Vida Útil', imageIcon:require('../../assets/img/icon5.png'), colors: ["#165585","#0e3553"], componentName: 'TimeLifeComponent'},
 				{key: '6', title:'Localiza a un distribuidor', imageIcon:require('../../assets/img/icon6.png'), colors: ["#00204d","#001431"], componentName: 'ContactformComponent'},
-				{key: '7', title:'Contáctenos', text: 'Lorem ipsum', imageIcon:require('../../assets/img/icon7.png'), colors: ["#0f0f22","#000917"], componentName: 'ContactComponent'}
+				{key: '7', title:'Contáctenos', imageIcon:require('../../assets/img/icon7.png'), colors: ["#0f0f22","#000917"], componentName: 'ContactComponent'}
 			],
 		};
 	}
@@ -47,14 +47,15 @@ class MainMenuComponent extends Component{
 
 	render() {
 		return (
-      <View style={styles.wrapperMenu}>
+
+      <ScrollView style={styles.wrapperMenu}>
 
       <Header {...this.props}/>
 
 			<FlatList data={this.state.listMenuItems}
 			  renderItem={this.renderItem}
 			/>
-      </View>
+      </ScrollView>
 		);
 	}
 }

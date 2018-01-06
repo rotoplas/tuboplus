@@ -159,12 +159,12 @@ export default class SlidesBenefitsComponent extends Component {
         </ScrollView>
         {/* END SECTION IMAGE */}
         {/* SECTION INDICATOR */}
-        <View
+        {/*<View
           style={[
             styles.layoutIndicator,
           ]}>
           {<View><Text style={styles.indicadorNumbers}>{`${position + 1} / ${this.props.dataSource.length}`}</Text></View>}
-        </View>
+        </View>*/}
         {/* END SECTION INDICATOR */}
       </View>
     );
