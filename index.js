@@ -29,4 +29,4 @@ const App = () => (
   </Provider>
 );
 
-AppRegistry.registerComponent('AwesomeProject', () =>  App);
+AppRegistry.registerComponent('Tuboplus', () =>  App);

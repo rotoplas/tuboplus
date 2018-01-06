@@ -71,7 +71,7 @@ class CategoriesComponent extends Component {
     <TouchableHighlight underlayColor={'transparent'} style={styles.productItem}
       onPress={() => this.props.navigation.navigate('ProductsXCategoryComponent', { category : item.key, name : item.name })}>
         <View style={styles.imageContainer}>
-            <Image style={styles.prodImage} source={item.image} />
+            <Image style={styles.prodImage} source={{uri: item.image}} />
             <Text style={styles.productName}>{item.name}</Text>
             {/*<Text style={styles.prodDescription}>{item.description}</Text>*/}
         </View>
