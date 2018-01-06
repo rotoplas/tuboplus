@@ -146,7 +146,7 @@ class TermofusionComponent extends Component {
                       handleFinish={handleTimerComplete}
                       getTime={this.getFormattedTime} />
                   </View>
-                </View>*/}
+                </View>
               <View>
                 <View style={styles.buttonsTermof}>
                   <TouchableHighlight style={styles.botRestablecer} underlayColor={'transparent'} onPress={this.resetTimer}>
@@ -156,7 +156,7 @@ class TermofusionComponent extends Component {
                     <Text style={styles.botText}>{!this.state.timerStart ? "Iniciar" : "Detener"}</Text>
                   </TouchableHighlight>
                 </View>
-              </View>
+              </View>*/}
               </View>
             </View>
           }
