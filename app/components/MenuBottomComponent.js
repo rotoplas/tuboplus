@@ -31,14 +31,6 @@ class MenuBottomComponent extends Component {
 
           <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
           <TouchableHighlight underlayColor={'transparent'}
-            style={this.props.navigation.state.routeName == 'TimeLifeComponent' ? styles.activeItem : styles.inactiveItem}
-            onPress={() => this.props.navigation.state.routeName == 'TimeLifeComponent' ? () => {return false} : this.navigateTo('EquivalenceComponent', 'Catálogo')}>
-              <Image style={styles.iconItem} source={require('../../assets/img/icon5.png')}/>
-           </TouchableHighlight>
-          </LinearGradient>
-
-          <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
-          <TouchableHighlight underlayColor={'transparent'}
 	          style={this.props.navigation.state.routeName == 'EquivalenceComponent' ? styles.activeItem : styles.inactiveItem}
 						onPress={() => this.props.navigation.state.routeName == 'EquivalenceComponent' ? () => {return false} : this.navigateTo('EquivalenceComponent', 'Catálogo')}>
               <Image style={styles.iconItem} source={require('../../assets/img/icon4.png')}/>
@@ -50,6 +42,14 @@ class MenuBottomComponent extends Component {
 	          style={this.props.navigation.state.routeName == 'TermofusionComponent' ? styles.activeItem : styles.inactiveItem}
 						onPress={() => this.props.navigation.state.routeName == 'TermofusionComponent' ? () => {return false} : this.navigateTo('TermofusionComponent', 'Correspondencias')}>
               <Image style={styles.iconItem} source={require('../../assets/img/icon3.png')}/>
+           </TouchableHighlight>
+          </LinearGradient>
+
+          <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
+          <TouchableHighlight underlayColor={'transparent'}
+            style={this.props.navigation.state.routeName == 'TimeLifeComponent' ? styles.activeItem : styles.inactiveItem}
+            onPress={() => this.props.navigation.state.routeName == 'TimeLifeComponent' ? () => {return false} : this.navigateTo('TimeLifeComponent', 'Catálogo')}>
+              <Image style={styles.iconItem} source={require('../../assets/img/icon5.png')}/>
            </TouchableHighlight>
           </LinearGradient>
 

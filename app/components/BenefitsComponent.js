@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: 'transparent',
       },
     titBenefits:{
       fontFamily: 'Signika-Bold',
@@ -107,6 +108,7 @@ const styles = StyleSheet.create({
         marginLeft: '4%',
         marginRight: '4%',
         paddingBottom: '60%',
+        backgroundColor: 'transparent',
       },
       cargando:{
       backgroundColor: 'transparent',

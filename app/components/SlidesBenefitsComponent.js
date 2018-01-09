@@ -159,12 +159,12 @@ export default class SlidesBenefitsComponent extends Component {
         </ScrollView>
         {/* END SECTION IMAGE */}
         {/* SECTION INDICATOR */}
-        {/*<View
+        <View
           style={[
             styles.layoutIndicator,
           ]}>
           {<View><Text style={styles.indicadorNumbers}>{`${position + 1} / ${this.props.dataSource.length}`}</Text></View>}
-        </View>*/}
+        </View>
         {/* END SECTION INDICATOR */}
       </View>
     );
@@ -172,7 +172,6 @@ export default class SlidesBenefitsComponent extends Component {
 }
 
 SlidesBenefitsComponent.defaultProps = {
-  height: 350,
   indicatorSize: 8,
   indicatorColor: '#CCCCCC',
   indicatorSelectedColor: '#FFFFFF',
@@ -205,7 +204,7 @@ SlidesBenefitsComponent.propTypes = {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    backgroundColor: '#ffffff',
+    backgroundColor: 'transparent',
   },
   layoutIndicator: {
     height: 15,
@@ -233,11 +232,11 @@ const styles = StyleSheet.create({
   },
   overlay: {
     opacity: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: 'transparent',
   },
   imageSlider:{
-    width:350,
-    height:350,
+    width:400,
+    height:400,
     },
   layoutText: {
     position: 'absolute',
