@@ -40,7 +40,7 @@ export default class SelectVidaUtil extends Component {
             transparent = {true}
             backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
             indicatorIcon = {<View style={styles.selectIconContainer}><Icon style={styles.selectIcon} name='angle-down'></Icon></View>}
-            optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999',height:600 }}
+            optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999',height:400 }}
           >
           <Option value = '200081'>200081</Option>
           <Option value = '200082'>200082</Option>
