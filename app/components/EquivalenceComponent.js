@@ -67,7 +67,7 @@ class EquivalenceComponent extends Component{
 
 				const sections = [
 	          {
-	            title: 'Equivalencias',
+	            title: 'Correspondencia',
 	            content:
 	              <View style={styles.content}>
 											<Table1 dataTable={this.state.dataTable}
@@ -80,7 +80,7 @@ class EquivalenceComponent extends Component{
 				view = (<View>
 									<Text style={styles.titCorresp}>Correspondencia</Text>
 
-									 <View style={styles.corresptBox}>
+									  {/* <View style={styles.corresptBox}>
 										<Text style={styles.titCorrespBox}>Ingresa datos</Text>
 										 <View style={styles.selectContainer}>
 											<View style={styles.selectCorrespond}>
@@ -117,8 +117,8 @@ class EquivalenceComponent extends Component{
 														<Option key={item.key} value={item.key}>{item.innerRight}</Option>
 													))}
 												</Select>
-											</View>
-										</View>
+											</View> 
+										</View> 
 										<TouchableHighlight underlayColor={'transparent'}
 											onPress={() => {
 												if(this.state.lastSelect != 0){
@@ -140,14 +140,20 @@ class EquivalenceComponent extends Component{
 											<LinearGradient colors={["#1a4585","#012d6c"]} style={styles.butCorresp}>
 												<Text style={styles.txtBut}>Correspondencia</Text>
 											</LinearGradient>
-										</TouchableHighlight>
-									</View>
+										</TouchableHighlight> 
+									</View> 
 
 									<View style={styles.textContainer}>
-									 {/*<Text style={styles.textIntro}>{ this.state.equivalencePayload.description }</Text>*/}
-									</View>
+									 <Text style={styles.textIntro}>{ this.state.equivalencePayload.description }</Text>
+									</View> */}
 
-									<AccordionProductComponent sections={sections} activeItem={0} />
+                  <View style={styles.tableCorrespond}>
+
+									<Table1 dataTable={this.state.dataTable}
+                          titleLeft="Milímetros"
+                          titleRight="Pulgadas"/>
+                  </View>
+
 								</View>);
 			}
 			return (
@@ -246,6 +252,7 @@ const styles = StyleSheet.create({
       fontSize: 18,
       color:'#515253',
       marginTop:30,
+      marginBottom:30,
       },
     titCorrespBox:{
       fontFamily: 'Signika-Bold',
@@ -328,6 +335,10 @@ const styles = StyleSheet.create({
       cargando:{
     flex: 1,
       backgroundColor: 'transparent',
+    },
+    tableCorrespond: {
+      marginLeft: 10,
+      marginRight: 10,
     },
 });
 

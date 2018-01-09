@@ -31,6 +31,14 @@ class MenuBottomComponent extends Component {
 
           <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
           <TouchableHighlight underlayColor={'transparent'}
+            style={this.props.navigation.state.routeName == 'TimeLifeComponent' ? styles.activeItem : styles.inactiveItem}
+            onPress={() => this.props.navigation.state.routeName == 'TimeLifeComponent' ? () => {return false} : this.navigateTo('EquivalenceComponent', 'Catálogo')}>
+              <Image style={styles.iconItem} source={require('../../assets/img/icon5.png')}/>
+           </TouchableHighlight>
+          </LinearGradient>
+
+          <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
+          <TouchableHighlight underlayColor={'transparent'}
 	          style={this.props.navigation.state.routeName == 'EquivalenceComponent' ? styles.activeItem : styles.inactiveItem}
 						onPress={() => this.props.navigation.state.routeName == 'EquivalenceComponent' ? () => {return false} : this.navigateTo('EquivalenceComponent', 'Catálogo')}>
               <Image style={styles.iconItem} source={require('../../assets/img/icon4.png')}/>
@@ -77,7 +85,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   	},
   iconItemContenainer: {
-    width: '20%',
+    width: '16.666%',
     },
   inactiveItem:{
     borderRightColor: '#ffffff',

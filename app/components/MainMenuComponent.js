@@ -68,9 +68,9 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.4,
     shadowRadius: 5,
-    paddingTop: "4.8%",
+    paddingTop: "5.5%",
     paddingLeft: "14%",
-    paddingBottom: "4.8%",
+    paddingBottom: "5.5%",
     flexDirection: 'row',
   },
   iconItem:{
