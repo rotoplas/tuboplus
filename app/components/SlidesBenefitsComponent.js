@@ -223,20 +223,20 @@ const styles = StyleSheet.create({
     margin: 3,
     opacity: 0.9
   },
-  indicatorSelected: {
-    opacity: 1,
-  },
   containerImage : {
     flex: 1,
-    width: '100%',
+    width: Dimensions.get('window').width,
+  },
+  indicatorSelected: {
+    opacity: 1,
   },
   overlay: {
     opacity: 1,
     backgroundColor: 'transparent',
   },
   imageSlider:{
-    width:400,
-    height:400,
+    width:385,
+    height:370,
     },
   layoutText: {
     position: 'absolute',
@@ -246,6 +246,7 @@ const styles = StyleSheet.create({
     right: 0,
     flexDirection: 'row',
     backgroundColor: 'transparent',
+    width:380,
   },
   textTitle: {
     fontWeight: 'bold',

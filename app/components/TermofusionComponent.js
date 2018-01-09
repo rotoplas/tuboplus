@@ -116,7 +116,7 @@ class TermofusionComponent extends Component {
                         transparent = {true}
                         backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
                         indicatorIcon = {<View style={styles.selectIconContainer}><Icon style={styles.selectIcon} name='angle-down'></Icon></View>}
-                        optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999' }}>
+                        optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999', height:360, }}>
                       {this.state.termofusionPayload.filters.map((item) => (
                         <Option key={item.key} value={item.key}>{item.value}</Option>
                       ))}

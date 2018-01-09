@@ -30,7 +30,7 @@ export default class SelectImput extends Component {
             transparent = {true}
             backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
             indicatorIcon = {<View style={styles.selectIconContainer}><Icon style={styles.selectIcon} name='angle-down'></Icon></View>}
-            optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999' }}>
+            optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999'}}>
           {this.props.options.map((item) => (
             <Option key={item.key} value={item.key}>{item.value}</Option>
           ))}
@@ -54,5 +54,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: '#999999',
     width: '100%',
-  }
+  },
+
 });

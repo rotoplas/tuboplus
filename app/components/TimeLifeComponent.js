@@ -77,7 +77,7 @@ class TimeLifeComponent extends Component {
 											transparent = {true}
 											backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
 											indicatorIcon = {<View style={styles.selectIconContainer}><Icon style={styles.selectIcon} name='angle-down'></Icon></View>}
-											optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999' }}>
+											optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999', height: 580 }}>
 										{this.state.timeLifePayload.filters.map((item) => (
 											<Option key={item.key} value={item.key}>{item.value}</Option>
 										))}
@@ -87,7 +87,7 @@ class TimeLifeComponent extends Component {
 					      <View style={styles.tableContainer} >
 									<Table1 dataTable={this.state.dataTable}
 										titleLeft="años de Servicio"
-										titleRight="Presión de servicio (kg/cm²) Tuboplus Fortech-CT® SDR 7.4"/>
+										titleRight="Presión de servicio (kg/cm²)"/>
 					      </View>
 			      </View>;
 		}
