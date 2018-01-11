@@ -72,7 +72,7 @@ class TermofusionComponent extends Component {
     });
   }
 
-  toggleTimer() {
+   toggleTimer() {
 		 this.setState({timerStart: !this.state.timerStart, timerReset: false});
 	 }
 
@@ -92,7 +92,7 @@ class TermofusionComponent extends Component {
 			 this.currentTime = time;
 	 };
 
-   onChangeView(e){
+   onChangeView(e) {
      this.props.navigation.navigate('StepInfoSingleComponent', { step : e.image.key });
    }
 
@@ -100,6 +100,7 @@ class TermofusionComponent extends Component {
     if(this.state.isLoading){
       view = <Text style={styles.cargando}> Cargando... </Text>;
     } else {
+
       const sections = [
           {
             title: 'Tiempos de calentamiento para la termofusión',
@@ -124,15 +125,15 @@ class TermofusionComponent extends Component {
                   </View>
               </View>
               <View>
-                {this.state.keysDT.map((item, key) =>
-                  <View key={key} style={styles.textsTermof}>
-                      <Text style={styles.text1}>{`${item}`}</Text>
-                      <Text style={styles.text2}>{`${this.state.dataTable[0][item]}`}</Text>
-                  </View>
-                )}
+                {this.state.keysDT
+                  .filter(value => value !== "id" && value !== "tiempo_cronometro" && value !== "titulo")
+                  .map((value, key) => (<View key={key}  style={styles.textsTermof}>
+                                            <Text style={styles.text1} >{`${value}`.replace("_", " ")}</Text>
+                                            <Text style={styles.text2}>{`${this.state.dataTable[0][value]}`}</Text>
+                                        </View>))}
               </View>
               <View>
-              {/*<View style={styles.titContainerCron}>
+              <View style={styles.titContainerCron}>
                   <Text style={styles.titCronometro}>Timer (crónometro en reversa)</Text>
               </View>
                 <View>
@@ -143,20 +144,24 @@ class TermofusionComponent extends Component {
                       start={this.state.timerStart}
                       reset={this.state.timerReset}
                       options={options}
-                      handleFinish={handleTimerComplete}
-                      getTime={this.getFormattedTime} />
+                      laps={false}
+                      handleFinish={() => this.setState({timerStart: false, timerReset: true})}/>
                   </View>
                 </View>
               <View>
                 <View style={styles.buttonsTermof}>
-                  <TouchableHighlight style={styles.botRestablecer} underlayColor={'transparent'} onPress={this.resetTimer}>
+                  <TouchableHighlight style={styles.botRestablecer}
+                  underlayColor={'transparent'}
+                  onPress={this.resetTimer}>
                     <Text style={styles.botText}>Restablecer</Text>
                   </TouchableHighlight>
-                  <TouchableHighlight style={styles.botIniciar} underlayColor={'transparent'} onPress={this.toggleTimer}>
+                  <TouchableHighlight style={styles.botIniciar}
+                  underlayColor={'transparent'}
+                  onPress={this.toggleTimer}>
                     <Text style={styles.botText}>{!this.state.timerStart ? "Iniciar" : "Detener"}</Text>
                   </TouchableHighlight>
                 </View>
-              </View>*/}
+              </View>
               </View>
             </View>
           }
@@ -178,7 +183,7 @@ class TermofusionComponent extends Component {
     <View style={styles.wrapperAll} >
 
       <ScrollView style={styles.wrapperProducts}
-      overScrollMode={"auto"}
+                  overScrollMode={"auto"}
 									showsVerticalScrollIndicator={false}
 									bounces={false}>
 
@@ -307,7 +312,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Signika-Regular',
         fontSize: 14,
         color: '#2f75b7',
-        },
+      },
       text2:{
         width: '30%',
         fontFamily: 'Signika-Regular',
@@ -315,8 +320,6 @@ const styles = StyleSheet.create({
         color: '#666666',
       }
 });
-
-const handleTimerComplete = () => alert("custom completion function");
 
 const options = {
   container: {

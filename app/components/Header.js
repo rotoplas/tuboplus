@@ -57,101 +57,88 @@ class Header extends Component{
 
       colors = ["#82e7ff","#5dc1d9"];
 
-      btnMenu =
+      btnMenu =(<View style={styles.displayMeneu}>
+									<TouchableHighlight underlayColor={'transparent'}
+												onPress={() => this.navigateTo()}>
+											<Image style={{width: 6, resizeMode: Image.resizeMode.contain}}  source={require('../../assets/img/menu-open.png')} />
+										</TouchableHighlight>
+								</View>);
 
-        <View style={styles.displayMeneu}>
-          <TouchableHighlight underlayColor={'transparent'}
-                onPress={() => this.navigateTo()}>
-              <Image style={{width: 6, resizeMode: Image.resizeMode.contain}}  source={require('../../assets/img/menu-open.png')} />
-            </TouchableHighlight>
-        </View>;
-
-        btnSearch =
-
-        <View style={styles.iconView} style={styles.iconView}>
-          <TouchableHighlight underlayColor={'transparent'}
-                onPress={() => this.props.navigation.goBack()}>
-                    <Icon name='arrow-left' style={styles.iconSearch}></Icon>
-            </TouchableHighlight>
-        </View>;
+        btnSearch = (<View style={styles.iconView} style={styles.iconView}>
+							          <TouchableHighlight underlayColor={'transparent'}
+							                onPress={() => this.props.navigation.goBack()}>
+							                    <Icon name='arrow-left' style={styles.iconSearch}></Icon>
+							            </TouchableHighlight>
+							        </View>);
 
     } else {
 				colors = ["#254067","#011d44"];
-        btnMenu =
+        btnMenu = (<View style={styles.displayMeneu}>
+						          <TouchableHighlight underlayColor={'transparent'}
+						                onPress={() => this.navigateTo()}>
+						              <Image style={{width: 6, resizeMode: Image.resizeMode.contain}}  source={require('../../assets/img/menu-open.png')} />
+						            </TouchableHighlight>
+						        </View>);
 
-        <View style={styles.displayMeneu}>
-          <TouchableHighlight underlayColor={'transparent'}
-                onPress={() => this.navigateTo()}>
-              <Image style={{width: 6, resizeMode: Image.resizeMode.contain}}  source={require('../../assets/img/menu-open.png')} />
-            </TouchableHighlight>
-        </View>;
-
-        btnSearch =
-
-        <View style={styles.iconView} style={styles.iconView}>
-          <TouchableHighlight underlayColor={'transparent'}
-                onPress={() => this.props.navigation.goBack()}>
-                    <Icon name='arrow-left' style={styles.iconSearch}></Icon>
-            </TouchableHighlight>
-        </View>;
+        btnSearch = (<View style={styles.iconView} style={styles.iconView}>
+							          <TouchableHighlight underlayColor={'transparent'}
+							                onPress={() => this.props.navigation.goBack()}>
+							                    <Icon name='arrow-left' style={styles.iconSearch}></Icon>
+							            </TouchableHighlight>
+							        </View>);
 		}
+
 		var searchInput;
 		var headerView;
 
 		    if (this.state.visible == true){
+		      searchInput = (<View>
+														<LinearGradient colors={["#23a7df","#0186be"]} style={styles.wrapperInner} >
+													      <TextField style={styles.inputSearch}
+													        value={this.state.text}
+													        label=''
+													        placeholder={this.state.placeholder}
+																	onChangeText={(text) => this.setState({text})}/>
 
-		      searchInput =
+													      <TouchableHighlight
+																underlayColor={'transparent'}
+																style={styles.arrowSearch}
+													                onPress={this.onClickedArrow}>
+													                 <Image source={require('../../assets/img/searchArrow.png')} />
+													      </TouchableHighlight>
 
-			        <LinearGradient colors={["#23a7df","#0186be"]} style={styles.wrapperInner} >
-				      <TextField style={styles.inputSearch}
-				        value={this.state.text}
-				        label=''
-				        placeholder={this.state.placeholder}
-								onChangeText={(text) => this.setState({text})}
-				      />
-
-
-				      <TouchableHighlight underlayColor={'transparent'} style={styles.arrowSearch}
-				                onPress={this.onClickedArrow}>
-				                 <Image source={require('../../assets/img/searchArrow.png')} />
-				      </TouchableHighlight>
-
-							<TouchableHighlight underlayColor={'transparent'} style={styles.butSearch}
-											 onPress={() => this.onClickedSearchProduct()}>
-												<Icon name='search' style={styles.iconSearch}></Icon>
-						 </TouchableHighlight>
-
-							</LinearGradient>
-
-
-		    }
-		    else{
+																<TouchableHighlight
+																underlayColor={'transparent'}
+																style={styles.butSearch}
+																				 onPress={() => this.onClickedSearchProduct()}>
+																					<Icon name='search' style={styles.iconSearch}></Icon>
+															 </TouchableHighlight>
+														</LinearGradient>
+													</View>);
+		    } else {
 		      headerView =
+					<LinearGradient style={styles.wrapperHeader} colors={colors} >
 
-		          <LinearGradient style={styles.wrapperHeader} colors={colors} >
+						{ btnSearch }
 
-					{ btnSearch }
+						<View style={styles.logo}>
+	            <TouchableHighlight underlayColor={'transparent'}
+	                        onPress={this.navigateGoHome}>
+							  <Image style={{width: 140, resizeMode: Image.resizeMode.contain}}  source={require('../../assets/img/logo.png')} />
+	            </TouchableHighlight>
+						</View>
 
-					<View style={styles.logo}>
-            <TouchableHighlight underlayColor={'transparent'}
-                        onPress={this.navigateGoHome}>
-						  <Image style={{width: 140, resizeMode: Image.resizeMode.contain}}  source={require('../../assets/img/logo.png')} />
-            </TouchableHighlight>
-					</View>
+						{ btnMenu }
 
-					{ btnMenu }
-
-				</LinearGradient>
-
-
+					</LinearGradient>;
 		    }
 
 		return (
     <View>
 
-		{ headerView }
+			{ headerView }
 
-		{ searchInput }
+			{ searchInput }
 
     </View>
 		);

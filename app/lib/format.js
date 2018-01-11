@@ -43,7 +43,12 @@ class FormatUtil {
                 equivalence : rawData[0].hasOwnProperty('correspondencias') ? this.toEquivalence(rawData[0].correspondencias) : [],
                 //plane : rawData[0].hasOwnProperty('planos') ? { url : rawData[0].planos } : null,
                 plane : rawData[0].hasOwnProperty('planos') ? rawData[0].planos : null,
-                codes : rawData[0].hasOwnProperty('codigos') ? this.toCode(rawData[0].codigos) : []
+                codes : rawData[0].hasOwnProperty('codigos') ? [
+                  {
+                    labels: rawData[0].codigos[0].listado,
+                    values: this.toTable3(rawData[0].codigos)
+                  }
+                ] : []
             };
           } catch (err) {
               console.log(err);
@@ -266,6 +271,21 @@ class FormatUtil {
                       out.push({
                         key : rawData[key].hasOwnProperty('id') ? rawData[key].id : this.makeid(),
                         values: rawData[key].hasOwnProperty('listado') && rawData[key].hasOwnProperty('valor') ? rawData[key].listado.map((val, idx) => { return { key : idx, innerLeft : val, innerRight : rawData[key].valor[idx] } }) : []
+                      });
+            return out;
+          }, []);
+        } catch (err) {
+            console.log(err);
+            return [];
+        }
+  }
+
+  static toTable3(rawData) {
+        try {
+            return Object.keys(rawData).reduce((out, key) => {
+                      out.push({
+                        key : rawData[key].hasOwnProperty('id') ? rawData[key].id : this.makeid(),
+                        items : rawData[key].hasOwnProperty('listado') && rawData[key].hasOwnProperty('valor') ? rawData[key].listado.map((val, idx) => { return { key : idx,  valor: rawData[key].valor[idx] } }) : []
                       });
             return out;
           }, []);

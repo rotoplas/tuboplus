@@ -9,7 +9,7 @@ import AccordionProductComponent from './AccordionProductComponent';
 import MenuBottomComponent from './MenuBottomComponent';
 import FormatUtil from '../lib/format';
 import Table1 from './Table1';
-import Table2 from './Table2';
+import Table3 from './Table3';
 import SelectPlanosComponent from './SelectPlanosComponent';
 
 class ProductComponent extends Component{
@@ -19,12 +19,10 @@ class ProductComponent extends Component{
     this.state = {
       isLoading: true,
       productPayload: [],
-      selected : null,
       options: [],
       dataTable: []
     };
   }
-
 
   componentDidMount() {
     this.initialFetch();
@@ -35,11 +33,10 @@ class ProductComponent extends Component{
     this.props.screenProps.fetchProduct(this.props.navigation.state.params.category, this.props.navigation.state.params.product).then((res) => {
       let productPayload = FormatUtil.toProductPayload(this.props.searchedProduct);
       let options = FormatUtil.toFilter(this.props.searchedProduct[0].codigos);
-      let dataTable = productPayload.codes[0].values;
+      let dataTable = productPayload.codes[0];
       this.setState({
         productPayload : productPayload,
         isLoading : false,
-        selected : this.props.searchedProduct[0].codigos[0].id,
         options : options,
         dataTable : dataTable
       });
@@ -48,11 +45,6 @@ class ProductComponent extends Component{
         this.setState({ isLoading : false });
     });
   };
-
-  onSelect(value, label) {
-    let ndataTable = this.state.productPayload.codes.filter(data => data.key == value);
-    this.setState({dataTable : ndataTable[0].values, selected : label});
-  }
 
   static navigationOptions = {};
 
@@ -66,7 +58,8 @@ class ProductComponent extends Component{
             content:
               <View style={styles.content}>
                 <Text style={styles.titleTable}>Equivalencias</Text>
-                <Table1 dataTable={this.state.productPayload.equivalence}
+                <Table1
+                  dataTable={this.state.productPayload.equivalence}
                   titleLeft="Milímetros (mm)"
                   titleRight="Pulgadas (”)"/>
               </View>
@@ -78,7 +71,8 @@ class ProductComponent extends Component{
                 style={{width: '100%', height:250, resizeMode: Image.resizeMode.contain}}
                 source={{uri: this.state.productPayload.plane}} />
 
-              <Table2 dataTable={this.state.dataTable}/>
+              {<Table3 labels={this.state.dataTable.labels}
+                      values={this.state.dataTable.values}/>}
             </View>
           }
       ];
@@ -94,8 +88,6 @@ class ProductComponent extends Component{
                 <View style={styles.imgContent}>
                   <Image style={styles.imgProd}  source={{uri: this.state.productPayload.image}} />
                 </View>
-
-                {/*<Text style={styles.introContainer}>{ this.state.productPayload.description }</Text>*/}
 
                 <AccordionProductComponent sections={sections} activeItem={-1}/>
             </View>);
