@@ -114,14 +114,6 @@ class ProductComponent extends Component{
 
         <Header {...this.props}/>
 
-
-        <TouchableHighlight
-        onPress={() => this.props.navigation.goBack()}>
-          <View>
-            <Text> Volver </Text>
-          </View>
-        </TouchableHighlight>
-
         { view }
 
         <View style={styles.space}></View>

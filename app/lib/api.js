@@ -30,7 +30,6 @@ class Api {
     const host = "http://35.168.212.248/wp-json/servicios";
     const url = `${host}${route}`;
 
-    console.log("Ruta",url);
     let options = Object.assign({ method: verb }, params ? { body: JSON.stringify(params) } : null );
     options.headers = Api.headers();
     return fetch(url, options).then( resp => {
@@ -43,7 +42,6 @@ class Api {
   }
 
   static xhrPost(route, params, verb) {
-    console.log("params", params);
     const url = "http://35.168.212.248/wp-json/servicios/guardar-datos-formularios";
     //let options = Object.assign({ method: verb }, params ? { body: JSON.stringify(params) } : null );
 
@@ -58,7 +56,6 @@ class Api {
        headers: Api.headers(),
        body: formData
     };
-    //options.headers = Api.headers();
 
     return fetch(url, request).then( resp => {
       let json = resp.json();

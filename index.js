@@ -7,7 +7,7 @@ import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 
 import AppContainer from './AppContainer';
-import reducer from './App/reducers';
+import reducer from './app/reducers';
 
 const loggerMiddleware = createLogger({ predicate : (getState, action) => __DEV__ });
 
