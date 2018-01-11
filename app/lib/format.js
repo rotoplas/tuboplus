@@ -38,9 +38,11 @@ class FormatUtil {
                 title : rawData[0].hasOwnProperty('titulo') ?  rawData[0].titulo : "",
                 category : rawData[0].hasOwnProperty('categoria') ?  rawData[0].categoria : "",
                 description : rawData[0].hasOwnProperty('descripcion') ?  rawData[0].descripcion : "",
-                image : rawData[0].hasOwnProperty('img_tablet') && rawData[0].hasOwnProperty('img_movil') ? DeviceInfo.isTablet() ? { 'url' : rawData[0].img_tablet } : { 'url' : rawData[0].img_movil } : null,
+                //image : rawData[0].hasOwnProperty('img_tablet') && rawData[0].hasOwnProperty('img_movil') ? DeviceInfo.isTablet() ? { 'url' : rawData[0].img_tablet } : { 'url' : rawData[0].img_movil } : null,
+                image: rawData[0].hasOwnProperty('img_tablet') && rawData[0].hasOwnProperty('img_movil') ? DeviceInfo.isTablet() ? rawData[0].img_tablet : rawData[0].img_movil : null,
                 equivalence : rawData[0].hasOwnProperty('correspondencias') ? this.toEquivalence(rawData[0].correspondencias) : [],
-                plane : rawData[0].hasOwnProperty('planos') ? { url : rawData[0].planos } : null,
+                //plane : rawData[0].hasOwnProperty('planos') ? { url : rawData[0].planos } : null,
+                plane : rawData[0].hasOwnProperty('planos') ? rawData[0].planos : null,
                 codes : rawData[0].hasOwnProperty('codigos') ? this.toCode(rawData[0].codigos) : []
             };
           } catch (err) {
@@ -196,7 +198,8 @@ class FormatUtil {
                         name: rawData[key].hasOwnProperty('titulo') ? rawData[key].titulo : "",
                         description: rawData[key].hasOwnProperty('descripcion') ? rawData[key].descripcion : "",
                         category: rawData[key].hasOwnProperty('idCat') ? rawData[key].idCat : 0,
-                        image: rawData[key].hasOwnProperty('img_tablet') && rawData[key].hasOwnProperty('img_movil') ? DeviceInfo.isTablet() ? { url : rawData[key].img_tablet } : { url : rawData[key].img_movil } : null
+                        //image: rawData[key].hasOwnProperty('img_tablet') && rawData[key].hasOwnProperty('img_movil') ? DeviceInfo.isTablet() ? { url : rawData[key].img_tablet } : { url : rawData[key].img_movil } : null
+                        image: rawData[key].hasOwnProperty('img_tablet') && rawData[key].hasOwnProperty('img_movil') ? DeviceInfo.isTablet() ? rawData[key].img_tablet : rawData[key].img_movil : null
                       });
             return out;
           }, []);

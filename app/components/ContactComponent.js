@@ -146,11 +146,13 @@ const styles = StyleSheet.create({
     },
     imgContent: {
       flexDirection: 'row',
+      width: '100%',
     },
     imgContact:{
       flex: 1,
       resizeMode: Image.resizeMode.contain,
       height: 290,
+      width: '100%',
       },
     contactBox1:{
       backgroundColor: '#ffffff',

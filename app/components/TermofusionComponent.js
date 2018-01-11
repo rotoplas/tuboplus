@@ -116,7 +116,7 @@ class TermofusionComponent extends Component {
                         transparent = {true}
                         backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
                         indicatorIcon = {<View style={styles.selectIconContainer}><Icon style={styles.selectIcon} name='angle-down'></Icon></View>}
-                        optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999' }}>
+                        optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999', height:360, }}>
                       {this.state.termofusionPayload.filters.map((item) => (
                         <Option key={item.key} value={item.key}>{item.value}</Option>
                       ))}
@@ -132,10 +132,9 @@ class TermofusionComponent extends Component {
                 )}
               </View>
               <View>
-              <View style={styles.titContainerCron}>
+              {/*<View style={styles.titContainerCron}>
                   <Text style={styles.titCronometro}>Timer (crónometro en reversa)</Text>
               </View>
-              <View>
                 <View>
                   <View style={styles.timerContainer}>
                   <Timer
@@ -148,6 +147,7 @@ class TermofusionComponent extends Component {
                       getTime={this.getFormattedTime} />
                   </View>
                 </View>
+              <View>
                 <View style={styles.buttonsTermof}>
                   <TouchableHighlight style={styles.botRestablecer} underlayColor={'transparent'} onPress={this.resetTimer}>
                     <Text style={styles.botText}>Restablecer</Text>
@@ -156,7 +156,7 @@ class TermofusionComponent extends Component {
                     <Text style={styles.botText}>{!this.state.timerStart ? "Iniciar" : "Detener"}</Text>
                   </TouchableHighlight>
                 </View>
-              </View>
+              </View>*/}
               </View>
             </View>
           }

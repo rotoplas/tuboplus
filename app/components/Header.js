@@ -16,6 +16,7 @@ class Header extends Component{
         };
         this.onClickedIcon = this.onClickedIcon.bind(this);
         this.onClickedArrow = this.onClickedArrow.bind(this);
+        this.navigateGoHome = this.navigateGoHome.bind(this);
 	}
 
 	onClickedIcon() {
@@ -30,6 +31,10 @@ class Header extends Component{
     }
 
 	componentDidMount() {}
+
+  navigateGoHome = () => {
+    this.props.navigation.navigate('MainMenuComponent', { category : "Menú principal" });
+  }
 
 	navigateTo = () => {
 		this.props.navigation.navigate('MainMenuComponent', { category : "Menú principal" });
@@ -128,7 +133,10 @@ class Header extends Component{
 					{ btnSearch }
 
 					<View style={styles.logo}>
-						<Image style={{width: 140, resizeMode: Image.resizeMode.contain}}  source={require('../../assets/img/logo.png')} />
+            <TouchableHighlight underlayColor={'transparent'}
+                        onPress={this.navigateGoHome}>
+						  <Image style={{width: 140, resizeMode: Image.resizeMode.contain}}  source={require('../../assets/img/logo.png')} />
+            </TouchableHighlight>
 					</View>
 
 					{ btnMenu }

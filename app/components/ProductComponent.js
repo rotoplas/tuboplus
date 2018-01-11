@@ -76,25 +76,8 @@ class ProductComponent extends Component{
             <View style={styles.contentPlano}>
               <Image
                 style={{width: '100%', height:250, resizeMode: Image.resizeMode.contain}}
-                source={this.state.productPayload.image} />
-              <View style={styles.filterBy}>
-                <View style={styles.containerSelect}>
-                  <Select
-                      onSelect = {this.onSelect.bind(this)}
-                      defaultText  = {this.state.selected}
-                      style = {{borderColor : 'transparent', backgroundColor : 'transparent', width: '100%'}}
-                      textStyle = {{color: '#999999'}}
-                      animationType = {'fade'}
-                      transparent = {true}
-                      backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
-                      indicatorIcon = {<View style={styles.selectIconContainer}><Icon style={styles.selectIcon} name='angle-down'></Icon></View>}
-                      optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999' }}>
-                    {this.state.options.map((item) => (
-                      <Option key={item.key} value={item.key}>{item.value}</Option>
-                    ))}
-                  </Select>
-                </View>
-              </View>
+                source={{uri: this.state.productPayload.plane}} />
+
               <Table2 dataTable={this.state.dataTable}/>
             </View>
           }
@@ -109,7 +92,7 @@ class ProductComponent extends Component{
                 </View>
 
                 <View style={styles.imgContent}>
-                  <Image style={styles.imgProd}  source={ this.state.productPayload.image } />
+                  <Image style={styles.imgProd}  source={{uri: this.state.productPayload.image}} />
                 </View>
 
                 {/*<Text style={styles.introContainer}>{ this.state.productPayload.description }</Text>*/}
