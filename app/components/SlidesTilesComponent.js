@@ -144,7 +144,7 @@ export default class SlidesTilesComponent extends Component {
 
             const textComponent = (
               <View style={styles.layoutText}>
-                {image.caption === undefined ? null : <Text style={styles.textCaption}>{image.caption}</Text>}
+                {image.caption === undefined ? null : <Text style={styles.textCaption}>{image.captionLarge}</Text>}
               </View>
             );
 
@@ -232,36 +232,47 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     marginTop: 20,
   },
-  indicatorText:{
+  indicadorNumbers:{
     fontFamily: 'Signika-Bold',
-    fontSize: 16,
-    color: '#2f75b7',
+    fontSize: 18,
+    color: '#ffffff',
     },
   indicator: {
     margin: 3,
     opacity: 0.9
   },
+  containerImage : {
+    width: Dimensions.get('window').width,
+  },
   indicatorSelected: {
     opacity: 1,
   },
-  containerImage : {
-    flex: 1,
-    width: Dimensions.get('window').width,
-  },
   overlay: {
+    width: Dimensions.get('window').width,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
     opacity: 1,
-    backgroundColor: '#ffffff',
   },
+  imageSlider:{
+    width:'90%',
+    height:350,
+    backgroundColor: '#ffffff',
+    },
   layoutText: {
     position: 'absolute',
-    paddingHorizontal: 15,
-    bottom: 30,
+    bottom: 0,
     left: 0,
     right: 0,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    flexDirection: 'column',
-    backgroundColor: 'transparent',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#0075bc',
+    width:'90%',
+    marginLeft:'5%',
+    marginRight:'5%',
+    paddingTop: 5,
+    paddingBottom: 5,
   },
   textTitle: {
     fontWeight: 'bold',
@@ -269,13 +280,11 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   textCaption: {
+    width: '90%',
     fontWeight: '400',
     fontFamily: 'Signika-Bold',
-    fontSize: 14,
-    color: '#2f75b7',
-  },
-  imageSlider:{
-    width:350,
-    height:350,
-    },
+    fontSize: 16,
+    color:'#ffffff',
+    textAlign: 'center',
+  }
 });

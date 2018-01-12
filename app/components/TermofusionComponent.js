@@ -284,9 +284,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         },
       sliderTermof:{
-        width: '90%',
-        marginLeft: '5%',
-        marginRight: '5%',
+        width: '100%',
         marginBottom: 30,
       },
       titCronometro:{
