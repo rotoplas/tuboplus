@@ -56,7 +56,7 @@ class BenefitsComponent extends Component {
     <View style={styles.wrapperAll} >
 
 
-      <ScrollView 
+      <ScrollView
                   overScrollMode={"auto"}
 									showsVerticalScrollIndicator={false}
 									bounces={false}>

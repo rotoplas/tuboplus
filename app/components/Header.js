@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, Image, StyleSheet, TouchableHighlight} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+//import Icon from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
 import Search from './Search';
 import { TextField } from 'react-native-material-textfield';
@@ -13,17 +14,18 @@ class Header extends Component{
 			text: '',
       		placeholder: 'Buscar',
             visible: false,
-        };
+    };
         this.onClickedIcon = this.onClickedIcon.bind(this);
         this.onClickedArrow = this.onClickedArrow.bind(this);
         this.navigateGoHome = this.navigateGoHome.bind(this);
 	}
 
-	onClickedIcon() {
+	 onClickedIcon() {
         this.setState({
             visible: true,
         });
     }
+
     onClickedArrow() {
         this.setState({
             visible: false
@@ -50,11 +52,10 @@ class Header extends Component{
 				btnMenu = <View></View>;
 				btnSearch = <TouchableHighlight underlayColor={'transparent'} style={styles.iconSearch1}
 								onPress={this.onClickedIcon}>
-			         				<Icon name='search' style={styles.iconSearch}></Icon>
+			         				<Icon name='search' style={styles.iconSearch} size={30}></Icon>
 			      			 </TouchableHighlight>;
 
 		} else if(this.props.navigation.state.routeName == "BenefitsComponent"){
-
       colors = ["#82e7ff","#5dc1d9"];
 
       btnMenu =(<View style={styles.displayMeneu}>
@@ -67,11 +68,12 @@ class Header extends Component{
         btnSearch = (<View style={styles.iconView} style={styles.iconView}>
 							          <TouchableHighlight underlayColor={'transparent'}
 							                onPress={() => this.props.navigation.goBack()}>
-							                    <Icon name='arrow-left' style={styles.iconSearch}></Icon>
+							                    <Icon name='arrow-left' style={styles.iconSearch} size={30}></Icon>
 							            </TouchableHighlight>
 							        </View>);
 
     } else {
+
 				colors = ["#254067","#011d44"];
         btnMenu = (<View style={styles.displayMeneu}>
 						          <TouchableHighlight underlayColor={'transparent'}
@@ -80,18 +82,18 @@ class Header extends Component{
 						            </TouchableHighlight>
 						        </View>);
 
-        btnSearch = (<View style={styles.iconView} style={styles.iconView}>
+        btnSearch = (<View style={styles.iconView}>
 							          <TouchableHighlight underlayColor={'transparent'}
 							                onPress={() => this.props.navigation.goBack()}>
-							                    <Icon name='arrow-left' style={styles.iconSearch}></Icon>
+							                <Icon name='arrow-left' style={styles.iconSearch} size={30}></Icon>
 							            </TouchableHighlight>
 							        </View>);
 		}
 
 		var searchInput;
 		var headerView;
-
-		    if (this.state.visible == true){
+		//console.log("this.state -> ", this.state);
+		    if (this.state.visible){
 		      searchInput = (<View>
 														<LinearGradient colors={["#23a7df","#0186be"]} style={styles.wrapperInner} >
 													      <TextField style={styles.inputSearch}
@@ -111,7 +113,7 @@ class Header extends Component{
 																underlayColor={'transparent'}
 																style={styles.butSearch}
 																				 onPress={() => this.onClickedSearchProduct()}>
-																					<Icon name='search' style={styles.iconSearch}></Icon>
+																					<Icon name='search' style={styles.iconSearch} size={30}></Icon>
 															 </TouchableHighlight>
 														</LinearGradient>
 													</View>);
@@ -164,7 +166,7 @@ const styles = StyleSheet.create({
   iconView:{
     width: '15%',
     height: 10,
-    paddingTop: 80,
+    marginTop: 50,
     justifyContent: 'center',
     alignItems: 'center',
     },
@@ -189,7 +191,7 @@ const styles = StyleSheet.create({
   displayMeneu:{
     width: '15%',
     height: 10,
-    paddingTop: 70,
+    marginTop: 50,
     justifyContent: 'center',
     alignItems: 'center',
     },
