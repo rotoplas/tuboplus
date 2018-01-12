@@ -224,19 +224,22 @@ const styles = StyleSheet.create({
     opacity: 0.9
   },
   containerImage : {
-    flex: 1,
     width: Dimensions.get('window').width,
   },
   indicatorSelected: {
     opacity: 1,
   },
   overlay: {
+    width: Dimensions.get('window').width,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
     opacity: 1,
     backgroundColor: 'transparent',
   },
   imageSlider:{
-    width:385,
-    height:370,
+    width:'90%',
+    height:350,
     },
   layoutText: {
     position: 'absolute',
@@ -245,8 +248,11 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: 'transparent',
-    width:380,
+    width:'90%',
+    marginLeft:'4%',
   },
   textTitle: {
     fontWeight: 'bold',
@@ -254,9 +260,11 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   textCaption: {
+    width: '100%',
     fontWeight: '400',
     fontFamily: 'Signika-Bold',
     fontSize: 16,
     color:'#0075bc',
+    textAlign: 'center',
   }
 });

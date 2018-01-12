@@ -104,9 +104,7 @@ const styles = StyleSheet.create({
       backgroundColor: 'transparent',
       },
       sliderBenefits:{
-        width: '92%',
-        marginLeft: '4%',
-        marginRight: '4%',
+        width: '100%',
         paddingBottom: '60%',
         backgroundColor: 'transparent',
       },
