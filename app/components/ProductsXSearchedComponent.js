@@ -80,6 +80,8 @@ class ProductsXSearchedComponent extends Component {
 
         { view }
 
+        <View style={styles.space}></View>
+        
      </ScrollView>
      <MenuBottomComponent {...this.props} />
     </View>

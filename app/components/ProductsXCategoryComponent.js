@@ -80,9 +80,14 @@ class ProductsXCategoryComponent extends Component {
         <Header {...this.props}/>
 
         { view }
+     <View style={styles.space}></View>
 
      </ScrollView>
+
      <MenuBottomComponent {...this.props} />
+
+
+
     </View>
     );
   }
