@@ -12,6 +12,7 @@ import FormatUtil from '../lib/format';
 import MenuBottomComponent from './MenuBottomComponent';
 import SlidesTilesComponent from './SlidesTilesComponent';
 import AccordionProductComponent from './AccordionProductComponent';
+import TimerComponent from './TimerComponent';
 
 class TermofusionComponent extends Component {
 
@@ -23,7 +24,7 @@ class TermofusionComponent extends Component {
       placeholder : 'Seleccionar diámetro...' ,
       dataTable : [],
       keysDT : [],
-      totalDuration: 0,
+      totalDuration: 3900000,
       timerStart: false,
       timerReset: false,
       timerHasFinished: false,
@@ -74,13 +75,12 @@ class TermofusionComponent extends Component {
   }
 
    toggleTimer() {
-     console.log("toggleTimer");
-     if(this.state.timerHasFinished){
+     /*if(this.state.timerHasFinished){
        this.resetTimer();
        setTimeout(() => this.setState({timerStart: !this.state.timerStart, timerReset: false, timerHasFinished: false}), 1000);
-     } else {
+     } else {*/
        this.setState({timerStart: !this.state.timerStart, timerReset: false});
-     }
+    // }
 	 }
 
 	 resetTimer() {
@@ -141,8 +141,7 @@ class TermofusionComponent extends Component {
               </View>
                 <View>
                   <View style={styles.timerContainer}>
-                  <Timer
-                      hours
+                  <TimerComponent
                       totalDuration={this.state.totalDuration}
                       start={this.state.timerStart}
                       reset={this.state.timerReset}
