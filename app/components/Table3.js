@@ -66,13 +66,13 @@ const styles = StyleSheet.create({
         width:'16.6%',
         color: '#0075bc',
         fontFamily: 'Signika-Regular',
-        fontSize: 14,
+        fontSize: 12,
       },
       tit2:{
         width:'16.6%',
         color: '#0075bc',
         fontFamily: 'Signika-Regular',
-        fontSize: 14,
+        fontSize: 12,
       },
       tit3:{
         width:'16.6%',
