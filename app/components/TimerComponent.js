@@ -126,41 +126,44 @@ class TimerComponent extends Component {
 
     let formatted;
 
-    formatted = (<View>
+    formatted = (<View style={styles.timerContainer}>
+               
+                        <View>
+
                         <View>
                           <Text>{hours < 10 ? 0 : ""}{hours}</Text>
                         </View>
                         <View>
                           <Text>:</Text>
                         </View>
-                        <View>
+
 
                         <TouchableHighlight underlayColor={'transparent'}
-      												onPress={() => this.addMinute()}>
-      											<Icon name='arrow-up' size={30}></Icon>
-      										</TouchableHighlight>
+                              onPress={() => this.addMinute()}>
+                            <Icon name='arrow-up' size={30}></Icon>
+                        </TouchableHighlight>
 
-                          <Text>{minutes < 10 ? 0 : ""}{minutes}</Text>
+                          <Text style={styles.minutos}>{minutes < 10 ? 0 : ""}{minutes}</Text>
 
                           <TouchableHighlight underlayColor={'transparent'}
-        												onPress={() => this.substractMinute()}>
-        											<Icon name='arrow-down' size={30}></Icon>
-        										</TouchableHighlight>
+                                onPress={() => this.substractMinute()}>
+                              <Icon name='arrow-down' size={30}></Icon>
+                          </TouchableHighlight>
 
                         </View>
                         <View>
-                          <Text>:</Text>
+                          <Text style={styles.puntos}>:</Text>
                         </View>
                         <View>
                         <TouchableHighlight underlayColor={'transparent'}
-      												onPress={() => this.addSecond()}>
-      											<Icon name='arrow-up' size={30}></Icon>
-      										</TouchableHighlight>
-                          <Text>{seconds < 10 ? 0 : ""}{seconds}</Text>
+                              onPress={() => this.addSecond()}>
+                            <Icon name='arrow-up' size={30}></Icon>
+                          </TouchableHighlight>
+                          <Text style={styles.segundos}>{seconds < 10 ? 0 : ""}{seconds}</Text>
                           <TouchableHighlight underlayColor={'transparent'}
-        												onPress={() => this.substractSecond()}>
-        											<Icon name='arrow-down'  size={30}></Icon>
-        										</TouchableHighlight>
+                                onPress={() => this.substractSecond()}>
+                              <Icon name='arrow-down'  size={30}></Icon>
+                            </TouchableHighlight>
                         </View>
                   </View>);
 
@@ -178,5 +181,31 @@ class TimerComponent extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+    timerContainer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      },
+      minutos:{
+        fontFamily: 'Signika-Regular',
+        fontSize: 50,
+        color: '#2f75b7',
+        fontWeight: '400',
+      },
+      segundos:{
+        fontFamily: 'Signika-Regular',
+        fontSize: 50,
+        color: '#2f75b7',
+        fontWeight: '400',
+      },
+      puntos:{
+        fontFamily: 'Signika-Regular',
+        fontSize: 50,
+        color: '#2f75b7',
+        fontWeight: '400',
+        },
+  });
+
 
 export default TimerComponent;

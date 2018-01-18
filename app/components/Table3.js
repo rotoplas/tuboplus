@@ -92,6 +92,8 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
         paddingLeft: 10,
         paddingRight: 10,
+        justifyContent: 'center',
+        alignItems:'center',
       },
 			tableTitle2:{
         backgroundColor: 'transparent',

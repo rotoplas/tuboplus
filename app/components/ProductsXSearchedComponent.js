@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput, TouchableHighlight } from 'react-native';
+import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput, TouchableHighlight, Dimensions } from 'react-native';
 import Slideshow from 'react-native-slideshow';
 import { connect } from 'react-redux';
 
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
     },
     imageContainer:{
       width: '100%',
-      height: 250,
+      height: Dimensions.get('window').width  / 2,
     },
     prodImage:{
       width: '100%',
