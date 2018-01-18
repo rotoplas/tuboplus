@@ -16,46 +16,38 @@ class Table3 extends Component{
 		return (
 			<View style={styles.table}>
 
-
       <View style={styles.tableCod}>
 
 			<LinearGradient colors={["#deecfd","#c4d2e3"]} style={styles.tableTitle}>
 					<Text style={styles.tit1}>{`Código`}</Text>
 			</LinearGradient>
 
-
-
-        <FlatList keyExtractor={this.keyExtractor} 
+        <FlatList keyExtractor={this.keyExtractor}
 									data={this.props.values}
         	renderItem={({item}) =>
                 <View style={styles.tableTexts}>
                   <Text style={styles.tit5}>{item.key}</Text>
-                </View> 
+                </View>
                 }/>
       </View>
 
-<ScrollView horizontal={true} style={styles.tableContent}>
+<ScrollView horizontal={true}
+						overScrollMode={'auto'}
+						decelerationRate={'normal'}
+						style={styles.tableContent}
+						>
 
-        {/*<LinearGradient colors={["#deecfd","#c4d2e3"]} style={styles.tableTitle}>
+        <LinearGradient colors={["#deecfd","#c4d2e3"]}
+												style={styles.tableTitle}>
           {this.props.labels.map((item, key) =>
-                <Text key={key} style={styles.tit2}>{`${item}`}</Text>
+                <Text key={key}
+											style={styles.tit2}>{`${item}`}</Text>
           )}
-        </LinearGradient>*/}
-
-
-      {this.props.values.map((item, key) =>
-                {item.items.map((citem, ckey) =>
-                    <View key={ckey} >
-                        <Text >{`${citem.valor}`}</Text>
-                    </View>
-                )}
-      )}
-
-
-
-        {/*
-          <FlatList keyExtractor={this.keyExtractor} 
+        </LinearGradient>
+				<View style={{ width: '100%', flex: 1 }}>
+        {<FlatList keyExtractor={this.keyExtractor}
                   data={this.props.values}
+									style={{ width: '100%', borderWidth: 1, borderColor: '#e0e1e2', marginTop: 10, flex: 1 }}
           renderItem={({item}) =>
                 <View style={styles.tableTexts}>
                   {item.items.map((citem, ckey) =>
@@ -63,10 +55,10 @@ class Table3 extends Component{
                         <Text style={styles.tit4}>{`${citem.valor}`}</Text>
                     </View>
                   )}
-                </View> 
-                }/>
-          */}
-</ScrollView>
+                </View>
+                }/>}
+				</View>
+			</ScrollView>
 
        </View>
 		);
@@ -84,6 +76,20 @@ const styles = StyleSheet.create({
         width: '20%',
         },
       tableTitle:{
+        backgroundColor: 'transparent',
+        flexDirection: 'row',
+        width: '100%',
+        height: 60,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.4,
+        shadowRadius: 2,
+        paddingTop: 10,
+        paddingBottom: 10,
+        paddingLeft: 10,
+        paddingRight: 10,
+      },
+			tableTitle2:{
         backgroundColor: 'transparent',
         flexDirection: 'row',
         width: '100%',
