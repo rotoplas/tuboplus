@@ -16,11 +16,11 @@ class Table3 extends Component{
 		return (
 			<View style={styles.table}>
 
+
+      <View style={styles.tableCod}>
+
 			<LinearGradient colors={["#deecfd","#c4d2e3"]} style={styles.tableTitle}>
 					<Text style={styles.tit1}>{`Código`}</Text>
-					{this.props.labels.map((item, key) =>
-								<Text key={key} style={styles.tit1}>{`${item}`}</Text>
-					)}
 			</LinearGradient>
 
 
@@ -30,13 +30,44 @@ class Table3 extends Component{
         	renderItem={({item}) =>
                 <View style={styles.tableTexts}>
                   <Text style={styles.tit5}>{item.key}</Text>
-									{item.items.map((citem, ckey) =>
-										<View key={ckey} style={styles.tit3}>
-												<Text style={styles.tit4}>{`${citem.valor}`}</Text>
-										</View>
-									)}
                 </View> 
                 }/>
+      </View>
+
+<ScrollView horizontal={true} style={styles.tableContent}>
+
+        {/*<LinearGradient colors={["#deecfd","#c4d2e3"]} style={styles.tableTitle}>
+          {this.props.labels.map((item, key) =>
+                <Text key={key} style={styles.tit2}>{`${item}`}</Text>
+          )}
+        </LinearGradient>*/}
+
+
+      {this.props.values.map((item, key) =>
+                {item.items.map((citem, ckey) =>
+                    <View key={ckey} >
+                        <Text >{`${citem.valor}`}</Text>
+                    </View>
+                )}
+      )}
+
+
+
+        {/*
+          <FlatList keyExtractor={this.keyExtractor} 
+                  data={this.props.values}
+          renderItem={({item}) =>
+                <View style={styles.tableTexts}>
+                  {item.items.map((citem, ckey) =>
+                    <View key={ckey} style={styles.tit3}>
+                        <Text style={styles.tit4}>{`${citem.valor}`}</Text>
+                    </View>
+                  )}
+                </View> 
+                }/>
+          */}
+</ScrollView>
+
        </View>
 		);
 	}
@@ -46,13 +77,17 @@ const styles = StyleSheet.create({
 
 
     table:{
-      flexDirection: 'column',
+      flexDirection: 'row',
       width: '100%',
       },
+      tableCod:{
+        width: '20%',
+        },
       tableTitle:{
         backgroundColor: 'transparent',
         flexDirection: 'row',
         width: '100%',
+        height: 60,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.4,
@@ -63,30 +98,32 @@ const styles = StyleSheet.create({
         paddingRight: 10,
       },
       tit1:{
-        width:'16.6%',
         color: '#0075bc',
         fontFamily: 'Signika-Regular',
         fontSize: 12,
+        textAlign:'center',
       },
       tit2:{
-        width:'16.6%',
+        width:'16%',
         color: '#0075bc',
         fontFamily: 'Signika-Regular',
         fontSize: 12,
+        textAlign:'center',
       },
       tit3:{
-        width:'16.6%',
+        width:'16%',
       },
       tit4:{
         color: '#cccccc',
         fontFamily: 'Signika-Regular',
-        fontSize: 14,
+        fontSize: 12,
+        textAlign:'center',
       },
       tit5:{
-        width:'16.6%',
         color: '#cccccc',
         fontFamily: 'Signika-Regular',
-        fontSize: 14,
+        fontSize: 12,
+        textAlign:'center',
       },
       tableTexts:{
         backgroundColor: '#ffffff',
