@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Image, StyleSheet, TextInput, ScrollView,FlatList } from 'react-native';
+import { Text, View, Image, StyleSheet, TextInput, ScrollView,FlatList,Dimensions } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 class Table3 extends Component{
@@ -34,20 +34,24 @@ class Table3 extends Component{
 <ScrollView horizontal={true}
 						overScrollMode={'auto'}
 						decelerationRate={'normal'}
+            bounces={false}
+            showsHorizontalScrollIndicator={true}
 						style={styles.tableContent}
 						>
 
-        <LinearGradient colors={["#deecfd","#c4d2e3"]}
-												style={styles.tableTitle}>
+				<View style={styles.tableInnerContent}>
+
+         <LinearGradient colors={["#deecfd","#c4d2e3"]}
+                        style={styles.tableTitle}>
           {this.props.labels.map((item, key) =>
                 <Text key={key}
-											style={styles.tit2}>{`${item}`}</Text>
+                      style={styles.tit2}>{`${item}`}</Text>
           )}
         </LinearGradient>
-				<View style={{ width: '100%', flex: 1 }}>
+
         {<FlatList keyExtractor={this.keyExtractor}
                   data={this.props.values}
-									style={{ width: '100%', borderWidth: 1, borderColor: '#e0e1e2', marginTop: 10, flex: 1 }}
+									
           renderItem={({item}) =>
                 <View style={styles.tableTexts}>
                   {item.items.map((citem, ckey) =>
@@ -73,13 +77,13 @@ const styles = StyleSheet.create({
       width: '100%',
       },
       tableCod:{
-        width: '20%',
+        width: 60,
         },
       tableTitle:{
         backgroundColor: 'transparent',
         flexDirection: 'row',
         width: '100%',
-        height: 60,
+        height: 70,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.4,
@@ -93,7 +97,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
         flexDirection: 'row',
         width: '100%',
-        height: 60,
+        height: 70,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.4,
@@ -110,14 +114,14 @@ const styles = StyleSheet.create({
         textAlign:'center',
       },
       tit2:{
-        width:'16%',
+        width:80,
         color: '#0075bc',
         fontFamily: 'Signika-Regular',
         fontSize: 12,
         textAlign:'center',
       },
       tit3:{
-        width:'16%',
+        width:80,
       },
       tit4:{
         color: '#cccccc',
@@ -144,6 +148,7 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         paddingRight: 10,
         alignItems: 'center',
+        height: 70,
       },
       innerTextContain:{
         width:'100%',
@@ -162,12 +167,10 @@ const styles = StyleSheet.create({
         borderLeftWidth: 1,
         borderTopWidth: 1,
         borderBottomWidth: 1,
-        borderRightColor: '#cc0000',
-        borderLeftColor: '#cc0000',
-        borderBottomColor: '#cc0000',
-        borderTopColor: '#cc0000',
       },
-
+      tableInnerContent:{
+        marginLeft:2,
+      }
 });
 
 export default Table3;
