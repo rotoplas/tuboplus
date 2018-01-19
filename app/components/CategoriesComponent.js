@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput, TouchableHighlight, NetInfo} from 'react-native';
+import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput, TouchableHighlight, NetInfo, Dimensions} from 'react-native';
 import Slideshow from 'react-native-slideshow';
 import { connect } from 'react-redux';
 import { Select, Option} from 'react-native-chooser';
@@ -101,7 +101,7 @@ class CategoriesComponent extends Component {
                               backdropStyle = {{backgroundColor : 'rgba(0,0,0,0.5)'}}
                               indicatorIcon = {<View style={styles.selectIconContainer}><Icon style={styles.selectIcon} name='angle-down'></Icon></View>}
                               optionListStyle = {{backgroundColor : '#ffffff', borderColor:'#999999' }}>
-                             {this.state.categoryPayload.filters.map((item) => (
+                              {this.state.categoryPayload.filters.map((item) => (
                               <Option key={item.key} value={item.key}>{item.value}</Option>
                             ))}
                           </Select>
@@ -177,11 +177,11 @@ const styles = StyleSheet.create({
       },
     imageContainer:{
       width: '100%',
-      height: 250,
+      height: Dimensions.get('window').width / 2 + 60,
     },
     prodImage:{
       width: '100%',
-      height: 200,
+      height: Dimensions.get('window').width  / 2,
       shadowColor: '#000000',
       shadowOffset: { width: 4, height: 2 },
       shadowOpacity: 0.2,

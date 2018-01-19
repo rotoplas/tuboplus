@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput, TouchableHighlight } from 'react-native';
+import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput, TouchableHighlight, Dimensions, } from 'react-native';
 import Slideshow from 'react-native-slideshow';
 import { connect } from 'react-redux';
+
 
 import Header from './Header';
 import SelectProductsList from './SelectProductsList';
@@ -125,11 +126,10 @@ const styles = StyleSheet.create({
     },
     imageContainer:{
       width: '100%',
-      height: 250,
     },
     prodImage:{
       width: '100%',
-      height: 200,
+      height: Dimensions.get('window').width  / 2,
       shadowColor: '#000000',
       shadowOffset: { width: 4, height: 2 },
       shadowOpacity: 0.2,

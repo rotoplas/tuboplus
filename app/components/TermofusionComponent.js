@@ -12,6 +12,7 @@ import FormatUtil from '../lib/format';
 import MenuBottomComponent from './MenuBottomComponent';
 import SlidesTilesComponent from './SlidesTilesComponent';
 import AccordionProductComponent from './AccordionProductComponent';
+import TimerComponent from './TimerComponent';
 
 class TermofusionComponent extends Component {
 
@@ -23,9 +24,10 @@ class TermofusionComponent extends Component {
       placeholder : 'Seleccionar diámetro...' ,
       dataTable : [],
       keysDT : [],
-      totalDuration: 0,
+      totalDuration: 3900000,
       timerStart: false,
       timerReset: false,
+      timerHasFinished: false,
     };
 
     this.toggleTimer = this.toggleTimer.bind(this);
@@ -73,7 +75,12 @@ class TermofusionComponent extends Component {
   }
 
    toggleTimer() {
-		 this.setState({timerStart: !this.state.timerStart, timerReset: false});
+     /*if(this.state.timerHasFinished){
+       this.resetTimer();
+       setTimeout(() => this.setState({timerStart: !this.state.timerStart, timerReset: false, timerHasFinished: false}), 1000);
+     } else {*/
+       this.setState({timerStart: !this.state.timerStart, timerReset: false});
+    // }
 	 }
 
 	 resetTimer() {
@@ -87,10 +94,6 @@ class TermofusionComponent extends Component {
 	 resetStopwatch() {
 		 this.setState({stopwatchStart: false, stopwatchReset: true});
 	 }
-
-	 getFormattedTime(time) {
-			 this.currentTime = time;
-	 };
 
    onChangeView(e) {
      this.props.navigation.navigate('StepInfoSingleComponent', { step : e.image.key });
@@ -138,14 +141,13 @@ class TermofusionComponent extends Component {
               </View>
                 <View>
                   <View style={styles.timerContainer}>
-                  <Timer
-                      hours
+                  <TimerComponent
                       totalDuration={this.state.totalDuration}
                       start={this.state.timerStart}
                       reset={this.state.timerReset}
                       options={options}
                       laps={false}
-                      handleFinish={() => this.setState({timerStart: false, timerReset: true})}/>
+                      handleFinish={() => this.setState({timerStart: false, timerHasFinished: true})}/>
                   </View>
                 </View>
               <View>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput, TouchableHighlight } from 'react-native';
+import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput, TouchableHighlight, Dimensions } from 'react-native';
 import Slideshow from 'react-native-slideshow';
 import { connect } from 'react-redux';
 
@@ -42,7 +42,7 @@ class ProductsXSearchedComponent extends Component {
     <TouchableHighlight underlayColor={'transparent'} style={styles.productItem}
       onPress={() => this.props.navigation.navigate('ProductComponent', { product : item.key, category : item.category })}>
       <View style={styles.imageContainer}>
-          <Image style={styles.prodImage} source={item.image} />
+          <Image style={styles.prodImage} source={{uri: item.image}} />
           <Text style={styles.productName}>{item.name}</Text>
           {/*<Text style={styles.prodDescription}>{item.description}</Text>*/}
       </View>
@@ -81,7 +81,7 @@ class ProductsXSearchedComponent extends Component {
         { view }
 
         <View style={styles.space}></View>
-        
+
      </ScrollView>
      <MenuBottomComponent {...this.props} />
     </View>
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
     },
     imageContainer:{
       width: '100%',
-      height: 250,
+      height: Dimensions.get('window').width  / 2,
     },
     prodImage:{
       width: '100%',
