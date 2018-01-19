@@ -87,7 +87,7 @@ class TimerComponent extends Component {
   //1 second is 1000 milliseconds
 
   addMinute(){
-    if(this.state.enableClick && this.state.remainingTime < 36000000){
+    if(this.state.enableClick && this.state.remainingTime < 3600000){
       let nmunutes = this.state.remainingTime + 60000;
       this.setState({remainingTime: nmunutes});
     }
@@ -101,7 +101,7 @@ class TimerComponent extends Component {
   }
 
   addSecond() {
-    if(this.state.enableClick && this.state.remainingTime < 36000000){
+    if(this.state.enableClick && this.state.remainingTime < 3600000){
       let nmunutes = this.state.remainingTime + 1000;
       this.setState({remainingTime: nmunutes});
     }
