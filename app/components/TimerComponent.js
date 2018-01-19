@@ -130,22 +130,14 @@ class TimerComponent extends Component {
 
                         <View>
 
-                        <View>
-                          <Text>{hours < 10 ? 0 : ""}{hours}</Text>
-                        </View>
-                        <View>
-                          <Text>:</Text>
-                        </View>
-
-
-                        <TouchableHighlight underlayColor={'transparent'}
+                        <TouchableHighlight style={styles.arrowTimer} underlayColor={'transparent'}
                               onPress={() => this.addMinute()}>
                             <Icon name='angle-up' size={30}></Icon>
                         </TouchableHighlight>
 
                           <Text style={styles.minutos}>{minutes < 10 ? 0 : ""}{minutes}</Text>
 
-                          <TouchableHighlight underlayColor={'transparent'}
+                          <TouchableHighlight style={styles.arrowTimer} underlayColor={'transparent'}
                                 onPress={() => this.substractMinute()}>
                               <Icon name='angle-down' size={30}></Icon>
                           </TouchableHighlight>
@@ -155,14 +147,14 @@ class TimerComponent extends Component {
                           <Text style={styles.puntos}>:</Text>
                         </View>
                         <View>
-                        <TouchableHighlight underlayColor={'transparent'}
+                        <TouchableHighlight style={styles.arrowTimer} underlayColor={'transparent'}
                               onPress={() => this.addSecond()}>
                             <Icon name='angle-up' size={30}></Icon>
                           </TouchableHighlight>
                           <Text style={styles.segundos}>{seconds < 10 ? 0 : ""}{seconds}</Text>
-                          <TouchableHighlight underlayColor={'transparent'}
+                          <TouchableHighlight style={styles.arrowTimer} underlayColor={'transparent'}
                                 onPress={() => this.substractSecond()}>
-                              <Icon name='angle-down'  size={30}></Icon>
+                              <Icon name='angle-down' size={30}></Icon>
                             </TouchableHighlight>
                         </View>
                   </View>);
@@ -205,6 +197,9 @@ const styles = StyleSheet.create({
         color: '#2f75b7',
         fontWeight: '400',
         },
+        arrowTimer: {
+          alignItems: 'center',
+        }
   });
 
 
