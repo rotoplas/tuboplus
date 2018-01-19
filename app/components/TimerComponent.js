@@ -136,6 +136,7 @@ class TimerComponent extends Component {
                         </TouchableHighlight>
 
                           <Text style={styles.minutos}>{minutes < 10 ? 0 : ""}{minutes}</Text>
+                          <Text style={styles.cronometroText}>Minutos</Text>
 
                           <TouchableHighlight style={styles.arrowTimer} underlayColor={'transparent'}
                                 onPress={() => this.substractMinute()}>
@@ -152,6 +153,7 @@ class TimerComponent extends Component {
                             <Icon name='angle-up' size={30}></Icon>
                           </TouchableHighlight>
                           <Text style={styles.segundos}>{seconds < 10 ? 0 : ""}{seconds}</Text>
+                          <Text style={styles.cronometroText}>Segundos</Text>
                           <TouchableHighlight style={styles.arrowTimer} underlayColor={'transparent'}
                                 onPress={() => this.substractSecond()}>
                               <Icon name='angle-down' size={30}></Icon>
@@ -182,14 +184,14 @@ const styles = StyleSheet.create({
       minutos:{
         fontFamily: 'Signika-Regular',
         fontSize: 50,
-        color: '#2f75b7',
-        fontWeight: '400',
+        color: '#0e3979',
+        fontWeight: '600',
       },
       segundos:{
         fontFamily: 'Signika-Regular',
         fontSize: 50,
         color: '#2f75b7',
-        fontWeight: '400',
+        fontWeight: '600',
       },
       puntos:{
         fontFamily: 'Signika-Regular',
@@ -199,7 +201,12 @@ const styles = StyleSheet.create({
         },
         arrowTimer: {
           alignItems: 'center',
-        }
+        },
+        cronometroText: {
+          fontFamily: 'Signika-Regular',
+          fontSize: 14,
+          color: '#666666',
+          },
   });
 
 
