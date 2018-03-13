@@ -108,9 +108,6 @@ static navigationOptions = {};
        <Header {...this.props}/>
 
        <View style={styles.wrapperForm} >
-          {/*<Text style={styles.textIntro}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et tincidunt nibh, vestibulum mollis odio. Nunc aliquam ipsum sed ante mollis.
-          </Text>*/}
           <Text style={styles.titContactform}>
           Contacta a los expertos
           </Text>

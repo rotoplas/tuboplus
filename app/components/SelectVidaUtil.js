@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Select, Option} from 'react-native-chooser';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
 import {
   AppRegistry,
   StyleSheet,

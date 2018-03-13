@@ -18,8 +18,6 @@ const splitVersion = reactNativePackage.version.split('.');
 const majorVersion = +splitVersion[0];
 const minorVersion = +splitVersion[1];
 
-
-
 export default class SlidesBenefitsComponent extends Component {
   constructor(props) {
     super(props);
@@ -134,8 +132,6 @@ export default class SlidesBenefitsComponent extends Component {
 
           {this.props.dataSource.map((image, index) => {
 
-            const imageObject = typeof image.url === 'string' ? {uri: image.url} : image.url;
-
             const textComponent = (
               <View style={styles.layoutText}>
                 {image.caption === undefined ? null : <Text style={styles.textCaption}>{image.caption}</Text>}
@@ -146,7 +142,7 @@ export default class SlidesBenefitsComponent extends Component {
               <View key={index} style={styles.containerImage}>
                 <View style={styles.overlay}>
                   <Image
-                    source={imageObject}
+                    source={{uri: `${image.url}.png`}}
                     style={styles.imageSlider}/>
                 </View>
                 {textComponent}
@@ -156,16 +152,8 @@ export default class SlidesBenefitsComponent extends Component {
             return imageComponent;
 
           })}
+
         </ScrollView>
-        {/* END SECTION IMAGE */}
-        {/* SECTION INDICATOR */}
-        {/*<View
-          style={[
-            styles.layoutIndicator,
-          ]}>
-          {<View><Text style={styles.indicadorNumbers}>{`${position + 1} / ${this.props.dataSource.length}`}</Text></View>}
-        </View>*/}
-        {/* END SECTION INDICATOR */}
       </View>
     );
   }

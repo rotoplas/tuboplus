@@ -165,7 +165,7 @@ export default class SlidesTilesComponent extends Component {
                     source={imageObject}
                      style={styles.imageSlider}/>
                 </View>
-                {textComponent} 
+                {textComponent}
                 {/* {btnComponent} */}
               </View>
             );
@@ -174,15 +174,6 @@ export default class SlidesTilesComponent extends Component {
 
           })}
         </ScrollView>
-        {/* END SECTION IMAGE */}
-        {/* SECTION INDICATOR */}
-        {/*<View
-          style={[
-            styles.layoutIndicator,
-          ]}>
-          {<View><Text style={styles.indicatorText}>{`${position + 1} / ${this.props.dataSource.length}`}</Text></View>}
-        </View>*/}
-        {/* END SECTION INDICATOR */}
       </View>
     );
   }

@@ -1,15 +1,18 @@
 import * as types from './types';
 import Api from '../lib/api';
+import beneficios from '../../assets/ldb/beneficios.json';
 
 //FETCHERS
 
 export function fetchBenefit(){
   return (dispatch, getState) => {
-    return Api.get(`/beneficios`).then(res => {
-      dispatch(setBenefit({ benefit: res }));
-    }).catch((err) => {
-      dispatch(setBenefit({ benefit: [] }));
-    })
+      return new Promise((resolve, reject) => {
+        try {
+          resolve(dispatch(setBenefit({ benefit: beneficios })));
+        } catch (e) {
+          reject(dispatch(setBenefit({ benefit: [] })));
+        }
+      });
   }
 }
 

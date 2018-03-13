@@ -42,6 +42,7 @@ class BenefitsComponent extends Component {
       view =  <Text style={styles.cargando}> Cargando... </Text>;
 
     } else {
+      console.log(this.state.benefitsPayload);
       view = (<View>
                 <View style={styles.wrapperBenefits}>
                   <Text style={styles.titBenefits}>Beneficios</Text>

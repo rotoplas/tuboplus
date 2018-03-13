@@ -3,7 +3,6 @@ import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput, Touchab
 import Slideshow from 'react-native-slideshow';
 import { connect } from 'react-redux';
 
-
 import Header from './Header';
 import SelectProductsList from './SelectProductsList';
 import FormatUtil from '../lib/format';

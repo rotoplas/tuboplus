@@ -75,12 +75,7 @@ class TermofusionComponent extends Component {
   }
 
    toggleTimer() {
-     /*if(this.state.timerHasFinished){
-       this.resetTimer();
-       setTimeout(() => this.setState({timerStart: !this.state.timerStart, timerReset: false, timerHasFinished: false}), 1000);
-     } else {*/
        this.setState({timerStart: !this.state.timerStart, timerReset: false});
-    // }
 	 }
 
 	 resetTimer() {

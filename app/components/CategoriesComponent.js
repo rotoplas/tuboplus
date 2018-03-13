@@ -24,29 +24,7 @@ class CategoriesComponent extends Component {
   }
 
   componentDidMount() {
-    NetInfo.addEventListener('connectionChange', this.handleConnectionChange);
-
-    NetInfo.getConnectionInfo().then((connectionInfo) => {
-      this.setState({ status: connectionInfo.type === "none" || connectionInfo.type === "unknown" ? false : true });
-      if(this.state.status){
-        this.initialFetch();
-      } else {
-        this.setState({ isLoading: false });
-      }
-    });
-  }
-
-  componentWillUnmount() {
-    NetInfo.removeEventListener('connectionChange', this.handleConnectionChange);
-  }
-
-  handleConnectionChange = ( connectionInfo ) => {
-    this.setState({ status: connectionInfo.type === "none" || connectionInfo.type === "unknown" ? false : true });
-    if(this.state.status){
-      this.initialFetch();
-    } else {
-      this.setState({ isLoading : false, status : false });
-    }
+    this.initialFetch();
   }
 
   initialFetch = () => {

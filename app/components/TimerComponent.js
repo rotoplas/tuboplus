@@ -125,7 +125,6 @@ class TimerComponent extends Component {
     minutes = minutes - (hours * 60);
 
     let formatted;
-
     formatted = (<View style={styles.timerContainer}>
 
                         <View>
@@ -208,6 +207,5 @@ const styles = StyleSheet.create({
           color: '#666666',
           },
   });
-
 
 export default TimerComponent;

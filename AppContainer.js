@@ -16,6 +16,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { ActionCreators } from './app/actions';
+
 import MainMenuComponent from './app/components/MainMenuComponent';
 import MenuBottomComponent from './app/components/MenuBottomComponent';
 import ProductComponent from './app/components/ProductComponent';
@@ -105,39 +106,13 @@ class AppContainer extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      status : false
-    };
+    this.state = {};
   }
 
-  componentDidMount() {
-    NetInfo.addEventListener('connectionChange', this.handleConnectionChange);
-
-    NetInfo.getConnectionInfo().then((connectionInfo) => {
-      this.setState({ status: connectionInfo.type === "none" || connectionInfo.type === "unknown" ? false : true });
-    });
-  }
-
-  componentWillUnmount() {
-      NetInfo.removeEventListener('connectionChange', this.handleConnectionChange);
-  }
-
-  handleConnectionChange = ( connectionInfo ) => {
-    this.setState({ status: connectionInfo.type === "none" || connectionInfo.type === "unknown" ? false : true });
-  }
+  componentDidMount() {}
 
   render() {
-    if(this.state.status){
-      return (
-        <RootStack screenProps={this.props} />
-      );
-    } else {
-      return (
-        <View >
-          <Text>"No tienes conexión a internet!"</Text>
-        </View>
-      );
-    }
+      return ( <RootStack screenProps={this.props} /> );
   }
 }
 

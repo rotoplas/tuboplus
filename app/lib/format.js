@@ -131,7 +131,7 @@ class FormatUtil {
               return Object.keys(rawData).reduce((out, key) => {
                           out.push({
                             key : rawData[key].hasOwnProperty('id') ? rawData[key].id : this.makeid(),
-                            url : rawData[key].hasOwnProperty('img_tablet') && rawData[key].hasOwnProperty('img_movil') ? DeviceInfo.isTablet() ? rawData[key].img_tablet : rawData[key].img_movil : null,
+                            url : rawData[key].hasOwnProperty('img_tablet') && rawData[key].hasOwnProperty('img_movil') ? DeviceInfo.isTablet() ? rawData[key].img_tablet :  rawData[key].img_movil : null,
                             caption : rawData[key].hasOwnProperty('descripcion') ? rawData[key].descripcion : ""
                           });
                 return out;

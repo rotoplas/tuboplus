@@ -72,6 +72,39 @@
 		BAEA5EF41DC842C6BC60E7F2 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 642E1A16F4C74F7BB2AC5A67 /* Zocial.ttf */; };
 		D3BB1264C2AF41C4A823A1EA /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8EE2228688E4C36869A90BC /* MaterialIcons.ttf */; };
 		E9243C7674494026B68B4AE7 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CFBBDDFA23D946A3984472EB /* SimpleLineIcons.ttf */; };
+		A48FD7BB6BEA4DB592E2C676 /* beneficios_rotoplas-01.png in Resources */ = {isa = PBXBuildFile; fileRef = DB2C6D4C752140EBA7A042CC /* beneficios_rotoplas-01.png */; };
+		5044C9709F284228B814FB01 /* beneficios_rotoplas-02.png in Resources */ = {isa = PBXBuildFile; fileRef = 808647613C21437F9B36B044 /* beneficios_rotoplas-02.png */; };
+		E941B7E5028E4990AB6181D2 /* beneficios_rotoplas-03.png in Resources */ = {isa = PBXBuildFile; fileRef = BE4E4207365E40C28B1EEB1B /* beneficios_rotoplas-03.png */; };
+		EED935EC150449D8ADD62910 /* beneficios_rotoplas-04.png in Resources */ = {isa = PBXBuildFile; fileRef = 1729513256B748559B96111D /* beneficios_rotoplas-04.png */; };
+		44241AE27C0B47099160D57D /* beneficios_rotoplas-05.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B143689C43549D2B63DEC56 /* beneficios_rotoplas-05.png */; };
+		87895788C8A74A4698B7543D /* beneficios_rotoplas-06.png in Resources */ = {isa = PBXBuildFile; fileRef = E6A71798EFBF422EA42DEC87 /* beneficios_rotoplas-06.png */; };
+		3DBFF023081D4B21AD8400B5 /* beneficios_rotoplas-07.png in Resources */ = {isa = PBXBuildFile; fileRef = FF0079D1F512471E94F5ACD7 /* beneficios_rotoplas-07.png */; };
+		95A4C211385E48EB9B583933 /* beneficios_rotoplas-08.png in Resources */ = {isa = PBXBuildFile; fileRef = A35D21CAA4B64A7A8B0F8872 /* beneficios_rotoplas-08.png */; };
+		800ADC51102C420B87C2C9AE /* beneficios_rotoplas-09.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FE47D885C50425785F61C76 /* beneficios_rotoplas-09.png */; };
+		85A986E2674F437BA01CCEA5 /* beneficios_rotoplas-10.png in Resources */ = {isa = PBXBuildFile; fileRef = B95FEE1CDE85445997C42935 /* beneficios_rotoplas-10.png */; };
+		431DED27ADA14E73A9C09868 /* bgSlider.png in Resources */ = {isa = PBXBuildFile; fileRef = 5995CE69BFFF4BBA8E1DB45D /* bgSlider.png */; };
+		6C2906A3C64A4E5BBA760FFC /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = CC18363E4B9341B6AA28B503 /* checked.png */; };
+		C68FC649AB874CF18896574B /* contact_icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = B09FCEE9951647ACBAA73AC5 /* contact_icon1.png */; };
+		A638089B95D348E890B31A58 /* contact_icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE63239C46B4D86A2536652 /* contact_icon2.png */; };
+		03239E00D43E42FEB7102EBA /* flechas-corres.png in Resources */ = {isa = PBXBuildFile; fileRef = B4C7AB7F207F453BB8E53DA8 /* flechas-corres.png */; };
+		B1B4305AAA7843369B03B87B /* icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A2AA4D5562A4B97AA8D39D9 /* icon1.png */; };
+		288034C91BAD49C4BBE34B59 /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E5A826263C4CD194625A41 /* icon2.png */; };
+		114ED291671943AB8AD8FC1A /* icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = CEFE142BD1F14A19BADCB5C8 /* icon3.png */; };
+		5D5048D4659B47BF93AED19B /* icon4.png in Resources */ = {isa = PBXBuildFile; fileRef = FC13E07453B64A519D1949E6 /* icon4.png */; };
+		DE8535CD5C054F06BC6ACBDD /* icon5.png in Resources */ = {isa = PBXBuildFile; fileRef = EB04967DCA574C3CADC99F92 /* icon5.png */; };
+		5E165B560D684CC3BD28DAF5 /* icon6.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C62B2519EE141978476EA73 /* icon6.png */; };
+		213C53E4E9DF40B2AB5E842C /* icon7.png in Resources */ = {isa = PBXBuildFile; fileRef = 430689F031F444C5BA6B8F75 /* icon7.png */; };
+		A2DC41047F6049B38B30EA91 /* img_contact.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25A1C1A743AE4293911E5A27 /* img_contact.jpg */; };
+		2EE4914484EF43A096748F85 /* img_slider.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1B64397BDE2848F5B90B289D /* img_slider.jpg */; };
+		4BFAC0CB5BCA441080734D7D /* img_tablapresiones.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4F2ED1D581FB49A4997CE563 /* img_tablapresiones.jpg */; };
+		9D393212E37A490EBE55D82F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A9E762090B2643488D6E2EDE /* logo.png */; };
+		F8C41EE7B82D437D82846292 /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B202D4BBB67489F84F02B83 /* logo2.png */; };
+		AE3F2CA2486E4879B963D993 /* menu-open.png in Resources */ = {isa = PBXBuildFile; fileRef = 27E183159C79498F8E03EAC5 /* menu-open.png */; };
+		BD052E8AD1024A75B3CB5F31 /* plano.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C4FE132B144E1A861A7A95 /* plano.png */; };
+		A46FBF6364184641A6244B15 /* producto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7DB01B6D7A764EF99F2909E5 /* producto.jpg */; };
+		F32FB1BEB4F440FCB2A6B168 /* producto1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 52A102E8EA2E4A158064C662 /* producto1.jpg */; };
+		F1CDC7C917454C5A9A53AC62 /* searchArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = F9949C5123B9473DAC78FF7B /* searchArrow.png */; };
+		7F430757EBC94D8AB7A6EDDE /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 396A288991D148939250DC0F /* unchecked.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -438,6 +471,39 @@
 		EAD15FEE94C64245A491D248 /* libRNDeviceInfo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNDeviceInfo.a; sourceTree = "<group>"; };
 		ECF003552E0749F0BB4BB5F6 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		F16AB769B6C9415BBC1686F5 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
+		DB2C6D4C752140EBA7A042CC /* beneficios_rotoplas-01.png */ = {isa = PBXFileReference; name = "beneficios_rotoplas-01.png"; path = "../assets/img/beneficios_rotoplas-01.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		808647613C21437F9B36B044 /* beneficios_rotoplas-02.png */ = {isa = PBXFileReference; name = "beneficios_rotoplas-02.png"; path = "../assets/img/beneficios_rotoplas-02.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BE4E4207365E40C28B1EEB1B /* beneficios_rotoplas-03.png */ = {isa = PBXFileReference; name = "beneficios_rotoplas-03.png"; path = "../assets/img/beneficios_rotoplas-03.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1729513256B748559B96111D /* beneficios_rotoplas-04.png */ = {isa = PBXFileReference; name = "beneficios_rotoplas-04.png"; path = "../assets/img/beneficios_rotoplas-04.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2B143689C43549D2B63DEC56 /* beneficios_rotoplas-05.png */ = {isa = PBXFileReference; name = "beneficios_rotoplas-05.png"; path = "../assets/img/beneficios_rotoplas-05.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E6A71798EFBF422EA42DEC87 /* beneficios_rotoplas-06.png */ = {isa = PBXFileReference; name = "beneficios_rotoplas-06.png"; path = "../assets/img/beneficios_rotoplas-06.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FF0079D1F512471E94F5ACD7 /* beneficios_rotoplas-07.png */ = {isa = PBXFileReference; name = "beneficios_rotoplas-07.png"; path = "../assets/img/beneficios_rotoplas-07.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A35D21CAA4B64A7A8B0F8872 /* beneficios_rotoplas-08.png */ = {isa = PBXFileReference; name = "beneficios_rotoplas-08.png"; path = "../assets/img/beneficios_rotoplas-08.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7FE47D885C50425785F61C76 /* beneficios_rotoplas-09.png */ = {isa = PBXFileReference; name = "beneficios_rotoplas-09.png"; path = "../assets/img/beneficios_rotoplas-09.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B95FEE1CDE85445997C42935 /* beneficios_rotoplas-10.png */ = {isa = PBXFileReference; name = "beneficios_rotoplas-10.png"; path = "../assets/img/beneficios_rotoplas-10.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5995CE69BFFF4BBA8E1DB45D /* bgSlider.png */ = {isa = PBXFileReference; name = "bgSlider.png"; path = "../assets/img/bgSlider.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CC18363E4B9341B6AA28B503 /* checked.png */ = {isa = PBXFileReference; name = "checked.png"; path = "../assets/img/checked.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B09FCEE9951647ACBAA73AC5 /* contact_icon1.png */ = {isa = PBXFileReference; name = "contact_icon1.png"; path = "../assets/img/contact_icon1.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0AE63239C46B4D86A2536652 /* contact_icon2.png */ = {isa = PBXFileReference; name = "contact_icon2.png"; path = "../assets/img/contact_icon2.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B4C7AB7F207F453BB8E53DA8 /* flechas-corres.png */ = {isa = PBXFileReference; name = "flechas-corres.png"; path = "../assets/img/flechas-corres.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7A2AA4D5562A4B97AA8D39D9 /* icon1.png */ = {isa = PBXFileReference; name = "icon1.png"; path = "../assets/img/icon1.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F5E5A826263C4CD194625A41 /* icon2.png */ = {isa = PBXFileReference; name = "icon2.png"; path = "../assets/img/icon2.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CEFE142BD1F14A19BADCB5C8 /* icon3.png */ = {isa = PBXFileReference; name = "icon3.png"; path = "../assets/img/icon3.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FC13E07453B64A519D1949E6 /* icon4.png */ = {isa = PBXFileReference; name = "icon4.png"; path = "../assets/img/icon4.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EB04967DCA574C3CADC99F92 /* icon5.png */ = {isa = PBXFileReference; name = "icon5.png"; path = "../assets/img/icon5.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9C62B2519EE141978476EA73 /* icon6.png */ = {isa = PBXFileReference; name = "icon6.png"; path = "../assets/img/icon6.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		430689F031F444C5BA6B8F75 /* icon7.png */ = {isa = PBXFileReference; name = "icon7.png"; path = "../assets/img/icon7.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		25A1C1A743AE4293911E5A27 /* img_contact.jpg */ = {isa = PBXFileReference; name = "img_contact.jpg"; path = "../assets/img/img_contact.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1B64397BDE2848F5B90B289D /* img_slider.jpg */ = {isa = PBXFileReference; name = "img_slider.jpg"; path = "../assets/img/img_slider.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4F2ED1D581FB49A4997CE563 /* img_tablapresiones.jpg */ = {isa = PBXFileReference; name = "img_tablapresiones.jpg"; path = "../assets/img/img_tablapresiones.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A9E762090B2643488D6E2EDE /* logo.png */ = {isa = PBXFileReference; name = "logo.png"; path = "../assets/img/logo.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9B202D4BBB67489F84F02B83 /* logo2.png */ = {isa = PBXFileReference; name = "logo2.png"; path = "../assets/img/logo2.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		27E183159C79498F8E03EAC5 /* menu-open.png */ = {isa = PBXFileReference; name = "menu-open.png"; path = "../assets/img/menu-open.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E2C4FE132B144E1A861A7A95 /* plano.png */ = {isa = PBXFileReference; name = "plano.png"; path = "../assets/img/plano.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7DB01B6D7A764EF99F2909E5 /* producto.jpg */ = {isa = PBXFileReference; name = "producto.jpg"; path = "../assets/img/producto.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		52A102E8EA2E4A158064C662 /* producto1.jpg */ = {isa = PBXFileReference; name = "producto1.jpg"; path = "../assets/img/producto1.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F9949C5123B9473DAC78FF7B /* searchArrow.png */ = {isa = PBXFileReference; name = "searchArrow.png"; path = "../assets/img/searchArrow.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		396A288991D148939250DC0F /* unchecked.png */ = {isa = PBXFileReference; name = "unchecked.png"; path = "../assets/img/unchecked.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -788,6 +854,39 @@
 				ECF003552E0749F0BB4BB5F6 /* Octicons.ttf */,
 				CFBBDDFA23D946A3984472EB /* SimpleLineIcons.ttf */,
 				642E1A16F4C74F7BB2AC5A67 /* Zocial.ttf */,
+				DB2C6D4C752140EBA7A042CC /* beneficios_rotoplas-01.png */,
+				808647613C21437F9B36B044 /* beneficios_rotoplas-02.png */,
+				BE4E4207365E40C28B1EEB1B /* beneficios_rotoplas-03.png */,
+				1729513256B748559B96111D /* beneficios_rotoplas-04.png */,
+				2B143689C43549D2B63DEC56 /* beneficios_rotoplas-05.png */,
+				E6A71798EFBF422EA42DEC87 /* beneficios_rotoplas-06.png */,
+				FF0079D1F512471E94F5ACD7 /* beneficios_rotoplas-07.png */,
+				A35D21CAA4B64A7A8B0F8872 /* beneficios_rotoplas-08.png */,
+				7FE47D885C50425785F61C76 /* beneficios_rotoplas-09.png */,
+				B95FEE1CDE85445997C42935 /* beneficios_rotoplas-10.png */,
+				5995CE69BFFF4BBA8E1DB45D /* bgSlider.png */,
+				CC18363E4B9341B6AA28B503 /* checked.png */,
+				B09FCEE9951647ACBAA73AC5 /* contact_icon1.png */,
+				0AE63239C46B4D86A2536652 /* contact_icon2.png */,
+				B4C7AB7F207F453BB8E53DA8 /* flechas-corres.png */,
+				7A2AA4D5562A4B97AA8D39D9 /* icon1.png */,
+				F5E5A826263C4CD194625A41 /* icon2.png */,
+				CEFE142BD1F14A19BADCB5C8 /* icon3.png */,
+				FC13E07453B64A519D1949E6 /* icon4.png */,
+				EB04967DCA574C3CADC99F92 /* icon5.png */,
+				9C62B2519EE141978476EA73 /* icon6.png */,
+				430689F031F444C5BA6B8F75 /* icon7.png */,
+				25A1C1A743AE4293911E5A27 /* img_contact.jpg */,
+				1B64397BDE2848F5B90B289D /* img_slider.jpg */,
+				4F2ED1D581FB49A4997CE563 /* img_tablapresiones.jpg */,
+				A9E762090B2643488D6E2EDE /* logo.png */,
+				9B202D4BBB67489F84F02B83 /* logo2.png */,
+				27E183159C79498F8E03EAC5 /* menu-open.png */,
+				E2C4FE132B144E1A861A7A95 /* plano.png */,
+				7DB01B6D7A764EF99F2909E5 /* producto.jpg */,
+				52A102E8EA2E4A158064C662 /* producto1.jpg */,
+				F9949C5123B9473DAC78FF7B /* searchArrow.png */,
+				396A288991D148939250DC0F /* unchecked.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -883,7 +982,6 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = 7F86P3H7HK;
 						ProvisioningStyle = Automatic;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
@@ -1320,6 +1418,39 @@
 				70E9F10B1FEDA0C500E654B0 /* main.jsbundle in Resources */,
 				E9243C7674494026B68B4AE7 /* SimpleLineIcons.ttf in Resources */,
 				BAEA5EF41DC842C6BC60E7F2 /* Zocial.ttf in Resources */,
+				A48FD7BB6BEA4DB592E2C676 /* beneficios_rotoplas-01.png in Resources */,
+				5044C9709F284228B814FB01 /* beneficios_rotoplas-02.png in Resources */,
+				E941B7E5028E4990AB6181D2 /* beneficios_rotoplas-03.png in Resources */,
+				EED935EC150449D8ADD62910 /* beneficios_rotoplas-04.png in Resources */,
+				44241AE27C0B47099160D57D /* beneficios_rotoplas-05.png in Resources */,
+				87895788C8A74A4698B7543D /* beneficios_rotoplas-06.png in Resources */,
+				3DBFF023081D4B21AD8400B5 /* beneficios_rotoplas-07.png in Resources */,
+				95A4C211385E48EB9B583933 /* beneficios_rotoplas-08.png in Resources */,
+				800ADC51102C420B87C2C9AE /* beneficios_rotoplas-09.png in Resources */,
+				85A986E2674F437BA01CCEA5 /* beneficios_rotoplas-10.png in Resources */,
+				431DED27ADA14E73A9C09868 /* bgSlider.png in Resources */,
+				6C2906A3C64A4E5BBA760FFC /* checked.png in Resources */,
+				C68FC649AB874CF18896574B /* contact_icon1.png in Resources */,
+				A638089B95D348E890B31A58 /* contact_icon2.png in Resources */,
+				03239E00D43E42FEB7102EBA /* flechas-corres.png in Resources */,
+				B1B4305AAA7843369B03B87B /* icon1.png in Resources */,
+				288034C91BAD49C4BBE34B59 /* icon2.png in Resources */,
+				114ED291671943AB8AD8FC1A /* icon3.png in Resources */,
+				5D5048D4659B47BF93AED19B /* icon4.png in Resources */,
+				DE8535CD5C054F06BC6ACBDD /* icon5.png in Resources */,
+				5E165B560D684CC3BD28DAF5 /* icon6.png in Resources */,
+				213C53E4E9DF40B2AB5E842C /* icon7.png in Resources */,
+				A2DC41047F6049B38B30EA91 /* img_contact.jpg in Resources */,
+				2EE4914484EF43A096748F85 /* img_slider.jpg in Resources */,
+				4BFAC0CB5BCA441080734D7D /* img_tablapresiones.jpg in Resources */,
+				9D393212E37A490EBE55D82F /* logo.png in Resources */,
+				F8C41EE7B82D437D82846292 /* logo2.png in Resources */,
+				AE3F2CA2486E4879B963D993 /* menu-open.png in Resources */,
+				BD052E8AD1024A75B3CB5F31 /* plano.png in Resources */,
+				A46FBF6364184641A6244B15 /* producto.jpg in Resources */,
+				F32FB1BEB4F440FCB2A6B168 /* producto1.jpg in Resources */,
+				F1CDC7C917454C5A9A53AC62 /* searchArrow.png in Resources */,
+				7F430757EBC94D8AB7A6EDDE /* unchecked.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1507,6 +1638,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1536,6 +1668,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

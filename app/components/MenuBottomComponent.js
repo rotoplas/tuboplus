@@ -3,7 +3,6 @@ import { FlatList, View, Text, Image, StyleSheet, ScrollView, TouchableHighlight
 import LinearGradient from 'react-native-linear-gradient';
 import { connect } from 'react-redux';
 
-
 class MenuBottomComponent extends Component {
 	constructor(props) {
 		super(props);
