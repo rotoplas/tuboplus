@@ -140,8 +140,6 @@ export default class SlidesTilesComponent extends Component {
 
           {this.props.dataSource.map((image, index) => {
 
-            const imageObject = typeof image.url === 'string' ? {uri: image.url} : image.url;
-
             const textComponent = (
               <View style={styles.layoutText}>
                 {image.caption === undefined ? null : <Text style={styles.textCaption}>{image.captionLarge}</Text>}
@@ -162,11 +160,10 @@ export default class SlidesTilesComponent extends Component {
               <View key={index} style={styles.containerImage}>
                 <View style={styles.overlay}>
                   <Image
-                    source={imageObject}
+                    source={{uri: `${image.url}`}}
                      style={styles.imageSlider}/>
                 </View>
                 {textComponent}
-                {/* {btnComponent} */}
               </View>
             );
 

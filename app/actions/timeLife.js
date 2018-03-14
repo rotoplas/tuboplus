@@ -1,15 +1,18 @@
 import * as types from './types';
 import Api from '../lib/api';
+import timeLife from '../../assets/ldb/vida_util.json';
 
 //FETCHERS
 
 export function fetchTimeLife(){
   return (dispatch, getState) => {
-    return Api.get(`/vida_util`).then(res => {
-      dispatch(setTimeLife({ timeLife: res }));
-    }).catch((err) => {
-      dispatch(setTimeLife({ timeLife: {} }));
-    })
+    return new Promise((resolve, reject) => {
+      try {
+        resolve(dispatch(setTimeLife({ timeLife: timeLife })));
+      } catch (e) {
+        reject(dispatch(setTimeLife({ timeLife: {} })));
+      }
+    });
   }
 }
 

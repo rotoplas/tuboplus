@@ -1,15 +1,18 @@
 import * as types from './types';
 import Api from '../lib/api';
+import equivalences from '../../assets/ldb/equivalencias.json';
 
 //FETCHERS
 
 export function fetchEquivalence(){
   return (dispatch, getState) => {
-    return Api.get(`/equivalencias`).then(res => {
-      dispatch(setEquivalence({ equivalence: res }));
-    }).catch((err) => {
-      dispatch(setEquivalence({ equivalence: {} }));
-    })
+    return new Promise((resolve, reject) => {
+      try {
+        resolve(dispatch(setEquivalence({ equivalence: equivalences })));
+      } catch (e) {
+        reject(dispatch(setEquivalence({ equivalence: {} })));
+      }
+    });
   }
 }
 

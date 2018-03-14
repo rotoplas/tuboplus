@@ -1,15 +1,18 @@
 import * as types from './types';
 import Api from '../lib/api';
+import contact from '../../assets/ldb/contactenos.json';
 
 //FETCHERS
 
 export function fetchContact(){
   return (dispatch, getState) => {
-    return Api.get(`/contactenos`).then(res => {
-      dispatch(setContact({ contact: res }));
-    }).catch((err) => {
-      dispatch(setContact({ contact: {} }));
-    })
+    return new Promise((resolve, reject) => {
+      try {
+        resolve(dispatch(setContact({ contact: contact })));
+      } catch (e) {
+        reject(dispatch(setContact({ contact: [] })));
+      }
+    });
   }
 }
 

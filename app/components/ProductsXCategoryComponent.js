@@ -44,7 +44,6 @@ class ProductsXCategoryComponent extends Component {
       <View style={styles.imageContainer}>
           <Image style={styles.prodImage} source={{uri: item.image}} />
           <Text style={styles.productName}>{item.name}</Text>
-          {/*<Text style={styles.prodDescription}>{item.description}</Text>*/}
       </View>
     </TouchableHighlight>
   );

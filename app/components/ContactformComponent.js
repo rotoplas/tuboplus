@@ -12,6 +12,7 @@ import MenuBottomComponent from './MenuBottomComponent';
 import FormatUtil from '../lib/format';
 
 class ContactformComponent extends Component{
+  
 static navigationOptions = {};
 
  constructor(props) {

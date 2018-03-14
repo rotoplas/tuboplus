@@ -16,7 +16,6 @@ class ContactComponent extends Component{
 	constructor(props) {
     super(props);
     this.state = {
-      phoneNumberCall: '+573225132806',
 			totalDuration: 90000,
 			timerStart: false,
 			timerReset: false,
@@ -45,13 +44,12 @@ class ContactComponent extends Component{
 
 	static navigationOptions = {};
 
-
 	render() {
 
 		if(this.state.isLoading){
 			view = <View><Text> Cargando ... </Text></View>;
 		} else {
-			console.log("contactPayload -> ", this.state.contactPayload);
+			console.log(this.state.contactPayload);
 				view = <View>
 									<View style={styles.imgContent}>
 										<Image style={styles.imgContact}  source={{uri : this.state.contactPayload.header.url}} />

@@ -40,9 +40,7 @@ class BenefitsComponent extends Component {
   render() {
     if(this.state.isLoading){
       view =  <Text style={styles.cargando}> Cargando... </Text>;
-
     } else {
-      console.log(this.state.benefitsPayload);
       view = (<View>
                 <View style={styles.wrapperBenefits}>
                   <Text style={styles.titBenefits}>Beneficios</Text>
@@ -56,23 +54,18 @@ class BenefitsComponent extends Component {
   return (
     <View style={styles.wrapperAll} >
 
-
       <ScrollView scrollEnabled={false}
                   overScrollMode={"auto"}
 									showsVerticalScrollIndicator={false}
 									bounces={false}>
 
-        <Header {...this.props}/>
+        <Header {...this.props} />
 
         <LinearGradient colors={["#5dc1d9","#092d4a"]} style={styles.linearGradient} >
-
         { view }
-
         </LinearGradient>
 
-
      </ScrollView>
-
 
      <MenuBottomComponent {...this.props} />
 
