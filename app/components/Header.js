@@ -92,7 +92,6 @@ class Header extends Component{
 
 		var searchInput;
 		var headerView;
-		//console.log("this.state -> ", this.state);
 		    if (this.state.visible){
 		      searchInput = (<View>
 														<LinearGradient colors={["#23a7df","#0186be"]} style={styles.wrapperInner} >

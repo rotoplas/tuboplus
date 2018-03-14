@@ -60,7 +60,6 @@ class CategoriesComponent extends Component {
   }
 
   render() {
-    if(this.state.status){
         if(this.state.isLoading){
           view = <Text style={styles.cargando}> Cargando... </Text>;
         } else {
@@ -91,9 +90,6 @@ class CategoriesComponent extends Component {
                           renderItem={this.renderItem}/>
                 </View>);
        }
-    } else {
-      view = <Text> No tienes conexión a internet. </Text>;
-    }
 
   return (
     <View style={styles.wrapperAll} >

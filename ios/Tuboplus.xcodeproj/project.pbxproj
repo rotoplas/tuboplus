@@ -114,6 +114,15 @@
 		239A618B13AC45D7AB545B6E /* Proceso-termofusion-06.png in Resources */ = {isa = PBXBuildFile; fileRef = E8A5634FCF524F19B47A4174 /* Proceso-termofusion-06.png */; };
 		DD0C631F22C8472595247694 /* Proceso-termofusion-07.png in Resources */ = {isa = PBXBuildFile; fileRef = 33902FA82B5E447797CCAD76 /* Proceso-termofusion-07.png */; };
 		CFBBFC336DC741D4A3EABC5C /* Proceso-termofusion-08.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E8F69EE71B441A7A297C582 /* Proceso-termofusion-08.png */; };
+		6432C4059FE047EC97E72D04 /* productHidraulica-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70BF3ED5144D408FAEA96261 /* productHidraulica-2.jpg */; };
+		E8F281D63021454B86DEE6BA /* termofusor-RJ-110-1-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20EB54ABC4FF427C881AC010 /* termofusor-RJ-110-1-1.jpg */; };
+		D1EEAE523E29441B955D8699 /* tubos-copy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D02454CEB1346F98EA4F797 /* tubos-copy.jpg */; };
+		4EF82894B3184358938DBA22 /* imagen1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1742EB4244BF49FAB421A0EA /* imagen1.jpg */; };
+		05BC41D113754F0B96FC3410 /* imagen2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 115723F89FF04C8A993C7414 /* imagen2.jpg */; };
+		E192F213FC17435A9E45948E /* imagen3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B57AA935F65A4A7892F56CCD /* imagen3.jpg */; };
+		1F37DE58488A4EFF964B37A4 /* imagen4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF7F91038D904BCD92F8F8E9 /* imagen4.jpg */; };
+		06177397A29047A9A0294753 /* imagen5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 682B7B16F94A4B0AA53C6601 /* imagen5.jpg */; };
+		61CAA407933643CA95E609A7 /* imagen7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B13714DFFAEF404EB5536FFD /* imagen7.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -522,6 +531,15 @@
 		E8A5634FCF524F19B47A4174 /* Proceso-termofusion-06.png */ = {isa = PBXFileReference; name = "Proceso-termofusion-06.png"; path = "../assets/img/termofusion/Proceso-termofusion-06.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		33902FA82B5E447797CCAD76 /* Proceso-termofusion-07.png */ = {isa = PBXFileReference; name = "Proceso-termofusion-07.png"; path = "../assets/img/termofusion/Proceso-termofusion-07.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		5E8F69EE71B441A7A297C582 /* Proceso-termofusion-08.png */ = {isa = PBXFileReference; name = "Proceso-termofusion-08.png"; path = "../assets/img/termofusion/Proceso-termofusion-08.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		70BF3ED5144D408FAEA96261 /* productHidraulica-2.jpg */ = {isa = PBXFileReference; name = "productHidraulica-2.jpg"; path = "../assets/img/categories/productHidraulica-2.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		20EB54ABC4FF427C881AC010 /* termofusor-RJ-110-1-1.jpg */ = {isa = PBXFileReference; name = "termofusor-RJ-110-1-1.jpg"; path = "../assets/img/categories/termofusor-RJ-110-1-1.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6D02454CEB1346F98EA4F797 /* tubos-copy.jpg */ = {isa = PBXFileReference; name = "tubos-copy.jpg"; path = "../assets/img/categories/tubos-copy.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1742EB4244BF49FAB421A0EA /* imagen1.jpg */ = {isa = PBXFileReference; name = "imagen1.jpg"; path = "../assets/img/categories/imagen1.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		115723F89FF04C8A993C7414 /* imagen2.jpg */ = {isa = PBXFileReference; name = "imagen2.jpg"; path = "../assets/img/categories/imagen2.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B57AA935F65A4A7892F56CCD /* imagen3.jpg */ = {isa = PBXFileReference; name = "imagen3.jpg"; path = "../assets/img/categories/imagen3.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DF7F91038D904BCD92F8F8E9 /* imagen4.jpg */ = {isa = PBXFileReference; name = "imagen4.jpg"; path = "../assets/img/categories/imagen4.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		682B7B16F94A4B0AA53C6601 /* imagen5.jpg */ = {isa = PBXFileReference; name = "imagen5.jpg"; path = "../assets/img/categories/imagen5.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B13714DFFAEF404EB5536FFD /* imagen7.jpg */ = {isa = PBXFileReference; name = "imagen7.jpg"; path = "../assets/img/categories/imagen7.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -914,6 +932,15 @@
 				E8A5634FCF524F19B47A4174 /* Proceso-termofusion-06.png */,
 				33902FA82B5E447797CCAD76 /* Proceso-termofusion-07.png */,
 				5E8F69EE71B441A7A297C582 /* Proceso-termofusion-08.png */,
+				70BF3ED5144D408FAEA96261 /* productHidraulica-2.jpg */,
+				20EB54ABC4FF427C881AC010 /* termofusor-RJ-110-1-1.jpg */,
+				6D02454CEB1346F98EA4F797 /* tubos-copy.jpg */,
+				1742EB4244BF49FAB421A0EA /* imagen1.jpg */,
+				115723F89FF04C8A993C7414 /* imagen2.jpg */,
+				B57AA935F65A4A7892F56CCD /* imagen3.jpg */,
+				DF7F91038D904BCD92F8F8E9 /* imagen4.jpg */,
+				682B7B16F94A4B0AA53C6601 /* imagen5.jpg */,
+				B13714DFFAEF404EB5536FFD /* imagen7.jpg */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1487,6 +1514,15 @@
 				239A618B13AC45D7AB545B6E /* Proceso-termofusion-06.png in Resources */,
 				DD0C631F22C8472595247694 /* Proceso-termofusion-07.png in Resources */,
 				CFBBFC336DC741D4A3EABC5C /* Proceso-termofusion-08.png in Resources */,
+				6432C4059FE047EC97E72D04 /* productHidraulica-2.jpg in Resources */,
+				E8F281D63021454B86DEE6BA /* termofusor-RJ-110-1-1.jpg in Resources */,
+				D1EEAE523E29441B955D8699 /* tubos-copy.jpg in Resources */,
+				4EF82894B3184358938DBA22 /* imagen1.jpg in Resources */,
+				05BC41D113754F0B96FC3410 /* imagen2.jpg in Resources */,
+				E192F213FC17435A9E45948E /* imagen3.jpg in Resources */,
+				1F37DE58488A4EFF964B37A4 /* imagen4.jpg in Resources */,
+				06177397A29047A9A0294753 /* imagen5.jpg in Resources */,
+				61CAA407933643CA95E609A7 /* imagen7.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

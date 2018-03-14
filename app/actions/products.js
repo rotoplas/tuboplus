@@ -1,5 +1,6 @@
 import * as types from './types';
 import Api from '../lib/api';
+import categories from '../../assets/ldb/catalogo.json';
 
 //FETCHERS
 
@@ -16,12 +17,13 @@ export function fetchProducts(){
 
 export function fetchCategories(){
    return (dispatch, getState) => {
-      return Api.get(`/catalogo`).then(res => {
-        dispatch(setSearchedCategories({ categories: res }));
-      }).catch((err) => {
-        console.log(err);
-        dispatch(setSearchedCategories({ categories: [] }));
-      })
+     return new Promise((resolve, reject) => {
+       try {
+         resolve(dispatch(setSearchedCategories({ categories: categories })));
+       } catch (e) {
+         reject(dispatch(setSearchedCategories({ categories: [] })));
+       }
+     });
   }
 }
 
