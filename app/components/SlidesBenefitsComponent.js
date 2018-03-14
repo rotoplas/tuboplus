@@ -128,6 +128,9 @@ export default class SlidesBenefitsComponent extends Component {
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           scrollEnabled={this.props.scrollEnabled}
+          overScrollMode={"auto"}
+          showsVerticalScrollIndicator={false}
+          bounces={false}
           {...this._panResponder.panHandlers}>
 
           {this.props.dataSource.map((image, index) => {
@@ -142,7 +145,7 @@ export default class SlidesBenefitsComponent extends Component {
               <View key={index} style={styles.containerImage}>
                 <View style={styles.overlay}>
                   <Image
-                    source={{uri: `${image.url}.png`}}
+                    source={{uri: `${image.url}`}}
                     style={styles.imageSlider}/>
                 </View>
                 {textComponent}

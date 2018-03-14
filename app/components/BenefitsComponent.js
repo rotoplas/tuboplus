@@ -48,7 +48,7 @@ class BenefitsComponent extends Component {
                   <Text style={styles.titBenefits}>Beneficios</Text>
                 </View>
                  <View style={styles.sliderBenefits}>
-                  <SlidesBenefitsComponent dataSource={this.state.benefitsPayload}/>
+                  <SlidesBenefitsComponent dataSource={this.state.benefitsPayload} />
                 </View>
               </View>);
   }
@@ -57,7 +57,7 @@ class BenefitsComponent extends Component {
     <View style={styles.wrapperAll} >
 
 
-      <ScrollView
+      <ScrollView scrollEnabled={false}
                   overScrollMode={"auto"}
 									showsVerticalScrollIndicator={false}
 									bounces={false}>

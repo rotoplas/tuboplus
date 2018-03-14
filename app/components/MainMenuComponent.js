@@ -35,7 +35,7 @@ class MainMenuComponent extends Component{
 
 	renderItem = ({item}) => (
 				<TouchableHighlight
-        underlayColor={'transparent'}
+          underlayColor={'transparent'}
 		      onPress={() => this.navigateTo(item)}>
 					<LinearGradient colors={item.colors} style={styles.linearGradient} key={item.key}>
 							<Image style={styles.iconItem} source={item.imageIcon}/>
@@ -50,7 +50,7 @@ class MainMenuComponent extends Component{
 		return (
 
       <ScrollView style={styles.wrapperMenu}
-      overScrollMode={"auto"}
+                  overScrollMode={"auto"}
 									showsVerticalScrollIndicator={false}
 									bounces={false}>
 
