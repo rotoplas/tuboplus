@@ -6,15 +6,16 @@ import * as TimeLifeActions from './timeLife';
 import * as BenefitsActions from './benefits';
 import * as ContactFormActions from './contactForm';
 import * as SearchActions from './search';
-
+import * as NetworkActions from './network';
 
 export const ActionCreators = Object.assign([],
-  ProductActions,
-  EquivalenceActions,
-  TermofusionActions,
-  ContactActions,
-  TimeLifeActions,
-  BenefitsActions,
-  ContactFormActions,
-  SearchActions,
+    ProductActions,
+    EquivalenceActions,
+    TermofusionActions,
+    ContactActions,
+    TimeLifeActions,
+    BenefitsActions,
+    ContactFormActions,
+    SearchActions,
+    NetworkActions,
 );

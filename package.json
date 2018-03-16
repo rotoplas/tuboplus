@@ -7,8 +7,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "base-64": "^0.1.0",
     "prop-types": "^15.6.0",
     "react": "16.0.0",
+    "react-addons-update": "^15.6.2",
     "react-native": "0.50.0",
     "react-native-animatable": "^1.2.4",
     "react-native-chooser": "^1.7.0",

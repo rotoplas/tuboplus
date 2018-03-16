@@ -181,6 +181,22 @@ class FormatUtil {
         }
   }
 
+  static toSubscribeForm(rawData) {
+        try {
+          return {
+            email_address: rawData.hasOwnProperty('placeholderEmail') ? rawData.placeholderEmail : "",
+            status: "subscribed",
+            merge_fields: {
+               "FNAME": rawData.hasOwnProperty('placeholderNombres') ? rawData.placeholderNombres : "",
+               "LNAME": rawData.hasOwnProperty('placeholderApellidos') ? rawData.placeholderApellidos : "",
+            }
+          };
+        } catch (err) {
+            console.log(err);
+            return {};
+        }
+  }
+
   static toDiameter(rawData) {
         try {
           return rawData.map((val, idx) => {

@@ -12,7 +12,6 @@ import MenuBottomComponent from './MenuBottomComponent';
 import FormatUtil from '../lib/format';
 
 class ContactformComponent extends Component{
-  
 static navigationOptions = {};
 
  constructor(props) {
@@ -83,22 +82,19 @@ static navigationOptions = {};
   onSendFrom = () => {
     if(this.validateForm(this.state)){
       let payload = FormatUtil.toContactForm(this.state);
-      console.log(payload);
       this.props.screenProps.sendContactForm(payload).then((res) => {
-          console.log(this.props.postedContactForm);
           this.setState({ isSending : false, status : false });
       }).catch(err => {
           console.log(`err -> ${err}`);
           this.setState({ isSending : false, status : false });
       });
     } else {
-      alert("no");
+      alert("Rellena los datos del formulario.");
     }
   }
 
   render() {
     return (
-
     <View style={styles.wrapperAll} >
 
       <ScrollView style={styles.wrapperContactform}
@@ -224,7 +220,6 @@ static navigationOptions = {};
        </ScrollView>
        <MenuBottomComponent {...this.props} />
     </View>
-
     );
   }
 }

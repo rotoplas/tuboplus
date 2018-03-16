@@ -7,6 +7,7 @@ import * as timeLifeReducer from './timeLife';
 import * as benefitReducer from './benefit';
 import * as contactFormReducer from './contactForm';
 import * as itemsSearchedReducer from './search';
+import * as networkReducer from './network'
 
 export default combineReducers(Object.assign(
   productsReducer,
@@ -17,4 +18,5 @@ export default combineReducers(Object.assign(
   benefitReducer,
   contactFormReducer,
   itemsSearchedReducer,
+  networkReducer,
 ));
