@@ -1,6 +1,6 @@
 import * as types from './types';
 import Api from '../lib/api';
-import beneficios from '../../assets/ldb/beneficios.json';
+import beneficios from '../../assets/ldb/beneficios.js';
 
 //FETCHERS
 

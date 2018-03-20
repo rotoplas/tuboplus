@@ -57,6 +57,7 @@ class TimeLifeComponent extends Component {
 		if(this.state.isLoading){
 			view = <Text style={styles.cargando}> Cargando... </Text>;
 		} else {
+			console.log(this.state.timeLifePayload.header.url);
 			view = <View>
 								<View style={styles.titContainer}>
 					       <Text style={styles.mainTitle}>{this.state.timeLifePayload.title}</Text>
@@ -64,7 +65,7 @@ class TimeLifeComponent extends Component {
 					      </View>
 
 					      <View style={styles.imgTableContain}>
-					        <Image style={styles.imgTable}  source={{url : this.state.timeLifePayload.header.url}} />
+					        <Image style={styles.imgTable}  source={this.state.timeLifePayload.header} />
 					      </View>
 
 					      <View style={styles.filterBy} >
@@ -91,6 +92,7 @@ class TimeLifeComponent extends Component {
 					      </View>
 			      </View>;
 		}
+
 		return (
 
 		<View style={styles.wrapperContact}>

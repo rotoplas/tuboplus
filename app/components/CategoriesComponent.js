@@ -49,7 +49,7 @@ class CategoriesComponent extends Component {
     <TouchableHighlight underlayColor={'transparent'} style={styles.productItem}
       onPress={() => this.props.navigation.navigate('ProductsXCategoryComponent', { category : item.key, name : item.name })}>
         <View style={styles.imageContainer}>
-            <Image style={styles.prodImage} source={{uri: item.image}} />
+            <Image style={styles.prodImage} source={item.image} />
             <Text style={styles.productName}>{item.name}</Text>
         </View>
     </TouchableHighlight>
@@ -95,7 +95,7 @@ class CategoriesComponent extends Component {
     <View style={styles.wrapperAll} >
 
       <ScrollView style={styles.wrapperProducts}
-      overScrollMode={"auto"}
+                  overScrollMode={"auto"}
 									showsVerticalScrollIndicator={false}
 									bounces={false}>
 

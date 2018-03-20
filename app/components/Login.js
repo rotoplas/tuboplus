@@ -53,8 +53,6 @@ class Login extends Component{
 
 
 const styles = StyleSheet.create({
-
-
   wrapperLogin: {
     paddingTop: '10%',
     paddingRight: '15%',
@@ -165,8 +163,6 @@ const styles = StyleSheet.create({
     marginTop: 50,
     textDecorationLine: 'underline',
   }
-
 });
-
 
 export default Login;

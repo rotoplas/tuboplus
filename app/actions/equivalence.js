@@ -1,6 +1,6 @@
 import * as types from './types';
 import Api from '../lib/api';
-import equivalences from '../../assets/ldb/equivalencias.json';
+import equivalences from '../../assets/ldb/equivalencias.js';
 
 //FETCHERS
 

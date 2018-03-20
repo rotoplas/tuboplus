@@ -116,7 +116,7 @@ class FormatUtil {
               return {
                   title : rawData.hasOwnProperty('titulo') ? rawData.titulo : "",
                   description : rawData.hasOwnProperty('descripcion') ? rawData.descripcion : "",
-                  header : rawData.hasOwnProperty('img_tablet') && rawData.hasOwnProperty('img_movil') ? DeviceInfo.isTablet() ? { url : rawData.img_tablet } : { url : rawData.img_movil } : null,
+                  header : rawData.hasOwnProperty('img_tablet') && rawData.hasOwnProperty('img_movil') ? DeviceInfo.isTablet() ? rawData.img_tablet : rawData.img_movil : null,
                   filters : rawData.hasOwnProperty('filtros') ? this.toFilter(rawData.filtros) : [],
                   pressures : rawData.hasOwnProperty('tabla_presiones') ? this.toPressures(rawData.tabla_presiones) : []
               };

@@ -1,8 +1,8 @@
-{
+export default {
    "titulo":"Presiones permisibles de trabajo.",
    "descripcion":" ",
-   "img_tablet":"http:\/\/35.168.212.248\/wp-content\/uploads\/2017\/12\/img_tablapresiones.jpg",
-   "img_movil":"http:\/\/35.168.212.248\/wp-content\/uploads\/2017\/12\/img_tablapresiones.jpg",
+   "img_tablet": require('../img/vida_util/img_tablapresiones.jpg'),
+   "img_movil": require('../img/vida_util/img_tablapresiones.jpg'),
    "filtros":[
       {
          "id":"1",

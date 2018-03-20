@@ -160,7 +160,7 @@ export default class SlidesTilesComponent extends Component {
               <View key={index} style={styles.containerImage}>
                 <View style={styles.overlay}>
                   <Image
-                    source={{uri: `${image.url}`}}
+                    source={image.url}
                      style={styles.imageSlider}/>
                 </View>
                 {textComponent}

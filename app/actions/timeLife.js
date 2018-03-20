@@ -1,6 +1,6 @@
 import * as types from './types';
 import Api from '../lib/api';
-import timeLife from '../../assets/ldb/vida_util.json';
+import timeLife from '../../assets/ldb/vida_util.js';
 
 //FETCHERS
 

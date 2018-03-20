@@ -1,6 +1,6 @@
 import * as types from './types';
 import Api from '../lib/api';
-import termofusion from '../../assets/ldb/termofusion.json';
+import termofusion from '../../assets/ldb/termofusion.js';
 
 //FETCHERS
 

@@ -1,68 +1,68 @@
-{
+export default {
    "slider":[
       {
          "id":"1",
          "titulo":"1",
          "descripcion":"",
          "descripcion_larga":"Verifica que los Dados, Termofusor, Conexiones y Tubo est\u00e9n limpios.De lo contrario limpiarlos con un pa\u00f1o sin pelusa y sin materiales sint\u00e9ticos.",
-         "img_tablet":"Proceso-termofusion-01.png",
-         "img_movil":"Proceso-termofusion-01.png"
+         "img_tablet": require('../img/termofusion/Proceso-termofusion-01.png'),
+         "img_movil": require('../img/termofusion/Proceso-termofusion-01.png')
       },
       {
          "id":"2",
          "titulo":"2",
          "descripcion":"",
          "descripcion_larga":"Marca profundidad de inserci\u00f3n en el Tubo acorde a su di\u00e1metro.",
-         "img_tablet":"Proceso-termofusion-02.png",
-         "img_movil":"Proceso-termofusion-02.png"
+         "img_tablet": require('../img/termofusion/Proceso-termofusion-02.png'),
+         "img_movil": require('../img/termofusion/Proceso-termofusion-02.png')
       },
       {
          "id":"3",
          "titulo":"3",
          "descripcion":"",
          "descripcion_larga":"Verifica que la temperatura del termofusor sea adecuada (LED verde) e inserta el Tubo y Conexi\u00f3n hasta la profundidad de inserci\u00f3n sin girarlos.",
-         "img_tablet":"Proceso-termofusion-03.png",
-         "img_movil":"Proceso-termofusion-03.png"
+         "img_tablet": require('../img/termofusion/Proceso-termofusion-03.png'),
+         "img_movil": require('../img/termofusion/Proceso-termofusion-03.png')
       },
       {
          "id":"4",
          "titulo":"4",
          "descripcion":"",
          "descripcion_larga":"Mant\u00e9n el Tubo y la Conexi\u00f3n en los dados del termofusor el tiempo de calentamiento acorde al di\u00e1metro.",
-         "img_tablet":"Proceso-termofusion-04.png",
-         "img_movil":"Proceso-termofusion-04.png"
+         "img_tablet": require('../img/termofusion/Proceso-termofusion-04.png'),
+         "img_movil": require('../img/termofusion/Proceso-termofusion-04.png')
       },
       {
          "id":"5",
          "titulo":"5",
          "descripcion":"",
          "descripcion_larga":"Remueve el Tubo y Conexi\u00f3n al mismo tiempo de los dados del Termofusor sin girarlos.",
-         "img_tablet":"Proceso-termofusion-05.png",
-         "img_movil":"Proceso-termofusion-05.png"
+         "img_tablet": require('../img/termofusion/Proceso-termofusion-05.png'),
+         "img_movil": require('../img/termofusion/Proceso-termofusion-05.png')
       },
       {
          "id":"6",
          "titulo":"6",
          "descripcion":"",
          "descripcion_larga":"Inserta inmediatamente el Tubo en la Conexi\u00f3n hasta la profundidad de inserci\u00f3n y hasta que se junten ambos labios.",
-         "img_tablet":"Proceso-termofusion-06.png",
-         "img_movil":"Proceso-termofusion-06.png"
+         "img_tablet": require('../img/termofusion/Proceso-termofusion-06.png'),
+         "img_movil": require('../img/termofusion/Proceso-termofusion-06.png')
       },
       {
          "id":"7",
          "titulo":"7",
          "descripcion":"",
          "descripcion_larga":"Una vez que los labios se junten, se tiene entre 4 y 10 segundos de acople acorde al di\u00e1metro del tubo para alinear y hacer ajustes, no girar.",
-         "img_tablet":"Proceso-termofusion-07.png",
-         "img_movil":"Proceso-termofusion-07.png"
+         "img_tablet": require('../img/termofusion/Proceso-termofusion-07.png'),
+         "img_movil": require('../img/termofusion/Proceso-termofusion-07.png')
       },
       {
          "id":"8",
          "titulo":"8",
          "descripcion":"",
          "descripcion_larga":"Mant\u00e9n el tiempo de enfriamiento acorde el di\u00e1metro y mant\u00e9n soportado el Tubo y la conexi\u00f3n por lo menos una cuarta parte del tiempo de enfriamiento.",
-         "img_tablet":"Proceso-termofusion-08.png",
-         "img_movil":"Proceso-termofusion-08.png"
+         "img_tablet": require('../img/termofusion/Proceso-termofusion-08.png'),
+         "img_movil": require('../img/termofusion/Proceso-termofusion-08.png')
       }
    ],
    "filtros":[
@@ -189,25 +189,25 @@
    "especificaciones":{
       "titulo":"",
       "descripcion":"",
-      "img_tablet":"http:\/\/www.tigre.pe\/sites\/tigre.pe\/files\/inline-images\/produto-home-tubos-e-conexoes_0.png.pagespeed.ce.BgfUTbXEQ6.png",
-      "img_movil":"http:\/\/www.tigre.pe\/sites\/tigre.pe\/files\/inline-images\/produto-home-tubos-e-conexoes_0.png.pagespeed.ce.BgfUTbXEQ6.png"
+      "img_tablet": require('../img/termofusion/produto-home-tubos-e-conexoes_0.png.pagespeed.ce.BgfUTbXEQ6.png'),
+      "img_movil": require('../img/termofusion/produto-home-tubos-e-conexoes_0.png.pagespeed.ce.BgfUTbXEQ6.png')
    },
    "herramientas":{
       "titulo":"",
       "descripcion":"",
-      "img_tablet":"http:\/\/www.tigre.pe\/sites\/tigre.pe\/files\/inline-images\/produto-home-tubos-e-conexoes_0.png.pagespeed.ce.BgfUTbXEQ6.png",
-      "img_movil":"http:\/\/www.tigre.pe\/sites\/tigre.pe\/files\/inline-images\/produto-home-tubos-e-conexoes_0.png.pagespeed.ce.BgfUTbXEQ6.png"
+      "img_tablet": require('../img/termofusion/produto-home-tubos-e-conexoes_0.png.pagespeed.ce.BgfUTbXEQ6.png'),
+      "img_movil": require('../img/termofusion/produto-home-tubos-e-conexoes_0.png.pagespeed.ce.BgfUTbXEQ6.png')
    },
    "tipos_calentamiento":{
       "titulo":"",
       "descripcion":"",
-      "img_tablet":"http:\/\/www.tigre.pe\/sites\/tigre.pe\/files\/inline-images\/produto-home-tubos-e-conexoes_0.png.pagespeed.ce.BgfUTbXEQ6.png",
-      "img_movil":"http:\/\/www.tigre.pe\/sites\/tigre.pe\/files\/inline-images\/produto-home-tubos-e-conexoes_0.png.pagespeed.ce.BgfUTbXEQ6.png"
+      "img_tablet": require('../img/termofusion/produto-home-tubos-e-conexoes_0.png.pagespeed.ce.BgfUTbXEQ6.png'),
+      "img_movil": require('../img/termofusion/produto-home-tubos-e-conexoes_0.png.pagespeed.ce.BgfUTbXEQ6.png')
    },
    "equivalencias":{
       "titulo":"",
       "descripcion":"",
-      "img_tablet":"http:\/\/www.tigre.pe\/sites\/tigre.pe\/files\/inline-images\/produto-home-tubos-e-conexoes_0.png.pagespeed.ce.BgfUTbXEQ6.png",
-      "img_movil":"http:\/\/www.tigre.pe\/sites\/tigre.pe\/files\/inline-images\/produto-home-tubos-e-conexoes_0.png.pagespeed.ce.BgfUTbXEQ6.png"
+      "img_tablet": require('../img/termofusion/produto-home-tubos-e-conexoes_0.png.pagespeed.ce.BgfUTbXEQ6.png'),
+      "img_movil": require('../img/termofusion/produto-home-tubos-e-conexoes_0.png.pagespeed.ce.BgfUTbXEQ6.png')
    }
 }

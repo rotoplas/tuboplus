@@ -1,6 +1,6 @@
 import * as types from './types';
 import Api from '../lib/api';
-import contact from '../../assets/ldb/contactenos.json';
+import contact from '../../assets/ldb/contactenos.js';
 
 //FETCHERS
 

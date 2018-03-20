@@ -109,7 +109,9 @@ class AppContainer extends Component {
     this.state = {};
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    console.log(Platform.OS); 
+  }
 
   render() {
       return ( <RootStack screenProps={this.props} /> );

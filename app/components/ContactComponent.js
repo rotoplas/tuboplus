@@ -52,7 +52,7 @@ class ContactComponent extends Component{
 			console.log(this.state.contactPayload);
 				view = <View>
 									<View style={styles.imgContent}>
-										<Image style={styles.imgContact}  source={{uri : this.state.contactPayload.header.url}} />
+										<Image style={styles.imgContact}  source={this.state.contactPayload.header.url} />
 									</View>
 
 									<View style={styles.contactBox1}>

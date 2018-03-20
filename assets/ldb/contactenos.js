@@ -1,6 +1,6 @@
-{
-   "img_tablet":"img_contacts.jpg",
-   "img_movil":"img_contacts.jpg",
+export default {
+   "img_tablet": require('../img/contactenos/img_contacts.jpg'),
+   "img_movil": require('../img/contactenos/img_contacts.jpg'),
    "horario_atencion":{
       "dias":"Lunes - Sábado",
       "horarios":"8:00am - 10:00pm"
