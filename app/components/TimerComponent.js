@@ -127,9 +127,7 @@ class TimerComponent extends Component {
     let formatted;
 
     formatted = (<View style={styles.timerContainer}>
-
-                        <View>
-
+                    <View>
                         <TouchableHighlight style={styles.arrowTimer} underlayColor={'transparent'}
                               onPress={() => this.addMinute()}>
                             <Icon name='angle-up' size={30}></Icon>

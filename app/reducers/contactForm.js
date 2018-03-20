@@ -6,3 +6,9 @@ export const postedContactForm = createReducer({}, {
     return action.contactForm;
   }
 });
+
+export const postedSubscribeForm = createReducer({}, {
+  [types.POST_SUBSCRIBE_FORM](state, action){
+    return action.subscribeForm;
+  }
+});

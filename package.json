@@ -7,8 +7,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "base-64": "^0.1.0",
     "prop-types": "^15.6.0",
     "react": "16.0.0",
+    "react-addons-update": "^15.6.2",
     "react-native": "0.50.0",
     "react-native-animatable": "^1.2.4",
     "react-native-chooser": "^1.7.0",
@@ -17,7 +19,7 @@
     "react-native-config": "^0.11.2",
     "react-native-connection-info": "^1.1.0",
     "react-native-device-info": "^0.13.0",
-    "react-native-linear-gradient": "react-native-community/react-native-linear-gradient",
+    "react-native-linear-gradient": "github:react-native-community/react-native-linear-gradient",
     "react-native-material-textfield": "^0.10.2",
     "react-native-modest-checkbox": "^2.0.0",
     "react-native-slideshow": "^1.0.1",
