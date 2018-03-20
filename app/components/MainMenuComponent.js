@@ -57,7 +57,7 @@ class MainMenuComponent extends Component{
 		  const value = await AsyncStorage.getItem('IS_REGISTERED');
 		  if (value !== null){
 		    // We have data!!
-				this.setState({ isRegistered: /*value === "true" ? true :*/ false });
+				this.setState({ isRegistered: value === "true" ? true :false });
 		  }
 
 		} catch (error) {
