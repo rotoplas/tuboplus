@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput, TouchableHighlight} from 'react-native';
+import { FlatList, Text, View, Image, StyleSheet, ScrollView, TextInput, TouchableHighlight, Alert } from 'react-native';
 import { TextField } from 'react-native-material-textfield';
 import CheckBox from 'react-native-modest-checkbox'
 import LinearGradient from 'react-native-linear-gradient';
@@ -83,13 +83,37 @@ static navigationOptions = {};
     if(this.validateForm(this.state)){
       let payload = FormatUtil.toContactForm(this.state);
       this.props.screenProps.sendContactForm(payload).then((res) => {
+          console.log(payload);
           this.setState({ isSending : false, status : false });
+          Alert.alert(
+            'Solicitud exitosa!',
+            'Datos enviados satisfactoriamente, en breve nos contactaremos con usted.',
+            [
+              {text: 'OK', onPress: () => console.log('OK Pressed')},
+            ],
+            { cancelable: false }
+          )
       }).catch(err => {
           console.log(`err -> ${err}`);
           this.setState({ isSending : false, status : false });
+          Alert.alert(
+            'Error!',
+            'Ocurrió un error al enviar los datos del formulario, por favor intente mas tarde.',
+            [
+              {text: 'OK', onPress: () => console.log('OK Pressed')},
+            ],
+            { cancelable: false }
+          )
       });
     } else {
-      alert("Rellena los datos del formulario.");
+      Alert.alert(
+        'Error!',
+        'Rellena los datos del formulario.',
+        [
+          {text: 'OK', onPress: () => console.log('OK Pressed')},
+        ],
+        { cancelable: false }
+      )
     }
   }
 

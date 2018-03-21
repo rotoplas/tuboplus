@@ -28,8 +28,6 @@ class Api {
   }
 
   static xhr(route, params, verb, headers = []) {
-    /*const host = "http://35.168.212.248/wp-json/servicios";
-    const url = `${host}${route}`;*/
 
     let options = Object.assign({ method: verb }, params ? { body: JSON.stringify(params) } : null );
     options.headers = Api.headers();
@@ -38,7 +36,7 @@ class Api {
       let authorization = base64.encode(headers["Authorization"]);
       options.headers["Authorization"] = `Basic ${authorization}`;
     }
-    
+
     return fetch(route, options).then(resp => {
       let json = resp.json();
       if (resp.ok) {
