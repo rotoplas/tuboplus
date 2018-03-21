@@ -42,7 +42,7 @@ class ProductsXSearchedComponent extends Component {
     <TouchableHighlight underlayColor={'transparent'} style={styles.productItem}
       onPress={() => this.props.navigation.navigate('ProductComponent', { product : item.key, category : item.category })}>
       <View style={styles.imageContainer}>
-          <Image style={styles.prodImage} source={{uri: item.image}} />
+          <Image style={styles.prodImage} source={item.image} />
           <Text style={styles.productName}>{item.name}</Text>
       </View>
     </TouchableHighlight>
@@ -57,10 +57,10 @@ class ProductsXSearchedComponent extends Component {
     if(this.state.listProductsXSearched.length){
       view = (<View>
                 <FlatList
-                keyExtractor={ this.keyExtractor }
-                numColumns={ 2 }
-                data={ this.state.listProductsXSearched }
-                renderItem={ this.renderItem }/>
+                  keyExtractor={ this.keyExtractor }
+                  numColumns={ 2 }
+                  data={ this.state.listProductsXSearched }
+                  renderItem={ this.renderItem }/>
             </View>);
     } else {
       view = <Text> No hay productos disponibles! </Text>;
@@ -71,7 +71,7 @@ class ProductsXSearchedComponent extends Component {
     <View style={styles.wrapperAll} >
 
       <ScrollView style={styles.wrapperProducts}
-        overScrollMode={"auto"}
+                  overScrollMode={"auto"}
 									showsVerticalScrollIndicator={false}
 									bounces={false}>
 

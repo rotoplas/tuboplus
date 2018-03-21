@@ -1,6 +1,7 @@
 import * as types from './types';
 import Api from '../lib/api';
 import categories from '../../assets/ldb/catalogo.js';
+import productsDTO from '../../assets/ldb/productos.js';
 
 //FETCHERS
 
@@ -27,29 +28,31 @@ export function fetchCategories(){
   }
 }
 
-export function fetchProduct(category, product){
+export function fetchProduct(category, productID){
   return (dispatch, getState) => {
-    return Api.get(`/productos/${category}/${product}`).then(res => {
+    /*return Api.get(`/productos/${category}/${product}`).then(res => {
       dispatch(setSearchedProduct({ product: res }));
     }).catch((err) => {
       console.log(err);
       dispatch(setSearchedProduct({ product: {} }));
-    })
+    })*/
+    return new Promise((resolve, reject) => {
+      try {
+        let product = productsDTO.filter(product => product.idCat === category && product.id === productID);
+        resolve(dispatch(setSearchedProduct({ product })));
+      } catch (e) {
+        reject(dispatch(setSearchedProduct({ product: [] })));
+      }
+    });
   }
 }
 
 export function fetchProductsXCategory(category : any){
   return (dispatch, getState) => {
-    /*return Api.get(`/productos/${category}`).then(res => {
-      dispatch(setSearchedProductsXCategory({ productsXCategory: res }));
-    }).catch((err) => {
-      console.log(err);
-      dispatch(setSearchedProductsXCategory({ productsXCategory: [] }));
-    })*/
     return new Promise((resolve, reject) => {
       try {
-        var productsXCategory =
-        resolve(dispatch(setSearchedProductsXCategory({ productsXCategory: categories })));
+        let productsXCategory = productsDTO.filter(product => product.idCat === category);
+        resolve(dispatch(setSearchedProductsXCategory({ productsXCategory })));
       } catch (e) {
         reject(dispatch(setSearchedProductsXCategory({ productsXCategory: [] })));
       }

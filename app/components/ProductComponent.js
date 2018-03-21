@@ -52,6 +52,12 @@ class ProductComponent extends Component{
     if(this.state.isLoading){
       view = <Text style={styles.cargando}> Cargando... </Text>;
     } else {
+      let ImgPlane = <View></View>;
+      if(this.state.productPayload.plane !== 80){
+        ImgPlane = <Image
+          style={{width: '100%', height:250, resizeMode: Image.resizeMode.contain}}
+          source={this.state.productPayload.plane} />;
+      }
       const sections = [
           {
             title: 'Correspondencias',
@@ -67,9 +73,8 @@ class ProductComponent extends Component{
             title: 'Planos',
             content:
             <View style={styles.contentPlano}>
-              <Image
-                style={{width: '100%', height:250, resizeMode: Image.resizeMode.contain}}
-                source={{uri: this.state.productPayload.plane}} />
+
+              {ImgPlane}
 
               {<Table3 labels={this.state.dataTable.labels}
                       values={this.state.dataTable.values}/>}
@@ -86,7 +91,7 @@ class ProductComponent extends Component{
                 </View>
 
                 <View style={styles.imgContent}>
-                  <Image style={styles.imgProd}  source={{uri: this.state.productPayload.image}} />
+                  <Image style={styles.imgProd}  source={this.state.productPayload.image} />
                 </View>
 
                 <AccordionProductComponent sections={sections} activeItem={-1}/>
@@ -100,7 +105,7 @@ class ProductComponent extends Component{
       <View style={styles.container}>
 
       <ScrollView style={styles.containerScroll}
-      overScrollMode={"auto"}
+                  overScrollMode={"auto"}
 									showsVerticalScrollIndicator={false}
 									bounces={false}>
 

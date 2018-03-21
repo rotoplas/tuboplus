@@ -5,8 +5,8 @@ export default [
       "titulo":"Tubo Clase 16",
       "descripcion":"",
       "categoria":"Tubería",
-      "img_tablet": require('../img/produtos/tubos-copy.jpg'),
-      "img_movil": require('../img/produtos/tubos-copy.jpg'),
+      "img_tablet": require('../img/productos/tubos-copy.jpg'),
+      "img_movil": require('../img/productos/tubos-copy.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -54,7 +54,7 @@ export default [
             "pulgadas":"4"
          }
       ],
-      "planos": require('../img/produtos/planos_rotoplas-01.png'),
+      "planos": require('../img/productos/planos_rotoplas-01.png'),
       "codigos":[
          {
             "id":"200224",
@@ -217,8 +217,8 @@ export default [
       "titulo":"Codo 90°",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/codo-90-1.jp'),
-      "img_movil":require('../img/produtos/codo-90-1.jpg'),
+      "img_tablet":require('../img/productos/codo-90-1.jpg'),
+      "img_movil":require('../img/productos/codo-90-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -266,7 +266,7 @@ export default [
             "pulgadas":"4"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-03.png'),
+      "planos":require('../img/productos/planos_rotoplas-03.png'),
       "codigos":[
          {
             "id":"200014",
@@ -429,8 +429,8 @@ export default [
       "titulo":"Codo M-H 90°",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/codo-macho-hembra-90-1.jpg'),
-      "img_movil":require('../img/produtos/codo-macho-hembra-90-1.jpg'),
+      "img_tablet":require('../img/productos/codo-macho-hembra-90-1.jpg'),
+      "img_movil":require('../img/productos/codo-macho-hembra-90-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -443,7 +443,7 @@ export default [
             "pulgadas":"3/4"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-04.png'),
+      "planos":require('../img/productos/planos_rotoplas-04.png'),
       "codigos":[
          {
             "id":"200037",
@@ -487,8 +487,8 @@ export default [
       "titulo":"Codo de 90° con Rosca Hembra",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/codo-c-rosca-hembra-1.jpg'),
-      "img_movil":require('../img/produtos/codo-c-rosca-hembra-1.jpg'),
+      "img_tablet":require('../img/productos/codo-c-rosca-hembra-1.jpg'),
+      "img_movil":require('../img/productos/codo-c-rosca-hembra-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -521,7 +521,7 @@ export default [
             "pulgadas":"1 x 1"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-06.png'),
+      "planos":require('../img/productos/planos_rotoplas-06.png'),
       "codigos":[
          {
             "id":"200022",
@@ -669,8 +669,8 @@ export default [
       "titulo":"Codo de 90° con Rosca Macho",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/codo-90-con-rosca-macho-.jpg'),
-      "img_movil":require('../img/produtos/codo-90-con-rosca-macho-.jpg'),
+      "img_tablet":require('../img/productos/codo-90-con-rosca-macho-.jpg'),
+      "img_movil":require('../img/productos/codo-90-con-rosca-macho-.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -703,7 +703,7 @@ export default [
             "pulgadas":"1 x 1"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-05.png'),
+      "planos":require('../img/productos/planos_rotoplas-05.png'),
       "codigos":[
          {
             "id":"200028",
@@ -863,8 +863,8 @@ export default [
       "titulo":"Codo 45°",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/codo-45-1.jpg'),
-      "img_movil":require('../img/produtos/codo-45-1.jpg'),
+      "img_tablet":require('../img/productos/codo-45-1.jpg'),
+      "img_movil":require('../img/productos/codo-45-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -912,7 +912,7 @@ export default [
             "pulgadas":"4"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-07.png'),
+      "planos":require('../img/productos/planos_rotoplas-07.png'),
       "codigos":[
          {
             "id":"200005",
@@ -1075,8 +1075,8 @@ export default [
       "titulo":"Codo M-H 45°",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/codo-macho-hembra-45-2.jp'),
-      "img_movil":require('../img/produtos/codo-macho-hembra-45-2.jpg'),
+      "img_tablet":require('../img/productos/codo-macho-hembra-45-2.jpg'),
+      "img_movil":require('../img/productos/codo-macho-hembra-45-2.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -1094,7 +1094,7 @@ export default [
             "pulgadas":"1"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-08.png'),
+      "planos":require('../img/productos/planos_rotoplas-08.png'),
       "codigos":[
          {
             "id":"200034",
@@ -1155,8 +1155,8 @@ export default [
       "titulo":"Cruz",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/cruz-1.jpg",
-      "img_movil":require('../img/produtos/cruz-1.jpg",
+      "img_tablet":require('../img/productos/cruz-1.jpg'),
+      "img_movil":require('../img/productos/cruz-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -1164,7 +1164,7 @@ export default [
             "pulgadas":"1/2"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-17.png",
+      "planos":require('../img/productos/planos_rotoplas-17.png'),
       "codigos":[
          {
             "id":"200082",
@@ -1191,8 +1191,8 @@ export default [
       "titulo":"Tee",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/T-normal.jpg",
-      "img_movil":require('../img/produtos/T-normal.jpg",
+      "img_tablet":require('../img/productos/T-normal.jpg'),
+      "img_movil":require('../img/productos/T-normal.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -1240,7 +1240,7 @@ export default [
             "pulgadas":"4"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-11.png",
+      "planos":require('../img/productos/planos_rotoplas-11.png'),
       "codigos":[
          {
             "id":"200178",
@@ -1421,8 +1421,8 @@ export default [
       "titulo":"Tee reducida central",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/Te-de-reducc-cen-.jpg",
-      "img_movil":require('../img/produtos/Te-de-reducc-cen-.jpg",
+      "img_tablet":require('../img/productos/Te-de-reducc-cen-.jpg'),
+      "img_movil":require('../img/productos/Te-de-reducc-cen-.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -1490,7 +1490,7 @@ export default [
             "pulgadas":"3 x 3 x 2 1/2"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-12.png",
+      "planos":require('../img/productos/planos_rotoplas-12.png'),
       "codigos":[
          {
             "id":"200185",
@@ -1851,8 +1851,8 @@ export default [
       "titulo":"Tee Reducida Extrema",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/Te-reduccion-extrema-1.jpg",
-      "img_movil":require('../img/produtos/Te-reduccion-extrema-1.jpg",
+      "img_tablet":require('../img/productos/Te-reduccion-extrema-1.jpg'),
+      "img_movil":require('../img/productos/Te-reduccion-extrema-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -1885,7 +1885,7 @@ export default [
             "pulgadas":"1 x 3/4 x 1"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-13.png",
+      "planos":require('../img/productos/planos_rotoplas-13.png'),
       "codigos":[
          {
             "id":"200198",
@@ -2069,8 +2069,8 @@ export default [
       "titulo":"Tee Reducida Extrema y Central",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/Te-de-reducc-extrema-y-cen-.jpg",
-      "img_movil":require('../img/produtos/Te-de-reducc-extrema-y-cen-.jpg",
+      "img_tablet":require('../img/productos/Te-de-reducc-extrema-y-cen-.jpg'),
+      "img_movil":require('../img/productos/Te-de-reducc-extrema-y-cen-.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -2083,7 +2083,7 @@ export default [
             "pulgadas":"1 x 1/2 x 3/4"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-14.png",
+      "planos":require('../img/productos/planos_rotoplas-14.png'),
       "codigos":[
          {
             "id":"200204",
@@ -2151,8 +2151,8 @@ export default [
       "titulo":"Tee con Rosca Central Hembra",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/tee-con-rosca-1.jpg",
-      "img_movil":require('../img/produtos/tee-con-rosca-1.jpg",
+      "img_tablet":require('../img/productos/tee-con-rosca-1.jpg'),
+      "img_movil":require('../img/productos/tee-con-rosca-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -2185,7 +2185,7 @@ export default [
             "pulgadas":"1 x 1"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-16.png",
+      "planos":require('../img/productos/planos_rotoplas-16.png'),
       "codigos":[
          {
             "id":"2000166",
@@ -2333,8 +2333,8 @@ export default [
       "titulo":"Tee con Rosca Central Macho",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/tee-con-rosca-central-macho-1.jpg",
-      "img_movil":require('../img/produtos/tee-con-rosca-central-macho-1.jpg",
+      "img_tablet":require('../img/productos/tee-con-rosca-central-macho-1.jpg'),
+      "img_movil":require('../img/productos/tee-con-rosca-central-macho-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -2367,7 +2367,7 @@ export default [
             "pulgadas":"1 x 1"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-15.png",
+      "planos":require('../img/productos/planos_rotoplas-15.png'),
       "codigos":[
          {
             "id":"2000172",
@@ -2527,8 +2527,8 @@ export default [
       "titulo":"Reducción",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/reduccion-1.jpg",
-      "img_movil":require('../img/produtos/reduccion-1.jpg",
+      "img_tablet":require('../img/productos/reduccion-1.jpg'),
+      "img_movil":require('../img/productos/reduccion-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -2616,7 +2616,7 @@ export default [
             "pulgadas":"4 x 3"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-24.png",
+      "planos":require('../img/productos/planos_rotoplas-24.png'),
       "codigos":[
          {
             "id":"200140",
@@ -2965,8 +2965,8 @@ export default [
       "titulo":"Cople",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/union-normal.jpg",
-      "img_movil":require('../img/produtos/union-normal.jpg",
+      "img_tablet":require('../img/productos/union-normal.jpg'),
+      "img_movil":require('../img/productos/union-normal.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -3014,7 +3014,7 @@ export default [
             "pulgadas":"4"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-02.png",
+      "planos":require('../img/productos/planos_rotoplas-02.png'),
       "codigos":[
          {
             "id":"200065",
@@ -3177,8 +3177,8 @@ export default [
       "titulo":"Conector Hembra",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/conector-hembra-1.jpg",
-      "img_movil":require('../img/produtos/conector-hembra-1.jpg",
+      "img_tablet":require('../img/productos/conector-hembra-1.jpg'),
+      "img_movil":require('../img/productos/conector-hembra-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -3236,7 +3236,7 @@ export default [
             "pulgadas":"3 x 3"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-21.png",
+      "planos":require('../img/productos/planos_rotoplas-21.png'),
       "codigos":[
          {
             "id":"200039",
@@ -3509,8 +3509,8 @@ export default [
       "titulo":"Tapón",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/tapon-1-1.jpg",
-      "img_movil":require('../img/produtos/tapon-1-1.jpg",
+      "img_tablet":require('../img/productos/tapon-1-1.jpg'),
+      "img_movil":require('../img/productos/tapon-1-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -3558,7 +3558,7 @@ export default [
             "pulgadas":"4"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-34.png",
+      "planos":require('../img/productos/planos_rotoplas-34.png'),
       "codigos":[
          {
             "id":"200155",
@@ -3721,8 +3721,8 @@ export default [
       "titulo":"Conector Macho con Espiga Termofusión",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/Conector-Macho-con-espiga-.jpg",
-      "img_movil":require('../img/produtos/Conector-Macho-con-espiga-.jpg",
+      "img_tablet":require('../img/productos/Conector-Macho-con-espiga-.jpg'),
+      "img_movil":require('../img/productos/Conector-Macho-con-espiga-.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -3730,7 +3730,7 @@ export default [
             "pulgadas":"1/2 x 1/2"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-22.png",
+      "planos":require('../img/productos/planos_rotoplas-22.png'),
       "codigos":[
          {
             "id":"200050",
@@ -3763,8 +3763,8 @@ export default [
       "titulo":"Tuerca Unión",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/tuerca_Union-1-1.jpg",
-      "img_movil":require('../img/produtos/tuerca_Union-1-1.jpg",
+      "img_tablet":require('../img/productos/tuerca_Union-1-1.jpg'),
+      "img_movil":require('../img/productos/tuerca_Union-1-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -3782,7 +3782,7 @@ export default [
             "pulgadas":"1 x 1"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-26.png",
+      "planos":require('../img/productos/planos_rotoplas-26.png'),
       "codigos":[
          {
             "id":"200232",
@@ -3849,8 +3849,8 @@ export default [
       "titulo":"Conector Macho",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/conector-macho-1.jpg",
-      "img_movil":require('../img/produtos/conector-macho-1.jpg",
+      "img_tablet":require('../img/productos/conector-macho-1.jpg'),
+      "img_movil":require('../img/productos/conector-macho-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -3908,7 +3908,7 @@ export default [
             "pulgadas":"3 x 3"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-22.png",
+      "planos":require('../img/productos/planos_rotoplas-22.png'),
       "codigos":[
          {
             "id":"200051",
@@ -4181,8 +4181,8 @@ export default [
       "titulo":"Conector Hembra con Espiga para Termofusión",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/Conector-hembra-con-espiga-1.jpg",
-      "img_movil":require('../img/produtos/Conector-hembra-con-espiga-1.jpg",
+      "img_tablet":require('../img/productos/Conector-hembra-con-espiga-1.jpg'),
+      "img_movil":require('../img/productos/Conector-hembra-con-espiga-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -4190,7 +4190,7 @@ export default [
             "pulgadas":"1/2 x 1/2"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-23.png",
+      "planos":require('../img/productos/planos_rotoplas-23.png'),
       "codigos":[
          {
             "id":"200050",
@@ -4223,8 +4223,8 @@ export default [
       "titulo":"Tuerca Unión Plástica Mixta",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/Tuerca-union-plast-mixta-1-1.jpg",
-      "img_movil":require('../img/produtos/Tuerca-union-plast-mixta-1-1.jpg",
+      "img_tablet":require('../img/productos/Tuerca-union-plast-mixta-1-1.jpg'),
+      "img_movil":require('../img/productos/Tuerca-union-plast-mixta-1-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -4242,7 +4242,7 @@ export default [
             "pulgadas":"1"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-31.png",
+      "planos":require('../img/productos/planos_rotoplas-31.png'),
       "codigos":[
          {
             "id":"200381",
@@ -4315,8 +4315,8 @@ export default [
       "titulo":"Unión Bridada",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/union-bridada-1-1.jpg",
-      "img_movil":require('../img/produtos/union-bridada-1-1.jpg",
+      "img_tablet":require('../img/productos/union-bridada-1-1.jpg'),
+      "img_movil":require('../img/productos/union-bridada-1-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -4349,7 +4349,7 @@ export default [
             "pulgadas":"4 x 4"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-32.png",
+      "planos":require('../img/productos/planos_rotoplas-32.png'),
       "codigos":[
          {
             "id":"200238",
@@ -4473,8 +4473,8 @@ export default [
       "titulo":"Tuerca Unión Mixta",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/tuerca-union-mixta-1-1.jpg",
-      "img_movil":require('../img/produtos/tuerca-union-mixta-1-1.jpg",
+      "img_tablet":require('../img/productos/tuerca-union-mixta-1-1.jpg'),
+      "img_movil":require('../img/productos/tuerca-union-mixta-1-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -4492,7 +4492,7 @@ export default [
             "pulgadas":"1 x 1"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-29.png",
+      "planos":require('../img/productos/planos_rotoplas-29.png'),
       "codigos":[
          {
             "id":"200235",
@@ -4577,8 +4577,8 @@ export default [
       "titulo":"Tuerca Unión Plástica",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/Tuerca-union-plastica-1-1.jpg",
-      "img_movil":require('../img/produtos/Tuerca-union-plastica-1-1.jpg",
+      "img_tablet":require('../img/productos/Tuerca-union-plastica-1-1.jpg'),
+      "img_movil":require('../img/productos/Tuerca-union-plastica-1-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -4596,7 +4596,7 @@ export default [
             "pulgadas":"1"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-31.png",
+      "planos":require('../img/productos/planos_rotoplas-31.png'),
       "codigos":[
          {
             "id":"200377",
@@ -4663,8 +4663,8 @@ export default [
       "titulo":"Unión Bridada Mixta",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/Unio%cc%81n-bridada-mixta-1.jpg",
-      "img_movil":require('../img/produtos/Unio%cc%81n-bridada-mixta-1.jpg",
+      "img_tablet":require('../img/productos/Union-bridada-mixta-1.jpg'),
+      "img_movil":require('../img/productos/Union-bridada-mixta-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -4697,7 +4697,7 @@ export default [
             "pulgadas":"4 x 4"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-33.png",
+      "planos":require('../img/productos/planos_rotoplas-33.png'),
       "codigos":[
          {
             "id":"200249",
@@ -4833,8 +4833,8 @@ export default [
       "titulo":"Curva de 90",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/curva-90-1.jpg",
-      "img_movil":require('../img/produtos/curva-90-1.jpg",
+      "img_tablet":require('../img/productos/curva-90-1.jpg'),
+      "img_movil":require('../img/productos/curva-90-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -4852,7 +4852,7 @@ export default [
             "pulgadas":"1"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-09.png",
+      "planos":require('../img/productos/planos_rotoplas-09.png'),
       "codigos":[
          {
             "id":"200085",
@@ -4913,8 +4913,8 @@ export default [
       "titulo":"Llave de Empotrar para Regadera",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/Llave-de-empotrar-para-regadera-1.jpg",
-      "img_movil":require('../img/produtos/Llave-de-empotrar-para-regadera-1.jpg",
+      "img_tablet":require('../img/productos/Llave-de-empotrar-para-regadera-1.jpg'),
+      "img_movil":require('../img/productos/Llave-de-empotrar-para-regadera-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -4922,7 +4922,7 @@ export default [
             "pulgadas":"1/2"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-38.png",
+      "planos":require('../img/productos/planos_rotoplas-38.png'),
       "codigos":[
          {
             "id":"210136",
@@ -4955,8 +4955,8 @@ export default [
       "titulo":"Conector rápido a Cobre",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/Conector-a-cobre.jpg",
-      "img_movil":require('../img/produtos/Conector-a-cobre.jpg",
+      "img_tablet":require('../img/productos/Conector-a-cobre.jpg'),
+      "img_movil":require('../img/productos/Conector-a-cobre.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -4964,7 +4964,7 @@ export default [
             "pulgadas":"1/2"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-38.png",
+      "planos":require('../img/productos/planos_rotoplas-38.png'),
       "codigos":[
          {
             "id":"200279",
@@ -4985,8 +4985,8 @@ export default [
       "titulo":"Juego de Llaves para Regadera",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/Llave-de-empotrar-para-regadera_compuesta-1.jpg",
-      "img_movil":require('../img/produtos/Llave-de-empotrar-para-regadera_compuesta-1.jpg",
+      "img_tablet":require('../img/productos/Llave-de-empotrar-para-regadera_compuesta-1.jpg'),
+      "img_movil":require('../img/productos/Llave-de-empotrar-para-regadera_compuesta-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -4994,7 +4994,7 @@ export default [
             "pulgadas":"1/2"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-38.png",
+      "planos":require('../img/productos/planos_rotoplas-38.png'),
       "codigos":[
          {
             "id":"200279",
@@ -5015,8 +5015,8 @@ export default [
       "titulo":"Curva de Sobrepasaje",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/curva-de-sobrepasaje-1.jpg",
-      "img_movil":require('../img/produtos/curva-de-sobrepasaje-1.jpg",
+      "img_tablet":require('../img/productos/curva-de-sobrepasaje-1.jpg'),
+      "img_movil":require('../img/productos/curva-de-sobrepasaje-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -5034,7 +5034,7 @@ export default [
             "pulgadas":"1"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-38.png",
+      "planos":require('../img/productos/planos_rotoplas-38.png'),
       "codigos":[
          {
             "id":"200279",
@@ -5055,8 +5055,8 @@ export default [
       "titulo":"Válvula de Esfera",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/Valvula-de-esfera_-1.jpg",
-      "img_movil":require('../img/produtos/Valvula-de-esfera_-1.jpg",
+      "img_tablet":require('../img/productos/Valvula-de-esfera_-1.jpg'),
+      "img_movil":require('../img/productos/Valvula-de-esfera_-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -5069,7 +5069,7 @@ export default [
             "pulgadas":"3/4"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-39.png",
+      "planos":require('../img/productos/planos_rotoplas-39.png'),
       "codigos":[
          {
             "id":"200250",
@@ -5117,8 +5117,8 @@ export default [
       "titulo":"Válvula de Globo PP-R",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/valvula-de-globo-1.jpg",
-      "img_movil":require('../img/produtos/valvula-de-globo-1.jpg",
+      "img_tablet":require('../img/productos/valvula-de-globo-1.jpg'),
+      "img_movil":require('../img/productos/valvula-de-globo-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -5151,7 +5151,7 @@ export default [
             "pulgadas":"2"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-37.png",
+      "planos":require('../img/productos/planos_rotoplas-37.png'),
       "codigos":[
          {
             "id":"200369",
@@ -5287,8 +5287,8 @@ export default [
       "titulo":"Válvula de Esfera Desmontable",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/valvula-de-esfera-desmon-1.jpg",
-      "img_movil":require('../img/produtos/valvula-de-esfera-desmon-1.jpg",
+      "img_tablet":require('../img/productos/valvula-de-esfera-desmon-1.jpg'),
+      "img_movil":require('../img/productos/valvula-de-esfera-desmon-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -5321,7 +5321,7 @@ export default [
             "pulgadas":"2 x 2"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-40.png",
+      "planos":require('../img/productos/planos_rotoplas-40.png'),
       "codigos":[
          {
             "id":"200252",
@@ -5445,8 +5445,8 @@ export default [
       "titulo":"Válvula de Esfera PP-R",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/Va%cc%81lvula-de-esfera-1-1.jpg",
-      "img_movil":require('../img/produtos/Va%cc%81lvula-de-esfera-1-1.jpg",
+      "img_tablet":require('../img/productos/Valvula-de-esfera-1-1.jpg'),
+      "img_movil":require('../img/productos/Valvula-de-esfera-1-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -5494,7 +5494,7 @@ export default [
             "pulgadas":"4"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-36.png",
+      "planos":require('../img/productos/planos_rotoplas-36.png'),
       "codigos":[
          {
             "id":"200360",
@@ -5693,8 +5693,8 @@ export default [
       "titulo":"Montura de Derivación",
       "descripcion":"",
       "categoria":"Conexiones",
-      "img_tablet":require('../img/produtos/montura-de-derivacion-1.jpg",
-      "img_movil":require('../img/produtos/montura-de-derivacion-1.jpg",
+      "img_tablet":require('../img/productos/montura-de-derivacion-1.jpg'),
+      "img_movil":require('../img/productos/montura-de-derivacion-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -5752,7 +5752,7 @@ export default [
             "pulgadas":"4 x 1"
          }
       ],
-      "planos":require('../img/produtos/planos_rotoplas-35.png",
+      "planos":require('../img/productos/planos_rotoplas-35.png'),
       "codigos":[
          {
             "id":"200121",
@@ -6015,8 +6015,8 @@ export default [
       "titulo":"Termofusor",
       "descripcion":"",
       "categoria":"Herramientas",
-      "img_tablet":require('../img/produtos/termofusor-RJ-110-1-1.jpg",
-      "img_movil":require('../img/produtos/termofusor-RJ-110-1-1.jpg",
+      "img_tablet":require('../img/productos/termofusor-RJ-110-1-1.jpg'),
+      "img_movil":require('../img/productos/termofusor-RJ-110-1-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -6064,7 +6064,7 @@ export default [
             "pulgadas":"4"
          }
       ],
-      "planos":require('../img/produtos/space.png",
+      "planos":require('../img/productos/space.png'),
       "codigos":[
          {
             "id":"200282",
@@ -6119,8 +6119,8 @@ export default [
       "titulo":"Dados M-H",
       "descripcion":"",
       "categoria":"Herramientas",
-      "img_tablet":require('../img/produtos/dados-1.jpg",
-      "img_movil":require('../img/produtos/dados-1.jpg",
+      "img_tablet":require('../img/productos/dados-1.jpg'),
+      "img_movil":require('../img/productos/dados-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -6168,7 +6168,7 @@ export default [
             "pulgadas":"4"
          }
       ],
-      "planos":require('../img/produtos/space.png",
+      "planos":require('../img/productos/space.png'),
       "codigos":[
          {
             "id":"200092",
@@ -6277,8 +6277,8 @@ export default [
       "titulo":"Dado de reparación",
       "descripcion":"",
       "categoria":"Herramientas",
-      "img_tablet":require('../img/produtos/Dados-para-reparacion-1-1.jpg",
-      "img_movil":require('../img/produtos/Dados-para-reparacion-1-1.jpg",
+      "img_tablet":require('../img/productos/Dados-para-reparacion-1-1.jpg'),
+      "img_movil":require('../img/productos/Dados-para-reparacion-1-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -6286,7 +6286,7 @@ export default [
             "pulgadas":"-"
          }
       ],
-      "planos":require('../img/produtos/space.png",
+      "planos":require('../img/productos/space.png'),
       "codigos":[
          {
             "id":"200107",
@@ -6307,8 +6307,8 @@ export default [
       "titulo":"Dados para montura de derivación",
       "descripcion":"",
       "categoria":"Herramientas",
-      "img_tablet":require('../img/produtos/dados-montura-1.jpg",
-      "img_movil":require('../img/produtos/dados-montura-1.jpg",
+      "img_tablet":require('../img/productos/dados-montura-1.jpg'),
+      "img_movil":require('../img/productos/dados-montura-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -6346,7 +6346,7 @@ export default [
             "pulgadas":"4 x 1"
          }
       ],
-      "planos":require('../img/produtos/space.png",
+      "planos":require('../img/productos/space.png'),
       "codigos":[
          {
             "id":"200102",
@@ -6433,8 +6433,8 @@ export default [
       "titulo":"Tapón de reparación",
       "descripcion":"",
       "categoria":"Herramientas",
-      "img_tablet":require('../img/produtos/Tapo%cc%81nde-reparacio%cc%81n.jpg",
-      "img_movil":require('../img/produtos/Tapo%cc%81nde-reparacio%cc%81n.jpg",
+      "img_tablet":require('../img/productos/Taponde-reparacion.jpg'),
+      "img_movil":require('../img/productos/Taponde-reparacion.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -6442,7 +6442,7 @@ export default [
             "pulgadas":"-"
          }
       ],
-      "planos":require('../img/produtos/space.png",
+      "planos":require('../img/productos/space.png'),
       "codigos":[
          {
             "id":"200280",
@@ -6463,8 +6463,8 @@ export default [
       "titulo":"Perforador para monturas de derivación",
       "descripcion":"",
       "categoria":"Herramientas",
-      "img_tablet":require('../img/produtos/Perforador_monturas_deriv-1-1.jpg",
-      "img_movil":require('../img/produtos/Perforador_monturas_deriv-1-1.jpg",
+      "img_tablet":require('../img/productos/Perforador_monturas_deriv-1-1.jpg'),
+      "img_movil":require('../img/productos/Perforador_monturas_deriv-1-1.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -6482,7 +6482,7 @@ export default [
             "pulgadas":"1"
          }
       ],
-      "planos":require('../img/produtos/space.png",
+      "planos":require('../img/productos/space.png'),
       "codigos":[
          {
             "id":"200130",
@@ -6514,8 +6514,8 @@ export default [
       "titulo":"Termofusor de banco",
       "descripcion":"",
       "categoria":"Herramientas",
-      "img_tablet":require('../img/produtos/termo_fusor_de_banc.jpg",
-      "img_movil":require('../img/produtos/termo_fusor_de_banc.jpg",
+      "img_tablet":require('../img/productos/termo_fusor_de_banc.jpg'),
+      "img_movil":require('../img/productos/termo_fusor_de_banc.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -6523,7 +6523,7 @@ export default [
             "pulgadas":"-"
          }
       ],
-      "planos":require('../img/produtos/space.png",
+      "planos":require('../img/productos/space.png'),
       "codigos":[
          {
             "id":"200210",
@@ -6544,8 +6544,8 @@ export default [
       "titulo":"Termofusor de banco 125mm",
       "descripcion":"",
       "categoria":"Herramientas",
-      "img_tablet":require('../img/produtos/termofusor_de_banco_125.jpg",
-      "img_movil":require('../img/produtos/termofusor_de_banco_125.jpg",
+      "img_tablet":require('../img/productos/termofusor_de_banco_125.jpg'),
+      "img_movil":require('../img/productos/termofusor_de_banco_125.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -6553,7 +6553,7 @@ export default [
             "pulgadas":"-"
          }
       ],
-      "planos":require('../img/produtos/space.png",
+      "planos":require('../img/productos/space.png'),
       "codigos":[
          {
             "id":"200134",
@@ -6574,8 +6574,8 @@ export default [
       "titulo":"Planta generadora de energía Tuboplus",
       "descripcion":"",
       "categoria":"Herramientas",
-      "img_tablet":require('../img/produtos/planta.jpg",
-      "img_movil":require('../img/produtos/planta.jpg",
+      "img_tablet":require('../img/productos/planta.jpg'),
+      "img_movil":require('../img/productos/planta.jpg'),
       "correspondencias":[
          {
             "id":"1",
@@ -6583,7 +6583,7 @@ export default [
             "pulgadas":"-"
          }
       ],
-      "planos":require('../img/produtos/space.png",
+      "planos":require('../img/productos/space.png'),
       "codigos":[
          {
             "id":"200266",
