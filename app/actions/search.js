@@ -1,16 +1,19 @@
 import * as types from './types';
 import Api from '../lib/api';
+import productsDTO from '../../assets/ldb/productos.js';
 
 //FETCHERS
 
 export function fetchSearch(params){
   return (dispatch, getState) => {
-    return Api.get(`/busqueda/${params}`).then(res => {
-      dispatch(setSearchedItems({ itemsSearched: res }));
-    }).catch((err) => {
-      console.log("err", err);
-      dispatch(setSearchedItems({ itemsSearched: [] }));
-    })
+    return new Promise((resolve, reject) => {
+      try {
+        let itemsSearched = productsDTO.filter(product => product.titulo.indexOf(params) > -1);
+        resolve(dispatch(setSearchedItems({ itemsSearched })));
+      } catch (e) {
+        reject(dispatch(setSearchedItems({ itemsSearched: [] })));
+      }
+    });
   }
 }
 

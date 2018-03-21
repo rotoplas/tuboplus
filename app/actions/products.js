@@ -30,12 +30,6 @@ export function fetchCategories(){
 
 export function fetchProduct(category, productID){
   return (dispatch, getState) => {
-    /*return Api.get(`/productos/${category}/${product}`).then(res => {
-      dispatch(setSearchedProduct({ product: res }));
-    }).catch((err) => {
-      console.log(err);
-      dispatch(setSearchedProduct({ product: {} }));
-    })*/
     return new Promise((resolve, reject) => {
       try {
         let product = productsDTO.filter(product => product.idCat === category && product.id === productID);

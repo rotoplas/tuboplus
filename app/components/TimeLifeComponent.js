@@ -57,7 +57,6 @@ class TimeLifeComponent extends Component {
 		if(this.state.isLoading){
 			view = <Text style={styles.cargando}> Cargando... </Text>;
 		} else {
-			console.log(this.state.timeLifePayload.header.url);
 			view = <View>
 								<View style={styles.titContainer}>
 					       <Text style={styles.mainTitle}>{this.state.timeLifePayload.title}</Text>
