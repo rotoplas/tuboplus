@@ -48,7 +48,7 @@ export function fetchProductsXCategory(category : any){
     })*/
     return new Promise((resolve, reject) => {
       try {
-        var productsXCategory =  
+        var productsXCategory =
         resolve(dispatch(setSearchedProductsXCategory({ productsXCategory: categories })));
       } catch (e) {
         reject(dispatch(setSearchedProductsXCategory({ productsXCategory: [] })));

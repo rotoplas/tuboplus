@@ -45,15 +45,15 @@ class CategoriesComponent extends Component {
 
   keyExtractor = (item, index) => item.key;
 
-  renderItem = ({item}) => (
-    <TouchableHighlight underlayColor={'transparent'} style={styles.productItem}
-      onPress={() => this.props.navigation.navigate('ProductsXCategoryComponent', { category : item.key, name : item.name })}>
-        <View style={styles.imageContainer}>
-            <Image style={styles.prodImage} source={item.image} />
-            <Text style={styles.productName}>{item.name}</Text>
-        </View>
-    </TouchableHighlight>
-  );
+  renderItem = ({item}) => {
+    return (<TouchableHighlight underlayColor={'transparent'} style={styles.productItem}
+              onPress={() => this.props.navigation.navigate('ProductsXCategoryComponent', { category : item.key, name : item.name })}>
+                <View style={styles.imageContainer}>
+                    <Image style={styles.prodImage} source={item.image} />
+                    <Text style={styles.productName}>{item.name}</Text>
+                </View>
+            </TouchableHighlight>);
+  }
 
   onSelect(value, label) {
     this.props.navigation.navigate('ProductsXCategoryComponent', { category : value, name : label });
