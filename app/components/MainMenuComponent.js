@@ -156,6 +156,7 @@ class MainMenuComponent extends Component{
 		var message = <View></View>;
 
 		if(this.state.isSendedForm){
+      console.log(this.props.postedSubscribeForm);
 			if(this.props.postedSubscribeForm.status === 400  && this.props.postedSubscribeForm.title === "Member Exists"){
 				message = <View>
 										<Text>El usuario ya se encuentra registrado!</Text>

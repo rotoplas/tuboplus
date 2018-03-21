@@ -21,8 +21,8 @@ export function sendSubscribeForm(params){
     //ID LIST -> 418415c7b4
     //USUARIO -> MDSMailing
     let headers = new Array();
-    headers["Authorization"] = "MDSMailing:0a4f35e5b5bd7c8fe749f2181aab0430-us16";
-    return Api.post(`https://us16.api.mailchimp.com/3.0/lists/3ca3d235ca/members/`, params, headers).then(res => {
+    headers["Authorization"] = "MDSMailing:683db2078f4605c2f6c00695bccd3506-us12";
+    return Api.post(`https://us12.api.mailchimp.com/3.0/lists/3ca3d235ca/members/`, params, headers).then(res => {
       dispatch(setSubscribeForm({ subscribeForm: res }));
     }).catch((err) => {
      console.log("err", err);
