@@ -153,8 +153,8 @@ class TermofusionComponent extends Component {
                     <Text style={styles.botText}>Restablecer</Text>
                   </TouchableHighlight>
                   <TouchableHighlight style={styles.botIniciar}
-                  underlayColor={'transparent'}
-                  onPress={this.toggleTimer}>
+                    underlayColor={'transparent'}
+                    onPress={this.toggleTimer}>
                     <Text style={styles.botText}>{!this.state.timerStart ? "Iniciar" : "Detener"}</Text>
                   </TouchableHighlight>
                 </View>
