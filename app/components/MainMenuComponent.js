@@ -192,7 +192,7 @@ class MainMenuComponent extends Component{
                     <View style={styles.wrapperForm} >
 
 		                   <Text style={styles.titContactform}>
-                       	Registrate aquí!
+                       	Regístrate aquí!
                        </Text>
 
 											 {message}
