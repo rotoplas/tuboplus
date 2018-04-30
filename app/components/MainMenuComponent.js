@@ -26,8 +26,7 @@ class MainMenuComponent extends Component{
 				{key: '3', title:'Proceso de termofusión', imageIcon:require('../../assets/img/icon3.png'), colors: ["#22a3da","#0183b9"], componentName: 'TermofusionComponent'},
 				{key: '4', title:'Correspondencias', imageIcon:require('../../assets/img/icon4.png'), colors: ["#3e7bc0","#2663a9"], componentName: 'EquivalenceComponent'},
 				{key: '5', title:'Vida Útil', imageIcon:require('../../assets/img/icon5.png'), colors: ["#165585","#0e3553"], componentName: 'TimeLifeComponent'},
-				{key: '6', title:'Localiza a un distribuidor', imageIcon:require('../../assets/img/icon6.png'), colors: ["#00204d","#001431"], componentName: 'ContactformComponent'},
-				{key: '7', title:'Contáctenos', imageIcon:require('../../assets/img/icon7.png'), colors: ["#0f0f22","#000917"], componentName: 'ContactComponent'}
+				{key: '6', title:'Contáctenos', imageIcon:require('../../assets/img/icon7.png'), colors: ["#00204d","#001431"], componentName: 'ContactComponent'}
 			],
       modalVisible: false,
       isRegistered: false,
@@ -271,9 +270,9 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.4,
     shadowRadius: 5,
-    paddingTop: "5.5%",
+    paddingTop: "6.55%",
     paddingLeft: "14%",
-    paddingBottom: "5.5%",
+    paddingBottom: "6.5%",
     flexDirection: 'row',
   },
   iconItem:{

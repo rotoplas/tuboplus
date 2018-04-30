@@ -54,14 +54,6 @@ class MenuBottomComponent extends Component {
 
           <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
           <TouchableHighlight underlayColor={'transparent'}
-	          style={this.props.navigation.state.routeName == 'ContactformComponent' ? styles.activeItem : styles.inactiveItem}
-						onPress={() => this.props.navigation.state.routeName == 'ContactformComponent' ? () => {return false} : this.navigateTo('ContactformComponent', 'Contacta a los expertos')}>
-              <Image style={styles.iconItem} source={require('../../assets/img/icon6.png')}/>
-           </TouchableHighlight>
-          </LinearGradient>
-
-          <LinearGradient colors={["#1a83c3","#0069a9"]} style={styles.iconItemContenainer}>
-          <TouchableHighlight underlayColor={'transparent'}
 	          style={this.props.navigation.state.routeName == 'ContactComponent' ? styles.activeItem : styles.inactiveItem}
 						onPress={() => this.props.navigation.state.routeName == 'ContactComponent' ? () => {return false} : this.navigateTo('ContactComponent', 'Contácto')}>
               <Image style={styles.iconItem} source={require('../../assets/img/icon7.png')}/>
@@ -84,7 +76,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   	},
   iconItemContenainer: {
-    width: '16.666%',
+    width: '20%',
     },
   inactiveItem:{
     borderRightColor: '#ffffff',
