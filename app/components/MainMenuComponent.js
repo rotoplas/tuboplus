@@ -320,7 +320,7 @@ const styles = StyleSheet.create({
     width: '84%',
     marginLeft: '8%',
     marginRight: '8%',
-    marginTop: 30,
+    marginTop: 20,
   },
   textIntro:{
     color: '#929292',
@@ -331,7 +331,7 @@ const styles = StyleSheet.create({
     color: '#515253',
     fontFamily: 'Signika-Bold',
     fontSize:22,
-    marginTop: 30,
+    marginTop: 20,
     marginBottom: 20,
   },
   inputLabel: {
@@ -341,7 +341,7 @@ const styles = StyleSheet.create({
   },
   inputForm: {
     backgroundColor: '#ffffff',
-    paddingTop: 14,
+    paddingTop: 10,
     paddingBottom: 14,
     paddingLeft: 14,
     paddingRight: 14,
@@ -351,7 +351,7 @@ const styles = StyleSheet.create({
     shadowRadius: 3,
     borderRadius: 4,
     marginTop: 5,
-    marginBottom: 20,
+    marginBottom: 10,
   },
   botIniciar:{
     width: 30,
