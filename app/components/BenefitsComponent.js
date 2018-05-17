@@ -93,8 +93,8 @@ const styles = StyleSheet.create({
       fontFamily: 'Signika-Bold',
       fontSize: 28,
       color:'#ffffff',
-      marginTop:30,
-      marginBottom:20,
+      marginTop:15,
+      marginBottom:15,
       backgroundColor: 'transparent',
       },
       sliderBenefits:{
